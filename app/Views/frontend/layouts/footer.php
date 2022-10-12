@@ -5,34 +5,17 @@
           <div class="container">
 
               <div class="row g-5">
-                  <div class="col-lg-4">
-                      <h3 class="footer-heading">About ZenBlog</h3>
+                  <div class="col-lg-6">
+                      <h3 class="footer-heading">Tentang Kami</h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab, perspiciatis beatae autem deleniti voluptate nulla a dolores, exercitationem eveniet libero laudantium recusandae officiis qui aliquid blanditiis omnis quae. Explicabo?</p>
                       <p><a href="about.html" class="footer-link-more">Learn More</a></p>
                   </div>
                   <div class="col-6 col-lg-2">
-                      <h3 class="footer-heading">Navigation</h3>
+                      <h3 class="footer-heading">Kategori</h3>
                       <ul class="footer-links list-unstyled">
-                          <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
-                          <li><a href="index.html"><i class="bi bi-chevron-right"></i> Blog</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Categories</a></li>
-                          <li><a href="single-post.html"><i class="bi bi-chevron-right"></i> Single Post</a></li>
-                          <li><a href="about.html"><i class="bi bi-chevron-right"></i> About us</a></li>
-                          <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-6 col-lg-2">
-                      <h3 class="footer-heading">Categories</h3>
-                      <ul class="footer-links list-unstyled">
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Business</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Culture</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Sport</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Food</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Politics</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Celebrity</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Startups</a></li>
-                          <li><a href="category.html"><i class="bi bi-chevron-right"></i> Travel</a></li>
-
+                          <?php foreach ($kategori as $item) : ?>
+                              <li><a href="category.html"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                          <?php endforeach ?>
                       </ul>
                   </div>
 

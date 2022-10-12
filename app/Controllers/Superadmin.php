@@ -7,7 +7,7 @@ class Superadmin extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Beranda - Sistem Administrasi',
+            'title' => 'Beranda - Kanal Berita',
             'top_header' => 'Beranda',
             'header' => '',
         ];

@@ -11,7 +11,22 @@
           <nav id="navbar" class="navbar">
               <ul>
                   <li><a href="index.html">Blog</a></li>
-                  <li><a href="about.html">About</a></li>
+                  <li class="dropdown"><a href="category.html"><span>About Us</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                      <ul>
+                          <li><a href="#">Pedoman Media Siber</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Kode Etik</a></li>
+                          <li><a href="#">Disclaimer</a></li>
+                      </ul>
+                  </li>
+                  <li class="dropdown"><a href="category.html"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                      <ul>
+                          <li><a href="#">Olahraga</a></li>
+                          <li><a href="#">Politik</a></li>
+                          <li><a href="#">Otomotif</a></li>
+                          <li><a href="#">Pendidikan</a></li>
+                      </ul>
+                  </li>
                   <li><a href="contact.html">Contact</a></li>
               </ul>
           </nav><!-- .navbar -->
