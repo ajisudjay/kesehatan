@@ -19,12 +19,11 @@
                           <li><a href="#">Disclaimer</a></li>
                       </ul>
                   </li>
-                  <li class="dropdown"><a href="category.html"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="category.html"><span>Kategori</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
-                          <li><a href="#">Olahraga</a></li>
-                          <li><a href="#">Politik</a></li>
-                          <li><a href="#">Otomotif</a></li>
-                          <li><a href="#">Pendidikan</a></li>
+                          <?php foreach ($kategori as $item) : ?>
+                              <li><a href="#"><?= $item['kategori'] ?></a></li>
+                          <?php endforeach ?>
                       </ul>
                   </li>
                   <li><a href="contact.html">Contact</a></li>

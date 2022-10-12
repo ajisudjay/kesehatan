@@ -9,7 +9,7 @@
             <?= $this->include('backend/layouts/top_navbar') ?>
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    <?= $this->include('backend/layouts/side_navbar/side_navbar') ?>
+                    <?= $this->include('backend/layouts/side_navbar/superadmin') ?>
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <!-- Main-body start -->
