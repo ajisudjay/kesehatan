@@ -14,11 +14,21 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Fakultas Universitas Mulawarman',
-            'top_header' => 'Surat',
-            'header' => 'Surat Keluar',
+            'title' => 'Beranda - Kanal Berita',
+            'top_header' => 'Beranda',
+            'header' => '',
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
         ];
-        return view('pages/home', $data);
+        return view('frontend/pages/index', $data);
+    }
+
+    public function hal_admin()
+    {
+        $data = [
+            'title' => 'Beranda - Kanal Berita',
+            'top_header' => 'Beranda',
+            'header' => '',
+        ];
+        return view('backend/pages/index', $data);
     }
 }

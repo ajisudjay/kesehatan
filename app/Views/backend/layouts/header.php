@@ -1,5 +1,5 @@
 <head>
-    <title>Adminty - Premium Admin Template by Colorlib </title>
+    <title><?= $title ?> </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,5 +28,5 @@
     <!-- TAMBAHAN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url(''); ?>\assets\icon\font-awesome\css\font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(''); ?>libraries_backend\assets\icon\font-awesome\css\font-awesome.min.css">
 </head>

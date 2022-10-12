@@ -21,8 +21,8 @@
                                             <div class="col-lg-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>SISTEM ADMINISTRASI DAN ARSIP</h4>
-                                                        <span>FAKULTAS KESEHATAN MASYARAKAT UNIVERSITAS MULAWARMAN</span>
+                                                        <h4>KANAL BERITA</h4>
+                                                        <span>SAMARINDA</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -32,15 +32,16 @@
                                                         <li class="breadcrumb-item">
                                                             <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
                                                         </li>
-                                                        <li class="breadcrumb-item"><a href="#!"><?= $top_header ?></a></li>
-                                                        <li class="breadcrumb-item"><a href="#!"><?= $header ?></a></li>
+                                                        <li class="breadcrumb-item"><a href="#!"><?= $top_header ?></a>
+                                                        </li>
+                                                        <li class="breadcrumb-item"><a href="#!"><?= $header ?></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Page-header end -->
-
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <div class="row">
@@ -48,12 +49,13 @@
                                                 <!-- Content Start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Card 1</h5>
-                                                        <span>Ini Card </span>
-
+                                                        <h4 style="font-family: Arial, Helvetica, sans-serif;"><?= $header ?></h4>
+                                                    </div>
+                                                    <div class="card-block">
+                                                        <div class="bg-transparent border-0" id="result"></div>
                                                     </div>
                                                 </div>
-                                                <!-- Content End -->
+                                                <!-- Content end -->
                                             </div>
                                         </div>
                                     </div>
@@ -69,6 +71,20 @@
         </div>
     </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: '<?= base_url('Kategori/viewData') ?>',
+            dataType: 'json',
+            success: function(response) {
+                $("#result").html(response.data);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+            }
+        });
+    });
+</script>
 <?= $this->include('backend/layouts/js_script') ?>
 
 </html>
