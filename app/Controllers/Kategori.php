@@ -14,6 +14,9 @@ class Kategori extends BaseController
     }
     public function index()
     {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
         $data = [
             'title' => 'Beranda - Kanal Berita',
             'top_header' => 'Beranda',
@@ -24,6 +27,9 @@ class Kategori extends BaseController
     }
     public function viewData()
     {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $data = [
@@ -41,13 +47,16 @@ class Kategori extends BaseController
 
     public function tambah()
     {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $kategori = $request->getVar('kategori');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
                 'kategori' => [
-                    'label' => 'Kegiatan',
+                    'label' => 'Kategori',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} Tidak Boleh Kosong',
@@ -71,14 +80,76 @@ class Kategori extends BaseController
                     'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
-                    'sukses' => 'Data Kategori Berhasil Ditambahkan !',
+                    'sukses' => 'Kategori Berhasil Ditambahkan !',
                     'status' => 'berhasil',
-                    'data' => view('kategori/view-data', $data2)
+                    'data' => view('backend/kategori/view-data', $data2)
                 ];
                 echo json_encode($msg);
             }
         } else {
             exit('Data Tidak Dapat diproses');
         }
+    }
+
+    public function edit()
+    {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
+        $request = \Config\Services::request();
+        if ($request->isAJAX()) {
+            $id = $request->getVar('id');
+            $kategori = $request->getVar('kategori');
+            $validation = \Config\Services::validation();
+            $valid = $this->validate([
+                'kategori' => [
+                    'label' => 'Kategori',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+            ]);
+
+            if (!$valid) {
+                $msg = [
+                    'error' => [
+                        'kategori' => $validation->getError('kategori'),
+                    ],
+                ];
+                echo json_encode($msg);
+            } else {
+                $data = [
+                    'kategori' => $kategori,
+                ];
+
+                $this->KategoriModel->update($id, $data);
+
+                $data2 = [
+                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                ];
+                $msg = [
+                    'sukses' => 'Kategori Berhasil Diubah !',
+                    'status' => 'berhasil',
+                    'data' => view('backend/kategori/view-data', $data2)
+                ];
+                echo json_encode($msg);
+            }
+        } else {
+            exit('Data Tidak Dapat diproses');
+        }
+    }
+
+
+
+    public function hapus($id)
+    {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
+        $this->KategoriModel->delete($id);
+
+        session()->setFlashdata('pesanHapus', 'Kategori Berhasil Di Hapus !');
+        return redirect()->to(base_url('/kategori'));
     }
 }

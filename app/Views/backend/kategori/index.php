@@ -22,7 +22,6 @@
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
                                                         <h4>KANAL BERITA</h4>
-                                                        <span>SAMARINDA</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,9 +47,6 @@
                                             <div class="col-sm-12">
                                                 <!-- Content Start -->
                                                 <div class="card">
-                                                    <div class="card-header">
-                                                        <h4 style="font-family: Arial, Helvetica, sans-serif;"><?= $header ?></h4>
-                                                    </div>
                                                     <div class="card-block">
                                                         <div class="bg-transparent border-0" id="result"></div>
                                                     </div>
@@ -74,7 +70,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: '<?= base_url('Kategori/viewData') ?>',
+            url: '<?= base_url('kategori/viewData') ?>',
             dataType: 'json',
             success: function(response) {
                 $("#result").html(response.data);
@@ -85,6 +81,6 @@
         });
     });
 </script>
-<?= $this->include('backend/layouts/js_script') ?>
+<?= $this->include('backend/layouts/js_index') ?>
 
 </html>

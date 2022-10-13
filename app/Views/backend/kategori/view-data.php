@@ -34,8 +34,9 @@
         </div>
     </div>
 </div>
+
 <div class="dt-responsive table-responsive">
-    <!-- id bisa diganti => simpletable -->
+    <!-- id dibawah bisa diganti => simpletable -->
     <table id="scr-vtr-dynamic" class="table table-striped table-bordered nowrap">
         <thead>
             <tr>
@@ -53,12 +54,39 @@
                     <td><?= $no++ ?></td>
                     <td>
                         <!-- button edit modal -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal">
+                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id'] ?>">
                             <span class="feather icon-edit-1 text-primary"></span>
                         </button>
+                        <!-- Modal Edit Kategori-->
+                        <div class="modal fade" id="editmodal<?= $id = $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Edit Kategori : <?= $item['kategori'] ?></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="<?= base_url('kategori/edit'); ?>" method="post" class="edit">
+                                        <?= csrf_field() ?>
+                                        <div class="modal-body">
+                                            <div class="col-lg-11">
+                                                <input type="text" name="id" class="form-control" value="<?= $item['id'] ?>" hidden>
+                                                <label>Kategori</label>
+                                                <input type="text" name="kategori" class="form-control" value="<?= $item['kategori'] ?>">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
+                                            <button type="submit" class="btn btn-primary btnEdit">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- button hapus modal-->
-                        <a href="<?= base_url('kategori/hapus/' . $item['id']); ?>" class="hapusKegiatan">
+                        <a href="<?= base_url('kategori/hapus/' . $item['id']); ?>" class="hapus">
                             <span class="feather icon-trash-2 text-danger"></span>
                         </a>
                     </td>
@@ -98,7 +126,6 @@
                             $('.kategori').removeClass('is-invalid');
                             $('.errorKategori').html('');
                         }
-
                     } else {
                         if (response.status == 'gagal') {
                             Swal.fire({
@@ -123,6 +150,70 @@
                 }
             })
         });
+
+        $('.edit').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+                dataType: "json",
+                beforeSend: function() {
+                    $('.btnEdit').attr('disable', 'disabled');
+                    $('.btnEdit').html('<i class="fa fa-spin fa-spinner"></i>');
+                },
+                complete: function() {
+                    $('.btnEdit').removeAttr('disable', 'disabled');
+                    $('.btnEdit').html('Simpan');
+                },
+                success: function(response) {
+                    if (response.error) {
+                        if (response.error.kategori) {
+                            $('.kategori').addClass('is-invalid');
+                            $('.errorkategoriEdit').html(response.error.kategori);
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'berhasil',
+                            text: response.sukses,
+                        });
+                        $('body').removeClass('modal-open');
+                        //modal-open class is added on body so it has to be removed
+                        $('.modal-backdrop').remove();
+                        //need to remove div with modal-backdrop class
+                        $("#result").html(response.data);
+                    }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+                }
+            })
+        });
+
+        //  function hapus
+        $('.hapus').on('click', function(e) {
+            e.preventDefault();
+            const href = $(this).attr('href')
+            Swal.fire({
+                title: 'Anda Yakin?',
+                text: "Data Akan Dihapus!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Hapus!'
+            }).then((result) => {
+                if (result.value) {
+                    document.location.href = href;
+                }
+            });
+        });
+        window.setTimeout(function() {
+            $(".flashAjax").fadeTo(500, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 5000);
     });
 </script>
-<?= $this->include('backend/layouts/js_view') ?>
+<?= $this->include('backend/layouts/js_viewData') ?>

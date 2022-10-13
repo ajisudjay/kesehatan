@@ -22,13 +22,26 @@ class Pages extends BaseController
         return view('frontend/pages/index', $data);
     }
 
-    public function hal_admin()
+    public function login()
     {
         $data = [
             'title' => 'Beranda - Kanal Berita',
             'top_header' => 'Beranda',
             'header' => '',
         ];
-        return view('backend/pages/index', $data);
+        return view('backend/pages/login', $data);
+    }
+
+    public function hal_superadmin()
+    {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
+        $data = [
+            'title' => 'Beranda - Kanal Berita',
+            'top_header' => 'Beranda',
+            'header' => '',
+        ];
+        return view('backend/pages/superadmin', $data);
     }
 }
