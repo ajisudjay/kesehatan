@@ -41,8 +41,9 @@ $routes->get('/', 'Pages::index');
 $routes->get('/login', 'Pages::login');
 $routes->get('/superadmin', 'Pages::hal_superadmin');
 
-// kategori
+// menu
 $routes->get('/kategori', 'Kategori::index');
+$routes->get('/user', 'User::index');
 
 /*
  * --------------------------------------------------------------------

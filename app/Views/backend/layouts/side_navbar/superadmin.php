@@ -1,6 +1,5 @@
 <nav class="pcoded-navbar">
     <div class="pcoded-inner-navbar main-menu">
-        <div class="pcoded-navigatio-lavel">Kanal Berita</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
                 <a href="javascript:void(0)">
@@ -45,6 +44,15 @@
                 <a href="#" target="_blank">
                     <span class="pcoded-micon"><i class="fa fa-gears"></i></span>
                     <span class="pcoded-mtext">Konfigurasi</span>
+                </a>
+            </li>
+        </ul>
+        <div class="pcoded-navigatio-lavel">User</div>
+        <ul class="pcoded-item pcoded-left-item">
+            <li>
+                <a href="<?= base_url('user'); ?>">
+                    <span class="pcoded-micon"><i class="fa fa-users"></i></span>
+                    <span class="pcoded-mtext">Data User</span>
                 </a>
             </li>
         </ul>

@@ -18,9 +18,9 @@ class Kategori extends BaseController
             return redirect()->to(base_url('/login'));
         }
         $data = [
-            'title' => 'Beranda - Kanal Berita',
+            'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
-            'header' => '',
+            'header' => 'Kategori',
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
         ];
         return view('backend/kategori/index', $data);

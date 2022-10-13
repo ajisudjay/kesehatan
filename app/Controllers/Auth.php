@@ -37,7 +37,6 @@ class Auth extends BaseController
                     ]
                 ],
             ]);
-
             if (!$valid) {
                 $msg = [
                     'error' => [
@@ -56,7 +55,8 @@ class Auth extends BaseController
                     echo json_encode($msg);
                 } else {
                     $level = $user['level'];
-                    if ($user['username'] === $username && $user['password'] === $password) {
+                    $hash_pass = $user['password'];
+                    if ($user['username'] === $username && password_verify($password, $hash_pass)) {
                         if ($level == 'Superadmin') {
                             session()->set('username', $user['username']);
                             session()->set('password', $user['password']);

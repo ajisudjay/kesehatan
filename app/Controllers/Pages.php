@@ -14,7 +14,7 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Beranda - Kanal Berita',
+            'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
@@ -25,7 +25,7 @@ class Pages extends BaseController
     public function login()
     {
         $data = [
-            'title' => 'Beranda - Kanal Berita',
+            'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
         ];
@@ -38,7 +38,7 @@ class Pages extends BaseController
             return redirect()->to(base_url('/login'));
         }
         $data = [
-            'title' => 'Beranda - Kanal Berita',
+            'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
         ];

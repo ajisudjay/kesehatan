@@ -33,12 +33,16 @@
                                     </div>
                                 <?php } ?>
                                 <div class="form-group form-primary">
-                                    <input type="text" name="username" class="form-control username" required="" placeholder="Username">
+                                    <input type="text" name="username" class="form-control username" placeholder="Username">
                                     <span class="form-bar"></span>
+                                    <div class="invalid-feedback errorUsername"></div>
                                 </div>
                                 <div class="form-group form-primary">
-                                    <input type="password" name="password" class="form-control password" required="" placeholder="Password">
+                                    <input type="password" name="password" class="form-control password" placeholder="Password">
                                     <span class="form-bar"></span>
+                                    <div class="invalid-feedback errorPassword"></div>
+                                    <div class="font-weight-bold text-danger errorgagal_login"></div>
+                                    <div class="font-weight-bold text-danger errorgagal_user"></div>
                                 </div>
                                 <div class="row m-t-25 text-left">
                                     <div class="col-12">
@@ -51,6 +55,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                <?php if (session()->get('pesanGagal')) { ?>
+                                    <div class="alert alert-danger alert-dismissible fade show flash text-center" role="alert">
+                                        <strong>Gagal Login !</strong> <?= session()->getFlashdata('pesanGagal') ?>
+                                    </div>
+                                <?php } ?>
+                                <?php if (session()->get('pesanLogout')) { ?>
+                                    <div class="alert alert-danger alert-dismissible fade show flash text-center" role="alert">
+                                        <strong>Gagal Login !</strong> <?= session()->getFlashdata('pesanLogout') ?>
+                                    </div>
+                                <?php } ?>
                                 <div class="row m-t-30">
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20 btnLogin">Sign in</button>
@@ -97,18 +111,18 @@
                     if (response.error) {
                         if (response.error.username) {
                             $('.username').addClass('is-invalid');
-                            $('.errorusername').html(response.error.username);
+                            $('.errorUsername').html(response.error.username);
                         } else {
                             $('.username').removeClass('is-invalid');
-                            $('.errorusername').html('');
+                            $('.errorUsername').html('');
                         }
 
                         if (response.error.password) {
                             $('.password').addClass('is-invalid');
-                            $('.errorpassword').html(response.error.password);
+                            $('.errorPassword').html(response.error.password);
                         } else {
                             $('.password').removeClass('is-invalid');
-                            $('.errorpassword').html('');
+                            $('.errorPassword').html('');
                         }
                     } else {
                         if (response.title == 'gagaluser') {
