@@ -130,13 +130,13 @@
                                                 <div class="row">
                                                     <div class="col-lg-5">
                                                         <label class="text-primary">Password</label>
-                                                        <input type="text" name="password" value="<?= password_verify($item['password'], $item['password']) ?>" class="form-control password" placeholder="Password">
+                                                        <input type="password" name="password" value="<?= base64_decode($item['password']) ?>" class="form-control password" placeholder="Password">
                                                         <div class="invalid-feedback errorPassword"></div>
                                                     </div>
                                                     <div class="col-lg-5">
                                                         <div class="invalid-feedback errorUser"></div>
                                                         <label class="text-primary">Ulangi Password</label>
-                                                        <input type="password" name="repassword" value="<?= $item['password'] ?>" class="form-control repassword" placeholder="Ulangi Password">
+                                                        <input type="password" name="repassword" value="<?= base64_decode($item['password']) ?>" class="form-control repassword" placeholder="Ulangi Password">
                                                         <div class="invalid-feedback errorRepassword"></div>
                                                     </div>
                                                     <hr>

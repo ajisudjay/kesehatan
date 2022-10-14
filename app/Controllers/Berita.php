@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\BeritaModel;
 use App\Models\KategoriModel;
 use App\Controllers\BaseController;
 
-class Kategori extends BaseController
+class Berita extends BaseController
 {
+    protected $BeritaModel;
     protected $KategoriModel;
     public function __construct()
     {
+        $this->BeritaModel = new BeritaModel();
         $this->KategoriModel = new KategoriModel();
     }
     public function index()
@@ -20,9 +23,9 @@ class Kategori extends BaseController
         $data = [
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
-            'header' => 'Kategori',
+            'header' => 'Berita',
         ];
-        return view('backend/kategori/index', $data);
+        return view('backend/berita/index', $data);
     }
     public function viewData()
     {
@@ -33,10 +36,11 @@ class Kategori extends BaseController
         if ($request->isAJAX()) {
             $data = [
                 'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [
-                'data' => view('backend/kategori/view-data', $data)
+                'data' => view('backend/berita/view-data', $data)
             ];
             echo json_encode($msg);
         } else {
@@ -49,13 +53,49 @@ class Kategori extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
+        $admin = session()->get('username');
+        $timestamp = date("Y-m-d H:i:s");
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
+            $judul = $request->getVar('judul');
+            $slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($judul)));
             $kategori = $request->getVar('kategori');
+            $tanggal = $request->getVar('tanggal');
+            $gambar = $request->getVar('gambar');
+            $isi = $request->getVar('isi');
+            $tag = $request->getVar('tag');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
+                'judul' => [
+                    'label' => 'Judul',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
                 'kategori' => [
                     'label' => 'Kategori',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+                'tanggal' => [
+                    'label' => 'Tanggal',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+                'isi' => [
+                    'label' => 'Isi',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+                'tag' => [
+                    'label' => 'Tag',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} Tidak Boleh Kosong',
@@ -65,23 +105,38 @@ class Kategori extends BaseController
             if (!$valid) {
                 $msg = [
                     'error' => [
+                        'judul' => $validation->getError('judul'),
                         'kategori' => $validation->getError('kategori'),
+                        'tanggal' => $validation->getError('tanggal'),
+                        'isi' => $validation->getError('isi'),
+                        'tag' => $validation->getError('tag'),
                     ],
                 ];
                 echo json_encode($msg);
             } else {
                 $data = [
+                    'judul' => $judul,
+                    'slug' => $slug,
                     'kategori' => $kategori,
+                    'tanggal' => $tanggal,
+                    'gambar' => $gambar,
+                    'isi' => $isi,
+                    'tag' => $tag,
+                    'status' => 'Belum Publish',
+                    'admin' => $admin,
+                    'timestamp' => $timestamp,
                 ];
-                $this->KategoriModel->insert($data);
+                $this->BeritaModel->insert($data);
 
                 $data2 = [
                     'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray(),
+                    'validation' => \Config\Services::validation(),
                 ];
                 $msg = [
-                    'sukses' => 'Kategori Berhasil Ditambahkan !',
+                    'sukses' => 'Berita Berhasil Ditambahkan !',
                     'status' => 'berhasil',
-                    'data' => view('backend/kategori/view-data', $data2)
+                    'data' => view('backend/berita/view-data', $data2)
                 ];
                 echo json_encode($msg);
             }
@@ -98,11 +153,11 @@ class Kategori extends BaseController
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $id = $request->getVar('id');
-            $kategori = $request->getVar('kategori');
+            $judul = $request->getVar('judul');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
-                'kategori' => [
-                    'label' => 'Kategori',
+                'judul' => [
+                    'label' => 'Judul',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} Tidak Boleh Kosong',
@@ -113,24 +168,26 @@ class Kategori extends BaseController
             if (!$valid) {
                 $msg = [
                     'error' => [
-                        'kategori' => $validation->getError('kategori'),
+                        'berita' => $validation->getError('berita'),
                     ],
                 ];
                 echo json_encode($msg);
             } else {
                 $data = [
-                    'kategori' => $kategori,
+                    'judul' => $judul,
                 ];
 
-                $this->KategoriModel->update($id, $data);
+                $this->BeritaModel->update($id, $data);
 
                 $data2 = [
                     'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray(),
+                    'validation' => \Config\Services::validation(),
                 ];
                 $msg = [
-                    'sukses' => 'Kategori Berhasil Diubah !',
+                    'sukses' => 'Berita Berhasil Diubah !',
                     'status' => 'berhasil',
-                    'data' => view('backend/kategori/view-data', $data2)
+                    'data' => view('backend/berita/view-data', $data2)
                 ];
                 echo json_encode($msg);
             }
@@ -146,9 +203,9 @@ class Kategori extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
-        $this->KategoriModel->delete($id);
+        $this->BeritaModel->delete($id);
 
-        session()->setFlashdata('pesanHapus', 'Kategori Berhasil Di Hapus !');
-        return redirect()->to(base_url('/kategori'));
+        session()->setFlashdata('pesanHapus', 'Berita Berhasil Di Hapus !');
+        return redirect()->to(base_url('/berita'));
     }
 }

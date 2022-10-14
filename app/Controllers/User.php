@@ -21,7 +21,6 @@ class User extends BaseController
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => 'Data User',
-            'user' => $this->UserModel->orderBy('username', 'ASC')->get()->getResultArray(),
         ];
         return view('backend/user/index', $data);
     }
@@ -111,7 +110,7 @@ class User extends BaseController
                 $data = [
                     'username' => $username,
                     'nama' => $nama,
-                    'password' => password_hash($password, PASSWORD_DEFAULT),
+                    'password' => base64_encode("$password"),
                     'level' => $level,
                 ];
                 $this->UserModel->insert($data);
@@ -198,7 +197,7 @@ class User extends BaseController
                 $data = [
                     'username' => $username,
                     'nama' => $nama,
-                    'password' => password_hash($password, PASSWORD_DEFAULT),
+                    'password' => base64_encode("$password"),
                     'level' => $level,
                 ];
 

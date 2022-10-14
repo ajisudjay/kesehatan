@@ -11,7 +11,7 @@
         <div class="pcoded-navigatio-lavel">Berita</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="<?= base_url('surat-keluar'); ?>">
+                <a href="<?= base_url('berita'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
                     <span class="pcoded-mtext">Berita</span>
                 </a>

