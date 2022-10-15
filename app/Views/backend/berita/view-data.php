@@ -13,39 +13,61 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?= base_url('berita/tambah'); ?>" method="post" class="tambah">
+                <form action="<?= base_url('berita/tambah'); ?>" method="post" enctype="multipart/form-data" class="tambah">
                     <?php csrf_field() ?>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-12">
                                 <label class="text-primary">Judul</label>
-                                <input type="text" name="judul" class="form-control judul" placeholder="Judul">
+                                <input type="text" name="judul" class="form-control judul" placeholder="Judul" required>
                                 <div class="invalid-feedback errorJudul"></div>
                                 <br>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
+                                <label class="text-primary">Tingkat</label>
+                                <select name="tingkat" class="form-control tingkat" required>
+                                    <option value="">-- Pilih Tingkat --</option>
+                                    <option value="Internasional">Internasional</option>
+                                    <option value="Nasional">Nasional</option>
+                                    <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                    <option value="Samarinda">Samarinda</option>
+                                </select>
+                                <div class="invalid-feedback errorTingkat"></div>
+                            </div>
+                            <div class="col-lg-4">
                                 <label class="text-primary">Kategori</label>
-                                <select name="kategori" class="form-control kategori">
+                                <select name="kategori" class="form-control kategori" required>
                                     <option value="">-- Pilih Kategori --</option>
                                     <?php foreach ($kategori as $item_kategori) : ?>
                                         <option value="<?= $item_kategori['id'] ?>"><?= $item_kategori['kategori'] ?></option>
                                     <?php endforeach ?>
                                 </select>
                                 <div class="invalid-feedback errorKategori"></div>
+                                <br>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-4">
                                 <label class="text-primary">Tanggal</label>
-                                <input type="date" name="tanggal" class="form-control tanggal" placeholder="Tanggal">
+                                <input type="date" name="tanggal" class="form-control tanggal" placeholder="Tanggal" required>
                                 <div class="invalid-feedback errorTanggal"></div>
                                 <br>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-12">
-                                <label class="text-primary">Gambar</label>
-                                <input type="file" name="gambar" class="form-control gambar" placeholder="Gambar">
+                            <div class="col-lg-6">
+                                <label class="text-primary">Jenis File</label>
+                                <div>
+                                    <input type="radio" name="jenis_file" value="Gambar" checked> Gambar
+                                    <label class="form-check-label"></label>
+                                    <input type="radio" name="jenis_file" disabled> Video (Cooming Soon)
+                                    <label class="form-check-label"></label>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-lg-6">
+                                <label class="text-primary">File</label>
+                                <input type="file" name="file" class="form-control gambar" accept="image/*" required>
                                 <div class="invalid-feedback errorGambar"></div>
                                 <br>
                             </div>
@@ -53,7 +75,10 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <label class="text-primary">Isi</label>
-                                <textarea name="isi" class="form-control" cols="30" rows="10"></textarea>
+                                <textarea name="isi" class="form-control" id="isi" required></textarea>
+                                <script>
+                                    CKEDITOR.replace('isi');
+                                </script>
                                 <div class="invalid-feedback errorIsi"></div>
                                 <br>
                             </div>
@@ -61,7 +86,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
-                                <input type="text" name="tag" class="form-control tag" placeholder="Tag">
+                                <input type="text" name="tag" class="form-control tag" placeholder="Tag" required>
                                 <div class="invalid-feedback errorTag"></div>
                                 <br>
                             </div>
@@ -82,48 +107,125 @@
     <table id="scr-vtr-dynamic" class="table table-striped table-bordered nowrap">
         <thead>
             <tr>
-                <th style="max-width:5%; text-align: center;">No.</th>
+                <th style=" max-width:5%; text-align: center;">No.</th>
                 <th style="max-width:10%; text-align: center;">Aksi</th>
-                <th style="max-width:35%; text-align: center;">Judul</th>
-                <th style="max-width:15%; text-align: center;">Kategori</th>
+                <th style="max-width:45%; text-align: center;">Judul</th>
+                <th style="max-width:10%; text-align: center;">Tingkat</th>
+                <th style="max-width:10%; text-align: center;">Kategori</th>
                 <th style="max-width:10%; text-align: center;">Tanggal</th>
                 <th style="max-width:10%; text-align: center;">Status</th>
-                <th style="max-width:15%; text-align: center;">Log</th>
             </tr>
         </thead>
         <tbody>
             <?php $no = 1 ?>
 
             <?php foreach ($berita as $item) : ?>
-                <?php $id = $item['id'] ?>
+                <?php $id = $item['id_berita'] ?>
                 <tr style="text-align: center;">
                     <td><?= $no++ ?></td>
                     <td>
-                        <!-- button detail modal -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id'] ?>">
-                            <span class="feather icon-eye text-primary"></span>
-                        </button>
+
+
                         <!-- button edit modal -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id'] ?>">
+                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id_berita'] ?>">
                             <span class="feather icon-edit-1 text-primary"></span>
                         </button>
+
                         <!-- Modal Edit Berita-->
-                        <div class="modal fade" id="editmodal<?= $id = $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="editmodal<?= $id = $item['id_berita'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Edit Berita : <?= $item['judul'] ?></h5>
+                                        <h5 class="modal-title"><?= $item['judul'] ?></h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="<?= base_url('berita/edit'); ?>" method="post" class="edit">
-                                        <?= csrf_field() ?>
-                                        <div class="modal-body">
-                                            <div class="col-lg-11">
-                                                <input type="text" name="id" class="form-control" value="<?= $item['id'] ?>" hidden>
-                                                <label>Judul</label>
-                                                <input type="text" name="judul" class="form-control" value="<?= $item['judul'] ?>">
+                                    <form action="<?= base_url('berita/edit'); ?>" method="post" enctype="multipart/form-data" class="edit">
+                                        <?php csrf_field() ?>
+                                        <div class="modal-body" style="text-align: left;">
+                                            <div class="row">
+                                                <div class="col-lg-11">
+                                                    <label class="text-primary">Judul</label>
+                                                    <input type="text" name="id" class="form-control id" value="<?= $item['id_berita'] ?>" hidden>
+                                                    <input type="text" name="judul" class="form-control judul" placeholder="Judul" value="<?= $item['judul'] ?>" required>
+                                                    <div class=" invalid-feedback errorJudul">
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <label class="text-primary">Tingkat</label>
+                                                    <select name="tingkat" class="form-control tingkat" style="height:20px ;" required>
+                                                        <option value=" <?= $item['tingkat'] ?>"><?= $item['tingkat'] ?></option>
+                                                        <option value="Internasional">Internasional</option>
+                                                        <option value="Nasional">Nasional</option>
+                                                        <option value="Kalimantan Timur">Kalimantan Timur</option>
+                                                        <option value="Samarinda">Samarinda</option>
+                                                    </select>
+                                                    <div class="invalid-feedback errorTingkat"></div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="text-primary">Kategori</label>
+                                                    <select name="kategori" class="form-control kategori" style="height:20px ;" required>
+                                                        <option value=" <?= $item['kategori_berita'] ?>"><?= $item['nama_kategori'] ?></option>
+                                                        <?php foreach ($kategori as $item_kategori) : ?>
+                                                            <option value=" <?= $item_kategori['id'] ?>"><?= $item_kategori['kategori'] ?></option>
+                                                        <?php endforeach ?>
+                                                    </select>
+                                                    <div class="invalid-feedback errorKategori"></div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <label class="text-primary">Tanggal</label>
+                                                    <input type="date" name="tanggal" class="form-control tanggal" placeholder="Tanggal" value="<?= $item['tanggal'] ?>" required>
+                                                    <div class=" invalid-feedback errorTanggal">
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <br>
+                                                    <label class="text-primary">Jenis File</label>
+                                                    <div>
+                                                        <input type="radio" name="jenis_file" value="Gambar" checked> Gambar
+                                                        <label class="form-check-label"></label>
+                                                        <input type="radio" name="jenis_file" disabled> Video (Cooming Soon)
+                                                        <label class="form-check-label"></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <img src="content/gambar/<?= $item['gambar'] ?>" width="20%">
+                                                    <br>
+                                                    <label class="text-primary">File</label>
+                                                    <input type="file" name="file" class="form-control gambar" accept="image/*">
+                                                    <div class=" invalid-feedback errorGambar">
+                                                    </div>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-11">
+                                                    <label class="text-primary">Isi</label>
+                                                    <textarea name="isi2" class="form-control" required><?= $item['isi'] ?></textarea>
+                                                    <script>
+                                                        CKEDITOR.replace('isi2');
+                                                    </script>
+                                                    <div class=" invalid-feedback errorIsi"></div>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-11">
+                                                    <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
+                                                    <input type="text" name="tag" class="form-control tag" placeholder="Tag" value="<?= $item['tag'] ?>" required>
+                                                    <div class="invalid-feedback errorTag"></div>
+                                                    <br>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -134,149 +236,84 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- button hapus modal-->
                         <a href="<?= base_url('berita/hapus/' . $item['id_berita']); ?>" class="hapus">
                             <span class="feather icon-trash-2 text-danger"></span>
                         </a>
+
                         <!-- button publish -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id'] ?>">
+                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id_berita'] ?>">
                             <span class="fa fa-check-circle-o text-primary"></span>
                         </button>
+
                         <!-- button unpublish -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id'] ?>">
+                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id_berita'] ?>">
                             <span class="fa fa-times-circle text-danger"></span>
                         </button>
 
                     </td>
-
                     <!-- ISI VIEW -->
-                    <td><?= $item['judul'] ?></td>
+                    <td><button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#detailmodal<?= $id = $item['id_berita'] ?>"><?= substr($item['judul'], 0, 30) ?></button></td>
+                    <td><?= $item['tingkat'] ?></td>
                     <td><?= $item['nama_kategori'] ?></td>
                     <td><?= $item['tanggal'] ?></td>
                     <td><?= $item['status'] ?></td>
-                    <td><?= $item['admin'] ?>|<?= $item['timestamp'] ?></td>
                 </tr>
+
+                <!-- Modal Detail-->
+                <div class="modal fade" id="detailmodal<?= $id = $item['id_berita'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content" style="text-align: center;">
+                            <div class="modal-header">
+                                <h5 class="modal-title"><?= $item['judul'] ?></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="text-align:center ;">
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <span><?= $item['admin'] ?> | <?= $item['tanggal'] ?></span>
+                                        <label class="label label-primary"><?= $item['tingkat'] ?></label>
+                                        <label class="label label-success"><?= $item['nama_kategori'] ?></label>
+                                        <label class="label label-info"><?= $item['status'] ?></label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <img src="content/gambar/<?= $item['gambar'] ?>" width="40%">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <p class="card-text"><?= $item['isi']; ?></p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <i class="fa fa-tags"><?= $item['tag'] ?></i>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-11">
+                                        <i class="fa fa-clock-o">Terakhir di Ubah : <b> <?= $item['timestamp'] ?></b> </i>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Kembali</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             <?php endforeach ?>
         </tbody>
     </table>
 </div>
-<!-- SCRIPT AJAX -->
-<script>
-    $(document).ready(function() {
-        //  function tambah
-        $('.tambah').submit(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "post",
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
-                dataType: "json",
-                beforeSend: function() {
-                    $('.btnSimpan').attr('disable', 'disabled');
-                    $('.btnSimpan').html('<i class="fa fa-spin fa-spinner"></i>');
-                },
-                complete: function() {
-                    $('.btnSimpan').removeAttr('disable', 'disabled');
-                    $('.btnSimpan').html('Simpan');
-                },
-                success: function(response) {
-                    if (response.error) {
-                        if (response.error.judul) {
-                            $('.judul').addClass('is-invalid');
-                            $('.errorJudul').html(response.error.judul);
-                        } else {
-                            $('.judul').removeClass('is-invalid');
-                            $('.errorJudul').html('');
-                        }
-                    } else {
-                        if (response.status == 'gagal') {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'GAGAL',
-                                text: response.sukses,
-                            })
-                        } else if (response.status == 'berhasil') {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Berhasil',
-                                text: response.sukses,
-                            });
-                        }
-                        $('body').removeClass('modal-open');
-                        $('.modal-backdrop').remove();
-                        $('#result').html(response.data);
-                    }
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
-                }
-            })
-        });
 
-        $('.edit').submit(function(e) {
-            e.preventDefault();
-            $.ajax({
-                type: "post",
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
-                dataType: "json",
-                beforeSend: function() {
-                    $('.btnEdit').attr('disable', 'disabled');
-                    $('.btnEdit').html('<i class="fa fa-spin fa-spinner"></i>');
-                },
-                complete: function() {
-                    $('.btnEdit').removeAttr('disable', 'disabled');
-                    $('.btnEdit').html('Simpan');
-                },
-                success: function(response) {
-                    if (response.error) {
-                        if (response.error.kategori) {
-                            $('.kategori').addClass('is-invalid');
-                            $('.errorkategoriEdit').html(response.error.kategori);
-                        }
-                    } else {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'berhasil',
-                            text: response.sukses,
-                        });
-                        $('body').removeClass('modal-open');
-                        //modal-open class is added on body so it has to be removed
-                        $('.modal-backdrop').remove();
-                        //need to remove div with modal-backdrop class
-                        $("#result").html(response.data);
-                    }
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
-                }
-            })
-        });
 
-        //  function hapus
-        $('.hapus').on('click', function(e) {
-            e.preventDefault();
-            const href = $(this).attr('href')
-            Swal.fire({
-                title: 'Anda Yakin?',
-                text: "Data Akan Dihapus!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Hapus!'
-            }).then((result) => {
-                if (result.value) {
-                    document.location.href = href;
-                }
-            });
-        });
-        window.setTimeout(function() {
-            $(".flashAjax").fadeTo(500, 0).slideUp(500, function() {
-                $(this).remove();
-            });
-        }, 5000);
-    });
-</script>
+<?= $this->include('backend/berita/ajax') ?>
 <?= $this->include('backend/layouts/js_viewData') ?>

@@ -36,7 +36,7 @@ class Berita extends BaseController
         if ($request->isAJAX()) {
             $data = [
                 'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-                'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray(),
+                'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [
@@ -56,93 +56,38 @@ class Berita extends BaseController
         $admin = session()->get('username');
         $timestamp = date("Y-m-d H:i:s");
         $request = \Config\Services::request();
-        if ($request->isAJAX()) {
-            $judul = $request->getVar('judul');
-            $slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($judul)));
-            $kategori = $request->getVar('kategori');
-            $tanggal = $request->getVar('tanggal');
-            $gambar = $request->getVar('gambar');
-            $isi = $request->getVar('isi');
-            $tag = $request->getVar('tag');
-            $validation = \Config\Services::validation();
-            $valid = $this->validate([
-                'judul' => [
-                    'label' => 'Judul',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'kategori' => [
-                    'label' => 'Kategori',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'tanggal' => [
-                    'label' => 'Tanggal',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'isi' => [
-                    'label' => 'Isi',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'tag' => [
-                    'label' => 'Tag',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-            ]);
-            if (!$valid) {
-                $msg = [
-                    'error' => [
-                        'judul' => $validation->getError('judul'),
-                        'kategori' => $validation->getError('kategori'),
-                        'tanggal' => $validation->getError('tanggal'),
-                        'isi' => $validation->getError('isi'),
-                        'tag' => $validation->getError('tag'),
-                    ],
-                ];
-                echo json_encode($msg);
-            } else {
-                $data = [
-                    'judul' => $judul,
-                    'slug' => $slug,
-                    'kategori' => $kategori,
-                    'tanggal' => $tanggal,
-                    'gambar' => $gambar,
-                    'isi' => $isi,
-                    'tag' => $tag,
-                    'status' => 'Belum Publish',
-                    'admin' => $admin,
-                    'timestamp' => $timestamp,
-                ];
-                $this->BeritaModel->insert($data);
 
-                $data2 = [
-                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray(),
-                    'validation' => \Config\Services::validation(),
-                ];
-                $msg = [
-                    'sukses' => 'Berita Berhasil Ditambahkan !',
-                    'status' => 'berhasil',
-                    'data' => view('backend/berita/view-data', $data2)
-                ];
-                echo json_encode($msg);
-            }
-        } else {
-            exit('Data Tidak Dapat diproses');
-        }
+        $judul = $request->getVar('judul');
+        $slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($judul)));
+        $tingkat = $request->getVar('tingkat');
+        $kategori = $request->getVar('kategori');
+        $tanggal = $request->getVar('tanggal');
+        $file = $request->getFile('file');
+        $isi = $request->getVar('isi');
+        $tag = $request->getVar('tag');
+        $jenis_file = $request->getVar('jenis_file');
+
+        $newName = $file->getRandomName();
+        $file->move('content/gambar/', $newName);
+        $nama_foto = $newName;
+        $data = [
+            'judul' => $judul,
+            'slug' => $slug,
+            'tingkat' => $tingkat,
+            'kategori' => $kategori,
+            'tanggal' => $tanggal,
+            'gambar' => $nama_foto,
+            'isi' => $isi,
+            'tag' => $tag,
+            'jenis_file' => $jenis_file,
+            'status' => 'Belum Publish',
+            'admin' => $admin,
+            'timestamp' => $timestamp,
+        ];
+        $this->BeritaModel->insert($data);
+
+        session()->setFlashdata('pesanInput', 'Berhasil Menambahkan Berita');
+        return redirect()->to(base_url('/berita'));
     }
 
     public function edit()
@@ -150,49 +95,63 @@ class Berita extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
+        $admin = session()->get('username');
+        $timestamp = date("Y-m-d H:i:s");
         $request = \Config\Services::request();
-        if ($request->isAJAX()) {
-            $id = $request->getVar('id');
-            $judul = $request->getVar('judul');
-            $validation = \Config\Services::validation();
-            $valid = $this->validate([
-                'judul' => [
-                    'label' => 'Judul',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-            ]);
 
-            if (!$valid) {
-                $msg = [
-                    'error' => [
-                        'berita' => $validation->getError('berita'),
-                    ],
-                ];
-                echo json_encode($msg);
-            } else {
-                $data = [
-                    'judul' => $judul,
-                ];
+        $id = $request->getVar('id');
+        $filelama = $this->BeritaModel->where('id', $id)->first();
+        $namafilelama = $filelama['gambar'];
+        $judul = $request->getVar('judul');
+        $slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($judul)));
+        $tingkat = $request->getVar('tingkat');
+        $kategori = $request->getVar('kategori');
+        $tanggal = $request->getVar('tanggal');
+        $file = $request->getFile('file');
+        $isi2 = $request->getVar('isi2');
+        $tag = $request->getVar('tag');
+        $jenis_file = $request->getVar('jenis_file');
+        if (!file_exists($_FILES['file']['tmp_name'])) {
+            $data = [
+                'judul' => $judul,
+                'slug' => $slug,
+                'tingkat' => $tingkat,
+                'kategori' => $kategori,
+                'tanggal' => $tanggal,
+                'isi' => $isi2,
+                'tag' => $tag,
+                'jenis_file' => $jenis_file,
+                'status' => 'Belum Publish',
+                'admin' => $admin,
+                'timestamp' => $timestamp,
+            ];
+            $this->BeritaModel->update($id, $data);
 
-                $this->BeritaModel->update($id, $data);
-
-                $data2 = [
-                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray(),
-                    'validation' => \Config\Services::validation(),
-                ];
-                $msg = [
-                    'sukses' => 'Berita Berhasil Diubah !',
-                    'status' => 'berhasil',
-                    'data' => view('backend/berita/view-data', $data2)
-                ];
-                echo json_encode($msg);
-            }
+            session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
+            return redirect()->to(base_url('/berita'));
         } else {
-            exit('Data Tidak Dapat diproses');
+            $newName = $file->getRandomName();
+            $file->move('content/gambar/', $newName);
+            $nama_foto = $newName;
+            unlink('content/gambar/' . $namafilelama);
+            $data = [
+                'judul' => $judul,
+                'slug' => $slug,
+                'tingkat' => $tingkat,
+                'kategori' => $kategori,
+                'tanggal' => $tanggal,
+                'gambar' => $nama_foto,
+                'isi' => $isi2,
+                'tag' => $tag,
+                'jenis_file' => $jenis_file,
+                'status' => 'Belum Publish',
+                'admin' => $admin,
+                'timestamp' => $timestamp,
+            ];
+            $this->BeritaModel->update($id, $data);
+
+            session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
+            return redirect()->to(base_url('/berita'));
         }
     }
 
@@ -203,6 +162,9 @@ class Berita extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
+        $cekfile = $this->BeritaModel->where('id', $id)->first();
+        $namafile = $cekfile['gambar'];
+        unlink('content/gambar/' . $namafile);
         $this->BeritaModel->delete($id);
 
         session()->setFlashdata('pesanHapus', 'Berita Berhasil Di Hapus !');
