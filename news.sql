@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2022 at 04:58 PM
+-- Generation Time: Oct 17, 2022 at 01:39 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -52,8 +52,8 @@ INSERT INTO `berita` (`id`, `judul`, `slug`, `isi`, `jenis_file`, `gambar`, `tin
 (17, 'Berita Pertama', 'berita-pertama', '<p>ini isian berita pertama KEDUA KETIGA s</p>\r\n', 'Gambar', '1665824157_82f4947869a42522b4c3.jpg', '   ', 1, '2022-12-01', 'Belum Publish', 'pertama', NULL, '2022-10-15 09:33:15', 'ajisudjay'),
 (18, 'Berita Kedua', 'berita-kedua', 'ini isian berita kedua', NULL, '1665823869_9cb80d8f92acffa02c30.jpg', NULL, 5, '2022-12-31', 'Belum Publish', 'kedua', NULL, '2022-10-15 03:51:09', 'ajisudjay'),
 (19, 'asdad', 'asdad', 'fgdgd', NULL, '1665827668_6cc7e371cb213ea6dca4.jpg', NULL, 2, '2022-12-31', 'Belum Publish', 'dfgd', NULL, '2022-10-15 04:54:28', 'ajisudjay'),
-(20, 'asdadas', 'asdadas', '<p>sfdfsfsdf</p>\r\n', NULL, '1665832279_166c12e6d577b86aeb36.jpg', NULL, 5, '2022-12-31', 'Publish', 'sdfs', NULL, '2022-10-16 07:41:20', 'ajisudjay'),
-(21, 'asdadas', 'asdadas', '<p>sfdfsfsdf</p>\r\n', NULL, '1665832280_9b3f7e1a82dd848f78f1.jpg', NULL, 5, '2022-12-31', 'Belum Publish', 'sdfs', NULL, '2022-10-16 07:41:24', 'ajisudjay'),
+(20, 'asdadas', 'asdadas', '<p>sfdfsfsdf</p>\r\n', NULL, '1665832279_166c12e6d577b86aeb36.jpg', 'Internasional', 5, '2022-12-31', 'Publish', 'sdfs', NULL, '2022-10-16 07:41:20', 'ajisudjay'),
+(21, 'asdadas', 'asdadas', '<p>sfdfsfsdf</p>\r\n', NULL, '1665832280_9b3f7e1a82dd848f78f1.jpg', 'Internasional', 5, '2022-12-31', 'Belum Publish', 'sdfs', NULL, '2022-10-16 07:41:24', 'ajisudjay'),
 (22, '123', '123', '<ul>\r\n	<li><strong>sadadsad</strong></li>\r\n	<li><strong>asd</strong></li>\r\n	<li><em>ada</em></li>\r\n	<li>&nbsp;</li>\r\n	<li><s>d</s></li>\r\n</ul>\r\n\r\n<ol>\r\n	<li>sadas</li>\r\n	<li>das</li>\r\n	<li>d</li>\r\n	<li>asd</li>\r\n	<li>as</li>\r\n</ol>\r\n', NULL, '1665832478_269461b7996e1c6771ab.jpg', 'Internasional', 5, '2022-12-30', 'Belum Publish', 'sadad', NULL, '2022-10-15 09:15:19', 'ajisudjay'),
 (23, 'Berita Betul', 'berita-betul', '<p>ini <strong>terbaik</strong></p>\r\n', NULL, '1665843064_def8542683ae13834c72.jpg', NULL, 1, '2022-12-31', 'Belum Publish', 'terbaik', NULL, '2022-10-16 07:46:09', 'ajisudjay'),
 (24, 'ini baru lagi', 'ini-baru-lagi', '<p>sadadasd</p>\r\n', NULL, '1665843250_b041d9855452d1ecf12f.jpeg', NULL, 1, '2022-12-30', 'Belum Publish', 'asdasdafdsf', NULL, '2022-10-15 09:14:10', 'ajisudjay'),

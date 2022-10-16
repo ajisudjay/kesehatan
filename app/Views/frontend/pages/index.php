@@ -64,17 +64,14 @@
                 <div class="row g-5">
                     <div class="col-lg-4">
                         <div class="post-entry-1 lg">
-                            <a href="single-post.html"><img src="libraries_frontend/assets/img/post-landscape-1.jpg" alt="" class="img-fluid rounded-2"></a>
-                            <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                            <h2><a href="single-post.html">11 Work From Home Part-Time Jobs You Can Do Now</a></h2>
-                            <p class="mb-4 d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus repudiandae, inventore pariatur numquam cumque possimus exercitationem? Nihil tempore odit ab minus eveniet praesentium, similique blanditiis molestiae ut saepe perspiciatis officia nemo, eos quae cumque. Accusamus fugiat architecto rerum animi atque eveniet, quo, praesentium dignissimos</p>
-
-                            <div class="d-flex align-items-center author">
-                                <div class="photo"><img src="libraries_frontend/assets/img/person-1.jpg" alt="" class="img-fluid"></div>
-                                <div class="name">
-                                    <h3 class="m-0 p-0">Cameron Williamson</h3>
-                                </div>
-                            </div>
+                            <a href="single-post.html"><img src="libraries_frontend/assets/img/post-landscape-1.jpg" style="height:240px;" class="img-fluid rounded-2">
+                                <div class="top-left">Hot</div>
+                            </a>
+                            <?php foreach ($berita_hot as $hot) : ?>
+                                <div class="post-meta"><span class="date"><?= $hot['tingkat'] ?> - <?= $hot['nama_kategori'] ?></span> <span class="mx-1">&bullet;</span> <br><span><?= $hot['tanggal'] ?></span></div>
+                                <h2><a href="single-post.html"><?= $hot['judul'] ?></a></h2>
+                                <p class="mb-4 d-block"><?= substr($hot['isi'], 0, 375) ?></p>
+                            <?php endforeach ?>
                         </div>
 
                     </div>

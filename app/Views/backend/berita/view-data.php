@@ -211,7 +211,7 @@
                                             <div class="row">
                                                 <div class="col-lg-11">
                                                     <label class="text-primary">Isi</label>
-                                                    <textarea name="isi2" class="form-control" required><?= $item['isi'] ?></textarea>
+                                                    <textarea name="isi2" class="form-control" rows="10" required><?= $item['isi'] ?></textarea>
                                                     <div class=" invalid-feedback errorIsi"></div>
                                                     <br>
                                                 </div>
