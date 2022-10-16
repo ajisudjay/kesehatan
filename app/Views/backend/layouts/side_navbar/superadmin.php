@@ -2,7 +2,7 @@
     <div class="pcoded-inner-navbar main-menu">
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="javascript:void(0)">
+                <a href="<?= base_url('/superadmin'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-home"></i></span>
                     <span class="pcoded-mtext">Beranda</span>
                 </a>
@@ -23,16 +23,16 @@
                 </a>
             </li>
             <li>
-                <a href="<?= base_url('surat-keluar'); ?>">
+                <a href="#">
                     <span class="pcoded-micon"><i class="fa fa-comments-o"></i></span>
-                    <span class="pcoded-mtext">Komentar</span>
+                    <span class="pcoded-mtext">Komentar (Cooming Soon)</span>
                 </a>
             </li>
         </ul>
         <div class="pcoded-navigatio-lavel">Iklan</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="#" target="_blank">
+                <a href="<?= base_url('iklan'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-shopping-bag"></i></span>
                     <span class="pcoded-mtext">Iklan</span>
                 </a>
@@ -41,9 +41,9 @@
         <div class="pcoded-navigatio-lavel">Konfigurasi</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="#" target="_blank">
+                <a href="<?= base_url('konfigurasi'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-gears"></i></span>
-                    <span class="pcoded-mtext">Konfigurasi</span>
+                    <span class="pcoded-mtext">Konfigurasi (Cooming Soon)</span>
                 </a>
             </li>
         </ul>

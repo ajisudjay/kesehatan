@@ -3,25 +3,13 @@
     $(document).ready(function() {
         //  function tambah
         $('.tambah').submit(function() {
-            var judul = $('#judul').val();
-            var isi = $('#isi').val();
-            var tingkat = $('#tingkat').val();
-            var kategori = $('#kategori').val();
-            var tanggal = $('#tanggal').val();
-            var status = $('#status').val();
-            var tag = $('#tag').val();
+            var nama = $('#nama').val();
             var jenis_file = $('#jenis_file').val();
             var files = $('#file')[0].files;
             var fd = new FormData();
 
             fd.append('file', files[0]);
-            fd.append('judul', judul);
-            fd.append('isi', isi);
-            fd.append('tanggal', tanggal);
-            fd.append('tingkat', tingkat);
-            fd.append('kategori', kategori);
-            fd.append('status', status);
-            fd.append('tag', tag);
+            fd.append('nama', nama);
             fd.append('jenis_file', jenis_file);
             $.ajax({
                 type: "post",
@@ -39,12 +27,12 @@
                 },
                 success: function(response) {
                     if (response.error) {
-                        if (response.error.judul) {
-                            $('.judul').addClass('is-invalid');
-                            $('.errorJudul').html(response.error.judul);
+                        if (response.error.nama) {
+                            $('.nama').addClass('is-invalid');
+                            $('.errorNama').html(response.error.nama);
                         } else {
-                            $('.judul').removeClass('is-invalid');
-                            $('.errorJudul').html('');
+                            $('.nama').removeClass('is-invalid');
+                            $('.errorNama').html('');
                         }
                     } else {
                         Swal.fire({
@@ -68,26 +56,14 @@
         //  function edit
         $('.edit').submit(function() {
             var id = $('#id').val();
-            var judul = $('#judul').val();
-            var isi2 = $('#isi2').val();
-            var tingkat = $('#tingkat').val();
-            var kategori = $('#kategori').val();
-            var tanggal = $('#tanggal').val();
-            var status = $('#status').val();
-            var tag = $('#tag').val();
+            var nama = $('#nama').val();
             var jenis_file = $('#jenis_file').val();
             var files = $('#file')[0].files;
             var fd = new FormData();
 
             fd.append('file', files[0]);
             fd.append('id', id);
-            fd.append('judul', judul);
-            fd.append('isi2', isi2);
-            fd.append('tanggal', tanggal);
-            fd.append('tingkat', tingkat);
-            fd.append('kategori', kategori);
-            fd.append('status', status);
-            fd.append('tag', tag);
+            fd.append('nama', nama);
             fd.append('jenis_file', jenis_file);
             $.ajax({
                 type: "post",
@@ -105,12 +81,12 @@
                 },
                 success: function(response) {
                     if (response.error) {
-                        if (response.error.judul) {
-                            $('.judul').addClass('is-invalid');
-                            $('.errorJudul').html(response.error.judul);
+                        if (response.error.nama) {
+                            $('.nama').addClass('is-invalid');
+                            $('.errorNama').html(response.error.nama);
                         } else {
-                            $('.judul').removeClass('is-invalid');
-                            $('.errorJudul').html('');
+                            $('.nama').removeClass('is-invalid');
+                            $('.errorNama').html('');
                         }
                     } else {
                         Swal.fire({

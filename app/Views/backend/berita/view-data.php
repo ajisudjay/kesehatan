@@ -131,7 +131,7 @@
                             <span class="feather icon-edit-1 text-primary"></span>
                         </button>
 
-                        <!-- Modal Edit Berita-->
+                        <!-- Modal Edit-->
                         <div class="modal fade" id="editmodal<?= $id = $item['id_berita'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                 <div class="modal-content">
@@ -212,9 +212,6 @@
                                                 <div class="col-lg-11">
                                                     <label class="text-primary">Isi</label>
                                                     <textarea name="isi2" class="form-control" required><?= $item['isi'] ?></textarea>
-                                                    <script>
-                                                        CKEDITOR.replace('isi2');
-                                                    </script>
                                                     <div class=" invalid-feedback errorIsi"></div>
                                                     <br>
                                                 </div>
@@ -238,19 +235,18 @@
                         </div>
                         <!-- button hapus modal-->
                         <a href="<?= base_url('berita/hapus/' . $item['id_berita']); ?>" class="hapus">
-                            <span class="feather icon-trash-2 text-danger"></span>
+                            <span class="feather icon-trash-2 text-danger"> </span>
                         </a>
-
+                        &nbsp;
                         <!-- button publish -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id_berita'] ?>">
-                            <span class="fa fa-check-circle-o text-primary"></span>
-                        </button>
-
+                        <a href="<?= base_url('berita/publish/' . $item['id_berita']); ?>" class="publish">
+                            <span class="fa fa-check-circle-o text-success"> </span>
+                        </a>
+                        &nbsp;
                         <!-- button unpublish -->
-                        <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id_berita'] ?>">
-                            <span class="fa fa-times-circle text-danger"></span>
-                        </button>
-
+                        <a href="<?= base_url('berita/unpublish/' . $item['id_berita']); ?>" class="unpublish">
+                            <span class="fa fa-times text-danger"> </span>
+                        </a>
                     </td>
                     <!-- ISI VIEW -->
                     <td><button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#detailmodal<?= $id = $item['id_berita'] ?>"><?= substr($item['judul'], 0, 30) ?></button></td>

@@ -46,6 +46,21 @@
                                                 <!-- Content Start -->
                                                 <div class="card">
                                                     <div class="card-block">
+                                                        <?php if (session()->get('pesanEdit')) { ?>
+                                                            <div class="alert alert-success alert-dismissible fade show flash" role="alert">
+                                                                <strong>Berhasil !</strong> <?= session()->getFlashdata('pesanEdit') ?>
+                                                            </div>
+                                                        <?php } ?>
+                                                        <?php if (session()->get('pesanHapus')) { ?>
+                                                            <div class="alert alert-success alert-dismissible fade show flash" role="alert">
+                                                                <strong>Berhasil !</strong> <?= session()->getFlashdata('pesanHapus') ?>
+                                                            </div>
+                                                        <?php } ?>
+                                                        <?php if (session()->get('pesanInput')) { ?>
+                                                            <div class="alert alert-success alert-dismissible fade show flash" role="alert">
+                                                                <strong>Berhasil !</strong> <?= session()->getFlashdata('pesanInput') ?>
+                                                            </div>
+                                                        <?php } ?>
                                                         <div class="bg-transparent border-0" id="result"></div>
                                                     </div>
                                                 </div>
@@ -68,7 +83,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: '<?= base_url('kategori/viewData') ?>',
+            url: '<?= base_url('konfigurasi/viewData') ?>',
             dataType: 'json',
             success: function(response) {
                 $("#result").html(response.data);

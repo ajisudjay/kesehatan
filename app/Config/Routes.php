@@ -45,6 +45,8 @@ $routes->get('/superadmin', 'Pages::hal_superadmin');
 $routes->get('/kategori', 'Kategori::index');
 $routes->get('/user', 'User::index');
 $routes->get('/berita', 'Berita::index');
+$routes->get('/iklan', 'Iklan::index');
+$routes->get('/konfigurasi', 'Konfigurasi::index');
 
 /*
  * --------------------------------------------------------------------

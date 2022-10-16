@@ -170,4 +170,36 @@ class Berita extends BaseController
         session()->setFlashdata('pesanHapus', 'Berita Berhasil Di Hapus !');
         return redirect()->to(base_url('/berita'));
     }
+
+    public function publish($id)
+    {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
+        $timestamp = date("Y-m-d H:i:s");
+        $data = [
+            'status' => 'Publish',
+            'timestamp' => $timestamp,
+        ];
+        $this->BeritaModel->update($id, $data);
+
+        session()->setFlashdata('pesanInput', 'Berhasil Publish Berita');
+        return redirect()->to(base_url('/berita'));
+    }
+
+    public function unpublish($id)
+    {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            return redirect()->to(base_url('/login'));
+        }
+        $timestamp = date("Y-m-d H:i:s");
+        $data = [
+            'status' => 'Belum Publish',
+            'timestamp' => $timestamp,
+        ];
+        $this->BeritaModel->update($id, $data);
+
+        session()->setFlashdata('pesanInput', 'Berhasil Unpublish Berita');
+        return redirect()->to(base_url('/berita'));
+    }
 }

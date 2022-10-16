@@ -31,8 +31,6 @@
                                                         <li class="breadcrumb-item">
                                                             <a href="index-1.htm"> <i class="feather icon-home"></i> </a>
                                                         </li>
-                                                        <li class="breadcrumb-item"><a href="#!"><?= $top_header ?></a>
-                                                        </li>
                                                         <li class="breadcrumb-item"><a href="#!"><?= $header ?></a>
                                                         </li>
                                                     </ul>

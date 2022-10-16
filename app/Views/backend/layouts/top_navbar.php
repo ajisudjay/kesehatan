@@ -54,16 +54,16 @@
                         </div>
                         <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
-                                <h6>Notifications</h6>
-                                <label class="label label-danger">New</label>
+                                <h6>Pemberitahuan</h6>
+                                <label class="label label-danger">Berita Baru</label>
                             </li>
                             <li>
                                 <div class="media">
                                     <img class="d-flex align-self-center img-radius" src="libraries_backend\assets\images\avatar-4.jpg" alt="Generic placeholder image">
                                     <div class="media-body">
-                                        <h5 class="notification-user">John Doe</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
+                                        <h5 class="notification-user">Judul Berita</h5>
+                                        <p class="notification-msg">Isi.</p>
+                                        <span class="notification-time">Kategori</span>
                                     </div>
                                 </div>
                             </li>
@@ -71,9 +71,9 @@
                                 <div class="media">
                                     <img class="d-flex align-self-center img-radius" src="libraries_backend\assets\images\avatar-3.jpg" alt="Generic placeholder image">
                                     <div class="media-body">
-                                        <h5 class="notification-user">Joseph William</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
+                                        <h5 class="notification-user">Judul Berita</h5>
+                                        <p class="notification-msg">Isi.</p>
+                                        <span class="notification-time">Kategori</span>
                                     </div>
                                 </div>
                             </li>
@@ -81,14 +81,20 @@
                                 <div class="media">
                                     <img class="d-flex align-self-center img-radius" src="libraries_backend\assets\images\avatar-4.jpg" alt="Generic placeholder image">
                                     <div class="media-body">
-                                        <h5 class="notification-user">Sara Soudein</h5>
-                                        <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
-                                        <span class="notification-time">30 minutes ago</span>
+                                        <h5 class="notification-user">Judul Berita</h5>
+                                        <p class="notification-msg">Isi.</p>
+                                        <span class="notification-time">Kategori</span>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                </li>
+
+                <li>
+                    <a href="<?= base_url('/'); ?>" target="_blank">
+                        <i class="feather icon-eye"></i>
+                    </a>
                 </li>
 
                 <li class="user-profile header-notification">
