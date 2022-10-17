@@ -36,7 +36,7 @@ class Berita extends BaseController
         if ($request->isAJAX()) {
             $data = [
                 'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-                'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->get()->getResultArray(),
+                'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('berita.tanggal', 'DESC')->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [

@@ -6,9 +6,9 @@
 
               <div class="row g-5">
                   <div class="col-lg-6">
-                      <h3 class="footer-heading">Tentang Kami</h3>
+                      <h3 class="footer-heading">Tentang Divisi.id</h3>
                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab, perspiciatis beatae autem deleniti voluptate nulla a dolores, exercitationem eveniet libero laudantium recusandae officiis qui aliquid blanditiis omnis quae. Explicabo?</p>
-                      <p><a href="about.html" class="footer-link-more">Learn More</a></p>
+                      <p><a href="about.html" class="footer-link-more">Lebih Lanjut . . . .</a></p>
                   </div>
                   <div class="col-6 col-lg-2">
                       <h3 class="footer-heading">Kategori</h3>
@@ -20,7 +20,7 @@
                   </div>
 
                   <div class="col-lg-4">
-                      <h3 class="footer-heading">Recent Posts</h3>
+                      <h3 class="footer-heading">Terbaru</h3>
 
                       <ul class="footer-links footer-blog-entry list-unstyled">
                           <li>
@@ -72,7 +72,6 @@
 
       <div class="footer-legal">
           <div class="container">
-
               <div class="row justify-content-between">
                   <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                       <div class="copyright">

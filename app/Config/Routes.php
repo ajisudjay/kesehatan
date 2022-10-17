@@ -40,6 +40,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/login', 'Pages::login');
 $routes->get('/superadmin', 'Pages::hal_superadmin');
+$routes->get('/berita/$1', 'Pages::detail_berita');
 
 // menu
 $routes->get('/kategori', 'Kategori::index');
