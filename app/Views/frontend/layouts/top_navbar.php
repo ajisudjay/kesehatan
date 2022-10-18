@@ -6,7 +6,7 @@
               <!-- Uncomment the line below if you also wish to use an image logo -->
               <!-- <img src="libraries/assets/img/logo.png" alt=""> -->
 
-              <img src="libraries_frontend/assets/img/bg.png">
+              <img src="<?= base_url() ?>/libraries_frontend/assets/img/bg.png">
           </a>
 
           <nav id="navbar" class="navbar">

@@ -74,6 +74,18 @@ class Pages extends BaseController
         return view('frontend/pages/berita_kategori', $data);
     }
 
+    public function berita($slug)
+    {
+        $data = [
+            'title' => 'Beranda - Divisi.id',
+            'top_header' => 'Beranda',
+            'header' => '',
+            'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+            'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('slug', $slug)->orderBy('tanggal', 'DESC')->findAll(1),
+        ];
+        return view('frontend/pages/berita_detail', $data);
+    }
+
     public function login()
     {
         $data = [
