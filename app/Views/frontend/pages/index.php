@@ -90,7 +90,7 @@
                             <div class="col-lg-4 border-start custom-border">
                                 <?php foreach ($berita1 as $berita1) : ?>
                                     <div class="post-entry-1">
-                                        <a href="<?= base_url('berita/' . $berita1['id']); ?>"><img src="content/gambar/<?= $berita1['gambar'] ?>" alt="" class="img-fluid rounded-1"></a>
+                                        <a href="<?= base_url('detailberita/' . $berita1['slug']); ?>"><img src="content/gambar/<?= $berita1['gambar'] ?>" alt="" class="img-fluid rounded-1"></a>
                                         <div class="post-meta"><span class="date"><?= $berita1['tingkat'] ?></span> &bullet; <span class="date"><?= $berita1['kategori'] ?></span> <br><span><?= $berita1['tanggal'] ?></span></div>
                                         <h2><a href="single-post.html"><?= $berita1['judul'] ?></a></h2>
                                     </div>

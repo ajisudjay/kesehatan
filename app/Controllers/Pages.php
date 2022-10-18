@@ -39,7 +39,7 @@ class Pages extends BaseController
         return view('frontend/pages/index', $data);
     }
 
-    public function detail_berita($id)
+    public function detailberita()
     {
         $data = [
             'title' => 'Beranda - Divisi.id',
@@ -54,7 +54,7 @@ class Pages extends BaseController
 
             'berita1' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->findAll(3),
 
-            'berita2' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->where('kategori', '3')->findAll(3),
+            'berita2' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'ASC')->orderBy('timestamp', 'ASC')->where('status', 'Publish')->findAll(3),
 
             'iklan' => $this->IklanModel->orderBy('id', 'DESC')->where('status', 'Publish')->get()->getResultArray(),
         ];

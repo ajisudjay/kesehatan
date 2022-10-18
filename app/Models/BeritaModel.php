@@ -39,4 +39,14 @@ class BeritaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    //function detail
+    public function getBerita($slug = false)
+    {
+        if ($slug == false) {
+            return $this->findAll();
+        }
+
+        return $this->where(['slug' => $slug])->first();
+    }
 }
