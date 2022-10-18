@@ -39,7 +39,7 @@ h6 {
 }
 
 #main {
-  margin-top: 90px;
+  margin-top: 90px;  
 }
 
 /*--------------------------------------------------------------
@@ -130,7 +130,7 @@ section {
   height: 90px;
   transition: all 0.5s;
   z-index: 997;
-  background: #f2f2f2;
+  background: #dddddd;
 }
 
 .header.sticked {
@@ -470,15 +470,8 @@ section {
   margin-bottom: 0;
   text-transform: capitalize;
   padding: 8px 21px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#fe9365),
-    to(#feb798)
-  );
-  background: linear-gradient(to right, #da3030, #feb798);
-  opacity: 60%;
+  background: linear-gradient(to right, #FF8C32, #feb798);
+  opacity: 30%;
   position: absolute;
   top: 8px;
   left: 16px;
@@ -1234,7 +1227,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   overflow: hidden;
-  background: rgba(var(--color-black-rgb), 0.9);
+  background: #0B1B4F;
   font-size: 16px;
   color: rgba(var(--color-white-rgb), 0.7);
 }
@@ -1264,7 +1257,7 @@ section {
 }
 
 .footer .footer-heading {
-  color: var(--color-white);
+  color: #FF8C32;
   margin-bottom: 20px;
   padding-bottom: 10px;
   font-size: 18px;
@@ -1304,7 +1297,7 @@ section {
 }
 
 .footer .footer-legal {
-  background: var(--color-black);
+  background: #03091b;
   padding: 40px 0;
 }
 

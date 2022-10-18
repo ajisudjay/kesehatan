@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 17, 2022 at 01:39 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Waktu pembuatan: 18 Okt 2022 pada 10.06
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -45,25 +45,21 @@ CREATE TABLE `berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id`, `judul`, `slug`, `isi`, `jenis_file`, `gambar`, `tingkat`, `kategori`, `tanggal`, `status`, `tag`, `dilihat`, `timestamp`, `admin`) VALUES
-(17, 'Berita Pertama', 'berita-pertama', '<p>ini isian berita pertama KEDUA KETIGA s</p>\r\n', 'Gambar', '1665824157_82f4947869a42522b4c3.jpg', '   ', 1, '2022-12-01', 'Belum Publish', 'pertama', NULL, '2022-10-15 09:33:15', 'ajisudjay'),
-(18, 'Berita Kedua', 'berita-kedua', 'ini isian berita kedua', NULL, '1665823869_9cb80d8f92acffa02c30.jpg', NULL, 5, '2022-12-31', 'Belum Publish', 'kedua', NULL, '2022-10-15 03:51:09', 'ajisudjay'),
-(19, 'asdad', 'asdad', 'fgdgd', NULL, '1665827668_6cc7e371cb213ea6dca4.jpg', NULL, 2, '2022-12-31', 'Belum Publish', 'dfgd', NULL, '2022-10-15 04:54:28', 'ajisudjay'),
-(20, 'asdadas', 'asdadas', '<p>sfdfsfsdf</p>\r\n', NULL, '1665832279_166c12e6d577b86aeb36.jpg', 'Internasional', 5, '2022-12-31', 'Publish', 'sdfs', NULL, '2022-10-16 07:41:20', 'ajisudjay'),
-(21, 'asdadas', 'asdadas', '<p>sfdfsfsdf</p>\r\n', NULL, '1665832280_9b3f7e1a82dd848f78f1.jpg', 'Internasional', 5, '2022-12-31', 'Belum Publish', 'sdfs', NULL, '2022-10-16 07:41:24', 'ajisudjay'),
-(22, '123', '123', '<ul>\r\n	<li><strong>sadadsad</strong></li>\r\n	<li><strong>asd</strong></li>\r\n	<li><em>ada</em></li>\r\n	<li>&nbsp;</li>\r\n	<li><s>d</s></li>\r\n</ul>\r\n\r\n<ol>\r\n	<li>sadas</li>\r\n	<li>das</li>\r\n	<li>d</li>\r\n	<li>asd</li>\r\n	<li>as</li>\r\n</ol>\r\n', NULL, '1665832478_269461b7996e1c6771ab.jpg', 'Internasional', 5, '2022-12-30', 'Belum Publish', 'sadad', NULL, '2022-10-15 09:15:19', 'ajisudjay'),
-(23, 'Berita Betul', 'berita-betul', '<p>ini <strong>terbaik</strong></p>\r\n', NULL, '1665843064_def8542683ae13834c72.jpg', NULL, 1, '2022-12-31', 'Belum Publish', 'terbaik', NULL, '2022-10-16 07:46:09', 'ajisudjay'),
-(24, 'ini baru lagi', 'ini-baru-lagi', '<p>sadadasd</p>\r\n', NULL, '1665843250_b041d9855452d1ecf12f.jpeg', NULL, 1, '2022-12-30', 'Belum Publish', 'asdasdafdsf', NULL, '2022-10-15 09:14:10', 'ajisudjay'),
-(25, 'asdadads', 'asdadads', '<p>sadadas</p>\r\n', NULL, '1665843338_b6b2e7038fdb238309b3.png', 'Samarinda', 5, '2022-12-31', 'Publish', 'wqeqwweq', NULL, '2022-10-16 07:41:04', 'ajisudjay'),
-(26, 'saadasd', 'saadasd', '<p>sadasdas</p>\r\n', 'Gambar', '1665844374_95988c3d153eb4e88bdb.jpg', 'Nasional', 1, '2022-10-31', 'Belum Publish', 'asdas', NULL, '2022-10-15 09:32:54', 'ajisudjay');
+(27, 'Berita Pertama', 'berita-pertama', '<p>ini isi dari berita pertama yang sangat singkat</p>\r\n', 'Gambar', '1665992109_1b8d5bf63877608595ac.jpg', 'Internasional', 1, '2022-12-01', 'Publish', 'pertama', 50, '2022-10-17 02:38:03', 'ajisudjay'),
+(28, 'Berita Kedua', 'berita-kedua', '<p>ini isi dari berita Kedua yang sangat singkat</p>\r\n', 'Gambar', '1665992152_bbd1bec13532238da69f.jpg', 'Nasional', 5, '2022-12-02', 'Publish', 'kedua', 30, '2022-10-17 02:38:01', 'ajisudjay'),
+(29, 'Berita Ketiga', 'berita-ketiga', '<p>ini isi dari berita ketiga yang sangat singkat</p>\r\nxz', 'Gambar', '1665992182_c279de671468ca00cc5f.jpg', ' Kalimantan Timur', 2, '2022-12-03', 'Publish', 'ketiga', 22, '2022-10-17 21:40:43', 'ajisudjay'),
+(30, 'Berita Keempat', 'berita-keempat', '<p>ini isi dari berita keempat yang sangat singkat</p>\r\n', 'Gambar', '1665992206_539f14e803d236216dd0.jpg', 'Samarinda', 4, '2022-10-04', 'Publish', 'keempat', 21, '2022-10-17 02:38:10', 'ajisudjay'),
+(31, 'Berita Kelima', 'berita-kelima', '<p>ini isi dari berita kelima yang sangat singkat</p>\r\n', 'Gambar', '1665992240_1738e3ebade61b56ea84.jpeg', 'Internasional', 3, '2022-10-05', 'Publish', 'kelima', 11, '2022-10-17 02:38:08', 'ajisudjay'),
+(32, 'Berita Keenam', 'berita-keenam', '<p>ini isi dari berita keenam yang sangat singkat</p>\r\n', 'Gambar', '1665992265_c86d3ced1dbe7fc10e82.jpg', '   Nasional', 31, '2023-06-01', 'Publish', 'keenam', 19, '2022-10-17 21:57:34', 'ajisudjay');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `iklan`
+-- Struktur dari tabel `iklan`
 --
 
 CREATE TABLE `iklan` (
@@ -75,17 +71,17 @@ CREATE TABLE `iklan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `iklan`
+-- Dumping data untuk tabel `iklan`
 --
 
 INSERT INTO `iklan` (`id`, `nama`, `file`, `jenis_file`, `status`) VALUES
-(1, 'ABC Kopi Susu', '1665926076_657be5e5c70070aee7cf.jpg', 'Gambar', 'Belum Publish'),
+(1, 'ABC Kopi Susu', '1665926076_657be5e5c70070aee7cf.jpg', 'Gambar', 'Publish'),
 (2, 'Kopi ABC Kopi Susu dan Choco Malt Coffe satu dua tiga empat lima enam tujuh delapan', '1665926528_338d7f17c1c90eeedddb.png', 'Gambar', 'Publish');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -94,7 +90,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id`, `kategori`) VALUES
@@ -102,12 +98,13 @@ INSERT INTO `kategori` (`id`, `kategori`) VALUES
 (2, 'Olahraga'),
 (3, 'Politik'),
 (4, 'Otomotif'),
-(5, 'Kriminal');
+(5, 'Kriminal'),
+(31, 'Lifestyle');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konfigurasi`
+-- Struktur dari tabel `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
@@ -117,7 +114,7 @@ CREATE TABLE `konfigurasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `konfigurasi`
+-- Dumping data untuk tabel `konfigurasi`
 --
 
 INSERT INTO `konfigurasi` (`id`, `judul`, `isi`) VALUES
@@ -130,7 +127,7 @@ INSERT INTO `konfigurasi` (`id`, `judul`, `isi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -141,72 +138,71 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `nama`, `level`) VALUES
-('ajisudjay', '$2y$10$lhEsAPSxzKR.KUFfP1Bel.Tcm2AoUWDOjkaKrx.YuHiIXITccAxU6', 'Aji Sudjai Aswar', 'Superadmin'),
-('fatin', '$2y$10$2I/eArPKQpDE3ZNUJA0SGubAJ2g0v8AcummxCMauSLWOVr04ejaYi', 'Fatin Fikriyah Aziz', 'Admin'),
-('shafiyyah', '$2y$10$K2oOiAFkoF6V2vMrsxhCEeWzpE5r1XNuaf8IxNVgVMl0MzeOL1tye', 'Shafiyyah Azizah', 'Superadmin');
+('ajisudjay', 'MTIzNDU2', 'Aji Sudjai Aswar', 'Superadmin'),
+('shafiyyah', 'MTIzNDU2', 'Shafiyyah Azizah', 'Superadmin');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `iklan`
+-- Indeks untuk tabel `iklan`
 --
 ALTER TABLE `iklan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `konfigurasi`
+-- Indeks untuk tabel `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `iklan`
+-- AUTO_INCREMENT untuk tabel `iklan`
 --
 ALTER TABLE `iklan`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `konfigurasi`
+-- AUTO_INCREMENT untuk tabel `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

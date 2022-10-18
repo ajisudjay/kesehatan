@@ -4,139 +4,114 @@
 
 <body>
     <?= $this->include('frontend/layouts/top_navbar') ?>
-    <main id="main">
 
-        <section class="single-post-content">
+
+    <main id="main">
+        <section>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-9 post-content" data-aos="fade-up">
 
-                        <!-- ======= Single Post Content ======= -->
-                        <div class="single-post">
-                            <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
-                            <h1 class="mb-5">13 Amazing Poems from Shel Silverstein with Valuable Life Lessons</h1>
-                            <p><span class="firstcharacter">L</span>orem ipsum dolor sit, amet consectetur adipisicing elit. Ratione officia sed, suscipit distinctio, numquam omnis quo fuga ipsam quis inventore voluptatum recusandae culpa, unde doloribus saepe labore alias voluptate expedita? Dicta delectus beatae explicabo odio voluptatibus quas, saepe qui aperiam autem obcaecati, illo et! Incidunt voluptas culpa neque repellat sint, accusamus beatae, cumque autem tempore quisquam quam eligendi harum debitis.</p>
+                    <div class="col-md-9" data-aos="fade-up">
+                        <h3 class="category-title">Category: Business</h3>
 
-                            <figure class="my-4">
+                        <div class="d-md-flex post-entry-2 half">
+                            <a href="single-post.html" class="me-4 thumbnail">
+                                <img src="assets/img/post-landscape-6.jpg" alt="" class="img-fluid">
+                            </a>
+                            <div>
+                                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                <h3><a href="single-post.html">What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+                                <div class="d-flex align-items-center author">
+                                    <div class="photo"><img src="assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                                    <div class="name">
+                                        <h3 class="m-0 p-0">Wade Warren</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-md-flex post-entry-2 half">
+                            <a href="single-post.html" class="me-4 thumbnail">
                                 <img src="assets/img/post-landscape-1.jpg" alt="" class="img-fluid">
-                                <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
-                            </figure>
-                            <p>Sunt reprehenderit, hic vel optio odit est dolore, distinctio iure itaque enim pariatur ducimus. Rerum soluta, perspiciatis voluptatum cupiditate praesentium repellendus quas expedita exercitationem tempora aliquam quaerat in eligendi adipisci harum non omnis reprehenderit quidem beatae modi. Ea fugiat enim libero, ipsam dicta explicabo nihil, tempore, nulla repellendus eos necessitatibus eligendi corporis cum? Eaque harum, eligendi itaque numquam aliquam soluta.</p>
-                            <p>Explicabo perspiciatis, laborum provident voluptates illum in nulla consectetur atque quaerat excepturi quisquam, veniam velit ex pariatur quos consequuntur? Excepturi reiciendis perferendis, cupiditate dolorem eos illum amet. Beatae voluptates nemo esse ratione voluptate, nesciunt fugit magnam veritatis voluptas dignissimos doloribus maiores? Aliquam, dolores natus exercitationem corrupti blanditiis, consequuntur nihil nobis sed voluptatibus maiores sunt, illo provident aliquid laborum. Vitae, ut.</p>
-                            <p>Reprehenderit aut sed doloribus blanditiis, aspernatur magni? In molestias rem, similique ut esse repudiandae quod recusandae dolores neque earum omnis at, suscipit fuga? Minima qui veniam deserunt quisquam error amet at ratione nesciunt porro quis placeat repudiandae voluptatibus officiis fuga necessitatibus, expedita officia adipisci eaque labore accusamus? Nesciunt repellat illo exercitationem facilis similique quaerat, quis sequi? Praesentium nulla ipsam dolor.</p>
-                            <p>Dolorum, incidunt! Adipisci harum itaque maxime dolores doloremque porro eligendi quis, doloribus vel sit rerum sunt obcaecati nam suscipit nulla vitae alias blanditiis aliquam debitis atque illo modi et placeat. Ratione iure eveniet provident. Culpa laboriosam sed ad quia. Corrupti, earum, perferendis dolore cupiditate sint nihil maiores iusto tempora nobis porro itaque est. Ut laborum culpa assumenda pariatur et perferendis?</p>
-                            <p>Est soluta veritatis laboriosam, consequuntur temporibus asperiores, fugit id a ullam sed, expedita sequi doloribus fugiat. Odio et necessitatibus enim nam, iste reprehenderit cupiditate omnis ut iure aliquid obcaecati, repellendus nemo provident eveniet tempora minus! Voluptates aut laboriosam, maiores nihil accusantium, a dolorum quaerat tenetur illo eum culpa cum laudantium sunt doloremque modi possimus magni? Perferendis cum repudiandae corrupti porro.</p>
-                            <figure class="my-4">
-                                <img src="assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
-                                <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, odit? </figcaption>
-                            </figure>
-                            <p>Quis molestiae, dolorem consequuntur labore perferendis enim accusantium commodi optio, sequi magnam ad consectetur iste omnis! Voluptatibus, quia officia esse necessitatibus magnam tempore reprehenderit quo aspernatur! Assumenda, minus dolorem repellendus corporis corrupti quia temporibus repudiandae in. Sit rem aut, consectetur repudiandae perferendis nemo alias, iure ipsam omnis quam soluta, nobis animi quis aliquam blanditiis at. Dicta nemo vero sequi exercitationem.</p>
-                            <p>Architecto ex id at illum aperiam corporis, quidem magnam doloribus non eligendi delectus laborum porro molestiae beatae eveniet dolor odit optio soluta dolores! Eaque odit a nihil recusandae, error repellendus debitis ex autem ab commodi, maiores officiis doloribus provident optio, architecto assumenda! Nihil cum laboriosam eos dolore aliquid perferendis amet doloremque quibusdam odio soluta vero odit, ipsa, quisquam quod nulla.</p>
-                            <p>Consequuntur corrupti fugiat quod! Ducimus sequi nemo illo ad necessitatibus amet nobis corporis et quasi. Optio cum neque fuga. Ad excepturi magnam quisquam ex voluptatibus vitae aut nam quidem doloribus, architecto perspiciatis sit consequatur pariatur alias animi expedita quas? Et doloribus voluptatibus perferendis qui fugiat voluptatum autem facere aspernatur quidem quae assumenda iste, sit similique, necessitatibus laborum magni. Ea, dolores!</p>
-                            <p>Possimus temporibus rerum illo quia repudiandae provident sed quas atque. Ipsam adipisci accusamus iste optio illo aliquam molestias? Voluptatibus, veniam recusandae facilis nobis perspiciatis rem similique, nisi ad explicabo ipsa voluptatum, inventore molestiae natus adipisci? Fuga delectus quia assumenda totam aspernatur. Nobis hic ea rem, quaerat voluptate vero illum laboriosam omnis aspernatur labore, natus ex iusto ducimus exercitationem a officia.</p>
-                        </div><!-- End Single Post Content -->
-
-                        <!-- ======= Comments ======= -->
-                        <div class="comments">
-                            <h5 class="comment-title py-4">2 Comments</h5>
-                            <div class="comment d-flex mb-4">
-                                <div class="flex-shrink-0">
-                                    <div class="avatar avatar-sm rounded-circle">
-                                        <img class="avatar-img" src="assets/img/person-5.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="flex-grow-1 ms-2 ms-sm-3">
-                                    <div class="comment-meta d-flex align-items-baseline">
-                                        <h6 class="me-2">Jordan Singer</h6>
-                                        <span class="text-muted">2d</span>
-                                    </div>
-                                    <div class="comment-body">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non minima ipsum at amet doloremque qui magni, placeat deserunt pariatur itaque laudantium impedit aliquam eligendi repellendus excepturi quibusdam nobis esse accusantium.
-                                    </div>
-
-                                    <div class="comment-replies bg-light p-3 mt-3 rounded">
-                                        <h6 class="comment-replies-title mb-4 text-muted text-uppercase">2 replies</h6>
-
-                                        <div class="reply d-flex mb-4">
-                                            <div class="flex-shrink-0">
-                                                <div class="avatar avatar-sm rounded-circle">
-                                                    <img class="avatar-img" src="assets/img/person-4.jpg" alt="" class="img-fluid">
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 ms-2 ms-sm-3">
-                                                <div class="reply-meta d-flex align-items-baseline">
-                                                    <h6 class="mb-0 me-2">Brandon Smith</h6>
-                                                    <span class="text-muted">2d</span>
-                                                </div>
-                                                <div class="reply-body">
-                                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="reply d-flex">
-                                            <div class="flex-shrink-0">
-                                                <div class="avatar avatar-sm rounded-circle">
-                                                    <img class="avatar-img" src="assets/img/person-3.jpg" alt="" class="img-fluid">
-                                                </div>
-                                            </div>
-                                            <div class="flex-grow-1 ms-2 ms-sm-3">
-                                                <div class="reply-meta d-flex align-items-baseline">
-                                                    <h6 class="mb-0 me-2">James Parsons</h6>
-                                                    <span class="text-muted">1d</span>
-                                                </div>
-                                                <div class="reply-body">
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio dolore sed eos sapiente, praesentium.
-                                                </div>
-                                            </div>
-                                        </div>
+                            </a>
+                            <div>
+                                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                <h3><a href="single-post.html">What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+                                <div class="d-flex align-items-center author">
+                                    <div class="photo"><img src="assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                                    <div class="name">
+                                        <h3 class="m-0 p-0">Wade Warren</h3>
                                     </div>
                                 </div>
                             </div>
-                            <div class="comment d-flex">
-                                <div class="flex-shrink-0">
-                                    <div class="avatar avatar-sm rounded-circle">
-                                        <img class="avatar-img" src="assets/img/person-2.jpg" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="flex-shrink-1 ms-2 ms-sm-3">
-                                    <div class="comment-meta d-flex">
-                                        <h6 class="me-2">Santiago Roberts</h6>
-                                        <span class="text-muted">4d</span>
-                                    </div>
-                                    <div class="comment-body">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum in corrupti dolorum, quas delectus nobis porro accusantium molestias sequi.
-                                    </div>
-                                </div>
-                            </div>
-                        </div><!-- End Comments -->
+                        </div>
 
-                        <!-- ======= Comments Form ======= -->
-                        <div class="row justify-content-center mt-5">
-
-                            <div class="col-lg-12">
-                                <h5 class="comment-title">Leave a Comment</h5>
-                                <div class="row">
-                                    <div class="col-lg-6 mb-3">
-                                        <label for="comment-name">Name</label>
-                                        <input type="text" class="form-control" id="comment-name" placeholder="Enter your name">
-                                    </div>
-                                    <div class="col-lg-6 mb-3">
-                                        <label for="comment-email">Email</label>
-                                        <input type="text" class="form-control" id="comment-email" placeholder="Enter your email">
-                                    </div>
-                                    <div class="col-12 mb-3">
-                                        <label for="comment-message">Message</label>
-
-                                        <textarea class="form-control" id="comment-message" placeholder="Enter your name" cols="30" rows="10"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <input type="submit" class="btn btn-primary" value="Post comment">
+                        <div class="d-md-flex post-entry-2 half">
+                            <a href="single-post.html" class="me-4 thumbnail">
+                                <img src="assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
+                            </a>
+                            <div>
+                                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                <h3><a href="single-post.html">What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+                                <div class="d-flex align-items-center author">
+                                    <div class="photo"><img src="assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                                    <div class="name">
+                                        <h3 class="m-0 p-0">Wade Warren</h3>
                                     </div>
                                 </div>
                             </div>
-                        </div><!-- End Comments Form -->
+                        </div>
 
+                        <div class="d-md-flex post-entry-2 half">
+                            <a href="single-post.html" class="me-4 thumbnail">
+                                <img src="assets/img/post-landscape-3.jpg" alt="" class="img-fluid">
+                            </a>
+                            <div>
+                                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                <h3><a href="single-post.html">What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+                                <div class="d-flex align-items-center author">
+                                    <div class="photo"><img src="assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                                    <div class="name">
+                                        <h3 class="m-0 p-0">Wade Warren</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-md-flex post-entry-2 half">
+                            <a href="single-post.html" class="me-4 thumbnail">
+                                <img src="assets/img/post-landscape-4.jpg" alt="" class="img-fluid">
+                            </a>
+                            <div>
+                                <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                                <h3><a href="single-post.html">What is the son of Football Coach John Gruden, Deuce Gruden doing Now?</a></h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio placeat exercitationem magni voluptates dolore. Tenetur fugiat voluptates quas, nobis error deserunt aliquam temporibus sapiente, laudantium dolorum itaque libero eos deleniti?</p>
+                                <div class="d-flex align-items-center author">
+                                    <div class="photo"><img src="assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                                    <div class="name">
+                                        <h3 class="m-0 p-0">Wade Warren</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-start py-4">
+                            <div class="custom-pagination">
+                                <a href="#" class="prev">Prevous</a>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <a href="#" class="next">Next</a>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="col-md-3">
                         <!-- ======= Sidebar ======= -->
                         <div class="aside-block">
@@ -314,11 +289,90 @@
                         </div><!-- End Tags -->
 
                     </div>
+
                 </div>
             </div>
         </section>
     </main><!-- End #main -->
-    <?= $this->include('frontend/layouts/footer') ?>
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+
+        <div class="footer-content">
+            <div class="container">
+
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <h3 class="footer-heading">Tentang Divisi.id</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam ab, perspiciatis beatae autem deleniti voluptate nulla a dolores, exercitationem eveniet libero laudantium recusandae officiis qui aliquid blanditiis omnis quae. Explicabo?</p>
+                        <p><a href="about.html" class="footer-heading">Lebih Lanjut . . . .</a></p>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <h3 class="footer-heading">Kategori</h3>
+                        <ul class="footer-links list-unstyled">
+                            <?php foreach ($kategori as $item) : ?>
+                                <li><a href="category.html"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h3 class="footer-heading">Terbaru</h3>
+
+                        <ul class="footer-links footer-blog-entry list-unstyled">
+                            <?php foreach ($terbaru as $terbaru) : ?>
+                                <li>
+                                    <a href="single-post.html" class="d-flex align-items-center">
+                                        <div>
+                                            <div class="post-meta d-block"><span class="date"><?= $terbaru['tingkat'] ?></span> <span class="mx-1">&bullet;</span> <span><?= $terbaru['nama_kategori'] ?></span><span class="mx-1">&bullet;</span><span><?= $terbaru['tanggal'] ?></span></div>
+                                            <span><?= $terbaru['judul'] ?></span>
+                                        </div>
+                                    </a>
+                                </li>
+
+                            <?php endforeach ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="footer-legal">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <div class="copyright">
+                            © Copyright <strong><span>Divisi.id</span></strong>2022
+                        </div>
+
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you purchased the pro version. -->
+                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+                            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="social-links mb-3 mb-lg-0 text-center text-md-end">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
 
