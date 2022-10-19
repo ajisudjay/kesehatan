@@ -17,21 +17,28 @@
                   </div>
                   <li class="dropdown"><a href="/berita-kategori"><span>Kategori</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
-                          <li class="dropdown"><a href="#"><span>Internasional</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                          <li class="dropdown"><a href="/berita-kategori/internasional"><span>Internasional</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                               <ul>
                                   <?php foreach ($kategori as $item) : ?>
                                       <li><a href="#"><?= $item['kategori'] ?></a></li>
                                   <?php endforeach ?>
                               </ul>
                           </li>
-                          <li class="dropdown"><a href="#"><span>Nasional</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                          <li class="dropdown"><a href="/berita-kategori/nasional"><span>Nasional</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                               <ul>
                                   <?php foreach ($kategori as $item) : ?>
                                       <li><a href="#"><?= $item['kategori'] ?></a></li>
                                   <?php endforeach ?>
                               </ul>
                           </li>
-                          <li class="dropdown"><a href="#"><span>Kalimantan Timur</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                          <li class="dropdown"><a href="/berita-kategori/kaltim"><span>Kalimantan Timur</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                              <ul>
+                                  <?php foreach ($kategori as $item) : ?>
+                                      <li><a href="#"><?= $item['kategori'] ?></a></li>
+                                  <?php endforeach ?>
+                              </ul>
+                          </li>
+                          <li class="dropdown"><a href="/berita-kategori/samarinda"><span>Samarinda</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                               <ul>
                                   <?php foreach ($kategori as $item) : ?>
                                       <li><a href="#"><?= $item['kategori'] ?></a></li>

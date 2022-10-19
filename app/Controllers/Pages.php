@@ -77,7 +77,9 @@ class Pages extends BaseController
     public function berita($slug)
     {
         $cekberita = $this->BeritaModel->where('slug', $slug)->first();
-
+        $id = $cekberita['id'];
+        $dilihat = $cekberita['dilihat'];
+        $terbaca = $dilihat + 1;
         $jumkar_isi = strlen($cekberita['isi']);
         $setengah = $jumkar_isi / 2;
         $setengahbulat = round($setengah);
@@ -94,7 +96,12 @@ class Pages extends BaseController
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
             'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('slug', $slug)->orderBy('tanggal', 'DESC')->findAll(1),
             'iklan' => $this->IklanModel->orderBy('id', 'DESC')->where('status', 'Publish')->get()->getResultArray(),
+            'dilihat' => $terbaca,
         ];
+        $dataupdate = [
+            'dilihat' => $terbaca,
+        ];
+        $this->BeritaModel->update($id, $dataupdate);
         return view('frontend/pages/berita_detail', $data);
     }
 

@@ -58,6 +58,9 @@
                                 <p><?= $bagian_kedua ?></p>
                             </div><!-- End Single Post Content -->
                         <?php endforeach ?>
+                        <div align="center">
+                            <a href="/"><button class="btn btn-primary btn-round btn-block" style="background-color:#0B1B4F;">Kembali</button></a>
+                        </div>
                     </div>
                     <div class="col-md-3">
                         <!-- ======= Sidebar ======= -->
@@ -75,7 +78,7 @@
                                 <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
                                     <?php foreach ($trending as $trend) : ?>
                                         <div class="post-entry-1 border-bottom">
-                                            <div class="post-meta"><span class="date"><?= $trend['tingkat'] ?></span> &bullet; <span class="date"><?= $trend['nama_kategori'] ?></span> <br><span><?= $trend['tanggal'] ?></span></div>
+                                            <div class="post-meta"><span class="date"><?= $trend['tingkat'] ?></span> &bullet; <span class="date"><?= $trend['nama_kategori'] ?></span>&bullet; <span><?= $trend['tanggal'] ?></span></div>
                                             <h2 class="mb-2"><a href="#"><?= $trend['judul'] ?></a></h2>
                                             <span class="author mb-3 d-block">dilihat : <?= $trend['dilihat'] ?></span>
                                         </div>
@@ -83,45 +86,16 @@
                                 </div> <!-- End Trending -->
                             </div>
                         </div>
-
-                        <div class="aside-block">
-                            <h3 class="aside-title">Video</h3>
-                            <div class="video-post">
-                                <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
-                                    <span class="bi-play-fill"></span>
-                                    <img src="<?= base_url() ?>/libraries_frontend/assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
-                                </a>
-                            </div>
-                        </div><!-- End Video -->
-
-                        <div class="aside-block">
-                            <h3 class="aside-title">Categories</h3>
-                            <ul class="aside-links list-unstyled">
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Business</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Culture</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Sport</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Food</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Politics</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Celebrity</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Startups</a></li>
-                                <li><a href="category.html"><i class="bi bi-chevron-right"></i> Travel</a></li>
+                        <!-- Kategori -->
+                        <div class="aside-block" style="text-align:left ;">
+                            <h3 class="aside-title">Kategori</h3>
+                            <ul class=" footer-links list-unstyled">
+                                <?php foreach ($kategori as $item) : ?>
+                                    <li><a href="category.html"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                                <?php endforeach ?>
                             </ul>
-                        </div><!-- End Categories -->
-
-                        <div class="aside-block">
-                            <h3 class="aside-title">Tags</h3>
-                            <ul class="aside-tags list-unstyled">
-                                <li><a href="category.html">Business</a></li>
-                                <li><a href="category.html">Culture</a></li>
-                                <li><a href="category.html">Sport</a></li>
-                                <li><a href="category.html">Food</a></li>
-                                <li><a href="category.html">Politics</a></li>
-                                <li><a href="category.html">Celebrity</a></li>
-                                <li><a href="category.html">Startups</a></li>
-                                <li><a href="category.html">Travel</a></li>
-                            </ul>
-                        </div><!-- End Tags -->
-
+                        </div>
+                        <!-- Kategori -->
                     </div>
                 </div>
             </div>
