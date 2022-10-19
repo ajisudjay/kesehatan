@@ -57,10 +57,10 @@
           <div class="position-relative">
 
               <a href="#" class="mx-2 js-search-open">
-                  <iconify-icon icon="fluent:search-12-filled"></iconify-icon>
+                  <iconify-icon icon="fluent:search-12-filled" style="color: #0b1b4f;"></iconify-icon>
               </a>
               <a href="/login" class="mx-2">
-                  <iconify-icon icon="ooui:log-in-ltr"></iconify-icon>
+                  <iconify-icon icon="ooui:log-in-ltr" style="color: #0b1b4f;"></iconify-icon>
               </a>
               <i class="bi bi-list mobile-nav-toggle"></i>
 

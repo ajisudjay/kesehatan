@@ -323,7 +323,7 @@
                                 <li>
                                     <a href="single-post.html" class="d-flex align-items-center">
                                         <div>
-                                            <div class="post-meta d-block"><span class="date"><?= $terbaru['tingkat'] ?></span> <span class="mx-1">&bullet;</span> <span><?= $terbaru['nama_kategori'] ?></span><span class="mx-1">&bullet;</span><span><?= $terbaru['tanggal'] ?></span></div>
+                                            <div class="post-meta d-block"><span class="date" style="font-size: 8px;"><?= $terbaru['tingkat'] ?></span> <span class=" mx-1">&bullet;</span> <span style="font-size: 8px;"><?= $terbaru['nama_kategori'] ?></span><span class="mx-1">&bullet;</span><span style="font-size: 8px;"><?= $terbaru['tanggal'] ?></span></div>
                                             <span><?= $terbaru['judul'] ?></span>
                                         </div>
                                     </a>
