@@ -21,8 +21,8 @@
                                             <div class="col-lg-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>KANAL BERITA</h4>
-                                                        <span>SAMARINDA</span>
+                                                        <h4>DIVISI.ID</h4>
+                                                        <span>Detail Inovatif dan Berintegritas</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,9 +48,8 @@
                                                 <!-- Content Start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h5>Card 1</h5>
-                                                        <span>Ini Card </span>
-
+                                                        <br><br><br><br>
+                                                        <img src="libraries_backend/assets/images/home.png" alt="">
                                                     </div>
                                                 </div>
                                                 <!-- Content End -->

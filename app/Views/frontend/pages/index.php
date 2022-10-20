@@ -8,7 +8,6 @@
     ?>
 
     <main id="main">
-
         <!-- <main id="main" style="background-color: red;"> -->
         <!-- ======= Hero Slider Section ======= -->
         <section id="hero-slider" class="hero-slider">

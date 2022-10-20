@@ -32,7 +32,7 @@ class Konfigurasi extends BaseController
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $data = [
-                'konfigurasi' => $this->KonfigurasiModel->orderBy('id', 'DESC')->get()->getResultArray(),
+                'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [
@@ -50,14 +50,48 @@ class Konfigurasi extends BaseController
             return redirect()->to(base_url('/login'));
         }
         $request = \Config\Services::request();
-        $id = $request->getVar('id');
-        $isi = $request->getVar('isi');
-        $data = [
-            'isi' => $isi,
-        ];
-        $this->KonfigurasiModel->update($id, $data);
+        if ($request->isAJAX()) {
+            $id = $request->getVar('id');
+            $judul = $request->getVar('judul');
+            $isi = $request->getVar('isi');
+            $validation = \Config\Services::validation();
+            $valid = $this->validate([
+                'judul' => [
+                    'label' => 'Konfigurasi',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+            ]);
 
-        session()->setFlashdata('pesanInput', 'Berhasil Mengubah Konfigurasi');
-        return redirect()->to(base_url('/konfigurasi'));
+            if (!$valid) {
+                $msg = [
+                    'error' => [
+                        'judul' => $validation->getError('judul'),
+                    ],
+                ];
+                echo json_encode($msg);
+            } else {
+                $data = [
+                    'judul' => $judul,
+                    'isi' => $isi,
+                ];
+
+                $this->KonfigurasiModel->update($id, $data);
+
+                $data2 = [
+                    'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
+                ];
+                $msg = [
+                    'sukses' => 'Konfigurasi Berhasil Diubah !',
+                    'status' => 'berhasil',
+                    'data' => view('backend/konfigurasi/view-data', $data2)
+                ];
+                echo json_encode($msg);
+            }
+        } else {
+            exit('Data Tidak Dapat diproses');
+        }
     }
 }

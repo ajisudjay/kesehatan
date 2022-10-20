@@ -68,7 +68,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: '<?= base_url('konfigurasi/viewData') ?>',
+            url: '<?= base_url('tingkat/viewData') ?>',
             dataType: 'json',
             success: function(response) {
                 $("#result").html(response.data);

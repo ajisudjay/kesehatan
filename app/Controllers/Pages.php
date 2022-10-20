@@ -2,17 +2,23 @@
 
 namespace App\Controllers;
 
+use App\Models\KonfigurasiModel;
 use App\Models\KategoriModel;
+use App\Models\TingkatModel;
 use App\Models\BeritaModel;
 use App\Models\IklanModel;
 
 class Pages extends BaseController
 {
+    protected $KonfigurasiModel;
+    protected $TingkatModel;
     protected $KategoriModel;
     protected $BeritaModel;
     protected $IklanModel;
     public function __construct()
     {
+        $this->KonfigurasiModel = new KonfigurasiModel();
+        $this->TingkatModel = new TingkatModel();
         $this->KategoriModel = new KategoriModel();
         $this->BeritaModel = new BeritaModel();
         $this->IklanModel = new IklanModel();
@@ -24,7 +30,8 @@ class Pages extends BaseController
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
-
+            'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
+            'tingkat_berita' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
 
             'hot' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(1),
@@ -56,20 +63,50 @@ class Pages extends BaseController
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
+            'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
+            'tingkat_berita' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
             'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(4),
         ];
         return view('frontend/pages/tentangkami', $data);
     }
 
-    public function berita_kategori()
+    public function berita_tingkat($tingkat)
     {
         $data = [
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
+            'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
+            'tingkat' => $tingkat,
+            'tingkat_berita' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(5),
+            'berita_tingkat' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->where('tingkat', $tingkat)->orderBy('tanggal', 'DESC')->findAll(),
+            'trending' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->findAll(3),
+            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(4),
+        ];
+        return view('frontend/pages/berita_tingkat', $data);
+    }
+
+    public function berita_kategori($tingkat)
+    {
+        $uri = current_url(true);
+        $tingkat = $uri->getSegment(3); // Method - instrument
+        $berita_kategori = $uri->getSegment(4); // Method - instrument
+        $cek_kategori = $this->KategoriModel->where('kategori', $berita_kategori)->first();
+        $id_berita_kategori = $cek_kategori['id'];
+        $data = [
+            'title' => 'Beranda - Divisi.id',
+            'top_header' => 'Beranda',
+            'header' => '',
+            'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
+            'tingkat_berita' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
+            'tingkat' => $tingkat,
+            'nama_kategori' => $berita_kategori,
+            'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(4),
+            'trending' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->findAll(3),
+            'berita_kategori' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->where('tingkat', $tingkat)->where('berita.kategori', $id_berita_kategori)->orderBy('tanggal', 'DESC')->findAll(),
         ];
         return view('frontend/pages/berita_kategori', $data);
     }
@@ -92,6 +129,7 @@ class Pages extends BaseController
             'jumkar' => $jumkar_isi,
             'setengah' => $setengahbulat,
             'lanjut' => $mulailagi,
+            'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
             'trending' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->findAll(3),
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
             'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('slug', $slug)->orderBy('tanggal', 'DESC')->findAll(1),

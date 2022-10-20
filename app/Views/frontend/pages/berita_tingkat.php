@@ -12,8 +12,8 @@
                 <div class="row">
 
                     <div class="col-md-9" data-aos="fade-up">
-                        <h3 class="category-title">Kategori: <?= $tingkat ?> - <?= $nama_kategori ?></h3>
-                        <?php foreach ($berita_kategori as $item) : ?>
+                        <h3 class="category-title">Tingkat: <?= $tingkat ?></h3>
+                        <?php foreach ($berita_tingkat as $item) : ?>
                             <div class="d-md-flex post-entry-2 half">
                                 <a href="single-post.html" class="me-4 thumbnail">
                                     <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="img-fluid" style="height:300px;width:300px;">
@@ -64,9 +64,7 @@
                         <!-- Kategori -->
 
                     </div>
-
                 </div>
-            </div>
         </section>
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
@@ -111,7 +109,11 @@
             </div>
         </div>
         <?= $this->include('frontend/layouts/footer') ?>
+
+
+
         <?= $this->include('frontend/layouts/javascript') ?>
+
 
 </body>
 

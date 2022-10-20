@@ -15,36 +15,18 @@
                   <div class="batas">
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>|</strong>
                   </div>
-                  <li class="dropdown"><a href="/berita-kategori"><span>Kategori</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                  <li class="dropdown"><a href="#"><span>Kategori</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
-                          <li class="dropdown"><a href="/berita-kategori/internasional"><span>Internasional</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                              <ul>
-                                  <?php foreach ($kategori as $item) : ?>
-                                      <li><a href="#"><?= $item['kategori'] ?></a></li>
-                                  <?php endforeach ?>
-                              </ul>
-                          </li>
-                          <li class="dropdown"><a href="/berita-kategori/nasional"><span>Nasional</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                              <ul>
-                                  <?php foreach ($kategori as $item) : ?>
-                                      <li><a href="#"><?= $item['kategori'] ?></a></li>
-                                  <?php endforeach ?>
-                              </ul>
-                          </li>
-                          <li class="dropdown"><a href="/berita-kategori/kaltim"><span>Kalimantan Timur</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                              <ul>
-                                  <?php foreach ($kategori as $item) : ?>
-                                      <li><a href="#"><?= $item['kategori'] ?></a></li>
-                                  <?php endforeach ?>
-                              </ul>
-                          </li>
-                          <li class="dropdown"><a href="/berita-kategori/samarinda"><span>Samarinda</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                              <ul>
-                                  <?php foreach ($kategori as $item) : ?>
-                                      <li><a href="#"><?= $item['kategori'] ?></a></li>
-                                  <?php endforeach ?>
-                              </ul>
-                          </li>
+                          <?php foreach ($tingkat_berita as $item2) : ?>
+                              <li class="dropdown"><a href="/berita-tingkat/<?= $item2['tingkat'] ?>"><span><?= $item2['tingkat'] ?></span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                                  <ul>
+                                      <?php foreach ($kategori as $item) : ?>
+                                          <li><a href="/berita-kategori/<?= $item2['tingkat'] ?>/<?= $item['kategori'] ?>"><?= $item['kategori'] ?></a></li>
+                                      <?php endforeach ?>
+                                  </ul>
+                              </li>
+                          <?php endforeach ?>
+
                       </ul>
                   </li>
                   <div class="batas">
@@ -52,11 +34,9 @@
                   </div>
                   <li class="dropdown"><a href="/tentangkami"><span>Tentang Kami</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                       <ul>
-                          <li><a href="#">Pedoman Media Siber</a></li>
-                          <li><a href="#">Privacy Policy</a></li>
-                          <li><a href="#">Kode Etik</a></li>
-                          <li><a href="#">Disclaimer</a></li>
-                          <li><a href="contact.html">Kontak</a></li>
+                          <?php foreach ($konfigurasi as $item3) : ?>
+                              <li><a href="/tentangkami"><?= $item3['judul'] ?></a></li>
+                          <?php endforeach ?>
                       </ul>
                   </li>
               </ul>

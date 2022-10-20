@@ -17,17 +17,23 @@
                 </a>
             </li>
             <li>
+                <a href="<?= base_url('tingkat'); ?>">
+                    <span class="pcoded-micon"><i class="fa fa-th-list"></i></span>
+                    <span class="pcoded-mtext">Tingkat</span>
+                </a>
+            </li>
+            <li>
                 <a href="<?= base_url('kategori'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-th-list"></i></span>
                     <span class="pcoded-mtext">Kategori</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="#">
                     <span class="pcoded-micon"><i class="fa fa-comments-o"></i></span>
                     <span class="pcoded-mtext">Komentar (Cooming Soon)</span>
                 </a>
-            </li>
+            </li> -->
         </ul>
         <div class="pcoded-navigatio-lavel">Iklan</div>
         <ul class="pcoded-item pcoded-left-item">
@@ -43,7 +49,7 @@
             <li>
                 <a href="<?= base_url('konfigurasi'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-gears"></i></span>
-                    <span class="pcoded-mtext">Konfigurasi (Cooming Soon)</span>
+                    <span class="pcoded-mtext">Konfigurasi (Maintenance)</span>
                 </a>
             </li>
         </ul>

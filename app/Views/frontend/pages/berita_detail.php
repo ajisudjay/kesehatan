@@ -102,11 +102,6 @@
         </section>
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
-
-
-
-
-
     <?= $this->include('frontend/layouts/footer') ?>
     <?= $this->include('frontend/layouts/javascript') ?>
 
