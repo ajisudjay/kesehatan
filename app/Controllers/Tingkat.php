@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\BeritaModel;
 use App\Models\TingkatModel;
 use App\Controllers\BaseController;
 
 class Tingkat extends BaseController
 {
+    protected $BeritaModel;
     protected $TingkatModel;
     public function __construct()
     {
+        $this->BeritaModel = new BeritaModel();
         $this->TingkatModel = new TingkatModel();
     }
     public function index()
@@ -17,10 +20,13 @@ class Tingkat extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
+        $admin = session()->get('nama');
         $data = [
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => 'Tingkat',
+            'admin' => $admin,
+            'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
         ];
         return view('backend/tingkat/index', $data);
     }

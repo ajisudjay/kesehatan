@@ -49,7 +49,7 @@
             <li>
                 <a href="<?= base_url('konfigurasi'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-gears"></i></span>
-                    <span class="pcoded-mtext">Konfigurasi (Maintenance)</span>
+                    <span class="pcoded-mtext">Konfigurasi</span>
                 </a>
             </li>
         </ul>

@@ -12,8 +12,8 @@
                 <div class="row">
 
                     <div class="col-md-9" data-aos="fade-up">
-                        <h3 class="category-title">Kategori: <?= $tingkat ?> - <?= $nama_kategori ?></h3>
-                        <?php foreach ($berita_kategori as $item) : ?>
+                        <h3 class="category-title">Tingkat: <?= $kategori2 ?></h3>
+                        <?php foreach ($berita_kategoriall as $item) : ?>
                             <div class="d-md-flex post-entry-2 half">
                                 <a href="/berita-detail/<?= $item['slug'] ?>" class="me-4 thumbnail">
                                     <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="img-fluid" style="height:300px;width:300px;">
@@ -57,22 +57,18 @@
                             <h3 class="aside-title">Kategori</h3>
                             <ul class=" footer-links list-unstyled">
                                 <?php foreach ($kategori as $item) : ?>
-                                    <li><a href="/berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                                    <li><a href="#"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
                                 <?php endforeach ?>
                             </ul>
                         </div>
                         <!-- Kategori -->
 
                     </div>
-
                 </div>
-            </div>
         </section>
     </main><!-- End #main -->
-
     <?= $this->include('frontend/layouts/footer') ?>
     <?= $this->include('frontend/layouts/javascript') ?>
-
 </body>
 
 </html>

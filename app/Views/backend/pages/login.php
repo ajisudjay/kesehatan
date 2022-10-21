@@ -44,17 +44,7 @@
                                     <div class="font-weight-bold text-danger errorgagal_login"></div>
                                     <div class="font-weight-bold text-danger errorgagal_user"></div>
                                 </div>
-                                <div class="row m-t-25 text-left">
-                                    <div class="col-12">
-                                        <div class="checkbox-fade fade-in-primary d-">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <?php if (session()->get('pesanGagal')) { ?>
                                     <div class="alert alert-danger alert-dismissible fade show flash text-center" role="alert">
                                         <strong>Gagal Login !</strong> <?= session()->getFlashdata('pesanGagal') ?>
@@ -73,11 +63,11 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <p class="text-inverse text-left m-b-0">Thank you.</p>
+                                        <p class="text-inverse text-left m-b-0">Terima kasih.</p>
                                         <p class="text-inverse text-left"><a href="/"><b class="f-w-600">Kembali ke Beranda</b></a></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <img src="libraries_backend\assets\images\auth\Logo-small-bottom.png" alt="small-logo.png">
+                                        <img src="libraries_backend\assets\images\logo-small.png" width="50px" alt="logo.png">
                                     </div>
                                 </div>
                             </div>

@@ -111,6 +111,25 @@ class Pages extends BaseController
         return view('frontend/pages/berita_kategori', $data);
     }
 
+    public function berita_kategoriall($kategori)
+    {
+        $cek_kategori = $this->KategoriModel->where('kategori', $kategori)->first();
+        $id_berita_kategori = $cek_kategori['id'];
+        $data = [
+            'title' => 'Beranda - Divisi.id',
+            'top_header' => 'Beranda',
+            'header' => '',
+            'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
+            'kategori2' => $kategori,
+            'tingkat_berita' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
+            'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+            'berita_kategoriall' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->where('berita.kategori', $id_berita_kategori)->orderBy('tanggal', 'DESC')->findAll(),
+            'trending' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->findAll(3),
+            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(4),
+        ];
+        return view('frontend/pages/berita_kategoriall', $data);
+    }
+
     public function berita($slug)
     {
         $cekberita = $this->BeritaModel->where('slug', $slug)->first();
@@ -129,12 +148,14 @@ class Pages extends BaseController
             'jumkar' => $jumkar_isi,
             'setengah' => $setengahbulat,
             'lanjut' => $mulailagi,
+            'tingkat_berita' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
             'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
             'trending' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('dilihat', 'DESC')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->where('status', 'Publish')->findAll(3),
             'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
             'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('slug', $slug)->orderBy('tanggal', 'DESC')->findAll(1),
             'iklan' => $this->IklanModel->orderBy('id', 'DESC')->where('status', 'Publish')->get()->getResultArray(),
             'dilihat' => $terbaca,
+
         ];
         $dataupdate = [
             'dilihat' => $terbaca,
@@ -158,10 +179,13 @@ class Pages extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
+        $admin = session()->get('nama');
         $data = [
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
+            'admin' => $admin,
+            'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
         ];
         return view('backend/pages/superadmin', $data);
     }

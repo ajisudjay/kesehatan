@@ -20,7 +20,7 @@
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu"></i>
             </a>
-            <a href="index-1.htm">
+            <a href="/superadmin">
                 <img class="img-fluid" src="libraries_backend\assets\images\logo.png" alt="Theme-Logo">
             </a>
             <a class="mobile-options">
@@ -50,43 +50,27 @@
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
                             <i class="feather icon-bell"></i>
-                            <span class="badge bg-c-pink">5</span>
+                            <span class="badge bg-c-pink"><?= count($berita_belum_publish) ?></span>
                         </div>
                         <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
                                 <h6>Pemberitahuan</h6>
                                 <label class="label label-danger">Berita Baru</label>
                             </li>
-                            <li>
-                                <div class="media">
-                                    <img class="d-flex align-self-center img-radius" src="libraries_backend\assets\images\avatar-4.jpg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Judul Berita</h5>
-                                        <p class="notification-msg">Isi.</p>
-                                        <span class="notification-time">Kategori</span>
+                            <?php foreach ($berita_belum_publish as $item) : ?>
+                                <li>
+                                    <div class="media">
+                                        <a href="/berita">
+                                            <div class="media-body">
+                                                <h5 class="notification-user"><?= $item['judul'] ?></h5>
+                                                <p class="notification-msg"><?= substr($item['isi'], 0, 50) ?></p>
+                                                <span class="notification-time"><?= $item['tingkat'] ?>&bullet;<?= $item['kategori'] ?></span>
+                                            </div>
+                                        </a>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <img class="d-flex align-self-center img-radius" src="libraries_backend\assets\images\avatar-3.jpg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Judul Berita</h5>
-                                        <p class="notification-msg">Isi.</p>
-                                        <span class="notification-time">Kategori</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <img class="d-flex align-self-center img-radius" src="libraries_backend\assets\images\avatar-4.jpg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="notification-user">Judul Berita</h5>
-                                        <p class="notification-msg">Isi.</p>
-                                        <span class="notification-time">Kategori</span>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            <?php endforeach ?>
+
                         </ul>
                     </div>
                 </li>
@@ -100,8 +84,7 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="libraries_backend\assets\images\avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                            <span>John Doe</span>
+                            <span><?= $admin ?></span>
                             <i class="feather icon-chevron-down"></i>
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
