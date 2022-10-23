@@ -18,8 +18,8 @@
                                 <div class="post-metaheader"><span class="date"><?= $item['tingkat'] ?></span> <span class="mx-1">&bullet;</span> <span><?= $item['nama_kategori'] ?></span><span class="mx-1">&bullet;</span> <span><?= $item['tanggal'] ?></span></div>
                                 <h1 class="mb-5"><?= $item['judul'] ?></h1>
 
-                                <figure class="my-8">
-                                    <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="max-width:100% ;height:150px;text-align: center;">
+                                <figure class="my-4">
+                                    <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:400px;width:95%; border-radius: 4%;">
                                 </figure>
                                 <?php
                                 if ($setengah > 300) {

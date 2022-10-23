@@ -146,7 +146,6 @@ class Berita extends BaseController
                 'isi' => $isi2,
                 'tag' => $tag,
                 'jenis_file' => $jenis_file,
-                'status' => 'Belum Publish',
                 'admin' => $admin,
                 'timestamp' => $timestamp,
             ];

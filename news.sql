@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Okt 2022 pada 04.22
--- Versi server: 10.4.24-MariaDB
--- Versi PHP: 8.1.6
+-- Generation Time: Oct 24, 2022 at 01:04 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `berita`
+-- Table structure for table `berita`
 --
 
 CREATE TABLE `berita` (
@@ -45,21 +45,23 @@ CREATE TABLE `berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `berita`
+-- Dumping data for table `berita`
 --
 
 INSERT INTO `berita` (`id`, `judul`, `slug`, `isi`, `jenis_file`, `gambar`, `tingkat`, `kategori`, `tanggal`, `status`, `tag`, `dilihat`, `timestamp`, `admin`) VALUES
-(27, 'Berita Pertama', 'berita-pertama', '<p>ini isi dari berita pertama yang sangat singkat</p>\r\n', 'Gambar', '1665992109_1b8d5bf63877608595ac.jpg', 'Internasional', 1, '2022-12-01', 'Publish', 'pertama', 55, '2022-10-17 02:38:03', 'ajisudjay'),
-(28, 'Berita Kedua', 'berita-kedua', '<p>ini isi dari berita Kedua yang sangat singkat</p>\r\n', 'Gambar', '1665992152_bbd1bec13532238da69f.jpg', 'Nasional', 5, '2022-12-02', 'Publish', 'kedua', 32, '2022-10-17 02:38:01', 'ajisudjay'),
-(29, 'Berita Ketiga', 'berita-ketiga', '<p>ini isi dari berita ketiga yang sangat singkat</p>\r\nxz', 'Gambar', '1665992182_c279de671468ca00cc5f.jpg', 'Kalimantan Timur', 2, '2022-12-03', 'Publish', 'ketiga', 22, '2022-10-20 20:37:18', 'ajisudjay'),
-(30, 'Berita Keempat', 'berita-keempat', '<p>ini isi dari berita keempat yang sangat singkat</p>\r\n', 'Gambar', '1665992206_539f14e803d236216dd0.jpg', 'Samarinda', 4, '2022-10-04', 'Publish', 'keempat', 21, '2022-10-20 20:37:21', 'ajisudjay'),
-(31, 'Berita Kelima', 'berita-kelima', '<p>ini isi dari berita kelima yang sangat singkat</p>\r\n', 'Gambar', '1665992240_1738e3ebade61b56ea84.jpeg', 'Internasional', 3, '2022-10-05', 'Publish', 'kelima', 11, '2022-10-17 02:38:08', 'ajisudjay'),
-(32, 'Berita Keenam', 'berita-keenam', 'pertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluh pertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluh', 'Gambar', '1666317462_46e41e1ddc8ccad5e5ef.jpg', ' Nasional', 31, '2023-06-01', 'Publish', 'keenam', 25, '2022-10-20 20:58:07', 'ajisudjay');
+(27, 'Berita Pertama', 'berita-pertama', '<p>ini isi dari berita pertama yang sangat singkat</p>\r\n', 'Gambar', '1666330877_aeeacd7fe97e57a731a4.jpg', ' Internasional', 1, '2022-12-01', 'Publish', 'pertama', 56, '2022-10-21 00:41:17', 'ajisudjay'),
+(28, 'Berita Kedua', 'berita-kedua', '<p>ini isi dari berita Kedua yang sangat singkat</p>\r\n', 'Gambar', '1666329548_f3de2d39c42131604281.jpg', ' Nasional', 5, '2022-12-02', 'Publish', 'kedua', 32, '2022-10-21 00:36:48', 'ajisudjay'),
+(29, 'Berita Ketiga', 'berita-ketiga', '<p>ini isi dari berita ketiga yang sangat singkat</p>\r\nxz', 'Gambar', '1666329353_92bacd077e1a1ab16d9e.jpg', ' Kalimantan Timur', 2, '2022-12-03', 'Publish', 'ketiga', 22, '2022-10-21 00:36:43', 'ajisudjay'),
+(30, 'Berita Keempat', 'berita-keempat', '<p>ini isi dari berita keempat yang sangat singkat</p>\r\n', 'Gambar', '1666330904_31b3c8d790358e608e7e.jpg', ' Samarinda', 4, '2022-10-04', 'Publish', 'keempat', 21, '2022-10-21 00:41:44', 'ajisudjay'),
+(31, 'Berita Kelima', 'berita-kelima', '<p>ini isi dari berita kelima yang sangat singkat</p>\r\n', 'Gambar', '1666330923_e43ffb34d367d531f3e4.jpg', ' Internasional', 3, '2022-10-05', 'Publish', 'kelima', 12, '2022-10-21 00:42:03', 'ajisudjay'),
+(32, 'Berita Keenam', 'berita-keenam', 'pertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluh pertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepulucvbhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluhpertama kedua ketiga keempat kelima keenam ketujuh kedelapan kesembilan kesepuluh', 'Gambar', '1666317462_46e41e1ddc8ccad5e5ef.jpg', '  Nasional', 31, '2023-06-01', 'Publish', 'keenam', 43, '2022-10-21 00:57:12', 'ajisudjay'),
+(33, 'BERITA BARU', 'berita-baru', '<p>GDFHGFG</p>\r\n', 'Gambar', '1666330853_828d3e2fa013e460b78a.jpg', ' Internasional', 1, '2022-12-31', 'Publish', 'SADADAS', NULL, '2022-10-21 00:40:53', 'ajisudjay'),
+(34, 'berita coba coba', 'berita-coba-coba', '<p>ldsklfjlskfjklsjfjsdlkfjksl<em><strong>jfl</strong></em></p>\r\n', 'Gambar', '1666331722_4faffd5db37724ccc1f1.jpg', 'Samarinda', 3, '2022-10-21', 'Publish', 'berita', NULL, '2022-10-21 00:56:02', 'ajisudjay');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `iklan`
+-- Table structure for table `iklan`
 --
 
 CREATE TABLE `iklan` (
@@ -71,17 +73,18 @@ CREATE TABLE `iklan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `iklan`
+-- Dumping data for table `iklan`
 --
 
 INSERT INTO `iklan` (`id`, `nama`, `file`, `jenis_file`, `status`) VALUES
-(1, 'ABC Kopi Susu', '1665926076_657be5e5c70070aee7cf.jpg', 'Gambar', 'Publish'),
-(2, 'Kopi ABC Kopi Susu dan Choco Malt Coffe satu dua tiga empat lima enam tujuh delapan', '1665926528_338d7f17c1c90eeedddb.png', 'Gambar', 'Publish');
+(1, 'ABC Kopi Susu', '1665926076_657be5e5c70070aee7cf.jpg', 'Gambar', 'Belum Publish'),
+(2, 'Kopi ABC Kopi Susu dan Choco Malt Coffe satu dua tiga empat lima enam tujuh delapan', '1665926528_338d7f17c1c90eeedddb.png', 'Gambar', 'Belum Publish'),
+(3, 'Pasang Berita', '1666331511_dda9aa9601477ce87515.jpg', 'Gambar', 'Publish');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori`
+-- Table structure for table `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -90,7 +93,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kategori`
+-- Dumping data for table `kategori`
 --
 
 INSERT INTO `kategori` (`id`, `kategori`) VALUES
@@ -99,12 +102,13 @@ INSERT INTO `kategori` (`id`, `kategori`) VALUES
 (3, 'Politik'),
 (4, 'Otomotif'),
 (5, 'Kriminal'),
-(31, 'Lifestyle');
+(31, 'Lifestyle'),
+(32, 'Pendidikan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfigurasi`
+-- Table structure for table `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
@@ -114,7 +118,7 @@ CREATE TABLE `konfigurasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `konfigurasi`
+-- Dumping data for table `konfigurasi`
 --
 
 INSERT INTO `konfigurasi` (`id`, `judul`, `isi`) VALUES
@@ -127,7 +131,7 @@ INSERT INTO `konfigurasi` (`id`, `judul`, `isi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tingkat`
+-- Table structure for table `tingkat`
 --
 
 CREATE TABLE `tingkat` (
@@ -136,7 +140,7 @@ CREATE TABLE `tingkat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tingkat`
+-- Dumping data for table `tingkat`
 --
 
 INSERT INTO `tingkat` (`id`, `tingkat`) VALUES
@@ -148,7 +152,7 @@ INSERT INTO `tingkat` (`id`, `tingkat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -159,7 +163,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `nama`, `level`) VALUES
@@ -171,71 +175,71 @@ INSERT INTO `user` (`username`, `password`, `nama`, `level`) VALUES
 --
 
 --
--- Indeks untuk tabel `berita`
+-- Indexes for table `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `iklan`
+-- Indexes for table `iklan`
 --
 ALTER TABLE `iklan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `kategori`
+-- Indexes for table `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `konfigurasi`
+-- Indexes for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `tingkat`
+-- Indexes for table `tingkat`
 --
 ALTER TABLE `tingkat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `berita`
+-- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `iklan`
+--
+ALTER TABLE `iklan`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT untuk tabel `iklan`
---
-ALTER TABLE `iklan`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `kategori`
---
-ALTER TABLE `kategori`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
-
---
--- AUTO_INCREMENT untuk tabel `konfigurasi`
+-- AUTO_INCREMENT for table `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tingkat`
+-- AUTO_INCREMENT for table `tingkat`
 --
 ALTER TABLE `tingkat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

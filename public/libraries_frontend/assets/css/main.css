@@ -802,7 +802,7 @@ section {
   left: 52%;
   min-width: 700px;
   max-width: 700px;
-  transform: translateX(-54%);
+  transform: translateX(-47%);
 }
 
 @media (max-width: 1255px) {
