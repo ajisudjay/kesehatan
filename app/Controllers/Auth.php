@@ -118,7 +118,7 @@ class Auth extends BaseController
         session()->set('nama', $cek['nama']);
         session()->set('level', $cek['level']);
         session()->setFlashdata('loginBerhasil', 'Login Berhasil');
-        return redirect()->to('/admin');
+        return redirect()->to(base_url('/admin'));
     }
 
     public function logout()

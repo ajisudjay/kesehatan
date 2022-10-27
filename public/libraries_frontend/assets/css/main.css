@@ -337,6 +337,8 @@ section {
     display: contents;
     color: #0b1b4f;
   }
+
+
 }
 
 @media (min-width: 1280px) and (max-width: 1366px) {
@@ -360,6 +362,18 @@ section {
   .batas {
     display: none;
   }
+
+  .slider2 {
+    max-height: 200px;
+  }
+  .slider1 {
+    max-height: 100px;
+  }
+  .slider1 h2 {
+    font-size: 10px;
+    font-weight: 500;
+    }
+
   .navbar ul {
     display: none;
     position: absolute;

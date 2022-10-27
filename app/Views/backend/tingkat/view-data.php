@@ -18,6 +18,9 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-12">
+                                <label class="text-primary">Urutan</label>
+                                <input type="text" name="urutan" class="form-control urutan" placeholder="Urutan">
+                                <br>
                                 <label class="text-primary">Tingkat</label>
                                 <input type="text" name="tingkat" class="form-control tingkat" placeholder="Tingkat">
                                 <div class="invalid-feedback errorTingkat"></div>
@@ -42,7 +45,8 @@
             <tr>
                 <th style="max-width:5%; text-align: center;">No.</th>
                 <th style="max-width:10%; text-align: center;">Aksi</th>
-                <th style="max-width:85%; text-align: center;">Tingkat</th>
+                <th style="max-width:10%; text-align: center;">Urutan</th>
+                <th style="max-width:75%; text-align: center;">Tingkat</th>
             </tr>
         </thead>
         <tbody>
@@ -72,6 +76,8 @@
                                         <div class="modal-body">
                                             <div class="col-lg-11">
                                                 <input type="text" name="id" class="form-control" value="<?= $item['id'] ?>" hidden>
+                                                <label>Urutan</label>
+                                                <input type="text" name="urutan" class="form-control" value="<?= $item['urutan'] ?>">
                                                 <label>Tingkat</label>
                                                 <input type="text" name="tingkat" class="form-control" value="<?= $item['tingkat'] ?>">
                                             </div>
@@ -92,6 +98,7 @@
                     </td>
 
                     <!-- ISI VIEW -->
+                    <td><?= $item['urutan'] ?></td>
                     <td><?= $item['tingkat'] ?></td>
                 </tr>
             <?php endforeach ?>

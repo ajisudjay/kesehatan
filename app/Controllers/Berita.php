@@ -17,45 +17,69 @@ class Berita extends BaseController
     }
     public function index()
     {
+        $admin = session()->get('nama');
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            $data = [
+                'title' => 'Beranda - Divisi.id',
+                'top_header' => 'Beranda',
+                'header' => 'Berita',
+                'admin' => $admin,
+                'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
+            ];
+            return view('backend/berita/index', $data);
+        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
+            $data = [
+                'title' => 'Beranda - Divisi.id',
+                'top_header' => 'Beranda',
+                'header' => 'Berita',
+                'admin' => $admin,
+                'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
+            ];
+            return view('backend/berita/index', $data);
+        } else {
             return redirect()->to(base_url('/login'));
         }
-        $admin = session()->get('nama');
-        $data = [
-            'title' => 'Beranda - Divisi.id',
-            'top_header' => 'Beranda',
-            'header' => 'Berita',
-            'admin' => $admin,
-            'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
-        ];
-        return view('backend/berita/index', $data);
     }
     public function viewData()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
         $request = \Config\Services::request();
-        if ($request->isAJAX()) {
-            $data = [
-                'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-                'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('berita.tanggal', 'DESC')->get()->getResultArray(),
-                'validation' => \Config\Services::validation(),
-            ];
-            $msg = [
-                'data' => view('backend/berita/view-data', $data)
-            ];
-            echo json_encode($msg);
+        $admin = session()->get('username');
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            if ($request->isAJAX()) {
+                $data = [
+                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('berita.admin', $admin)->get()->getResultArray(),
+                    'validation' => \Config\Services::validation(),
+                ];
+                $msg = [
+                    'data' => view('backend/berita/view-data', $data)
+                ];
+                echo json_encode($msg);
+            } else {
+                exit('Data Tidak Dapat diproses');
+            }
+        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
+            if ($request->isAJAX()) {
+                $data = [
+                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('berita.tanggal', 'DESC')->get()->getResultArray(),
+                    'validation' => \Config\Services::validation(),
+                ];
+                $msg = [
+                    'data' => view('backend/berita/view-data', $data)
+                ];
+                echo json_encode($msg);
+            } else {
+                exit('Data Tidak Dapat diproses');
+            }
         } else {
-            exit('Data Tidak Dapat diproses');
+            return redirect()->to(base_url('/login'));
         }
     }
 
     public function tambah()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
+
         $admin = session()->get('username');
         $timestamp = date("Y-m-d H:i:s");
         $request = \Config\Services::request();
@@ -73,31 +97,52 @@ class Berita extends BaseController
         $newName = $file->getRandomName();
         $file->move('content/gambar/', $newName);
         $nama_foto = $newName;
-        $data = [
-            'judul' => $judul,
-            'slug' => $slug,
-            'tingkat' => $tingkat,
-            'kategori' => $kategori,
-            'tanggal' => $tanggal,
-            'gambar' => $nama_foto,
-            'isi' => $isi,
-            'tag' => $tag,
-            'jenis_file' => $jenis_file,
-            'status' => 'Belum Publish',
-            'admin' => $admin,
-            'timestamp' => $timestamp,
-        ];
-        $this->BeritaModel->insert($data);
 
-        session()->setFlashdata('pesanInput', 'Berhasil Menambahkan Berita');
-        return redirect()->to(base_url('/berita'));
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            $data = [
+                'judul' => $judul,
+                'slug' => $slug,
+                'tingkat' => $tingkat,
+                'kategori' => $kategori,
+                'tanggal' => $tanggal,
+                'gambar' => $nama_foto,
+                'isi' => $isi,
+                'tag' => $tag,
+                'jenis_file' => $jenis_file,
+                'status' => 'Belum Publish',
+                'admin' => $admin,
+                'timestamp' => $timestamp,
+            ];
+            $this->BeritaModel->insert($data);
+
+            session()->setFlashdata('pesanInput', 'Berhasil Menambahkan Berita');
+            return redirect()->to(base_url('/berita'));
+        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
+            $data = [
+                'judul' => $judul,
+                'slug' => $slug,
+                'tingkat' => $tingkat,
+                'kategori' => $kategori,
+                'tanggal' => $tanggal,
+                'gambar' => $nama_foto,
+                'isi' => $isi,
+                'tag' => $tag,
+                'jenis_file' => $jenis_file,
+                'status' => 'Belum Publish',
+                'admin' => $admin,
+                'timestamp' => $timestamp,
+            ];
+            $this->BeritaModel->insert($data);
+
+            session()->setFlashdata('pesanInput', 'Berhasil Menambahkan Berita');
+            return redirect()->to(base_url('/berita'));
+        } else {
+            return redirect()->to(base_url('/login'));
+        }
     }
 
     public function edit()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
         $admin = session()->get('username');
         $timestamp = date("Y-m-d H:i:s");
         $request = \Config\Services::request();
@@ -114,45 +159,90 @@ class Berita extends BaseController
         $isi2 = $request->getVar('isi2');
         $tag = $request->getVar('tag');
         $jenis_file = $request->getVar('jenis_file');
-        if (!file_exists($_FILES['file']['tmp_name'])) {
-            $data = [
-                'judul' => $judul,
-                'slug' => $slug,
-                'tingkat' => $tingkat,
-                'kategori' => $kategori,
-                'tanggal' => $tanggal,
-                'isi' => $isi2,
-                'tag' => $tag,
-                'jenis_file' => $jenis_file,
-                'admin' => $admin,
-                'timestamp' => $timestamp,
-            ];
-            $this->BeritaModel->update($id, $data);
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+            if (!file_exists($_FILES['file']['tmp_name'])) {
+                $data = [
+                    'judul' => $judul,
+                    'slug' => $slug,
+                    'tingkat' => $tingkat,
+                    'kategori' => $kategori,
+                    'tanggal' => $tanggal,
+                    'isi' => $isi2,
+                    'tag' => $tag,
+                    'jenis_file' => $jenis_file,
+                    'admin' => $admin,
+                    'timestamp' => $timestamp,
+                ];
+                $this->BeritaModel->update($id, $data);
 
-            session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
-            return redirect()->to(base_url('/berita'));
+                session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
+                return redirect()->to(base_url('/berita'));
+            } else {
+                $newName = $file->getRandomName();
+                $file->move('content/gambar/', $newName);
+                $nama_foto = $newName;
+                unlink('content/gambar/' . $namafilelama);
+                $data = [
+                    'judul' => $judul,
+                    'slug' => $slug,
+                    'tingkat' => $tingkat,
+                    'kategori' => $kategori,
+                    'tanggal' => $tanggal,
+                    'gambar' => $nama_foto,
+                    'isi' => $isi2,
+                    'tag' => $tag,
+                    'jenis_file' => $jenis_file,
+                    'admin' => $admin,
+                    'timestamp' => $timestamp,
+                ];
+                $this->BeritaModel->update($id, $data);
+
+                session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
+                return redirect()->to(base_url('/berita'));
+            }
+        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
+            if (!file_exists($_FILES['file']['tmp_name'])) {
+                $data = [
+                    'judul' => $judul,
+                    'slug' => $slug,
+                    'tingkat' => $tingkat,
+                    'kategori' => $kategori,
+                    'tanggal' => $tanggal,
+                    'isi' => $isi2,
+                    'tag' => $tag,
+                    'jenis_file' => $jenis_file,
+                    'admin' => $admin,
+                    'timestamp' => $timestamp,
+                ];
+                $this->BeritaModel->update($id, $data);
+
+                session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
+                return redirect()->to(base_url('/berita'));
+            } else {
+                $newName = $file->getRandomName();
+                $file->move('content/gambar/', $newName);
+                $nama_foto = $newName;
+                unlink('content/gambar/' . $namafilelama);
+                $data = [
+                    'judul' => $judul,
+                    'slug' => $slug,
+                    'tingkat' => $tingkat,
+                    'kategori' => $kategori,
+                    'tanggal' => $tanggal,
+                    'gambar' => $nama_foto,
+                    'isi' => $isi2,
+                    'tag' => $tag,
+                    'jenis_file' => $jenis_file,
+                    'admin' => $admin,
+                    'timestamp' => $timestamp,
+                ];
+                $this->BeritaModel->update($id, $data);
+
+                session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
+                return redirect()->to(base_url('/berita'));
+            }
         } else {
-            $newName = $file->getRandomName();
-            $file->move('content/gambar/', $newName);
-            $nama_foto = $newName;
-            unlink('content/gambar/' . $namafilelama);
-            $data = [
-                'judul' => $judul,
-                'slug' => $slug,
-                'tingkat' => $tingkat,
-                'kategori' => $kategori,
-                'tanggal' => $tanggal,
-                'gambar' => $nama_foto,
-                'isi' => $isi2,
-                'tag' => $tag,
-                'jenis_file' => $jenis_file,
-                'admin' => $admin,
-                'timestamp' => $timestamp,
-            ];
-            $this->BeritaModel->update($id, $data);
-
-            session()->setFlashdata('pesanInput', 'Berhasil Mengubah Berita');
-            return redirect()->to(base_url('/berita'));
+            return redirect()->to(base_url('/login'));
         }
     }
 
@@ -161,6 +251,7 @@ class Berita extends BaseController
     public function hapus($id)
     {
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
             return redirect()->to(base_url('/login'));
         }
         $cekfile = $this->BeritaModel->where('id', $id)->first();

@@ -14,7 +14,7 @@ class TingkatModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'tingkat'];
+    protected $allowedFields    = ['id', 'tingkat', 'urutan'];
 
     // Dates
     protected $useTimestamps = false;

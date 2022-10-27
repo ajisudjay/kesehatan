@@ -58,10 +58,18 @@ class Kategori extends BaseController
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $kategori = $request->getVar('kategori');
+            $urutan = $request->getVar('urutan');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
                 'kategori' => [
                     'label' => 'Kategori',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+                'urutan' => [
+                    'label' => 'Urutan',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} Tidak Boleh Kosong',
@@ -72,17 +80,19 @@ class Kategori extends BaseController
                 $msg = [
                     'error' => [
                         'kategori' => $validation->getError('kategori'),
+                        'urutan' => $validation->getError('urutan'),
                     ],
                 ];
                 echo json_encode($msg);
             } else {
                 $data = [
+                    'urutan' => $urutan,
                     'kategori' => $kategori,
                 ];
                 $this->KategoriModel->insert($data);
 
                 $data2 = [
-                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
                     'sukses' => 'Kategori Berhasil Ditambahkan !',
@@ -104,6 +114,7 @@ class Kategori extends BaseController
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $id = $request->getVar('id');
+            $urutan = $request->getVar('urutan');
             $kategori = $request->getVar('kategori');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
@@ -114,24 +125,33 @@ class Kategori extends BaseController
                         'required' => '{field} Tidak Boleh Kosong',
                     ]
                 ],
+                'urutan' => [
+                    'label' => 'Urutan',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
             ]);
 
             if (!$valid) {
                 $msg = [
                     'error' => [
+                        'urutan' => $validation->getError('urutan'),
                         'kategori' => $validation->getError('kategori'),
                     ],
                 ];
                 echo json_encode($msg);
             } else {
                 $data = [
+                    'urutan' => $urutan,
                     'kategori' => $kategori,
                 ];
 
                 $this->KategoriModel->update($id, $data);
 
                 $data2 = [
-                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
                     'sukses' => 'Kategori Berhasil Diubah !',

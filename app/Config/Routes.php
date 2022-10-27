@@ -40,6 +40,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/login', 'Pages::login');
 $routes->get('/superadmin', 'Pages::hal_superadmin');
+$routes->get('/admin', 'Pages::hal_superadmin');
 $routes->get('/tentangkami', 'Pages::tentangkami');
 $routes->get('/berita-detail/(:any)', 'Pages::berita/$1');
 $routes->get('/berita-tingkat/(:any)', 'Pages::berita_tingkat/$1');
@@ -50,13 +51,14 @@ $routes->get('/berita-kategori/(:any)/(:any)', 'Pages::berita_kategori/$1/$1');
 $routes->get('/tingkat', 'Tingkat::index');
 $routes->get('/kategori', 'Kategori::index');
 $routes->get('/user', 'User::index');
+$routes->get('/profil', 'Profil::index');
 $routes->get('/berita', 'Berita::index');
 $routes->get('/iklan', 'Iklan::index');
 $routes->get('/konfigurasi', 'Konfigurasi::index');
 
 /*
  * --------------------------------------------------------------------
- * Additional Routing
+ * Additional Routing   
  * --------------------------------------------------------------------
  *
  * There will often be times that you need additional routing and you

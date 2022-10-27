@@ -18,6 +18,10 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-lg-12">
+                                <label class="text-primary">Urutan</label>
+                                <input type="text" name="urutan" class="form-control urutan" placeholder="Urutan">
+                                <div class="invalid-feedback errorUrutan"></div>
+                                <br>
                                 <label class="text-primary">Kategori</label>
                                 <input type="text" name="kategori" class="form-control kategori" placeholder="Kategori">
                                 <div class="invalid-feedback errorKategori"></div>
@@ -42,7 +46,8 @@
             <tr>
                 <th style="max-width:5%; text-align: center;">No.</th>
                 <th style="max-width:10%; text-align: center;">Aksi</th>
-                <th style="max-width:85%; text-align: center;">Kategori</th>
+                <th style="max-width:10%; text-align: center;">Urutan</th>
+                <th style="max-width:75%; text-align: center;">Kategori</th>
             </tr>
         </thead>
         <tbody>
@@ -72,6 +77,9 @@
                                         <div class="modal-body">
                                             <div class="col-lg-11">
                                                 <input type="text" name="id" class="form-control" value="<?= $item['id'] ?>" hidden>
+                                                <label>Urutan</label>
+                                                <input type="text" name="urutan" class="form-control" value="<?= $item['urutan'] ?>">
+                                                <br>
                                                 <label>Kategori</label>
                                                 <input type="text" name="kategori" class="form-control" value="<?= $item['kategori'] ?>">
                                             </div>
@@ -92,6 +100,7 @@
                     </td>
 
                     <!-- ISI VIEW -->
+                    <td><?= $item['urutan'] ?></td>
                     <td><?= $item['kategori'] ?></td>
                 </tr>
             <?php endforeach ?>

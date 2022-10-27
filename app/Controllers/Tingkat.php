@@ -58,10 +58,18 @@ class Tingkat extends BaseController
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $tingkat = $request->getVar('tingkat');
+            $urutan = $request->getVar('urutan');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
                 'tingkat' => [
                     'label' => 'Tingkat',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+                'urutan' => [
+                    'label' => 'Urutan',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} Tidak Boleh Kosong',
@@ -72,17 +80,19 @@ class Tingkat extends BaseController
                 $msg = [
                     'error' => [
                         'tingkat' => $validation->getError('tingkat'),
+                        'urutan' => $validation->getError('urutan'),
                     ],
                 ];
                 echo json_encode($msg);
             } else {
                 $data = [
                     'tingkat' => $tingkat,
+                    'urutan' => $urutan,
                 ];
                 $this->TingkatModel->insert($data);
 
                 $data2 = [
-                    'tingkat' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
+                    'tingkat' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
                     'sukses' => 'Tingkat Berhasil Ditambahkan !',
@@ -105,10 +115,18 @@ class Tingkat extends BaseController
         if ($request->isAJAX()) {
             $id = $request->getVar('id');
             $tingkat = $request->getVar('tingkat');
+            $urutan = $request->getVar('urutan');
             $validation = \Config\Services::validation();
             $valid = $this->validate([
                 'tingkat' => [
                     'label' => 'Tingkat',
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => '{field} Tidak Boleh Kosong',
+                    ]
+                ],
+                'urutan' => [
+                    'label' => 'Urutan',
                     'rules' => 'required',
                     'errors' => [
                         'required' => '{field} Tidak Boleh Kosong',
@@ -120,18 +138,20 @@ class Tingkat extends BaseController
                 $msg = [
                     'error' => [
                         'tingkat' => $validation->getError('tingkat'),
+                        'urutan' => $validation->getError('urutan'),
                     ],
                 ];
                 echo json_encode($msg);
             } else {
                 $data = [
                     'tingkat' => $tingkat,
+                    'urutan' => $urutan,
                 ];
 
                 $this->TingkatModel->update($id, $data);
 
                 $data2 = [
-                    'tingkat' => $this->TingkatModel->orderBy('tingkat', 'ASC')->get()->getResultArray(),
+                    'tingkat' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
                     'sukses' => 'Tingkat Berhasil Diubah !',

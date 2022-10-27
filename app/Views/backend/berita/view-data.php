@@ -233,18 +233,25 @@
                                 </div>
                             </div>
                         </div>
+                        <?php
+                        if (session()->get('level') === 'Superadmin') {
+                            $tom_hapus = '';
+                        } elseif (session()->get('level') === 'Admin') {
+                            $tom_hapus = 'hidden';
+                        }
+                        ?>
                         <!-- button hapus modal-->
-                        <a href="<?= base_url('berita/hapus/' . $item['id_berita']); ?>" class="hapus">
+                        <a href="<?= base_url('berita/hapus/' . $item['id_berita']); ?>" class="hapus" <?= $tom_hapus ?>>
                             <span class="feather icon-trash-2 text-danger"> </span>
                         </a>
                         &nbsp;
                         <!-- button publish -->
-                        <a href="<?= base_url('berita/publish/' . $item['id_berita']); ?>" class="publish">
+                        <a href="<?= base_url('berita/publish/' . $item['id_berita']); ?>" class="publish" <?= $tom_hapus ?>>
                             <span class="fa fa-check-circle-o text-success"> </span>
                         </a>
                         &nbsp;
                         <!-- button unpublish -->
-                        <a href="<?= base_url('berita/unpublish/' . $item['id_berita']); ?>" class="unpublish">
+                        <a href="<?= base_url('berita/unpublish/' . $item['id_berita']); ?>" class="unpublish" <?= $tom_hapus ?>>
                             <span class="fa fa-times text-danger"> </span>
                         </a>
                     </td>
