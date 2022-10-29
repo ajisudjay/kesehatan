@@ -9,7 +9,14 @@
             <?= $this->include('backend/layouts/top_navbar') ?>
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    <?= $this->include('backend/layouts/side_navbar/superadmin') ?>
+                    <?php
+                    if ($lvl === 'Superadmin') {
+                        $sidenavbar = $this->include('backend/layouts/side_navbar/superadmin');
+                    } elseif ($lvl === 'Admin') {
+                        $sidenavbar = $this->include('backend/layouts/side_navbar/admin');
+                    }
+                    ?>
+                    <?= $sidenavbar ?>
                     <div class="pcoded-content">
                         <div class="pcoded-inner-content">
                             <!-- Main-body start -->

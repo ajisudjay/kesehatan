@@ -251,7 +251,6 @@ class Berita extends BaseController
     public function hapus($id)
     {
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
             return redirect()->to(base_url('/login'));
         }
         $cekfile = $this->BeritaModel->where('id', $id)->first();

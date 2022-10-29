@@ -17,116 +17,220 @@ class Profil extends BaseController
     }
     public function index()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+        if (session()->get('username') == NULL || session()->get('level') === 'Superadmin') {
+            $admin = session()->get('nama');
+            $lvl = session()->get('level');
+            $data = [
+                'title' => 'Beranda - Divisi.id',
+                'top_header' => 'Beranda',
+                'header' => 'Ubah Profil',
+                'admin' => $admin,
+                'lvl' => $lvl,
+                'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
+            ];
+            return view('backend/profil/index', $data);
+        } elseif (session()->get('username') == NULL || session()->get('level') === 'Admin') {
+            $admin = session()->get('nama');
+            $lvl = session()->get('level');
+            $data = [
+                'title' => 'Beranda - Divisi.id',
+                'top_header' => 'Beranda',
+                'header' => 'Ubah Profil',
+                'admin' => $admin,
+                'lvl' => $lvl,
+                'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
+            ];
+            return view('backend/profil/index', $data);
+        } else {
             return redirect()->to(base_url('/login'));
         }
-        $admin = session()->get('nama');
-        $data = [
-            'title' => 'Beranda - Divisi.id',
-            'top_header' => 'Beranda',
-            'header' => 'Ubah Profil',
-            'admin' => $admin,
-            'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
-        ];
-        return view('backend/profil/index', $data);
     }
     public function viewData()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
-        $request = \Config\Services::request();
-        $username = session()->get('username');
-        if ($request->isAJAX()) {
-            $data = [
-                'user' => $this->UserModel->where('username', $username)->orderBy('username', 'ASC')->get()->getResultArray(),
-                'validation' => \Config\Services::validation(),
-            ];
-            $msg = [
-                'data' => view('backend/profil/view-data', $data)
-            ];
-            echo json_encode($msg);
+        if (session()->get('username') == NULL || session()->get('level') === 'Superadmin') {
+            $request = \Config\Services::request();
+            $username = session()->get('username');
+            if ($request->isAJAX()) {
+                $data = [
+                    'user' => $this->UserModel->where('username', $username)->orderBy('username', 'ASC')->get()->getResultArray(),
+                    'validation' => \Config\Services::validation(),
+                ];
+                $msg = [
+                    'data' => view('backend/profil/view-data', $data)
+                ];
+                echo json_encode($msg);
+            } else {
+                exit('Data Tidak Dapat diproses');
+            }
+        } elseif (session()->get('username') == NULL || session()->get('level') === 'Admin') {
+            $request = \Config\Services::request();
+            $username = session()->get('username');
+            if ($request->isAJAX()) {
+                $data = [
+                    'user' => $this->UserModel->where('username', $username)->orderBy('username', 'ASC')->get()->getResultArray(),
+                    'validation' => \Config\Services::validation(),
+                ];
+                $msg = [
+                    'data' => view('backend/profil/view-data', $data)
+                ];
+                echo json_encode($msg);
+            } else {
+                exit('Data Tidak Dapat diproses');
+            }
         } else {
-            exit('Data Tidak Dapat diproses');
+            return redirect()->to(base_url('/login'));
         }
     }
 
 
     public function edit()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
-        $request = \Config\Services::request();
-        if ($request->isAJAX()) {
-            $username = $request->getVar('username');
-            $nama = $request->getVar('nama');
-            $password = $request->getVar('password');
-            $repassword = $request->getVar('repassword');
-            $validation = \Config\Services::validation();
-            $valid = $this->validate([
-                'username' => [
-                    'label' => 'Username',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'nama' => [
-                    'label' => 'Nama',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'password' => [
-                    'label' => 'Password',
-                    'rules' => 'required',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                    ]
-                ],
-                'repassword' => [
-                    'label' => 'Repassword',
-                    'rules' => 'required|matches[password]',
-                    'errors' => [
-                        'required' => '{field} Tidak Boleh Kosong',
-                        'matches' => 'Konfirmasi Password Tidak Sesuai'
-                    ]
-                ],
-            ]);
-
-            if (!$valid) {
-                $msg = [
-                    'error' => [
-                        'username' => $validation->getError('username'),
-                        'nama' => $validation->getError('nama'),
-                        'password' => $validation->getError('password'),
-                        'repassword' => $validation->getError('repassword'),
+        if (session()->get('username') == NULL || session()->get('level') === 'Superadmin') {
+            $request = \Config\Services::request();
+            if ($request->isAJAX()) {
+                $username = $request->getVar('username');
+                $nama = $request->getVar('nama');
+                $password = $request->getVar('password');
+                $repassword = $request->getVar('repassword');
+                $validation = \Config\Services::validation();
+                $valid = $this->validate([
+                    'username' => [
+                        'label' => 'Username',
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                        ]
                     ],
-                ];
-                echo json_encode($msg);
+                    'nama' => [
+                        'label' => 'Nama',
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                        ]
+                    ],
+                    'password' => [
+                        'label' => 'Password',
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                        ]
+                    ],
+                    'repassword' => [
+                        'label' => 'Repassword',
+                        'rules' => 'required|matches[password]',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                            'matches' => 'Konfirmasi Password Tidak Sesuai'
+                        ]
+                    ],
+                ]);
+
+                if (!$valid) {
+                    $msg = [
+                        'error' => [
+                            'username' => $validation->getError('username'),
+                            'nama' => $validation->getError('nama'),
+                            'password' => $validation->getError('password'),
+                            'repassword' => $validation->getError('repassword'),
+                        ],
+                    ];
+                    echo json_encode($msg);
+                } else {
+                    $data = [
+                        'username' => $username,
+                        'nama' => $nama,
+                        'password' => base64_encode("$password"),
+                    ];
+
+                    $this->UserModel->update($username, $data);
+
+                    $data2 = [
+                        'user' => $this->UserModel->where('username', $username)->orderBy('username', 'ASC')->get()->getResultArray(),
+                    ];
+                    $msg = [
+                        'sukses' => 'Profil Berhasil Diubah !',
+                        'status' => 'berhasil',
+                        'data' => view('backend/profil/view-data', $data2)
+                    ];
+                    echo json_encode($msg);
+                }
             } else {
-                $data = [
-                    'username' => $username,
-                    'nama' => $nama,
-                    'password' => base64_encode("$password"),
-                ];
+                exit('Data Tidak Dapat diproses');
+            }
+        } elseif (session()->get('username') == NULL || session()->get('level') === 'Admin') {
+            $request = \Config\Services::request();
+            if ($request->isAJAX()) {
+                $username = $request->getVar('username');
+                $nama = $request->getVar('nama');
+                $password = $request->getVar('password');
+                $repassword = $request->getVar('repassword');
+                $validation = \Config\Services::validation();
+                $valid = $this->validate([
+                    'username' => [
+                        'label' => 'Username',
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                        ]
+                    ],
+                    'nama' => [
+                        'label' => 'Nama',
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                        ]
+                    ],
+                    'password' => [
+                        'label' => 'Password',
+                        'rules' => 'required',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                        ]
+                    ],
+                    'repassword' => [
+                        'label' => 'Repassword',
+                        'rules' => 'required|matches[password]',
+                        'errors' => [
+                            'required' => '{field} Tidak Boleh Kosong',
+                            'matches' => 'Konfirmasi Password Tidak Sesuai'
+                        ]
+                    ],
+                ]);
 
-                $this->UserModel->update($username, $data);
+                if (!$valid) {
+                    $msg = [
+                        'error' => [
+                            'username' => $validation->getError('username'),
+                            'nama' => $validation->getError('nama'),
+                            'password' => $validation->getError('password'),
+                            'repassword' => $validation->getError('repassword'),
+                        ],
+                    ];
+                    echo json_encode($msg);
+                } else {
+                    $data = [
+                        'username' => $username,
+                        'nama' => $nama,
+                        'password' => base64_encode("$password"),
+                    ];
 
-                $data2 = [
-                    'user' => $this->UserModel->where('username', $username)->orderBy('username', 'ASC')->get()->getResultArray(),
-                ];
-                $msg = [
-                    'sukses' => 'Profil Berhasil Diubah !',
-                    'status' => 'berhasil',
-                    'data' => view('backend/profil/view-data', $data2)
-                ];
-                echo json_encode($msg);
+                    $this->UserModel->update($username, $data);
+
+                    $data2 = [
+                        'user' => $this->UserModel->where('username', $username)->orderBy('username', 'ASC')->get()->getResultArray(),
+                    ];
+                    $msg = [
+                        'sukses' => 'Profil Berhasil Diubah !',
+                        'status' => 'berhasil',
+                        'data' => view('backend/profil/view-data', $data2)
+                    ];
+                    echo json_encode($msg);
+                }
+            } else {
+                exit('Data Tidak Dapat diproses');
             }
         } else {
-            exit('Data Tidak Dapat diproses');
+            return redirect()->to(base_url('/login'));
         }
     }
 }

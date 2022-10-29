@@ -81,7 +81,7 @@
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
                                 <a href="<?= base_url('/profil'); ?>">
-                                    <i class="feather icon-user"></i> Ganti Password
+                                    <i class="feather icon-user"></i> Ganti Profil
                                 </a>
                             </li>
                             <li>

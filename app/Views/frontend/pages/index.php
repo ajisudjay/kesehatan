@@ -4,8 +4,7 @@
 
 <body>
     <?= $this->include('frontend/layouts/top_navbar') ?>
-    <?php error_reporting(0)
-    ?>
+    <?php error_reporting(0); ?>
 
     <!-- <main id="main"> -->
     <main id="main">

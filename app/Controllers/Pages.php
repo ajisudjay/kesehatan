@@ -25,11 +25,13 @@ class Pages extends BaseController
     }
     public function index()
     {
+        error_reporting(0);
         $databerita = $this->BeritaModel->select('kategori as katber')->distinct('kategori')->orderBy('tanggal', 'ASC')->get()->getResultArray();
         $data = [
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
+            'tentangkami' => $this->KonfigurasiModel->where('urutan', '1')->first(),
             'konfigurasi' => $this->KonfigurasiModel->orderBy('judul', 'ASC')->get()->getResultArray(),
             'tingkat_berita' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
             'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),

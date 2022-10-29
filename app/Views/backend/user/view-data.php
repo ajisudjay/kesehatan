@@ -151,9 +151,15 @@
                                 </div>
                             </div>
                         </div>
-
+                        <?php
+                        if (session()->get('username') === $item['username']) {
+                            $tom_hapus = 'hidden';
+                        } else {
+                            $tom_hapus = '';
+                        }
+                        ?>
                         <!-- button hapus modal-->
-                        <a href="<?= base_url('user/hapus/' . $item['username']); ?>" class="hapus">
+                        <a href="<?= base_url('user/hapus/' . $item['username']); ?>" class="hapus" <?= $tom_hapus ?>>
                             <span class="feather icon-trash-2 text-danger"></span>
                         </a>
                     </td>
