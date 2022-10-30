@@ -52,6 +52,7 @@
                                     <a href="berita-detail/<?= $hot['slug'] ?>"><img src="content/gambar/<?= $hot['gambar'] ?>" style="height:300px;width:100%;" class="img-fluid rounded-2 slider2">
                                         <div class="top-left">Hot</div>
                                     </a>
+                                    <div class="post-meta"><span class="date"><?= $hot['tingkat'] ?></span>&bullet;<span class="date"><?= $hot['kategori'] ?></span>&bullet;<span><?= $hot['tanggal'] ?></span></div>
                                     <h3><a href="single-post.html"><?= $hot['judul'] ?></a></h3>
                                     <p class="mb-4 d-block"><?= substr($hot['isi'], 0, 375) ?></p>
                                 <?php endforeach ?>
@@ -90,29 +91,29 @@
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <div class="row g-5" style="text-align:center ;">
+                            <div class="row g-5" style="text-align:left ;">
                                 <div class="col-lg-4 border-start custom-border">
-                                    <?php foreach ($berita_3 as $berita3) : ?>
-                                        <div class="post-entry-1">
-                                            <a href="berita-detail/<?= $berita3['slug'] ?>"><img src="content/gambar/<?= $berita3['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
-                                            <div class="post-meta"><span class="date"><?= $berita3['tingkat'] ?></span>&bullet;<span class="date"><?= $berita3['kategori'] ?></span>&bullet;<span><?= $berita3['tanggal'] ?></span></div>
-                                            <h2><a href="berita-detail/<?= $berita3['slug'] ?>"><?= $berita3['judul'] ?></a></h2>
-                                        </div>
-                                    <?php endforeach ?>
                                     <?php foreach ($berita_1 as $berita1) : ?>
                                         <div class="post-entry-1">
-                                            <a href="berita-detail/<?= $berita1['slug'] ?>">
-                                                <img src="content/gambar/<?= $berita1['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px">
-                                            </a>
+                                            <a href="berita-detail/<?= $berita1['slug'] ?>"><img src="content/gambar/<?= $berita1['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
                                             <div class="post-meta"><span class="date"><?= $berita1['tingkat'] ?></span>&bullet;<span class="date"><?= $berita1['kategori'] ?></span>&bullet;<span><?= $berita1['tanggal'] ?></span></div>
-                                            <h2><a href="berita-detail/<?= $berita1['slug'] ?>"><?= $berita1['judul'] ?></a></h2>
+                                            <strong><a href="berita-detail/<?= $berita1['slug'] ?>"><?= $berita1['judul'] ?></a></strong>
+                                        </div>
+                                    <?php endforeach ?>
+                                    <?php foreach ($berita_3 as $berita_3) : ?>
+                                        <div class="post-entry-1">
+                                            <a href="berita-detail/<?= $berita_3['slug'] ?>">
+                                                <img src="content/gambar/<?= $berita_3['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px">
+                                            </a>
+                                            <div class="post-meta"><span class="date"><?= $berita_3['tingkat'] ?></span>&bullet;<span class="date"><?= $berita_3['kategori'] ?></span>&bullet;<span><?= $berita_3['tanggal'] ?></span></div>
+                                            <strong><a href="berita-detail/<?= $berita_3['slug'] ?>"><?= $berita_3['judul'] ?></a></strong>
                                         </div>
                                     <?php endforeach ?>
                                     <?php foreach ($berita_5 as $berita5) : ?>
                                         <div class="post-entry-1">
                                             <a href="berita-detail/<?= $berita5['slug'] ?>"><img src="content/gambar/<?= $berita5['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
                                             <div class="post-meta"><span class="date"><?= $berita5['tingkat'] ?></span>&bullet;<span class="date"><?= $berita5['kategori'] ?></span>&bullet;<span><?= $berita5['tanggal'] ?></span></div>
-                                            <h2><a href="berita-detail/<?= $berita5['slug'] ?>"><?= $berita5['judul'] ?></a></h2>
+                                            <strong><a href="berita-detail/<?= $berita5['slug'] ?>"><?= $berita5['judul'] ?></a></strong>
                                         </div>
                                     <?php endforeach ?>
                                 </div>
@@ -121,21 +122,21 @@
                                         <div class="post-entry-1">
                                             <a href="berita-detail/<?= $berita2['slug'] ?>"><img src="content/gambar/<?= $berita2['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
                                             <div class="post-meta"><span class="date"><?= $berita2['tingkat'] ?></span>&bullet;<span class="date"><?= $berita2['kategori'] ?></span>&bullet;<span><?= $berita2['tanggal'] ?></span></div>
-                                            <h2><a href="berita-detail/<?= $berita2['slug'] ?>"><?= $berita2['judul'] ?></a></h2>
+                                            <strong><a href="berita-detail/<?= $berita2['slug'] ?>"><?= $berita2['judul'] ?></a></strong>
                                         </div>
                                     <?php endforeach ?>
-                                    <?php foreach ($berita_6 as $berita6) : ?>
+                                    <?php foreach ($berita_4 as $berita_4) : ?>
                                         <div class="post-entry-1">
-                                            <a href="berita-detail/<?= $berita6['slug'] ?>"><img src="content/gambar/<?= $berita6['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
-                                            <div class="post-meta"><span class="date"><?= $berita6['tingkat'] ?></span>&bullet;<span class="date"><?= $berita6['kategori'] ?></span>&bullet;<span><?= $berita6['tanggal'] ?></span></div>
-                                            <h2><a href="berita-detail/<?= $berita6['slug'] ?>"><?= $berita6['judul'] ?></a></h2>
+                                            <a href="berita-detail/<?= $berita_4['slug'] ?>"><img src="content/gambar/<?= $berita_4['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
+                                            <div class="post-meta"><span class="date"><?= $berita_4['tingkat'] ?></span>&bullet;<span class="date"><?= $berita_4['kategori'] ?></span>&bullet;<span><?= $berita_4['tanggal'] ?></span></div>
+                                            <strong><a href="berita-detail/<?= $berita_4['slug'] ?>"><?= $berita_4['judul'] ?></a></strong>
                                         </div>
                                     <?php endforeach ?>
-                                    <?php foreach ($berita_4 as $berita4) : ?>
+                                    <?php foreach ($berita_6 as $berita_6) : ?>
                                         <div class="post-entry-1">
-                                            <a href="berita-detail/<?= $berita4['slug'] ?>"><img src="content/gambar/<?= $berita4['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
-                                            <div class="post-meta"><span class="date"><?= $berita4['tingkat'] ?></span>&bullet;<span class="date"><?= $berita4['kategori'] ?></span>&bullet;<span><?= $berita4['tanggal'] ?></span></div>
-                                            <h2><a href="berita-detail/<?= $berita4['slug'] ?>"><?= $berita4['judul'] ?></a></h2>
+                                            <a href="berita-detail/<?= $berita_6['slug'] ?>"><img src="content/gambar/<?= $berita_6['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
+                                            <div class="post-meta"><span class="date"><?= $berita_6['tingkat'] ?></span>&bullet;<span class="date"><?= $berita_6['kategori'] ?></span>&bullet;<span><?= $berita_6['tanggal'] ?></span></div>
+                                            <strong><a href="berita-detail/<?= $berita_6['slug'] ?>"><?= $berita_6['judul'] ?></a></strong>
                                         </div>
                                     <?php endforeach ?>
                                 </div>

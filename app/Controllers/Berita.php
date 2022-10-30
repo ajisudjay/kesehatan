@@ -4,16 +4,19 @@ namespace App\Controllers;
 
 use App\Models\BeritaModel;
 use App\Models\KategoriModel;
+use App\Models\TingkatModel;
 use App\Controllers\BaseController;
 
 class Berita extends BaseController
 {
     protected $BeritaModel;
     protected $KategoriModel;
+    protected $TingkatModel;
     public function __construct()
     {
         $this->BeritaModel = new BeritaModel();
         $this->KategoriModel = new KategoriModel();
+        $this->TingkatModel = new TingkatModel();
     }
     public function index()
     {
@@ -47,7 +50,8 @@ class Berita extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             if ($request->isAJAX()) {
                 $data = [
-                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                    'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
+                    'tingkat' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                     'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('berita.admin', $admin)->get()->getResultArray(),
                     'validation' => \Config\Services::validation(),
                 ];
@@ -61,8 +65,9 @@ class Berita extends BaseController
         } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
             if ($request->isAJAX()) {
                 $data = [
-                    'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
-                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->orderBy('berita.tanggal', 'DESC')->get()->getResultArray(),
+                    'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
+                    'tingkat' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('kategori', 'kategori.id=berita.kategori')->join('tingkat', 'tingkat.id=berita.tingkat')->orderBy('berita.tanggal', 'DESC')->get()->getResultArray(),
                     'validation' => \Config\Services::validation(),
                 ];
                 $msg = [

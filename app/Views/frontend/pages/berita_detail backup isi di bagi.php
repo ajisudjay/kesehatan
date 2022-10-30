@@ -16,16 +16,22 @@
                         <?php foreach ($berita as $item) : ?>
                             <div class="single-post">
                                 <div class="post-metaheader"><span class="date"><?= $item['tingkat'] ?></span> <span class="mx-1">&bullet;</span> <span><?= $item['nama_kategori'] ?></span><span class="mx-1">&bullet;</span> <span><?= $item['tanggal'] ?></span></div>
-                                <h3 class="mb-5" align="center"><?= $item['judul'] ?></h3>
+                                <h1 class="mb-5"><?= $item['judul'] ?></h1>
 
-                                <figure class="my-4" align="center">
+                                <figure class="my-4">
                                     <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:400px;width:95%; border-radius: 4%;">
                                     <figcaption align="center"><?= $item['caption'] ?></figcaption>
                                 </figure>
-                                <div style="text-align:justify ;">
-                                    <p><?= $item['isi']; ?></p>
-                                </div>
-
+                                <?php
+                                if ($setengah > 300) {
+                                    $bagian_pertama = substr($item['isi'], 0, $setengah);
+                                    $bagian_kedua = substr($item['isi'], $lanjut);
+                                } else {
+                                    $bagian_pertama = $item['isi'];
+                                    $bagian_kedua = '';
+                                }
+                                ?>
+                                <p><?= $bagian_pertama ?></p>
                                 <figure class=" my-4">
                                     <!-- ======= Iklan Slider Section ======= -->
                                     <section id="hero-slider" class="hero-slider">
@@ -50,6 +56,7 @@
                                         </div>
                                     </section><!-- End Hero Slider Section -->
                                 </figure>
+                                <p><?= $bagian_kedua ?></p>
                             </div><!-- End Single Post Content -->
                         <?php endforeach ?>
                         <div align="center">

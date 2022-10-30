@@ -27,10 +27,9 @@
                                 <label class="text-primary">Tingkat</label>
                                 <select name="tingkat" class="form-control tingkat" required>
                                     <option value="">-- Pilih Tingkat --</option>
-                                    <option value="Internasional">Internasional</option>
-                                    <option value="Nasional">Nasional</option>
-                                    <option value="Kalimantan Timur">Kalimantan Timur</option>
-                                    <option value="Samarinda">Samarinda</option>
+                                    <?php foreach ($tingkat as $item_tingkat) : ?>
+                                        <option value=" <?= $item_tingkat['id'] ?>"><?= $item_tingkat['tingkat'] ?></option>
+                                    <?php endforeach ?>
                                 </select>
                                 <div class="invalid-feedback errorTingkat"></div>
                             </div>
@@ -132,7 +131,7 @@
                             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title"><?= $item['judul'] ?></h5>
+                                        <h5 class="modal-title"><?= substr($item['judul'], 0, 65) . '. . .' ?></h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -153,10 +152,9 @@
                                                     <label class="text-primary">Tingkat</label>
                                                     <select name="tingkat" class="form-control tingkat" style="height:20px ;" required>
                                                         <option value=" <?= $item['tingkat'] ?>"><?= $item['tingkat'] ?></option>
-                                                        <option value="Internasional">Internasional</option>
-                                                        <option value="Nasional">Nasional</option>
-                                                        <option value="Kalimantan Timur">Kalimantan Timur</option>
-                                                        <option value="Samarinda">Samarinda</option>
+                                                        <?php foreach ($tingkat as $item_tingkat) : ?>
+                                                            <option value=" <?= $item_tingkat['id'] ?>"><?= $item_tingkat['tingkat'] ?></option>
+                                                        <?php endforeach ?>
                                                     </select>
                                                     <div class="invalid-feedback errorTingkat"></div>
                                                 </div>
@@ -250,7 +248,7 @@
                     </td>
                     <!-- ISI VIEW -->
                     <td><button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#detailmodal<?= $id = $item['id_berita'] ?>"><?= substr($item['judul'], 0, 30) ?></button></td>
-                    <td><?= $item['tingkat'] ?></td>
+                    <td><?= $item['nama_tingkat'] ?></td>
                     <td><?= $item['nama_kategori'] ?></td>
                     <td><?= $item['tanggal'] ?></td>
                     <td><?= $item['status'] ?></td>
