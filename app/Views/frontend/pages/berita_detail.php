@@ -20,6 +20,7 @@
 
                                 <figure class="my-4">
                                     <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:400px;width:95%; border-radius: 4%;">
+                                    <figcaption align="center"><?= $item['caption'] ?></figcaption>
                                 </figure>
                                 <?php
                                 if ($setengah > 300) {
@@ -31,7 +32,7 @@
                                 }
                                 ?>
                                 <p><?= $bagian_pertama ?></p>
-                                <figure class="my-4">
+                                <figure class=" my-4">
                                     <!-- ======= Iklan Slider Section ======= -->
                                     <section id="hero-slider" class="hero-slider">
                                         <div class="swiper sliderFeaturedPosts">

@@ -23,8 +23,6 @@
                                 <div class="invalid-feedback errorJudul"></div>
                                 <br>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-4">
                                 <label class="text-primary">Tingkat</label>
                                 <select name="tingkat" class="form-control tingkat" required>
@@ -53,8 +51,6 @@
                                 <div class="invalid-feedback errorTanggal"></div>
                                 <br>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-6">
                                 <label class="text-primary">Jenis File</label>
                                 <div>
@@ -71,8 +67,12 @@
                                 <div class="invalid-feedback errorGambar"></div>
                                 <br>
                             </div>
-                        </div>
-                        <div class="row">
+                            <div class="col-lg-12   ">
+                                <label class="text-primary">Caption</label>
+                                <input type="text" name="caption" class="form-control caption" placeholder="Caption" required>
+                                <div class="invalid-feedback errorCaption"></div>
+                            </div>
+                            <br>
                             <div class="col-lg-12">
                                 <label class="text-primary">Isi</label>
                                 <textarea name="isi" class="form-control" id="isi" required></textarea>
@@ -82,8 +82,6 @@
                                 <div class="invalid-feedback errorIsi"></div>
                                 <br>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-lg-12">
                                 <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
                                 <input type="text" name="tag" class="form-control tag" placeholder="Tag" required>
@@ -124,8 +122,6 @@
                 <tr style="text-align: center;">
                     <td><?= $no++ ?></td>
                     <td>
-
-
                         <!-- button edit modal -->
                         <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id_berita'] ?>">
                             <span class="feather icon-edit-1 text-primary"></span>
@@ -153,8 +149,6 @@
                                                     </div>
                                                     <br>
                                                 </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-lg-3">
                                                     <label class="text-primary">Tingkat</label>
                                                     <select name="tingkat" class="form-control tingkat" style="height:20px ;" required>
@@ -183,11 +177,7 @@
                                                     </div>
                                                     <br>
                                                 </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-lg-5">
-                                                    <br>
-                                                    <br>
                                                     <br>
                                                     <br>
                                                     <label class="text-primary">Jenis File</label>
@@ -207,37 +197,40 @@
                                                     </div>
                                                     <br>
                                                 </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-lg-11">
-                                                    <label class="text-primary">Isi</label>
-                                                    <textarea name="isi2" class="form-control" rows="10" required><?= $item['isi'] ?></textarea>
-                                                    <div class=" invalid-feedback errorIsi"></div>
-                                                    <br>
+                                                    <label class="text-primary">Caption</label>
+                                                    <input type="text" name="caption" class="form-control caption" placeholder="Caption" value="<?= $item['caption'] ?>" required>
+                                                    <div class=" invalid-feedback errorCaption">
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-11">
+                                                        <label class="text-primary">Isi</label>
+                                                        <textarea name="isi2" class="form-control" rows="10" required><?= $item['isi'] ?></textarea>
+                                                        <div class=" invalid-feedback errorIsi"></div>
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-11">
+                                                        <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
+                                                        <input type="text" name="tag" class="form-control tag" placeholder="Tag" value="<?= $item['tag'] ?>" required>
+                                                        <div class="invalid-feedback errorTag"></div>
+                                                        <br>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-lg-11">
-                                                    <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
-                                                    <input type="text" name="tag" class="form-control tag" placeholder="Tag" value="<?= $item['tag'] ?>" required>
-                                                    <div class="invalid-feedback errorTag"></div>
-                                                    <br>
-                                                </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
+                                                <button type="submit" class="btn btn-primary btnEdit">Simpan</button>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
-                                            <button type="submit" class="btn btn-primary btnEdit">Simpan</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <?php
-                        if (session()->get('level') === 'Superadmin') {
-                            $tom_hapus = '';
-                        } elseif (session()->get('level') === 'Admin') {
+                        if (session()->get('level') !== 'Superadmin') {
                             $tom_hapus = 'hidden';
+                        } else {
+                            $tom_hapus = '';
                         }
                         ?>
                         <!-- button hapus modal-->
@@ -286,6 +279,7 @@
                                 <div class="row">
                                     <div class="col-lg-11">
                                         <img src="content/gambar/<?= $item['gambar'] ?>" width="40%">
+                                        <figcaption><?= $item['caption']; ?></figcaption>
                                     </div>
                                 </div>
                                 <div class="row">

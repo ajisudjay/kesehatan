@@ -88,6 +88,7 @@ class Berita extends BaseController
         $slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($judul)));
         $tingkat = $request->getVar('tingkat');
         $kategori = $request->getVar('kategori');
+        $caption = $request->getVar('caption');
         $tanggal = $request->getVar('tanggal');
         $file = $request->getFile('file');
         $isi = $request->getVar('isi');
@@ -104,6 +105,7 @@ class Berita extends BaseController
                 'slug' => $slug,
                 'tingkat' => $tingkat,
                 'kategori' => $kategori,
+                'caption' => $caption,
                 'tanggal' => $tanggal,
                 'gambar' => $nama_foto,
                 'isi' => $isi,
@@ -123,6 +125,7 @@ class Berita extends BaseController
                 'slug' => $slug,
                 'tingkat' => $tingkat,
                 'kategori' => $kategori,
+                'caption' => $caption,
                 'tanggal' => $tanggal,
                 'gambar' => $nama_foto,
                 'isi' => $isi,
@@ -158,6 +161,7 @@ class Berita extends BaseController
         $file = $request->getFile('file');
         $isi2 = $request->getVar('isi2');
         $tag = $request->getVar('tag');
+        $caption = $request->getVar('caption');
         $jenis_file = $request->getVar('jenis_file');
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             if (!file_exists($_FILES['file']['tmp_name'])) {
@@ -168,6 +172,7 @@ class Berita extends BaseController
                     'kategori' => $kategori,
                     'tanggal' => $tanggal,
                     'isi' => $isi2,
+                    'caption' => $caption,
                     'tag' => $tag,
                     'jenis_file' => $jenis_file,
                     'admin' => $admin,
@@ -191,6 +196,7 @@ class Berita extends BaseController
                     'gambar' => $nama_foto,
                     'isi' => $isi2,
                     'tag' => $tag,
+                    'caption' => $caption,
                     'jenis_file' => $jenis_file,
                     'admin' => $admin,
                     'timestamp' => $timestamp,
@@ -210,6 +216,7 @@ class Berita extends BaseController
                     'tanggal' => $tanggal,
                     'isi' => $isi2,
                     'tag' => $tag,
+                    'caption' => $caption,
                     'jenis_file' => $jenis_file,
                     'admin' => $admin,
                     'timestamp' => $timestamp,
@@ -232,6 +239,7 @@ class Berita extends BaseController
                     'gambar' => $nama_foto,
                     'isi' => $isi2,
                     'tag' => $tag,
+                    'caption' => $caption,
                     'jenis_file' => $jenis_file,
                     'admin' => $admin,
                     'timestamp' => $timestamp,

@@ -10,6 +10,7 @@
             var tanggal = $('#tanggal').val();
             var status = $('#status').val();
             var tag = $('#tag').val();
+            var caption = $('#caption').val();
             var jenis_file = $('#jenis_file').val();
             var files = $('#file')[0].files;
             var fd = new FormData();
@@ -22,6 +23,7 @@
             fd.append('kategori', kategori);
             fd.append('status', status);
             fd.append('tag', tag);
+            fd.append('caption', caption);
             fd.append('jenis_file', jenis_file);
             $.ajax({
                 type: "post",
@@ -75,6 +77,7 @@
             var tanggal = $('#tanggal').val();
             var status = $('#status').val();
             var tag = $('#tag').val();
+            var caption = $('#caption').val();
             var jenis_file = $('#jenis_file').val();
             var files = $('#file')[0].files;
             var fd = new FormData();
@@ -87,6 +90,7 @@
             fd.append('tingkat', tingkat);
             fd.append('kategori', kategori);
             fd.append('status', status);
+            fd.append('caption', caption);
             fd.append('tag', tag);
             fd.append('jenis_file', jenis_file);
             $.ajax({
