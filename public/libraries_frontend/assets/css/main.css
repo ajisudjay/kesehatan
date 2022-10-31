@@ -351,15 +351,27 @@ section {
   display: none;
 }
 
+.beritamobile {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
+  .beritamobile {
+    display: contents;
+  }
+
   .navbar {
     padding: 0;
     z-index: 9997;
   }
   .batas {
+    display: none;
+  }
+
+  .beritadesktop {
     display: none;
   }
 
@@ -530,6 +542,16 @@ section {
   font-family: var(--font-secondary);
   color: rgba(var(--color-black-rgb), 0.4);
   margin-bottom: 10px;
+}
+
+.post-meta2 {
+  font-size: 4px;
+  letter-spacing: 0.07rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: var(--font-secondary);
+  color: rgba(var(--color-black-rgb), 0.4);
+  margin-bottom: 0px;
 }
 
 @media (max-width: 768px) {
@@ -969,10 +991,6 @@ section {
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
-.comment {
-  /* Font not working in <textarea> for this version of bs */
-}
-
 .comment .avatar {
   position: relative;
   display: inline-block;

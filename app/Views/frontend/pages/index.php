@@ -92,7 +92,7 @@
                         </div>
                         <div class="col-lg-7">
                             <div class="row g-5" style="text-align:left ;">
-                                <div class="col-lg-4 border-start custom-border">
+                                <div class="col-lg-4 border-start custom-border beritadesktop">
                                     <?php foreach ($berita_1 as $berita1) : ?>
                                         <div class="post-entry-1">
                                             <a href="berita-detail/<?= $berita1['slug'] ?>"><img src="content/gambar/<?= $berita1['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
@@ -117,7 +117,7 @@
                                         </div>
                                     <?php endforeach ?>
                                 </div>
-                                <div class="col-lg-4 border-start custom-border">
+                                <div class="col-lg-4 border-start custom-border beritadesktop">
                                     <?php foreach ($berita_2 as $berita2) : ?>
                                         <div class="post-entry-1">
                                             <a href="berita-detail/<?= $berita2['slug'] ?>"><img src="content/gambar/<?= $berita2['gambar'] ?>" class="rounded-1" style="max-width:175px ;height:150px"></a>
@@ -141,6 +141,57 @@
                                     <?php endforeach ?>
                                 </div>
 
+                                <!-- berita mobile -->
+                                <div class="col-lg-4 beritamobile">
+                                    <table align="right" style="margin-left:15px ;margin-right:4px ;">
+                                        <tr>
+                                            <td width="50%">
+                                                <?php foreach ($berita_1 as $berita1) : ?>
+                                                    <a href="berita-detail/<?= $berita1['slug'] ?>"><img src="content/gambar/<?= $berita1['gambar'] ?>" class="rounded-1" style="width:85% ;height: 50%;"></a><br>
+                                                    <strong style="font-size:10px;"><a href="berita-detail/<?= $berita1['slug'] ?>"><?= substr($berita1['judul'], 0, 30) . '...' ?></a></strong>
+                                                <?php endforeach ?>
+                                            </td>
+                                            <td width="50%">
+                                                <?php foreach ($berita_2 as $berita2) : ?>
+                                                    <a href="berita-detail/<?= $berita2['slug'] ?>"><img src="content/gambar/<?= $berita2['gambar'] ?>" class="rounded-1" style="width:85% ;height: 50%;"></a><br>
+                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita2['slug'] ?>"><?= substr($berita2['judul'], 0, 30) ?></a></strong>
+                                                <?php endforeach ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="50%">
+                                                <?php foreach ($berita_33 as $berita33) : ?>
+                                                    <a href="berita-detail/<?= $berita33['slug'] ?>"><img src="content/gambar/<?= $berita33['gambar'] ?>" class="rounded-1" style="width:85% ;height: 50%;"></a>
+                                                    <br>
+                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita33['slug'] ?>"><?= substr($berita33['judul'], 0, 30) ?></a></strong>
+                                                <?php endforeach ?>
+                                            </td>
+                                            <td width="50%">
+                                                <?php foreach ($berita_4 as $berita4) : ?>
+                                                    <a href="berita-detail/<?= $berita4['slug'] ?>"><img src="content/gambar/<?= $berita4['gambar'] ?>" class="rounded-1" style="width:85% ;height:50%"></a>
+                                                    <br>
+                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita4['slug'] ?>"><?= substr($berita4['judul'], 0, 30) ?></a></strong>
+                                                <?php endforeach ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="50%">
+                                                <?php foreach ($berita_5 as $berita5) : ?>
+                                                    <a href="berita-detail/<?= $berita5['slug'] ?>"><img src="content/gambar/<?= $berita5['gambar'] ?>" class="rounded-1" style="width:85% ;height: 50%;"></a>
+                                                    <br>
+                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita5['slug'] ?>"><?= substr($berita5['judul'], 0, 30) ?></a></strong>
+                                                <?php endforeach ?>
+                                            </td>
+                                            <td width="50%">
+                                                <?php foreach ($berita_6 as $berita6) : ?>
+                                                    <a href="berita-detail/<?= $berita6['slug'] ?>"><img src="content/gambar/<?= $berita6['gambar'] ?>" class="rounded-1" style="width:85% ;height:50px"></a>
+                                                    <br>
+                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita6['slug'] ?>"><?= substr($berita6['judul'], 0, 30) ?></a></strong>
+                                                <?php endforeach ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                                 <!-- Trending Section -->
                                 <div class="col-lg-4">
 
@@ -163,7 +214,7 @@
                                         <!-- End Trending -->
                                         <!-- ======= Iklan Slider Section ======= -->
                                         <section id="hero-slider" class="hero-slider">
-                                            <div class="container-md" data-aos="fade-in">
+                                            <div class="container-md beritadesktop" data-aos="fade-in">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="swiper sliderFeaturedPosts rounded-4">
@@ -190,7 +241,7 @@
                                             </div>
                                         </section><!-- End Iklan Slider Section -->
                                         <!-- Kategori -->
-                                        <div class="aside-block" style="text-align:left ;">
+                                        <div class="aside-block beritadesktop" style="text-align:left ;">
                                             <h3 class="aside-title">Kategori</h3>
                                             <ul class=" footer-links list-unstyled">
                                                 <?php foreach ($kategori as $item) : ?>

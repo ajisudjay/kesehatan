@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <!-- Kategori -->
-                        <div class="aside-block" style="text-align:left ;">
+                        <div class="aside-block beritadesktop" style="text-align:left ;">
                             <h3 class="aside-title">Kategori</h3>
                             <ul class=" footer-links list-unstyled">
                                 <?php foreach ($kategori as $item) : ?>

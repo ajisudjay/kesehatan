@@ -10,7 +10,7 @@
                      <p><?= $tentangkami['isi'] ?></p>
                      <p><a href="/tentangkami" class="footer-heading">Selengkapnya . . . .</a></p>
                  </div>
-                 <div class="col-6 col-lg-2">
+                 <div class="col-6 col-lg-2 beritadesktop">
                      <h3 class="footer-heading">Kategori</h3>
                      <ul class="footer-links list-unstyled">
                          <?php foreach ($kategori as $item) : ?>
@@ -19,6 +19,16 @@
                      </ul>
                  </div>
 
+                 <div class="col-8 beritamobile">
+                     <h3 class="footer-heading">&nbsp;&nbsp;Kategori</h3>
+                     <ul class="footer-links list-unstyled">
+                         <li>
+                             <?php foreach ($kategori as $item) : ?>
+                                 <a href="berita-kategoriall/<?= $item['kategori'] ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $item['kategori'] ?></a> |
+                             <?php endforeach ?>
+                         </li>
+                     </ul>
+                 </div>
                  <div class="col-lg-4">
                      <h3 class="footer-heading">Terbaru</h3>
 
