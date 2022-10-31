@@ -8,6 +8,10 @@ Username : admin@divisi.id
 Password : Divisiid2022
 https://webmail.divisi.id/roundcube/?_task=mail&_mbox=INBOX.Sent#
 
+Hosting : 
+Control Panel URL: https://brawl.extremhost.net/login_up.php
+Username: divisiid
+Password: 523s?F~wGXc8As
 
 Database 
 database : divisiid_news

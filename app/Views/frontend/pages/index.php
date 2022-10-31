@@ -12,13 +12,13 @@
             <!-- ======= Hero Slider Section ======= -->
             <section id="hero-slider" class="hero-slider">
                 <div class="container-md" data-aos="fade-in">
-                    <div class="row-">
+                    <div class="row-5">
                         <div class="col-12">
                             <div class="swiper sliderFeaturedPosts rounded-4">
                                 <div class="swiper-wrapper">
                                     <?php foreach ($trending as $trend) : ?>
                                         <div class="swiper-slide">
-                                            <a href="berita-detail/<?= $trend['slug'] ?>" class="img-bg d-flex align-items-end rounded-4 slider1" style="background-image: url('content/gambar/<?= $trend['gambar'] ?>');">
+                                            <a href="berita-detail/<?= $trend['slug'] ?>" class="img-bg d-flex align-items-end rounded-4 slider1" style="background-image: url('content/gambar/<?= $trend['gambar'] ?>');background-size: cover; ">
                                                 <!-- background-size: auto|length|cover|contain|initial|inherit; -->
                                                 <div class=" img-bg-inner">
                                                     <h2><?= $trend['judul'] ?></h2>
