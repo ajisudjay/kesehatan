@@ -151,7 +151,7 @@
                                                 <div class="col-lg-3">
                                                     <label class="text-primary">Tingkat</label>
                                                     <select name="tingkat" class="form-control tingkat" style="height:20px ;" required>
-                                                        <option value=" <?= $item['tingkat'] ?>"><?= $item['tingkat'] ?></option>
+                                                        <option value="<?= $item['id'] ?>"><?= $item['tingkat'] ?></option>
                                                         <?php foreach ($tingkat as $item_tingkat) : ?>
                                                             <option value=" <?= $item_tingkat['id'] ?>"><?= $item_tingkat['tingkat'] ?></option>
                                                         <?php endforeach ?>
