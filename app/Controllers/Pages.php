@@ -7,6 +7,7 @@ use App\Models\KategoriModel;
 use App\Models\TingkatModel;
 use App\Models\BeritaModel;
 use App\Models\IklanModel;
+use App\Models\KomentarModel;
 
 class Pages extends BaseController
 {
@@ -15,6 +16,7 @@ class Pages extends BaseController
     protected $KategoriModel;
     protected $BeritaModel;
     protected $IklanModel;
+    protected $KomentarModel;
     public function __construct()
     {
         $this->KonfigurasiModel = new KonfigurasiModel();
@@ -22,11 +24,12 @@ class Pages extends BaseController
         $this->KategoriModel = new KategoriModel();
         $this->BeritaModel = new BeritaModel();
         $this->IklanModel = new IklanModel();
+        $this->KomentarModel = new KomentarModel();
     }
     public function index()
     {
         error_reporting(0);
-        $databerita = $this->BeritaModel->select('kategori as katber')->distinct('kategori')->orderBy('tanggal', 'DESC')->get()->getResultArray();
+        $databerita = $this->BeritaModel->select('kategori as katber')->distinct('kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->get()->getResultArray();
         $data = [
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
@@ -36,7 +39,7 @@ class Pages extends BaseController
             'tingkat_berita' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
             'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
 
-            'hot' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(1),
+            'hot' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->findAll(1),
 
             'hot2' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(1),
 
@@ -157,6 +160,7 @@ class Pages extends BaseController
             'title' => 'Beranda - Divisi.id',
             'top_header' => 'Beranda',
             'header' => '',
+            'id_berita' => $id,
             'tentangkami' => $this->KonfigurasiModel->where('urutan', '1')->first(),
             // 'jumkar' => $jumkar_isi,
             // 'setengah' => $setengahbulat,
@@ -167,6 +171,8 @@ class Pages extends BaseController
             'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
             'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('slug', $slug)->orderBy('tanggal', 'DESC')->findAll(1),
             'iklan' => $this->IklanModel->orderBy('id', 'DESC')->where('status', 'Publish')->get()->getResultArray(),
+            'komentar' => $this->KomentarModel->orderBy('timestamp', 'DESC')->where('id_berita', $id)->get()->getResultArray(),
+            'jum_komentar' => $this->KomentarModel->selectCount('id', 'jumlah')->where('id_berita', $id)->first(),
             'dilihat' => $terbaca,
 
         ];

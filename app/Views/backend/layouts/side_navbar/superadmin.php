@@ -28,12 +28,12 @@
                     <span class="pcoded-mtext">Kategori</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="#">
+            <li>
+                <a href="<?= base_url('komentar'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-comments-o"></i></span>
-                    <span class="pcoded-mtext">Komentar (Cooming Soon)</span>
+                    <span class="pcoded-mtext">Komentar</span>
                 </a>
-            </li> -->
+            </li>
         </ul>
         <div class="pcoded-navigatio-lavel">Iklan</div>
         <ul class="pcoded-item pcoded-left-item">

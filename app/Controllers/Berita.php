@@ -52,7 +52,7 @@ class Berita extends BaseController
                 $data = [
                     'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                     'tingkat' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
-                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('berita.admin', $admin)->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('berita.admin', $admin)->orderBy('berita.tanggal', 'DESC')->orderBy('berita.timestamp', 'DESC')->get()->getResultArray(),
                     'validation' => \Config\Services::validation(),
                 ];
                 $msg = [
@@ -67,7 +67,7 @@ class Berita extends BaseController
                 $data = [
                     'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                     'tingkat' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
-                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('kategori', 'kategori.id=berita.kategori')->join('tingkat', 'tingkat.id=berita.tingkat')->orderBy('berita.tanggal', 'DESC')->get()->getResultArray(),
+                    'berita' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('kategori', 'kategori.id=berita.kategori')->join('tingkat', 'tingkat.id=berita.tingkat')->orderBy('berita.tanggal', 'DESC')->orderBy('berita.timestamp', 'DESC')->get()->getResultArray(),
                     'validation' => \Config\Services::validation(),
                 ];
                 $msg = [
@@ -164,7 +164,7 @@ class Berita extends BaseController
         $kategori = $request->getVar('kategori');
         $tanggal = $request->getVar('tanggal');
         $file = $request->getFile('file');
-        $isi2 = $request->getVar('isi2');
+        $isi = $request->getVar('isi');
         $tag = $request->getVar('tag');
         $caption = $request->getVar('caption');
         $jenis_file = $request->getVar('jenis_file');
@@ -176,7 +176,7 @@ class Berita extends BaseController
                     'tingkat' => $tingkat,
                     'kategori' => $kategori,
                     'tanggal' => $tanggal,
-                    'isi' => $isi2,
+                    'isi' => $isi,
                     'caption' => $caption,
                     'tag' => $tag,
                     'jenis_file' => $jenis_file,
@@ -199,7 +199,7 @@ class Berita extends BaseController
                     'kategori' => $kategori,
                     'tanggal' => $tanggal,
                     'gambar' => $nama_foto,
-                    'isi' => $isi2,
+                    'isi' => $isi,
                     'tag' => $tag,
                     'caption' => $caption,
                     'jenis_file' => $jenis_file,
@@ -219,7 +219,7 @@ class Berita extends BaseController
                     'tingkat' => $tingkat,
                     'kategori' => $kategori,
                     'tanggal' => $tanggal,
-                    'isi' => $isi2,
+                    'isi' => $isi,
                     'tag' => $tag,
                     'caption' => $caption,
                     'jenis_file' => $jenis_file,
@@ -242,7 +242,7 @@ class Berita extends BaseController
                     'kategori' => $kategori,
                     'tanggal' => $tanggal,
                     'gambar' => $nama_foto,
-                    'isi' => $isi2,
+                    'isi' => $isi,
                     'tag' => $tag,
                     'caption' => $caption,
                     'jenis_file' => $jenis_file,

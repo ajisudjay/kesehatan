@@ -14,7 +14,7 @@
                      <h3 class="footer-heading">Kategori</h3>
                      <ul class="footer-links list-unstyled">
                          <?php foreach ($kategori as $item) : ?>
-                             <li><a href="berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                             <li><a href="/berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
                          <?php endforeach ?>
                      </ul>
                  </div>
@@ -24,14 +24,13 @@
                      <ul class="footer-links list-unstyled">
                          <li>
                              <?php foreach ($kategori as $item) : ?>
-                                 <a href="berita-kategoriall/<?= $item['kategori'] ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $item['kategori'] ?></a> |
+                                 <a href="/berita-kategoriall/<?= $item['kategori'] ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $item['kategori'] ?></a> |
                              <?php endforeach ?>
                          </li>
                      </ul>
                  </div>
                  <div class="col-lg-4">
                      <h3 class="footer-heading">Terbaru</h3>
-
                      <ul class="footer-links footer-blog-entry list-unstyled">
                          <?php foreach ($terbaru as $terbaru) : ?>
                              <li>
@@ -42,7 +41,6 @@
                                      </div>
                                  </a>
                              </li>
-
                          <?php endforeach ?>
                      </ul>
                  </div>

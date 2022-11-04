@@ -1,104 +1,4 @@
-<!-- button tambah modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahmodal">
-    <span class="feather icon-plus text-light"></span>
-</button>
-<!-- tambah modal-->
-<div class="modal fade" id="tambahmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Tambah Berita</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="<?= base_url('berita/tambah'); ?>" method="post" enctype="multipart/form-data" class="tambah">
-                    <?php csrf_field() ?>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <label class="text-primary">Judul</label>
-                                <input type="text" name="judul" class="form-control judul" placeholder="Judul" required>
-                                <div class="invalid-feedback errorJudul"></div>
-                                <br>
-                            </div>
-                            <div class="col-lg-4">
-                                <label class="text-primary">Tingkat</label>
-                                <select name="tingkat" class="form-control tingkat" required>
-                                    <option value="">-- Pilih Tingkat --</option>
-                                    <?php foreach ($tingkat as $item_tingkat) : ?>
-                                        <option value=" <?= $item_tingkat['id'] ?>"><?= $item_tingkat['tingkat'] ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                                <div class="invalid-feedback errorTingkat"></div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label class="text-primary">Kategori</label>
-                                <select name="kategori" class="form-control kategori" required>
-                                    <option value="">-- Pilih Kategori --</option>
-                                    <?php foreach ($kategori as $item_kategori) : ?>
-                                        <option value="<?= $item_kategori['id'] ?>"><?= $item_kategori['kategori'] ?></option>
-                                    <?php endforeach ?>
-                                </select>
-                                <div class="invalid-feedback errorKategori"></div>
-                                <br>
-                            </div>
-                            <div class="col-lg-4">
-                                <label class="text-primary">Tanggal</label>
-                                <input type="date" name="tanggal" class="form-control tanggal" placeholder="Tanggal" required>
-                                <div class="invalid-feedback errorTanggal"></div>
-                                <br>
-                            </div>
-                            <div class="col-lg-6">
-                                <label class="text-primary">Jenis File</label>
-                                <div>
-                                    <input type="radio" name="jenis_file" value="Gambar" checked> Gambar
-                                    <label class="form-check-label"></label>
-                                    <input type="radio" name="jenis_file" disabled> Video (Cooming Soon)
-                                    <label class="form-check-label"></label>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="col-lg-6">
-                                <label class="text-primary">File</label>
-                                <input type="file" name="file" class="form-control gambar" accept="image/*" required>
-                                <div class="invalid-feedback errorGambar"></div>
-                                <br>
-                            </div>
-                            <div class="col-lg-12   ">
-                                <label class="text-primary">Caption</label>
-                                <input type="text" name="caption" class="form-control caption" placeholder="Caption" required>
-                                <div class="invalid-feedback errorCaption"></div>
-                            </div>
-                            <br>
-                            <div class="col-lg-12">
-                                <label class="text-primary">Isi</label>
-                                <textarea name="isi" class="form-control" id="isi" required></textarea>
-                                <script>
-                                    CKEDITOR.replace('isi');
-                                </script>
-                                <div class="invalid-feedback errorIsi"></div>
-                                <br>
-                            </div>
-                            <div class="col-lg-12">
-                                <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
-                                <input type="text" name="tag" class="form-control tag" placeholder="Tag" required>
-                                <div class="invalid-feedback errorTag"></div>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
-                        <button type="submit" class="btn btn-primary btnSimpan">Simpan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
+<h3>Data Berita</h3>
 <div class="dt-responsive table-responsive">
     <!-- id dibawah bisa diganti => simpletable -->
     <table id="scr-vtr-dynamic" class="table table-striped table-bordered nowrap">
@@ -106,18 +6,22 @@
             <tr>
                 <th style=" max-width:5%; text-align: center;">No.</th>
                 <th style="max-width:10%; text-align: center;">Aksi</th>
-                <th style="max-width:45%; text-align: center;">Judul</th>
+                <th style="max-width:35%; text-align: center;">Judul</th>
                 <th style="max-width:10%; text-align: center;">Tingkat</th>
                 <th style="max-width:10%; text-align: center;">Kategori</th>
                 <th style="max-width:10%; text-align: center;">Tanggal</th>
                 <th style="max-width:10%; text-align: center;">Status</th>
+                <th style="max-width:10%; text-align: center;">Log</th>
             </tr>
         </thead>
         <tbody>
             <?php $no = 1 ?>
+            <?php $no_isi = 2 ?>
 
             <?php foreach ($berita as $item) : ?>
-                <?php $id = $item['id_berita'] ?>
+                <?php
+                $id = $item['id_berita'];
+                ?>
                 <tr style="text-align: center;">
                     <td><?= $no++ ?></td>
                     <td>
@@ -203,7 +107,10 @@
                                                     </div>
                                                     <div class="col-lg-11">
                                                         <label class="text-primary">Isi</label>
-                                                        <textarea name="isi2" class="form-control" rows="10" required><?= $item['isi'] ?></textarea>
+                                                        <textarea name="isi" id="<?= 'isi' . $id ?>" class="form-control" rows="10" required><?= $item['isi'] ?></textarea>
+                                                        <script>
+                                                            CKEDITOR.replace('<?= 'isi' . $id ?>');
+                                                        </script>
                                                         <div class=" invalid-feedback errorIsi"></div>
                                                         <br>
                                                     </div>
@@ -247,11 +154,12 @@
                         </a>
                     </td>
                     <!-- ISI VIEW -->
-                    <td><button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#detailmodal<?= $id = $item['id_berita'] ?>"><?= substr($item['judul'], 0, 30) ?></button></td>
+                    <td align="left"><button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#detailmodal<?= $id = $item['id_berita'] ?>"><?= substr($item['judul'], 0, 70) ?></button></td>
                     <td><?= $item['nama_tingkat'] ?></td>
                     <td><?= $item['nama_kategori'] ?></td>
                     <td><?= $item['tanggal'] ?></td>
                     <td><?= $item['status'] ?></td>
+                    <td><?= $item['admin'] . ' | ' . $item['timestamp'] ?></td>
                 </tr>
 
                 <!-- Modal Detail-->
@@ -280,11 +188,6 @@
                                         <figcaption><?= $item['caption']; ?></figcaption>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-11">
-                                        <p class="card-text"><?= $item['isi']; ?></p>
-                                    </div>
-                                </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-lg-11">
@@ -308,7 +211,91 @@
         </tbody>
     </table>
 </div>
-
+<br>
+<br>
+<br>
+<h3>Tambah Berita</h3>
+<form action="<?= base_url('berita/tambah'); ?>" method="post" enctype="multipart/form-data" class="tambah">
+    <?php csrf_field() ?>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <label class="text-primary">Judul</label>
+                <input type="text" name="judul" class="form-control judul" placeholder="Judul" required>
+                <div class="invalid-feedback errorJudul"></div>
+                <br>
+            </div>
+            <div class="col-lg-4">
+                <label class="text-primary">Tingkat</label>
+                <select name="tingkat" class="form-control tingkat" required>
+                    <option value="">-- Pilih Tingkat --</option>
+                    <?php foreach ($tingkat as $item_tingkat) : ?>
+                        <option value=" <?= $item_tingkat['id'] ?>"><?= $item_tingkat['tingkat'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <div class="invalid-feedback errorTingkat"></div>
+            </div>
+            <div class="col-lg-4">
+                <label class="text-primary">Kategori</label>
+                <select name="kategori" class="form-control kategori" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <?php foreach ($kategori as $item_kategori) : ?>
+                        <option value="<?= $item_kategori['id'] ?>"><?= $item_kategori['kategori'] ?></option>
+                    <?php endforeach ?>
+                </select>
+                <div class="invalid-feedback errorKategori"></div>
+                <br>
+            </div>
+            <div class="col-lg-4">
+                <label class="text-primary">Tanggal</label>
+                <input type="date" name="tanggal" class="form-control tanggal" placeholder="Tanggal" required>
+                <div class="invalid-feedback errorTanggal"></div>
+                <br>
+            </div>
+            <div class="col-lg-6">
+                <label class="text-primary">Jenis File</label>
+                <div>
+                    <input type="radio" name="jenis_file" value="Gambar" checked> Gambar
+                    <label class="form-check-label"></label>
+                    <input type="radio" name="jenis_file" disabled> Video (Cooming Soon)
+                    <label class="form-check-label"></label>
+                </div>
+            </div>
+            <br>
+            <div class="col-lg-6">
+                <label class="text-primary">File</label>
+                <input type="file" name="file" class="form-control gambar" accept="image/*" required>
+                <div class="invalid-feedback errorGambar"></div>
+                <br>
+            </div>
+            <div class="col-lg-12   ">
+                <label class="text-primary">Caption</label>
+                <input type="text" name="caption" class="form-control caption" placeholder="Caption" required>
+                <div class="invalid-feedback errorCaption"></div>
+            </div>
+            <br>
+            <div class="col-lg-12">
+                <label class="text-primary">Isi</label>
+                <textarea name="isi" class="form-control" id="isi" required></textarea>
+                <script>
+                    CKEDITOR.replace('isi');
+                </script>
+                <div class="invalid-feedback errorIsi"></div>
+                <br>
+            </div>
+            <div class="col-lg-12">
+                <label class="text-primary">Tag <span>(pisahkan dengan tanda (,))</span></label>
+                <input type="text" name="tag" class="form-control tag" placeholder="Tag" required>
+                <div class="invalid-feedback errorTag"></div>
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
+        <button type="submit" class="btn btn-primary btnSimpan">Simpan</button>
+    </div>
+</form>
 
 <?= $this->include('backend/berita/ajax') ?>
 <?= $this->include('backend/layouts/js_viewData') ?>

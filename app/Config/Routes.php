@@ -54,6 +54,7 @@ $routes->get('/user', 'User::index');
 $routes->get('/profil', 'Profil::index');
 $routes->get('/berita', 'Berita::index');
 $routes->get('/iklan', 'Iklan::index');
+$routes->get('/komentar', 'Komentar::index');
 $routes->get('/konfigurasi', 'Konfigurasi::index');
 
 /*

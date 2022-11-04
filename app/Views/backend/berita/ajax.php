@@ -71,7 +71,7 @@
         $('.edit').submit(function() {
             var id = $('#id').val();
             var judul = $('#judul').val();
-            var isi2 = $('#isi2').val();
+            var isi = $('#isi').val();
             var tingkat = $('#tingkat').val();
             var kategori = $('#kategori').val();
             var tanggal = $('#tanggal').val();
@@ -85,7 +85,7 @@
             fd.append('file', files[0]);
             fd.append('id', id);
             fd.append('judul', judul);
-            fd.append('isi2', isi2);
+            fd.append('isi', isi);
             fd.append('tanggal', tanggal);
             fd.append('tingkat', tingkat);
             fd.append('kategori', kategori);

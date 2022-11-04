@@ -22,7 +22,7 @@
                                     <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:400px;width:95%; border-radius: 4%;">
                                     <figcaption align="center"><?= $item['caption'] ?></figcaption>
                                 </figure>
-                                <div style="text-align:justify ;">
+                                <div style="text-align:justify;">
                                     <p><?= $item['isi']; ?></p>
                                 </div>
 
@@ -52,6 +52,63 @@
                                 </figure>
                             </div><!-- End Single Post Content -->
                         <?php endforeach ?>
+                        <!-- ======= Comments ======= -->
+                        <div class="comments">
+                            <h5 class="comment-title py-4"><?= $jum_komentar['jumlah'] ?> Komentar</h5>
+                            <?php
+                            if ($jum_komentar['jumlah'] < 1) {
+                                $komen = 'none';
+                            } else {
+                                $komen = 'content';
+                            }
+                            ?>
+                            <div class="scrollauto" style="display:<?= $komen ?> ;">
+                                <?php foreach ($komentar as $item) : ?>
+                                    <div class="comment d-flex mb-4">
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar avatar-sm rounded-circle">
+                                                <img class="avatar-img" src="<?= base_url('libraries_frontend/assets/img/commentator.png') ?>" alt="" class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2 ms-sm-3">
+                                            <div class="comment-meta d-flex align-items-baseline">
+                                                <h6 class="me-2"><?= $item['nama'] ?></h6>
+                                                <span class="text-muted"><?= $item['timestamp'] ?></span>
+                                            </div>
+                                            <div class="comment-body">
+                                                <?= $item['komentar'] ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach ?>
+                            </div>
+                        </div>
+                        <!-- End Comments -->
+
+                        <!-- ======= Comments Form ======= -->
+                        <div class="row justify-content-center mt-5">
+                            <form action="<?= base_url('komentar/tambah'); ?>" method="post" class="komen">
+                                <?php csrf_field() ?>
+                                <div class="col-lg-12">
+                                    <h5 class="comment-title">Berikan Komentar Anda</h5>
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <label for="comment-name">Nama</label>
+                                            <input type="text" name="id_berita" value="<?= $id_berita ?>" class="form-control" hidden>
+                                            <input type="text" name="nama" class="form-control" id="comment-name" placeholder="Masukkan Nama Anda" required>
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label for="comment-message">Komentar</label>
+                                            <textarea class="form-control" name="komentar" id="comment-message" placeholder="Berikan Komentar Anda" cols="30" rows="5" required></textarea>
+                                        </div>
+                                        <div class="col-12" align="center">
+                                            <input type="submit" class="btn btn-primary btnSimpan" value="Kirim">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!-- End Comments Form -->
+                        <br>
                         <div align="center">
                             <a href="/"><button class="btn btn-primary btn-round btn-block" style="background-color:#0B1B4F;">Kembali</button></a>
                         </div>
@@ -85,7 +142,7 @@
                             <h3 class="aside-title">Kategori</h3>
                             <ul class=" footer-links list-unstyled">
                                 <?php foreach ($kategori as $item) : ?>
-                                    <li><a href="category.html"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                                    <li><a href="/berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
                                 <?php endforeach ?>
                             </ul>
                         </div>
@@ -97,6 +154,69 @@
     </main><!-- End #main -->
     <!-- ======= Footer ======= -->
     <?= $this->include('frontend/layouts/footerdetail') ?>
+
+    <!-- SCRIPT AJAX -->
+    <script>
+        $(document).ready(function() {
+            //  function tambah
+            $('.komen').submit(function() {
+                var nama = $('#nama').val();
+                var komentar = $('#komentar').val();
+                var id_berita = $('#id_berita').val();
+                var fd = new FormData();
+
+                fd.append('nama', nama);
+                fd.append('id_berita', id_berita);
+                fd.append('komentar', komentar);
+                $.ajax({
+                    type: "post",
+                    data: fd,
+                    dataType: "json",
+                    contentType: false,
+                    processData: false,
+                    beforeSend: function() {
+                        $('.btnSimpan').attr('disable', 'disabled');
+                        $('.btnSimpan').html('<i class="fa fa-spin fa-spinner"></i>');
+                    },
+                    complete: function() {
+                        $('.btnSimpan').removeAttr('disable', 'disabled');
+                        $('.btnSimpan').html('Simpan');
+                    },
+                    success: function(response) {
+                        if (response.error) {
+                            if (response.error.nama) {
+                                $('.nama').addClass('is-invalid');
+                                $('.errorNama').html(response.error.nama);
+                            } else {
+                                $('.nama').removeClass('is-invalid');
+                                $('.errorNama').html('');
+                            }
+                        } else {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'berhasil',
+                                text: response.sukses,
+                            });
+                            $('body').removeClass('modal-open');
+                            //modal-open class is added on body so it has to be removed
+                            $('.modal-backdrop').remove();
+                            //need to remove div with modal-backdrop class
+                            $("#result").html(response.data);
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
+                    }
+                })
+            });
+
+            window.setTimeout(function() {
+                $(".flashAjax").fadeTo(500, 0).slideUp(500, function() {
+                    $(this).remove();
+                });
+            }, 5000);
+        });
+    </script>
     <?= $this->include('frontend/layouts/javascript') ?>
 
 

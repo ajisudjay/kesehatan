@@ -22,7 +22,6 @@
                                     <div class=" post-meta"><span class="date"><?= $item['tingkat'] ?></span>&bullet;<span class="date"><?= $item['kategori'] ?></span>&bullet;<span><?= $item['tanggal'] ?></span>
                                     </div>
                                     <h3><a href="/berita-detail/<?= $item['slug'] ?>"><?= $item['judul'] ?></a></h3>
-                                    <p><?= substr($item['isi'], 0, 100) ?></p>
                                 </div>
                             </div>
                         <?php endforeach ?>

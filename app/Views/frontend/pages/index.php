@@ -54,7 +54,6 @@
                                     </a>
                                     <div class="post-meta"><span class="date"><?= $hot['tingkat'] ?></span>&bullet;<span class="date"><?= $hot['kategori'] ?></span>&bullet;<span><?= $hot['tanggal'] ?></span></div>
                                     <h3><a href="single-post.html"><?= $hot['judul'] ?></a></h3>
-                                    <p class="mb-4 d-block"><?= substr($hot['isi'], 0, 375) ?></p>
                                 <?php endforeach ?>
 
                                 <!-- ======= Iklan Slider Section ======= -->
@@ -245,7 +244,7 @@
                                             <h3 class="aside-title">Kategori</h3>
                                             <ul class=" footer-links list-unstyled">
                                                 <?php foreach ($kategori as $item) : ?>
-                                                    <li><a href="berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
+                                                    <li><a href="/berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
                                                 <?php endforeach ?>
                                             </ul>
                                         </div>
