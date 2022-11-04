@@ -16,7 +16,7 @@
                         <?php foreach ($berita_tingkat as $item) : ?>
                             <div class="d-md-flex post-entry-2 half">
                                 <a href="/berita-detail/<?= $item['slug'] ?>" class="me-4 thumbnail">
-                                    <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="img-fluid" style="height:300px;width:300px;">
+                                    <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="img-fluid" style="height:300px;width:100%;">
                                 </a>
                                 <div>
                                     <div class=" post-meta"><span class="date"><?= $item['tingkat'] ?></span>&bullet;<span class="date"><?= $item['kategori'] ?></span>&bullet;<span><?= $item['tanggal'] ?></span>

@@ -389,7 +389,8 @@ section {
     max-height: 200px;
   }
   .slider1 {
-    max-height: 100px;
+    max-height: 180px;
+    max-width: 100%;
   }
   .slider1 h2 {
     font-size: 10px;

@@ -7,39 +7,36 @@
     <?php error_reporting(0); ?>
 
     <!-- <main id="main"> -->
+    <!-- ======= Hero Slider Section ======= -->
+    <section id="hero-slider" class="hero-slider" style="margin-top:80px">
+        <div class="container-md" data-aos="fade-in">
+            <div class="swiper sliderFeaturedPosts rounded-4">
+                <div class="swiper-wrapper">
+                    <?php foreach ($trending as $trend) : ?>
+                        <div class="swiper-slide">
+                            <a href="berita-detail/<?= $trend['slug'] ?>" class="img-bg d-flex align-items-end rounded-4 slider1" style="background-image: url('content/gambar/<?= $trend['gambar'] ?>');background-size: cover; ">
+                                <!-- background-size: auto|length|cover|contain|initial|inherit; -->
+                                <div class=" img-bg-inner">
+                                    <h2><?= $trend['judul'] ?></h2>
+                                    <p><?= substr($trend['isi'], 0, 100) ?></p>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+                <div class="custom-swiper-button-next">
+                    <span class="bi-chevron-right"></span>
+                </div>
+                <div class="custom-swiper-button-prev">
+                    <span class="bi-chevron-left"></span>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section><!-- End Hero Slider Section -->
     <main id="main">
         <div class="bgmain" style="background:url(libraries_frontend/assets/img/bg2.png) no-repeat;background-size: contain;background-position-x: center;background-position-y: center; margin: 75px;">
-            <!-- ======= Hero Slider Section ======= -->
-            <section id="hero-slider" class="hero-slider">
-                <div class="container-md" data-aos="fade-in">
-                    <div class="row-5">
-                        <div class="col-12">
-                            <div class="swiper sliderFeaturedPosts rounded-4">
-                                <div class="swiper-wrapper">
-                                    <?php foreach ($trending as $trend) : ?>
-                                        <div class="swiper-slide">
-                                            <a href="berita-detail/<?= $trend['slug'] ?>" class="img-bg d-flex align-items-end rounded-4 slider1" style="background-image: url('content/gambar/<?= $trend['gambar'] ?>');background-size: cover; ">
-                                                <!-- background-size: auto|length|cover|contain|initial|inherit; -->
-                                                <div class=" img-bg-inner">
-                                                    <h2><?= $trend['judul'] ?></h2>
-                                                    <p><?= substr($trend['isi'], 0, 100) ?></p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    <?php endforeach ?>
-                                </div>
-                                <div class="custom-swiper-button-next">
-                                    <span class="bi-chevron-right"></span>
-                                </div>
-                                <div class="custom-swiper-button-prev">
-                                    <span class="bi-chevron-left"></span>
-                                </div>
-                                <div class="swiper-pagination"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section><!-- End Hero Slider Section -->
+
             <!-- <div style="background-image: url('libraries_frontend/assets/img/bg.png');background-size: contain;background-repeat: no-repeat; "> -->
             <!-- ======= Post Grid Section ======= -->
             <section id="posts" class="posts">
@@ -59,27 +56,25 @@
                                 <!-- ======= Iklan Slider Section ======= -->
                                 <section id="hero-slider" class="hero-slider">
                                     <div class="container-md" data-aos="fade-in">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="swiper sliderFeaturedPosts">
-                                                    <div class="swiper-wrapper">
-                                                        <?php foreach ($iklan as $item) : ?>
-                                                            <div class="swiper-slide ">
-                                                                <div class="img-bg-inner">
-                                                                    <img src="content/iklan/<?= $item['file'] ?>" class="slider1" style="height:200px;width:100%; border-radius: 4%;">
-                                                                </div>
-                                                                </a>
+                                        <div class="col-12">
+                                            <div class="swiper sliderFeaturedPosts">
+                                                <div class="swiper-wrapper">
+                                                    <?php foreach ($iklan as $item) : ?>
+                                                        <div class="swiper-slide ">
+                                                            <div class="img-bg-inner">
+                                                                <img src="content/iklan/<?= $item['file'] ?>" class="slider1" style="height:185px;width:100%; border-radius: 4%;">
                                                             </div>
-                                                        <?php endforeach ?>
-                                                    </div>
-                                                    <div class="custom-swiper-button-next">
-                                                        <span class="bi-chevron-right"></span>
-                                                    </div>
-                                                    <div class="custom-swiper-button-prev">
-                                                        <span class="bi-chevron-left"></span>
-                                                    </div>
-                                                    <div class="swiper-pagination"></div>
+                                                            </a>
+                                                        </div>
+                                                    <?php endforeach ?>
                                                 </div>
+                                                <div class="custom-swiper-button-next">
+                                                    <span class="bi-chevron-right"></span>
+                                                </div>
+                                                <div class="custom-swiper-button-prev">
+                                                    <span class="bi-chevron-left"></span>
+                                                </div>
+                                                <div class="swiper-pagination"></div>
                                             </div>
                                         </div>
                                     </div>
