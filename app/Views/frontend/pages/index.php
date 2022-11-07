@@ -7,35 +7,35 @@
     <?php error_reporting(0); ?>
 
     <!-- <main id="main"> -->
-    <!-- ======= Hero Slider Section ======= -->
-    <section id="hero-slider" class="hero-slider" style="margin-top:80px">
-        <div class="container-md" data-aos="fade-in">
-            <div class="swiper sliderFeaturedPosts rounded-4">
-                <div class="swiper-wrapper">
-                    <?php foreach ($trending as $trend) : ?>
-                        <div class="swiper-slide">
-                            <a href="berita-detail/<?= $trend['slug'] ?>" class="img-bg d-flex align-items-end rounded-4 slider1" style="background-image: url('content/gambar/<?= $trend['gambar'] ?>');background-size: cover; ">
-                                <!-- background-size: auto|length|cover|contain|initial|inherit; -->
-                                <div class=" img-bg-inner">
-                                    <h2><?= $trend['judul'] ?></h2>
-                                    <p><?= substr($trend['isi'], 0, 100) ?></p>
-                                </div>
-                            </a>
-                        </div>
-                    <?php endforeach ?>
-                </div>
-                <div class="custom-swiper-button-next">
-                    <span class="bi-chevron-right"></span>
-                </div>
-                <div class="custom-swiper-button-prev">
-                    <span class="bi-chevron-left"></span>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section><!-- End Hero Slider Section -->
     <main id="main">
-        <div class="bgmain" style="background:url(libraries_frontend/assets/img/bg2.png) no-repeat;background-size: contain;background-position-x: center;background-position-y: center; margin: 75px;">
+        <!-- ======= Hero Slider Section ======= -->
+        <section id="hero-slider" class="hero-slider" style="margin-top:40px">
+            <div class="container-md" data-aos="fade-in">
+                <div class="swiper sliderFeaturedPosts rounded-4">
+                    <div class="swiper-wrapper">
+                        <?php foreach ($terbaru as $trend) : ?>
+                            <div class="swiper-slide">
+                                <a href="berita-detail/<?= $trend['slug'] ?>" class="img-bg d-flex align-items-end rounded-4 slider1" style="background-image: url('content/gambar/<?= $trend['gambar'] ?>');background-size: cover; ">
+                                    <!-- background-size: auto|length|cover|contain|initial|inherit; -->
+                                    <div class=" img-bg-inner">
+                                        <h2><?= $trend['judul'] ?></h2>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+                    <div class="custom-swiper-button-next">
+                        <span class="bi-chevron-right"></span>
+                    </div>
+                    <div class="custom-swiper-button-prev">
+                        <span class="bi-chevron-left"></span>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section><!-- End Hero Slider Section -->
+
+        <div class="bgmain" style="background:url(libraries_frontend/assets/img/bg2.png) no-repeat;background-size: contain;background-position-x: center;background-position-y: center; margin:5px;">
 
             <!-- <div style="background-image: url('libraries_frontend/assets/img/bg.png');background-size: contain;background-repeat: no-repeat; "> -->
             <!-- ======= Post Grid Section ======= -->
@@ -161,10 +161,10 @@
                                                 <?php endforeach ?>
                                             </td>
                                             <td width="50%">
-                                                <?php foreach ($berita_4 as $berita4) : ?>
-                                                    <a href="berita-detail/<?= $berita4['slug'] ?>"><img src="content/gambar/<?= $berita4['gambar'] ?>" class="rounded-1" style="width:85% ;height:50%"></a>
+                                                <?php foreach ($berita_44 as $berita44) : ?>
+                                                    <a href="berita-detail/<?= $berita44['slug'] ?>"><img src="content/gambar/<?= $berita44['gambar'] ?>" class="rounded-1" style="width:85% ;height:50%"></a>
                                                     <br>
-                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita4['slug'] ?>"><?= substr($berita4['judul'], 0, 30) ?></a></strong>
+                                                    <strong style="font-size:10px ;"><a href="berita-detail/<?= $berita44['slug'] ?>"><?= substr($berita44['judul'], 0, 30) ?></a></strong>
                                                 <?php endforeach ?>
                                             </td>
                                         </tr>
@@ -201,40 +201,38 @@
                                         <?php foreach ($trending as $trend) : ?>
                                             <div class="post-entry-1 border-bottom" style="text-align:left ;">
                                                 <div class="post-meta"><span class="date"><?= $trend['tingkat'] ?></span> &bullet; <span class="date"><?= $trend['nama_kategori'] ?></span> &bullet;<span><?= $trend['tanggal'] ?></span></div>
-                                                <h2 class="mb-2"><a href="berita-detail/<?= $trend['slug'] ?>"><?= $trend['judul'] ?></a></h2>
+                                                <strong class="mb-2"><a href="berita-detail/<?= $trend['slug'] ?>"><?= $trend['judul'] ?></a></strong>
                                                 <div class="post-meta-heading"><span class="date">dilihat : <?= $trend['dilihat'] ?></span></div>
                                             </div>
                                         <?php endforeach ?>
                                         <!-- End Trending -->
-                                        <!-- ======= Iklan Slider Section ======= -->
-                                        <section id="hero-slider" class="hero-slider">
-                                            <div class="container-md beritadesktop" data-aos="fade-in">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div class="swiper sliderFeaturedPosts rounded-4">
-                                                            <div class="swiper-wrapper">
-                                                                <?php foreach ($iklan as $item) : ?>
-                                                                    <div class="swiper-slide ">
-                                                                        <div class="img-bg-inner">
-                                                                            <img src="content/iklan/<?= $item['file'] ?>" style="height:115px;width:100%;">
-                                                                        </div>
-                                                                        </a>
+                                        <div class="container-md beritadesktop" data-aos="fade-in">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="swiper sliderFeaturedPosts rounded-4">
+                                                        <div class="swiper-wrapper">
+                                                            <?php foreach ($iklan as $item) : ?>
+                                                                <div class="swiper-slide ">
+                                                                    <div class="img-bg-inner">
+                                                                        <img src="content/iklan/<?= $item['file'] ?>" style="height:115px;width:100%;">
                                                                     </div>
-                                                                <?php endforeach ?>
-                                                            </div>
-                                                            <div class="custom-swiper-button-next">
-                                                                <span class="bi-chevron-right"></span>
-                                                            </div>
-                                                            <div class="custom-swiper-button-prev">
-                                                                <span class="bi-chevron-left"></span>
-                                                            </div>
-                                                            <div class="swiper-pagination"></div>
+                                                                    </a>
+                                                                </div>
+                                                            <?php endforeach ?>
                                                         </div>
+                                                        <div class="custom-swiper-button-next">
+                                                            <span class="bi-chevron-right"></span>
+                                                        </div>
+                                                        <div class="custom-swiper-button-prev">
+                                                            <span class="bi-chevron-left"></span>
+                                                        </div>
+                                                        <div class="swiper-pagination"></div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </section><!-- End Iklan Slider Section -->
+                                        </div>
                                         <!-- Kategori -->
+                                        <br>
                                         <div class="aside-block beritadesktop" style="text-align:left ;">
                                             <h3 class="aside-title">Kategori</h3>
                                             <ul class=" footer-links list-unstyled">

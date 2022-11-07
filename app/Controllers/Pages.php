@@ -51,13 +51,13 @@ class Pages extends BaseController
 
             'berita_33' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->orderBy('timestamp', 'DESC')->orderBy('tanggal', 'DESC')->where('berita.kategori', $databerita[2])->where('berita.status', 'Publish')->findAll(1),
 
-            'berita_4' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->orderBy('timestamp', 'DESC')->orderBy('tanggal', 'DESC')->where('berita.kategori', $databerita[3])->where('berita.status', 'Publish')->findAll(1),
+            'berita_44' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->orderBy('timestamp', 'DESC')->orderBy('tanggal', 'DESC')->where('berita.kategori', $databerita[3])->where('berita.status', 'Publish')->findAll(1),
 
             'berita_5' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->orderBy('timestamp', 'DESC')->orderBy('tanggal', 'DESC')->where('berita.kategori', $databerita[4])->where('berita.status', 'Publish')->findAll(1),
 
             'berita_6' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->orderBy('timestamp', 'DESC')->orderBy('tanggal', 'DESC')->where('berita.kategori', $databerita[5])->where('berita.status', 'Publish')->findAll(1),
 
-            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(4),
+            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->orderBy('timestamp', 'DESC')->findAll(4),
 
             'iklan' => $this->IklanModel->orderBy('id', 'DESC')->where('status', 'Publish')->get()->getResultArray(),
         ];
