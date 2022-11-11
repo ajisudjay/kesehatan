@@ -74,7 +74,7 @@ class Auth extends BaseController
                             session()->set('level', $user['level']);
                             $msg = [
                                 'title' => 'berhasiloperator',
-                                'urloperator' => '/auth/admin',
+                                'urloperator' => '/auth/superadmin',
                             ];
                             echo json_encode($msg);
                         }
@@ -107,19 +107,7 @@ class Auth extends BaseController
         return redirect()->to(base_url('/superadmin'));
     }
 
-    public function admin()
-    {
-        $password = session()->get('password');
-        $username = session()->get('username');
 
-        $cek = $this->UserModel->where(['username' => $username, 'password' => $password])->first();
-        session()->set('username', $cek['username']);
-        session()->set('password', $cek['password']);
-        session()->set('nama', $cek['nama']);
-        session()->set('level', $cek['level']);
-        session()->setFlashdata('loginBerhasil', 'Login Berhasil');
-        return redirect()->to(base_url('/admin'));
-    }
 
     public function logout()
     {
