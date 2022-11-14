@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?= $this->include('frontend/layouts/header') ?>
+<?= $this->include('frontend/layouts/header_post') ?>
 
 <body>
     <?= $this->include('frontend/layouts/top_navbar') ?>
@@ -20,7 +20,7 @@
 
                                 <figure class="my-4" align="center">
                                     <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:400px;width:95%; border-radius: 4%;">
-                                    <figcaption align="center"><?= $item['caption'] ?></figcaption>
+                                    <figcaption align="center" style="font-size:10px;color:#A9A9A9;"><?= $item['caption'] ?></figcaption>
                                 </figure>
                                 <div style="text-align:justify;">
                                     <p><?= $item['isi']; ?></p>
@@ -130,7 +130,7 @@
                                     <?php foreach ($trending as $trend) : ?>
                                         <div class="post-entry-1 border-bottom">
                                             <div class="post-meta"><span class="date"><?= $trend['tingkat'] ?></span> &bullet; <span class="date"><?= $trend['nama_kategori'] ?></span>&bullet; <span><?= $trend['tanggal'] ?></span></div>
-                                            <h2 class="mb-2"><a href="#"><?= $trend['judul'] ?></a></h2>
+                                            <h2 class="mb-2"><a href="/berita-detail/<?= $trend['slug'] ?>"><?= $trend['judul'] ?></a></h2>
                                             <span class="author mb-3 d-block">dilihat : <?= $trend['dilihat'] ?></span>
                                         </div>
                                     <?php endforeach ?>

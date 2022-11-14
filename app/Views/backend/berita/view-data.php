@@ -79,18 +79,19 @@
                                                     </div>
                                                     <br>
                                                 </div>
-                                                <div class="col-lg-5">
+                                                <div class="col-lg-3">
                                                     <br>
                                                     <br>
                                                     <label class="text-primary">Jenis File</label>
                                                     <div>
                                                         <input type="radio" name="jenis_file" value="Gambar" checked> Gambar
                                                         <label class="form-check-label"></label>
-                                                        <input type="radio" name="jenis_file" disabled> Video (Cooming Soon)
-                                                        <label class="form-check-label"></label>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-5">
+                                                <div class="col-lg-4">
+                                                    <img src="libraries_backend/assets/images/ukuran_gambar.png" width="80%">
+                                                </div>
+                                                <div class="col-lg-3">
                                                     <img src="content/gambar/<?= $item['gambar'] ?>" width="20%">
                                                     <br>
                                                     <label class="text-primary">File</label>
@@ -252,17 +253,19 @@
                 <div class="invalid-feedback errorTanggal"></div>
                 <br>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
                 <label class="text-primary">Jenis File</label>
                 <div>
                     <input type="radio" name="jenis_file" value="Gambar" checked> Gambar
                     <label class="form-check-label"></label>
-                    <input type="radio" name="jenis_file" disabled> Video (Cooming Soon)
-                    <label class="form-check-label"></label>
                 </div>
             </div>
             <br>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
+                <img src="libraries_backend/assets/images/ukuran_gambar.png" width="100%">
+            </div>
+            <br>
+            <div class="col-lg-4">
                 <label class="text-primary">File</label>
                 <input type="file" name="file" class="form-control gambar" accept="image/*" required>
                 <div class="invalid-feedback errorGambar"></div>

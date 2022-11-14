@@ -154,6 +154,8 @@ class Pages extends BaseController
     {
         $cekberita = $this->BeritaModel->where('slug', $slug)->first();
         $id = $cekberita['id'];
+        $judul = $cekberita['judul'];
+        $gambar = $cekberita['gambar'];
         $dilihat = $cekberita['dilihat'];
         $terbaca = $dilihat + 1;
         // $jumkar_isi = strlen($cekberita['isi']);
@@ -166,6 +168,9 @@ class Pages extends BaseController
             'top_header' => 'Beranda',
             'header' => '',
             'id_berita' => $id,
+            'judul_berita' => $judul,
+            'gambar_berita' => $gambar,
+
             'tentangkami' => $this->KonfigurasiModel->where('urutan', '1')->first(),
             // 'jumkar' => $jumkar_isi,
             // 'setengah' => $setengahbulat,

@@ -2,11 +2,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Divisi.id - Detail Inovatif dan Berintegritas</title>
+  <title>divisi.id - Detail Inovatif & Berintegritas</title>
+  <meta property="og:image" content="<?= base_url() ?>/content/gambar/<?= $gambar_berita ?>" />
+  <meta property="og:title" content="<?= $judul_berita ?>" />
+  <meta property="og:description" content="divisi.id - Detail Inovatif & Berintegritas" />
   <meta content="" name="description">
   <meta content="" name="keywords">
   <!-- Favicons -->
   <link href="<?= base_url() ?>/libraries_frontend/assets/img/logo.png" rel="icon">
+  <link href="<?= base_url() ?>/libraries_frontend/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,5 +27,4 @@
   <!-- Template Main CSS Files -->
   <link href="<?= base_url() ?>/libraries_frontend/assets/css/variables.css" rel="stylesheet">
   <link href="<?= base_url() ?>/libraries_frontend/assets/css/main.css" rel="stylesheet">
-
 </head>
