@@ -1,27 +1,30 @@
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Divisi.id - Detail Inovatif dan Berintegritas</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <!-- Favicons -->
-  <link href="<?= base_url() ?>/libraries_frontend/assets/img/logo.png" rel="icon">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- ===============================================-->
+  <!--    Document Title-->
+  <!-- ===============================================-->
+  <title>Personal Prevention Check Up</title>
 
-  <!-- Vendor CSS Files -->
-  <link href="<?= base_url() ?>/libraries_frontend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="<?= base_url() ?>/libraries_frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="<?= base_url() ?>/libraries_frontend/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="<?= base_url() ?>/libraries_frontend/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="<?= base_url() ?>/libraries_frontend/assets/vendor/aos/aos.css" rel="stylesheet">
 
-  <!-- Template Main CSS Files -->
-  <link href="<?= base_url() ?>/libraries_frontend/assets/css/variables.css" rel="stylesheet">
-  <link href="<?= base_url() ?>/libraries_frontend/assets/css/main.css" rel="stylesheet">
+  <!-- ===============================================-->
+  <!--    Favicons-->
+  <!-- ===============================================-->
+  <link rel="apple-touch-icon" sizes="180x180" href="libraries_frontend/assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="libraries_frontend/assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="libraries_frontend/assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" href="libraries_frontend/assets/img/favicons/favicon.ico">
+  <link rel="manifest" href="libraries_frontend/assets/img/favicons/manifest.json">
+  <meta name="msapplication-TileImage" content="libraries_frontend/assets/img/favicons/mstile-150x150.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <!-- ===============================================-->
+  <!--    Stylesheets-->
+  <!-- ===============================================-->
+  <link href="libraries_frontend/assets/css/theme.css" rel="stylesheet" />
 
 </head>

@@ -1,69 +1,17 @@
- <!-- ======= Footer ======= -->
- <footer id="footer" class="footer">
+<section class="py-0 bg-primary">
 
-     <div class="footer-content">
-         <div class="container">
-
-             <div class="row g-5">
-                 <div class="col-lg-6">
-                     <h3 class="footer-heading">Tentang Divisi.id</h3>
-                     <p><?= $tentangkami['isi'] ?></p>
-                     <p><a href="/tentangkami" class="footer-heading">Selengkapnya . . . .</a></p>
-                 </div>
-                 <div class="col-6 col-lg-2 beritadesktop">
-                     <h3 class="footer-heading">Kategori</h3>
-                     <ul class="footer-links list-unstyled">
-                         <?php foreach ($kategori as $item) : ?>
-                             <li><a href="/berita-kategoriall/<?= $item['kategori'] ?>"><i class="bi bi-chevron-right"></i><?= $item['kategori'] ?></a></li>
-                         <?php endforeach ?>
-                     </ul>
-                 </div>
-
-                 <div class="col-8 beritamobile">
-                     <h3 class="footer-heading">&nbsp;&nbsp;Kategori</h3>
-                     <ul class="footer-links list-unstyled">
-                         <li>
-                             <?php foreach ($kategori as $item) : ?>
-                                 <a href="/berita-kategoriall/<?= $item['kategori'] ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?= $item['kategori'] ?></a> |
-                             <?php endforeach ?>
-                         </li>
-                     </ul>
-                 </div>
-                 <div class="col-lg-4">
-                     <h3 class="footer-heading">Terbaru</h3>
-                     <ul class="footer-links footer-blog-entry list-unstyled">
-                         <?php foreach ($terbaru as $terbaru) : ?>
-                             <li>
-                                 <a href="/berita-detail/<?= $terbaru['slug'] ?>" class="d-flex align-items-center">
-                                     <div>
-                                         <div class="post-meta d-block"><span class="date" style="font-size: 8px;"><?= $terbaru['tingkat'] ?></span> <span class=" mx-1">&bullet;</span> <span style="font-size: 8px;"><?= $terbaru['nama_kategori'] ?></span><span class="mx-1">&bullet;</span><span style="font-size: 8px;"><?= $terbaru['tanggal'] ?></span></div>
-                                         <span><?= $terbaru['judul'] ?></span>
-                                     </div>
-                                 </a>
-                             </li>
-                         <?php endforeach ?>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </div>
- </footer>
- <footer id="footer" class="footer">
-     <div class="footer-legal">
-         <div class="container">
-             <div class="row justify-content-between">
-                 <div class="col-md-12">
-                     <div class="social-links mb-3 mb-lg-0 text-center">
-                         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                     </div>
-                     <div class="copyright text-center">
-                         © Copyright <strong><span>Divisi.id</span></strong>2022
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </div>
- </footer>
- <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <div class="container">
+        <div class="row justify-content-md-between justify-content-evenly py-4">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-auto text-center text-md-start">
+                <p class="fs--1 my-2 fw-bold text-200">Kesehatan Masyarakat &copy; 2021</p>
+            </div>
+            <div class="col-12 col-sm-8 col-md-6">
+                <p class="fs--1 my-2 text-center text-md-end text-200"> Made with&nbsp;
+                    <svg class="bi bi-suit-heart-fill" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#F95C19" viewBox="0 0 16 16">
+                        <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"></path>
+                    </svg>&nbsp;by&nbsp;<a class="fw-bold text-info" href="https://themewagon.com/" target="_blank">Samarinda </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

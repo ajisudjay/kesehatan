@@ -19,7 +19,7 @@
                                 <h3 class="mb-5" align="center"><?= $item['judul'] ?></h3>
 
                                 <figure class="my-4" align="center">
-                                    <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:400px;width:95%; border-radius: 4%;">
+                                    <img src="<?= base_url('content/gambar/' . $item['gambar']); ?>" class="rounded-1" style="height:40%;width:95%; border-radius: 4%;">
                                     <figcaption align="center" style="font-size:10px;color:#A9A9A9;"><?= $item['caption'] ?></figcaption>
                                 </figure>
                                 <div style="text-align:justify;">
