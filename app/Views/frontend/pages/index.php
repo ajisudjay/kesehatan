@@ -13,9 +13,9 @@
             <!--/.bg-holder-->
 
             <div class="container">
-                <div class="row min-vh-xl-100 min-vh-xxl-25">
+                <div class="row min-vh-xl-25">
                     <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="libraries_frontend/assets/img/gallery/hero.png" alt="hero-header" /></div>
-                    <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-6">
+                    <div class="col-md-25 col-xl-6 col-xxl-5 text-md-start text-center py-6">
                         <h1 class="fw-light font-base fs-6 fs-xxl-7">Personal Prevention Check Up</strong></h1>
                         <p class="fs-1 mb-5">You can check up your health <br />for preventive health. </p><a class="btn btn-lg btn-primary rounded-pill" href="#checkup" role="button">Get Started</a>
                     </div>
@@ -44,20 +44,20 @@
                         <form action="<?= base_url('Checkup/baru'); ?>" method="post" class="baru">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <input class="form-control form-livedoc-control" name="nama" type="text" placeholder="Nama" />
+                                    <input class="form-control form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control form-livedoc-control" name="hp" type="text" placeholder="telepon" />
+                                    <input class="form-control form-livedoc-control" name="telepon" type="text" placeholder="telepon" required>
                                 </div>
                                 <div class="col-md-3">
-                                    <select class="form-select" name="jk">
-                                        <option selected="selected">Jenis Kelamin</option>
-                                        <option>Laki-laki</option>
-                                        <option>Perempuan</option>
+                                    <select class="form-select" name="jk" required>
+                                        <option selected="selected" value="">Jenis Kelamin</option>
+                                        <option value="Laki-laki">Laki-laki</option>
+                                        <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control form-livedoc-control" name="umur" type="text" placeholder="Umur" />
+                                    <input class="form-control form-livedoc-control" name="umur" type="text" placeholder="Umur" required>
                                 </div>
                             </div>
 
@@ -81,7 +81,7 @@
 <!-- SCRIPT AJAX -->
 <script>
     $(document).ready(function() {
-        //  function tambah
+        //  function baru
         $('.baru').submit(function() {
             var nama = $('#nama').val();
             var hp = $('#hp').val();

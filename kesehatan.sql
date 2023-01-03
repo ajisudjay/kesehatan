@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2023 at 12:33 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Waktu pembuatan: 03 Jan 2023 pada 08.22
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `berita`
+-- Struktur dari tabel `berita`
 --
 
 CREATE TABLE `berita` (
@@ -46,7 +46,7 @@ CREATE TABLE `berita` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `berita`
+-- Dumping data untuk tabel `berita`
 --
 
 INSERT INTO `berita` (`id`, `judul`, `slug`, `isi`, `jenis_file`, `gambar`, `caption`, `tingkat`, `kategori`, `tanggal`, `status`, `tag`, `dilihat`, `timestamp`, `admin`) VALUES
@@ -61,7 +61,7 @@ INSERT INTO `berita` (`id`, `judul`, `slug`, `isi`, `jenis_file`, `gambar`, `cap
 -- --------------------------------------------------------
 
 --
--- Table structure for table `iklan`
+-- Struktur dari tabel `iklan`
 --
 
 CREATE TABLE `iklan` (
@@ -73,7 +73,7 @@ CREATE TABLE `iklan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `iklan`
+-- Dumping data untuk tabel `iklan`
 --
 
 INSERT INTO `iklan` (`id`, `nama`, `file`, `jenis_file`, `status`) VALUES
@@ -82,7 +82,7 @@ INSERT INTO `iklan` (`id`, `nama`, `file`, `jenis_file`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori`
+-- Struktur dari tabel `kategori`
 --
 
 CREATE TABLE `kategori` (
@@ -92,7 +92,7 @@ CREATE TABLE `kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori`
+-- Dumping data untuk tabel `kategori`
 --
 
 INSERT INTO `kategori` (`id`, `kategori`, `urutan`) VALUES
@@ -107,7 +107,7 @@ INSERT INTO `kategori` (`id`, `kategori`, `urutan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `komentar`
+-- Struktur dari tabel `komentar`
 --
 
 CREATE TABLE `komentar` (
@@ -119,7 +119,7 @@ CREATE TABLE `komentar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `komentar`
+-- Dumping data untuk tabel `komentar`
 --
 
 INSERT INTO `komentar` (`id`, `nama`, `komentar`, `timestamp`, `id_berita`) VALUES
@@ -131,7 +131,7 @@ INSERT INTO `komentar` (`id`, `nama`, `komentar`, `timestamp`, `id_berita`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konfigurasi`
+-- Struktur dari tabel `konfigurasi`
 --
 
 CREATE TABLE `konfigurasi` (
@@ -142,7 +142,7 @@ CREATE TABLE `konfigurasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `konfigurasi`
+-- Dumping data untuk tabel `konfigurasi`
 --
 
 INSERT INTO `konfigurasi` (`id`, `judul`, `isi`, `urutan`) VALUES
@@ -156,7 +156,64 @@ INSERT INTO `konfigurasi` (`id`, `judul`, `isi`, `urutan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tingkat`
+-- Struktur dari tabel `koresponden`
+--
+
+CREATE TABLE `koresponden` (
+  `id` int(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `telepon` varchar(100) NOT NULL,
+  `jk` varchar(100) NOT NULL,
+  `umur` int(100) NOT NULL,
+  `p1` varchar(100) NOT NULL,
+  `p2` varchar(100) NOT NULL,
+  `p3` varchar(100) NOT NULL,
+  `p4` varchar(100) NOT NULL,
+  `p5` varchar(100) NOT NULL,
+  `p6` varchar(100) NOT NULL,
+  `p7` varchar(100) NOT NULL,
+  `p8` varchar(100) NOT NULL,
+  `p9` varchar(100) NOT NULL,
+  `p10` varchar(100) NOT NULL,
+  `p11` varchar(100) NOT NULL,
+  `p12` varchar(100) NOT NULL,
+  `p13` varchar(100) NOT NULL,
+  `p14` varchar(100) NOT NULL,
+  `p15` varchar(100) NOT NULL,
+  `p16` varchar(100) NOT NULL,
+  `p17` varchar(100) NOT NULL,
+  `p18` varchar(100) NOT NULL,
+  `p19` varchar(100) NOT NULL,
+  `p20` varchar(100) NOT NULL,
+  `p21` varchar(100) NOT NULL,
+  `p22` varchar(100) NOT NULL,
+  `p23` varchar(100) NOT NULL,
+  `p24` varchar(100) NOT NULL,
+  `p25` varchar(100) NOT NULL,
+  `p26` varchar(100) NOT NULL,
+  `p27` varchar(100) NOT NULL,
+  `p28` varchar(100) NOT NULL,
+  `p29` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `koresponden`
+--
+
+INSERT INTO `koresponden` (`id`, `slug`, `nama`, `telepon`, `jk`, `umur`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`, `p16`, `p17`, `p18`, `p19`, `p20`, `p21`, `p22`, `p23`, `p24`, `p25`, `p26`, `p27`, `p28`, `p29`) VALUES
+(1, '', 'asddsa', '32423', 'asdasd', 21, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
+(2, '', 'sdfsdfs', 'sdfsdf', 'sdf', 21, 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
+(797945397, '', 'aji sudjai', '0852', 'Laki-laki', 23, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1197770804, '', 'sdfsd', '', 'Laki-laki', 21, 'ya', 'ya', 'ya', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1575742452, '', 'sdfsd', '', 'Laki-laki', 21, 'ya', 'ya', 'ya', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1575742454, 'shafiyyah-azizah-12345-3', 'Shafiyyah Azizah', '12345', 'Perempuan', 3, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1575742455, 'nama-123-3', 'nama', '123', 'Laki-laki', 3, 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tingkat`
 --
 
 CREATE TABLE `tingkat` (
@@ -166,7 +223,7 @@ CREATE TABLE `tingkat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tingkat`
+-- Dumping data untuk tabel `tingkat`
 --
 
 INSERT INTO `tingkat` (`id`, `tingkat`, `urutan`) VALUES
@@ -178,7 +235,7 @@ INSERT INTO `tingkat` (`id`, `tingkat`, `urutan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -189,7 +246,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`username`, `password`, `nama`, `level`) VALUES
@@ -201,7 +258,7 @@ INSERT INTO `user` (`username`, `password`, `nama`, `level`) VALUES
 --
 
 --
--- Indexes for table `berita`
+-- Indeks untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`),
@@ -210,88 +267,100 @@ ALTER TABLE `berita`
   ADD KEY `tingkat` (`tingkat`);
 
 --
--- Indexes for table `iklan`
+-- Indeks untuk tabel `iklan`
 --
 ALTER TABLE `iklan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `kategori`
+-- Indeks untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `komentar`
+-- Indeks untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_berita` (`id_berita`);
 
 --
--- Indexes for table `konfigurasi`
+-- Indeks untuk tabel `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tingkat`
+-- Indeks untuk tabel `koresponden`
+--
+ALTER TABLE `koresponden`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `tingkat`
 --
 ALTER TABLE `tingkat`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `berita`
+-- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT for table `iklan`
+-- AUTO_INCREMENT untuk tabel `iklan`
 --
 ALTER TABLE `iklan`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `kategori`
+-- AUTO_INCREMENT untuk tabel `kategori`
 --
 ALTER TABLE `kategori`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `komentar`
+-- AUTO_INCREMENT untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `konfigurasi`
+-- AUTO_INCREMENT untuk tabel `konfigurasi`
 --
 ALTER TABLE `konfigurasi`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tingkat`
+-- AUTO_INCREMENT untuk tabel `koresponden`
+--
+ALTER TABLE `koresponden`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742456;
+
+--
+-- AUTO_INCREMENT untuk tabel `tingkat`
 --
 ALTER TABLE `tingkat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `berita`
+-- Ketidakleluasaan untuk tabel `berita`
 --
 ALTER TABLE `berita`
   ADD CONSTRAINT `berita_ibfk_1` FOREIGN KEY (`admin`) REFERENCES `user` (`username`) ON DELETE SET NULL ON UPDATE CASCADE,
@@ -299,7 +368,7 @@ ALTER TABLE `berita`
   ADD CONSTRAINT `berita_ibfk_3` FOREIGN KEY (`kategori`) REFERENCES `kategori` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Constraints for table `komentar`
+-- Ketidakleluasaan untuk tabel `komentar`
 --
 ALTER TABLE `komentar`
   ADD CONSTRAINT `komentar_ibfk_1` FOREIGN KEY (`id_berita`) REFERENCES `berita` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

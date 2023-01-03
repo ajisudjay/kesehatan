@@ -42,6 +42,7 @@ $routes->get('/login', 'Pages::login');
 $routes->get('/superadmin', 'Pages::hal_superadmin');
 $routes->get('/admin', 'Pages::hal_superadmin');
 $routes->get('/tentangkami', 'Pages::tentangkami');
+$routes->get('/hasil/(:any)', 'Pages::hasil');
 $routes->get('/berita-detail/(:any)', 'Pages::berita/$1');
 $routes->get('/berita-tingkat/(:any)', 'Pages::berita_tingkat/$1');
 $routes->get('/berita-kategoriall/(:any)', 'Pages::berita_kategoriall/$1');
