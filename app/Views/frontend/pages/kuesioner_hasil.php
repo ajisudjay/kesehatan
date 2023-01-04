@@ -4,6 +4,17 @@
     <div style="background-color: cyan;">
         <div class="row">
             <div class="col-md-8">
+                <label class="visually" for="inputName">PERTANYAAN</label>
+            </div>
+            <div class="col-md-4">
+                <label class="form-check-label">
+                    JAWABAN
+                </label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8">
                 <label class="visually" for="inputName">1. Merasa mudah menderita Flu (Pilek, Batuk) / gangguan pernafasan lainnya ?</label>
             </div>
             <div class="col-md-4">
@@ -76,11 +87,11 @@
     <div style="background-color:greenyellow;">
         <div class="row">
             <div class="col-md-8">
-                <label class="visually" for="inputName">8. Mengkonsumsi buah dan sayur organik kurang dari 9 porsi setiap hari ? (standar WHO)</label>
+                <label class="visually" for="inputName">10. Mengkonsumsi buah dan sayur organik kurang dari 9 porsi setiap hari ? (standar WHO)</label>
             </div>
             <div class="col-md-4">
                 <label class="form-check-label">
-                    <?= $item['p8'] ?>
+                    <?= $item['p10'] ?>
                 </label>
             </div>
         </div>
@@ -116,7 +127,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <label class="visually" for="inputName">12. Minum air kurang dari 2 liter (8 gelas) per hari?</label>
+                <label class="visually" for="inputName">12. Minum air kurang dari 2 liter (10 gelas) per hari?</label>
             </div>
             <div class="col-md-4">
                 <label class="form-check-label">
@@ -178,7 +189,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <label class="visually" for="inputName">18. Rutin diluar rumah lebih dari 8 jam untuk bekerja / aktifitas lainnya?</label>
+                <label class="visually" for="inputName">18. Rutin diluar rumah lebih dari 10 jam untuk bekerja / aktifitas lainnya?</label>
             </div>
             <div class="col-md-4">
                 <label class="form-check-label">
@@ -252,7 +263,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <label class="visually" for="inputName">25. Remaja kurang dari 18 tahun ?</label>
+                <label class="visually" for="inputName">25. Remaja kurang dari 110 tahun ?</label>
             </div>
             <div class="col-md-4">
                 <label class="form-check-label">
@@ -272,7 +283,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <label class="visually" for="inputName">27. Mengenakan ukuran celana : wanita lebih dari 32 (80 cm), pria lebih dari 36 (90 cm) ?</label>
+                <label class="visually" for="inputName">27. Mengenakan ukuran celana : wanita lebih dari 32 (100 cm), pria lebih dari 36 (90 cm) ?</label>
             </div>
             <div class="col-md-4">
                 <label class="form-check-label">
@@ -301,5 +312,137 @@
             </div>
         </div>
     </div>
+    <br>
+    <table id="scr-vtr-dynamic" class="table table-striped table-hover">
+        <tr>
+            <td width="40px">
+                A
+            </td>
+            <td width="40px">
+                B
+            </td>
+            <td width="40px">
+                C
+            </td>
+            <td width="40px">
+                D
+            </td>
+            <td width="40px">
+                E
+            </td>
+            <td width="40px">
+                F
+            </td>
+            <td width="40px">
+                G
+            </td>
+            <td width="40px">
+                H
+            </td>
+            <td width="40px">
+                I
+            </td>
+            <td width="40px">
+                J
+            </td>
+            <td width="40px">
+                K
+            </td>
+            <td width="40px">
+                L
+            </td>
+            <td width="40px">
+                M
+            </td>
+            <td width="40px">
+                N
+            </td>
+            <td width="40px">
+                O
+            </td>
+            <td width="40px">
+                P
+            </td>
+            <td width="40px">
+                Q
+            </td>
+            <td width="40px">
+                R
+            </td>
+            <td width="40px">
+                S
+            </td>
+        </tr>
+        <tr>
+            <td width="40px">
+                <?= $nilai_a ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_b ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_c ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_d ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_e ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_f ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_g ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_h ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_i ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_j ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_k ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_l ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_m ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_n ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_o ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_p ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_q ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_r ?>
+            </td>
+            <td width="40px">
+                <?= $nilai_s ?>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <label>Tingkat 1 : Sangat baik, AKG standar, kebutuhan tubuh terpenuhi </label>
+            </td>
+            <td colspan="6">
+                <label>Tingkat 2 : Waspada, memerlukan nutrisi dalam jumlah rendah sesuai kebutuhan tubuh </label>
+            </td>
+            <td colspan="7">
+                <label>Tingkat 3 : Risiko tinggi, sangat memerlukan nutrisi sesuai AKG kebutuhan tubuh </label>
+            </td>
+        </tr>
+    </table>
 <?php endforeach ?>
 <br>

@@ -2301,8 +2301,6 @@ progress {
 }
 
 .table {
-  --bs-table-bg: transparent;
-  --bs-table-accent-bg: transparent;
   --bs-table-striped-color: #1B71A1;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
   --bs-table-active-color: #1B71A1;
@@ -2313,7 +2311,6 @@ progress {
   margin-bottom: 1rem;
   color: #1B71A1;
   vertical-align: top;
-  border-color: #C5C5D2;
 }
 
 .table > :not(caption) > * > * {
