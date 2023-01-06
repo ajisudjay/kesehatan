@@ -3,44 +3,42 @@
 <html lang="en-US" dir="ltr">
 
 <body>
-    <?php error_reporting(0); ?>
     <!-- SECTION1 -->
     <main class="main" id="top">
         <?= $this->include('frontend/layouts/guest') ?>
-        <section class="py-xxl-10 pb-0" id="home">
-            <div class="bg-holder bg-size" style="background-image:url(libraries_frontend/assets/img/gallery/hero-bg.png);background-position:top center;background-size:cover;">
+        <section id="home">
+            <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
-            <!--/.bg-holder-->
 
             <div class="container">
-                <div class="row min-vh-xl-25">
-                    <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img class="pt-7 pt-md-0 w-100" src="libraries_frontend/assets/img/gallery/hero.png" alt="hero-header" /></div>
-                    <div class="col-md-25 col-xl-6 col-xxl-5 text-md-start text-center py-6">
-                        <h1 class="fw-light font-base fs-6 fs-xxl-7">Personal Prevention Check Up</strong></h1>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Personal Prevention Check Up</h1>
                         <p class="fs-1 mb-5">You can check up your health <br />for preventive health. </p><a class="btn btn-lg btn-primary rounded-pill" href="#checkup" role="button">Get Started</a>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <form action="<?= base_url('Checkup/baru'); ?>" method="post" class="baru">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-6">
+                                <p><input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
+                                    <button class="btn btn-primary rounded-pill" type="submit">Cari</button>
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+
         </section>
 
         <!-- SECTION2 -->
         <section class="pb-0" id="checkup">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 py-3">
-                        <h1 class="text-center">Personal Prevention Check Up</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-holder bg-size" style="background-image:url(assets/img/gallery/about-bg.png);background-position:top center;background-size:contain;">
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="bg-holder bg-size" style="background-image:url(assets/img/gallery/dot-bg.png);background-position:bottom right;background-size:auto;">
-                    </div>
                     <!--/.bg-holder-->
-                    <div class="col-lg-12 z-index-2">
+                    <div class="col-lg-12">
                         <form action="<?= base_url('Checkup/baru'); ?>" method="post" class="baru">
                             <div class="row">
                                 <div class="col-md-5">
@@ -69,6 +67,7 @@
                                 </div>
                             </div>
                         </form>
+                        <br>
                     </div>
                 </div>
             </div>

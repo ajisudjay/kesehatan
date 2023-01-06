@@ -2311,7 +2311,7 @@ progress {
   margin-bottom: 1rem;
   color: #1B71A1;
   vertical-align: top;
-  border-color: #C5C5D2;
+  border-color: #000000;
 }
 
 .table > :not(caption) > * > * {
@@ -2378,7 +2378,7 @@ progress {
   --bs-table-hover-bg: #c9ccda;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #c6c8d6;
+  border-color: #0c0c0c;
 }
 
 .table-secondary {
@@ -2390,7 +2390,7 @@ progress {
   --bs-table-hover-bg: #c7d7e1;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #c3d3dd;
+  border-color: #0c0c0c;
 }
 
 .table-success {
@@ -2402,7 +2402,7 @@ progress {
   --bs-table-hover-bg: #cbe0d1;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #c8dcce;
+  border-color: #0c0c0c;
 }
 
 .table-info {
@@ -2414,7 +2414,7 @@ progress {
   --bs-table-hover-bg: #c5e2e8;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #c1dee4;
+  border-color: #0c0c0c;
 }
 
 .table-warning {
@@ -2426,7 +2426,7 @@ progress {
   --bs-table-hover-bg: #f1e5cc;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #ede1c9;
+  border-color: #0c0c0c;
 }
 
 .table-danger {
@@ -2438,7 +2438,7 @@ progress {
   --bs-table-hover-bg: #ebccd1;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #e6c8ce;
+  border-color: #0c0c0c;
 }
 
 .table-light {
@@ -2450,7 +2450,7 @@ progress {
   --bs-table-hover-bg: #e3e7ed;
   --bs-table-hover-color: #464558;
   color: #464558;
-  border-color: #dfe3e9;
+  border-color: #0c0c0c;
 }
 
 .table-dark {
