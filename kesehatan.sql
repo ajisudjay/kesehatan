@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jan 2023 pada 08.22
+-- Waktu pembuatan: 06 Jan 2023 pada 09.09
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -166,6 +166,7 @@ CREATE TABLE `koresponden` (
   `telepon` varchar(100) NOT NULL,
   `jk` varchar(100) NOT NULL,
   `umur` int(100) NOT NULL,
+  `datetime` date DEFAULT NULL,
   `p1` varchar(100) NOT NULL,
   `p2` varchar(100) NOT NULL,
   `p3` varchar(100) NOT NULL,
@@ -201,14 +202,22 @@ CREATE TABLE `koresponden` (
 -- Dumping data untuk tabel `koresponden`
 --
 
-INSERT INTO `koresponden` (`id`, `slug`, `nama`, `telepon`, `jk`, `umur`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`, `p16`, `p17`, `p18`, `p19`, `p20`, `p21`, `p22`, `p23`, `p24`, `p25`, `p26`, `p27`, `p28`, `p29`) VALUES
-(1, '', 'asddsa', '32423', 'asdasd', 21, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
-(2, '', 'sdfsdfs', 'sdfsdf', 'sdf', 21, 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
-(797945397, '', 'aji sudjai', '0852', 'Laki-laki', 23, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
-(1197770804, '', 'sdfsd', '', 'Laki-laki', 21, 'ya', 'ya', 'ya', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
-(1575742452, '', 'sdfsd', '', 'Laki-laki', 21, 'ya', 'ya', 'ya', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
-(1575742454, 'shafiyyah-azizah-12345-3', 'Shafiyyah Azizah', '12345', 'Perempuan', 3, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
-(1575742455, 'nama-123-3', 'nama', '123', 'Laki-laki', 3, 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak');
+INSERT INTO `koresponden` (`id`, `slug`, `nama`, `telepon`, `jk`, `umur`, `datetime`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`, `p16`, `p17`, `p18`, `p19`, `p20`, `p21`, `p22`, `p23`, `p24`, `p25`, `p26`, `p27`, `p28`, `p29`) VALUES
+(1, '', 'asddsa', '32423', 'asdasd', 21, NULL, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
+(2, '', 'sdfsdfs', 'sdfsdf', 'sdf', 21, NULL, 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
+(797945397, '', 'aji sudjai', '0852', 'Laki-laki', 23, NULL, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1197770804, '', 'sdfsd', '', 'Laki-laki', 21, NULL, 'ya', 'ya', 'ya', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1575742452, '', 'sdfsd', '', 'Laki-laki', 21, NULL, 'ya', 'ya', 'ya', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1575742454, 'shafiyyah-azizah-12345-3', 'Shafiyyah Azizah', '12345', 'Perempuan', 3, NULL, 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya'),
+(1575742455, 'nama-123-3', 'nama', '123', 'Laki-laki', 3, NULL, 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'ya', 'ya', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak', 'tidak'),
+(1575742457, 'aji-sudjai-089656680408-27', 'Aji Sudjai', '089656680408', 'Laki-laki', 27, NULL, 'Ya', 'Ya', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya'),
+(1575742459, 'aji-sudjai-089656680408-20', 'aji sudjai', '089656680408', 'Laki-laki', 27, NULL, 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak'),
+(1575742460, 'shafiyyah-azizah-089656681234-54', 'Shafiyyah Azizah', '089656681234', 'Perempuan', 3, NULL, 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya'),
+(1575742461, 'orang-baru-08523-32', 'orang baru', '08523', 'Laki-laki', 30, NULL, 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Ya', 'Tidak', 'Ya', 'Ya', 'Tidak', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya'),
+(1575742465, 'sadsad-32432-2023-01-06', 'sadsad', '32432', 'Laki-laki', 23, '2023-01-06', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Tidak', 'Ya', 'Tidak', 'Ya', 'Tidak', 'Ya'),
+(1575742466, 'sadsad345345-32432werw-2023-01-06', 'sadsad345345', '32432werw', 'Laki-laki', 27, '2023-01-06', 'Ya', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Tidak', 'Ya'),
+(1575742469, 'nama-123-2023-01-06', 'nama', '123', 'Perempuan', 3, '2023-01-06', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak'),
+(1575742470, 'yaya-493509304-2023-01-06', 'yaya', '493509304', 'Perempuan', 15, '2023-01-06', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Ya', 'Ya', 'Ya', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Tidak');
 
 -- --------------------------------------------------------
 
@@ -347,7 +356,7 @@ ALTER TABLE `konfigurasi`
 -- AUTO_INCREMENT untuk tabel `koresponden`
 --
 ALTER TABLE `koresponden`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742456;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742471;
 
 --
 -- AUTO_INCREMENT untuk tabel `tingkat`
