@@ -173,6 +173,25 @@ class Checkup extends BaseController
         }
     }
 
+    public function riwayat()
+    {
+        $request = \Config\Services::request();
+        $nama = $request->getVar('nama');
+        $telepon = $request->getVar('telepon');
+        $cekriwayat = $this->KorespondenModel->where('nama', $nama)->where('telepon', $telepon)->first();
+        if ($cekriwayat < 1) {
+            $data = [
+                'msg' => 'tidak ada',
+            ];
+            return redirect()->to(base_url("/riwayat"));
+        } else {
+            $data = [
+                'msg' => 'ada',
+            ];
+            return redirect()->to(base_url("/riwayat"));
+        }
+    }
+
     public function index()
     {
         $data = [

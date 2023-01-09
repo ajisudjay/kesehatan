@@ -2,18 +2,15 @@
 
 namespace App\Controllers;
 
-use App\Models\BeritaModel;
-use App\Models\KategoriModel;
+use App\Models\KorespondenModel;
 use App\Controllers\BaseController;
 
-class Kategori extends BaseController
+class Koresponden extends BaseController
 {
-    protected $BeritaModel;
-    protected $KategoriModel;
+    protected $KorespondenModel;
     public function __construct()
     {
-        $this->BeritaModel = new BeritaModel();
-        $this->KategoriModel = new KategoriModel();
+        $this->KorespondenModel = new KorespondenModel();
     }
     public function index()
     {
@@ -22,13 +19,12 @@ class Kategori extends BaseController
         }
         $admin = session()->get('nama');
         $data = [
-            'title' => 'Beranda - Divisi.id',
-            'top_header' => 'Beranda',
-            'header' => 'Kategori',
+            'title' => 'Koresponden - Siswanto',
+            'top_header' => 'Koresponden',
+            'header' => 'Koresponden',
             'admin' => $admin,
-            'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
         ];
-        return view('backend/kategori/index', $data);
+        return view('backend/koresponden/index', $data);
     }
     public function viewData()
     {
@@ -38,11 +34,11 @@ class Kategori extends BaseController
         $request = \Config\Services::request();
         if ($request->isAJAX()) {
             $data = [
-                'kategori' => $this->KategoriModel->orderBy('kategori', 'ASC')->get()->getResultArray(),
+                'koresponden' => $this->KorespondenModel->orderBy('nama', 'ASC')->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [
-                'data' => view('backend/kategori/view-data', $data)
+                'data' => view('backend/koresponden/view-data', $data)
             ];
             echo json_encode($msg);
         } else {
@@ -89,15 +85,15 @@ class Kategori extends BaseController
                     'urutan' => $urutan,
                     'kategori' => $kategori,
                 ];
-                $this->KategoriModel->insert($data);
+                $this->KorespondenModel->insert($data);
 
                 $data2 = [
-                    'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
+                    'kategori' => $this->KorespondenModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
                     'sukses' => 'Kategori Berhasil Ditambahkan !',
                     'status' => 'berhasil',
-                    'data' => view('backend/kategori/view-data', $data2)
+                    'data' => view('backend/koresponden/view-data', $data2)
                 ];
                 echo json_encode($msg);
             }
@@ -148,15 +144,15 @@ class Kategori extends BaseController
                     'kategori' => $kategori,
                 ];
 
-                $this->KategoriModel->update($id, $data);
+                $this->KorespondenModel->update($id, $data);
 
                 $data2 = [
-                    'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
+                    'kategori' => $this->KorespondenModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
                 ];
                 $msg = [
                     'sukses' => 'Kategori Berhasil Diubah !',
                     'status' => 'berhasil',
-                    'data' => view('backend/kategori/view-data', $data2)
+                    'data' => view('backend/koresponden/view-data', $data2)
                 ];
                 echo json_encode($msg);
             }
@@ -172,9 +168,9 @@ class Kategori extends BaseController
         if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             return redirect()->to(base_url('/login'));
         }
-        $this->KategoriModel->delete($id);
+        $this->KorespondenModel->delete($id);
 
         session()->setFlashdata('pesanHapus', 'Kategori Berhasil Di Hapus !');
-        return redirect()->to(base_url('/kategori'));
+        return redirect()->to(base_url('/koresponden'));
     }
 }

@@ -21,7 +21,7 @@
                 <i class="feather icon-menu"></i>
             </a>
             <a href="/superadmin">
-                <img class="img-fluid" src="libraries_backend\assets\images\logo.png" alt="Theme-Logo">
+                <img class="img-fluid" src="libraries_backend\assets\images\logo-small.png" alt="Theme-Logo">
             </a>
             <a class="mobile-options">
                 <i class="feather icon-more-horizontal"></i>
@@ -37,35 +37,6 @@
                 </li>
             </ul>
             <ul class="nav-right">
-                <li class="header-notification">
-                    <div class="dropdown-primary dropdown">
-                        <div class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="feather icon-bell"></i>
-                            <span class="badge bg-c-pink"><?= count($berita_belum_publish) ?></span>
-                        </div>
-                        <ul class="show-notification notification-view dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                            <li>
-                                <h6>Pemberitahuan</h6>
-                                <label class="label label-danger">Berita Baru</label>
-                            </li>
-                            <?php foreach ($berita_belum_publish as $item) : ?>
-                                <li>
-                                    <div class="media">
-                                        <a href="/berita">
-                                            <div class="media-body">
-                                                <h5 class="notification-user"><?= $item['judul'] ?></h5>
-                                                <p class="notification-msg"><?= substr($item['isi'], 0, 50) ?></p>
-                                                <span class="notification-time"><?= $item['tingkat'] ?>&bullet;<?= $item['kategori'] ?></span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            <?php endforeach ?>
-
-                        </ul>
-                    </div>
-                </li>
-
                 <li>
                     <a href="<?= base_url('/'); ?>" target="_blank">
                         <i class="feather icon-eye"></i>

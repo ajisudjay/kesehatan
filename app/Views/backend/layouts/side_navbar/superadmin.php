@@ -8,39 +8,12 @@
                 </a>
             </li>
         </ul>
-        <div class="pcoded-navigatio-lavel">Berita</div>
+        <div class="pcoded-navigatio-lavel">Data</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="<?= base_url('berita'); ?>">
-                    <span class="pcoded-micon"><i class="fa fa-newspaper-o"></i></span>
-                    <span class="pcoded-mtext">Berita</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= base_url('tingkat'); ?>">
+                <a href="<?= base_url('koresponden'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-th-list"></i></span>
-                    <span class="pcoded-mtext">Tingkat</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= base_url('kategori'); ?>">
-                    <span class="pcoded-micon"><i class="fa fa-th-list"></i></span>
-                    <span class="pcoded-mtext">Kategori</span>
-                </a>
-            </li>
-            <li>
-                <a href="<?= base_url('komentar'); ?>">
-                    <span class="pcoded-micon"><i class="fa fa-comments-o"></i></span>
-                    <span class="pcoded-mtext">Komentar</span>
-                </a>
-            </li>
-        </ul>
-        <div class="pcoded-navigatio-lavel">Iklan</div>
-        <ul class="pcoded-item pcoded-left-item">
-            <li>
-                <a href="<?= base_url('iklan'); ?>">
-                    <span class="pcoded-micon"><i class="fa fa-shopping-bag"></i></span>
-                    <span class="pcoded-mtext">Iklan</span>
+                    <span class="pcoded-mtext">Koresponden</span>
                 </a>
             </li>
         </ul>

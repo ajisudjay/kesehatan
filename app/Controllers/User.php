@@ -2,17 +2,14 @@
 
 namespace App\Controllers;
 
-use App\Models\BeritaModel;
 use App\Models\UserModel;
 use App\Controllers\BaseController;
 
 class User extends BaseController
 {
-    protected $BeritaModel;
     protected $UserModel;
     public function __construct()
     {
-        $this->BeritaModel = new BeritaModel();
         $this->UserModel = new UserModel();
     }
     public function index()
@@ -26,7 +23,6 @@ class User extends BaseController
             'top_header' => 'Beranda',
             'header' => 'Data User',
             'admin' => $admin,
-            'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
         ];
         return view('backend/user/index', $data);
     }

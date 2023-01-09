@@ -12,9 +12,7 @@
                     <!-- Authentication card start -->
                     <form class="md-float-material form-material login-form" action="<?= base_url('auth/index'); ?>" method="post">
                         <?= csrf_field() ?>
-                        <div class="text-center">
-                            <img src="libraries_backend\assets\images\logo.png" alt="logo.png">
-                        </div>
+
                         <div class="auth-box card">
                             <div class="card-block">
                                 <div class="row m-b-20">
@@ -67,7 +65,7 @@
                                         <p class="text-inverse text-left"><a href="/"><b class="f-w-600">Kembali ke Beranda</b></a></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <img src="libraries_backend\assets\images\logo-small.png" width="50px" alt="logo.png">
+                                        <img src="libraries_backend\assets\images\logo.png" width="50px" alt="logo.png">
                                     </div>
                                 </div>
                             </div>

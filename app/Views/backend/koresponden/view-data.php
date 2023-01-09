@@ -23,8 +23,8 @@
                                 <div class="invalid-feedback errorUrutan"></div>
                                 <br>
                                 <label class="text-primary">Kategori</label>
-                                <input type="text" name="kategori" class="form-control kategori" placeholder="Kategori">
-                                <div class="invalid-feedback errorKategori"></div>
+                                <input type="text" name="Nama" class="form-control Nama" placeholder="Nama">
+                                <div class="invalid-feedback errorNama"></div>
                                 <hr>
                             </div>
                         </div>
@@ -46,14 +46,17 @@
             <tr>
                 <th style="max-width:5%; text-align: center;">No.</th>
                 <th style="max-width:10%; text-align: center;">Aksi</th>
-                <th style="max-width:10%; text-align: center;">Urutan</th>
-                <th style="max-width:75%; text-align: center;">Kategori</th>
+                <th style="max-width:25%; text-align: center;">Nama</th>
+                <th style="max-width:20%; text-align: center;">Kontak</th>
+                <th style="max-width:20%; text-align: center;">Jenis Kelamin</th>
+                <th style="max-width:10%; text-align: center;">Umur (Tahun)</th>
+                <th style="max-width:10%; text-align: center;">Tanggal</th>
             </tr>
         </thead>
         <tbody>
             <?php $no = 1 ?>
 
-            <?php foreach ($kategori as $item) : ?>
+            <?php foreach ($koresponden as $item) : ?>
                 <?php $id = $item['id'] ?>
                 <tr style="text-align: center;">
                     <td><?= $no++ ?></td>
@@ -67,7 +70,7 @@
                             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title">Edit Kategori : <?= $item['kategori'] ?></h5>
+                                        <h5 class="modal-title">Edit Kategori : <?= $item['nama'] ?></h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -78,10 +81,10 @@
                                             <div class="col-lg-11">
                                                 <input type="text" name="id" class="form-control" value="<?= $item['id'] ?>" hidden>
                                                 <label>Urutan</label>
-                                                <input type="text" name="urutan" class="form-control" value="<?= $item['urutan'] ?>">
+                                                <input type="text" name="urutan" class="form-control" value="<?= $item['slug'] ?>">
                                                 <br>
                                                 <label>Kategori</label>
-                                                <input type="text" name="kategori" class="form-control" value="<?= $item['kategori'] ?>">
+                                                <input type="text" name="kategori" class="form-control" value="<?= $item['nama'] ?>">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -94,14 +97,17 @@
                         </div>
 
                         <!-- button hapus modal-->
-                        <a href="<?= base_url('kategori/hapus/' . $item['id']); ?>" class="hapus">
+                        <a href="<?= base_url('koresponden/hapus/' . $item['id']); ?>" class="hapus">
                             <span class="feather icon-trash-2 text-danger"></span>
                         </a>
                     </td>
 
                     <!-- ISI VIEW -->
-                    <td><?= $item['urutan'] ?></td>
-                    <td><?= $item['kategori'] ?></td>
+                    <td><?= $item['nama'] ?></td>
+                    <td><?= $item['telepon'] ?></td>
+                    <td><?= $item['jk'] ?></td>
+                    <td><?= $item['umur'] ?></td>
+                    <td><?= $item['datetime'] ?></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
@@ -128,12 +134,12 @@
                 },
                 success: function(response) {
                     if (response.error) {
-                        if (response.error.kategori) {
-                            $('.kategori').addClass('is-invalid');
-                            $('.errorKategori').html(response.error.kategori);
+                        if (response.error.nama) {
+                            $('.nama').addClass('is-invalid');
+                            $('.errornama').html(response.error.nama);
                         } else {
-                            $('.kategori').removeClass('is-invalid');
-                            $('.errorKategori').html('');
+                            $('.nama').removeClass('is-invalid');
+                            $('.errornama').html('');
                         }
                     } else {
                         if (response.status == 'gagal') {
@@ -177,9 +183,9 @@
                 },
                 success: function(response) {
                     if (response.error) {
-                        if (response.error.kategori) {
-                            $('.kategori').addClass('is-invalid');
-                            $('.errorkategoriEdit').html(response.error.kategori);
+                        if (response.error.nama) {
+                            $('.nama').addClass('is-invalid');
+                            $('.errornamaEdit').html(response.error.nama);
                         }
                     } else {
                         Swal.fire({

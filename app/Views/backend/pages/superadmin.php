@@ -29,8 +29,8 @@
                                             <div class="col-lg-8">
                                                 <div class="page-header-title">
                                                     <div class="d-inline">
-                                                        <h4>DIVISI.ID</h4>
-                                                        <span>Detail Inovatif dan Berintegritas</span>
+                                                        <h4>SISWANTO</h4>
+                                                        <span>-----------------</span>
                                                     </div>
                                                 </div>
                                             </div>

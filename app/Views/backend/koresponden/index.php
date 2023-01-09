@@ -68,7 +68,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: '<?= base_url('kategori/viewData') ?>',
+            url: '<?= base_url('koresponden/viewData') ?>',
             dataType: 'json',
             success: function(response) {
                 $("#result").html(response.data);

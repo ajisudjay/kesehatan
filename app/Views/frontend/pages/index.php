@@ -5,32 +5,25 @@
 <body>
     <!-- SECTION1 -->
     <main class="main" id="top">
-        <?= $this->include('frontend/layouts/guest') ?>
+        <?= $this->include('frontend/layouts/topnavbar') ?>
         <section id="home">
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
-
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Personal Prevention Check Up</h1>
-                        <p class="fs-1 mb-5">You can check up your health <br />for preventive health. </p><a class="btn btn-lg btn-primary rounded-pill" href="#checkup" role="button">Get Started</a>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <form action="<?= base_url('Checkup/baru'); ?>" method="post" class="baru">
-                            <div class="col-md-2">
-                            </div>
-                            <div class="col-md-6">
-                                <p><input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
-                                    <button class="btn btn-primary rounded-pill" type="submit">Cari</button>
-                                </p>
-                            </div>
+                        <p class="fs-1 mb-5">Lakukan check up disini <a class="btn btn-lg btn-primary rounded-pill" href="#checkup" role="button">Get Started</a></p>
+                        <form action="<?= base_url('Checkup/riwayat'); ?>" method="post" class="baru">
+                            <p class="fs-1 mb-5">Sudah pernah check up ? <br> cek riwayat disini <br>
+                                <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
+                                <input class="form-livedoc-control" name="telepon" type="text" placeholder="Telepon" required>
+                                <button class="btn btn-primary rounded-pill" type="submit">Cari</button>
+                            </p>
                         </form>
                     </div>
                 </div>
             </div>
-
         </section>
 
         <!-- SECTION2 -->
