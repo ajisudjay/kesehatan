@@ -45,7 +45,9 @@ $routes->get('/tentangkami', 'Pages::tentangkami');
 $routes->get('/hasil/(:any)', 'Pages::hasil');
 
 // menu
-$routes->get('/koresponden', 'Koresponden::index');
+$routes->get('/riwayat', 'Riwayat::index');
+$routes->get('/ppcu', 'PPCU::index');
+$routes->get('/klien', 'Klien::index');
 $routes->get('/user', 'User::index');
 $routes->get('/profil', 'Profil::index');
 $routes->get('/konfigurasi', 'Konfigurasi::index');

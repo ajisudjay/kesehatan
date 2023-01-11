@@ -2,17 +2,14 @@
 
 namespace App\Controllers;
 
-use App\Models\BeritaModel;
 use App\Models\UserModel;
 use App\Controllers\BaseController;
 
 class Profil extends BaseController
 {
-    protected $BeritaModel;
     protected $UserModel;
     public function __construct()
     {
-        $this->BeritaModel = new BeritaModel();
         $this->UserModel = new UserModel();
     }
     public function index()
@@ -26,7 +23,6 @@ class Profil extends BaseController
                 'header' => 'Ubah Profil',
                 'admin' => $admin,
                 'lvl' => $lvl,
-                'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
             ];
             return view('backend/profil/index', $data);
         } elseif (session()->get('username') == NULL || session()->get('level') === 'Admin') {
@@ -38,7 +34,6 @@ class Profil extends BaseController
                 'header' => 'Ubah Profil',
                 'admin' => $admin,
                 'lvl' => $lvl,
-                'berita_belum_publish' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Belum Publish')->orderBy('tanggal', 'DESC')->findAll(),
             ];
             return view('backend/profil/index', $data);
         } else {

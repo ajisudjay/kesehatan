@@ -39,4 +39,9 @@ class KorespondenModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function dataKlien($nama, $telepon)
+    {
+        return $this->db->table('koresponden')->where(['nama' => $nama, 'telepon' => $telepon])->get()->getResultArray();
+    }
 }

@@ -28,7 +28,7 @@
 
         <!-- SECTION2 -->
         <section class="pb-0" id="checkup">
-            <div class="container">
+            <div class="container-xxl">
                 <div class="row">
                     <!--/.bg-holder-->
                     <div class="col-lg-12">

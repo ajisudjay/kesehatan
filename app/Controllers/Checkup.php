@@ -2,17 +2,14 @@
 
 namespace App\Controllers;
 
-use App\Models\KomentarModel;
 use App\Models\KorespondenModel;
 use App\Controllers\BaseController;
 
 class Checkup extends BaseController
 {
-    protected $KomentarModel;
     protected $KorespondenModel;
     public function __construct()
     {
-        $this->KomentarModel = new KomentarModel();
         $this->KorespondenModel = new KorespondenModel();
     }
 
@@ -190,45 +187,5 @@ class Checkup extends BaseController
             ];
             return redirect()->to(base_url("/riwayat"));
         }
-    }
-
-    public function index()
-    {
-        $data = [
-            'title' => 'Beranda - Divisi.id',
-            'top_header' => 'Beranda',
-            'header' => 'Komentar',
-        ];
-        return view('backend/komentar/index', $data);
-    }
-    public function viewData()
-    {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
-        $request = \Config\Services::request();
-        if ($request->isAJAX()) {
-            $data = [
-                'komentar' => $this->KomentarModel->select('*')->select('komentar.id as id_komentar')->orderBy('komentar.timestamp', 'DESC')->orderBy('id_berita', 'DESC')->join('berita', 'berita.id=komentar.id_berita')->get()->getResultArray(),
-                'validation' => \Config\Services::validation(),
-            ];
-            $msg = [
-                'data' => view('backend/komentar/view-data', $data)
-            ];
-            echo json_encode($msg);
-        } else {
-            exit('Data Tidak Dapat diproses');
-        }
-    }
-
-    public function hapus($id)
-    {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
-            return redirect()->to(base_url('/login'));
-        }
-        $this->KomentarModel->delete($id);
-
-        session()->setFlashdata('pesanHapus', 'Komentar Berhasil Di Hapus !');
-        return redirect()->to(base_url('/komentar'));
     }
 }

@@ -3,19 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\KonfigurasiModel;
-use App\Models\KategoriModel;
 use App\Models\KorespondenModel;
+use App\Models\PertanyaanModel;
 
 class Pages extends BaseController
 {
     protected $KonfigurasiModel;
-    protected $KategoriModel;
     protected $KorespondenModel;
+    protected $PertanyaanModel;
     public function __construct()
     {
         $this->KonfigurasiModel = new KonfigurasiModel();
-        $this->KategoriModel = new KategoriModel();
         $this->KorespondenModel = new KorespondenModel();
+        $this->PertanyaanModel = new PertanyaanModel();
     }
     public function index()
     {
@@ -24,6 +24,7 @@ class Pages extends BaseController
             'title' => 'Beranda - Siswanto',
             'top_header' => 'Beranda',
             'header' => '',
+            'pertanyaan' => $this->PertanyaanModel->orderBy('nomor', 'ASC')->get()->getResultArray(),
         ];
         return view('frontend/pages/index', $data);
     }
@@ -573,9 +574,6 @@ class Pages extends BaseController
             'header' => '',
             'tentangkami' => $this->KonfigurasiModel->where('urutan', '1')->first(),
             'konfigurasi' => $this->KonfigurasiModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
-            'tingkat_berita' => $this->TingkatModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
-            'kategori' => $this->KategoriModel->orderBy('urutan', 'ASC')->get()->getResultArray(),
-            'terbaru' => $this->BeritaModel->select('*')->select('berita.id as id_berita')->select('berita.kategori as kategori_berita')->select('kategori.kategori as nama_kategori')->select('tingkat.tingkat as nama_tingkat')->join('tingkat', 'tingkat.id=berita.tingkat')->join('kategori', 'kategori.id=berita.kategori')->where('status', 'Publish')->orderBy('tanggal', 'DESC')->findAll(4),
         ];
         return view('frontend/pages/tentangkami', $data);
     }

@@ -68,7 +68,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: '<?= base_url('koresponden/viewData') ?>',
+            url: '<?= base_url('klien/viewData') ?>',
             dataType: 'json',
             success: function(response) {
                 $("#result").html(response.data);

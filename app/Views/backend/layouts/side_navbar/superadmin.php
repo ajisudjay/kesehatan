@@ -11,9 +11,15 @@
         <div class="pcoded-navigatio-lavel">Data</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="<?= base_url('koresponden'); ?>">
+                <a href="<?= base_url('ppcu'); ?>">
                     <span class="pcoded-micon"><i class="fa fa-th-list"></i></span>
-                    <span class="pcoded-mtext">Koresponden</span>
+                    <span class="pcoded-mtext">PPCU</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?= base_url('klien'); ?>">
+                    <span class="pcoded-micon"><i class="fa fa-th-list"></i></span>
+                    <span class="pcoded-mtext">Klien</span>
                 </a>
             </li>
         </ul>
