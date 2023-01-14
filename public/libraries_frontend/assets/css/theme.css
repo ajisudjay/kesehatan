@@ -2396,15 +2396,15 @@ progress {
 }
 
 .table-primary {
-  --bs-table-bg: #d4d7e4;
-  --bs-table-striped-bg: #cdd0dd;
-  --bs-table-striped-color: #464558;
-  --bs-table-active-bg: #c6c8d6;
-  --bs-table-active-color: #464558;
-  --bs-table-hover-bg: #c9ccda;
-  --bs-table-hover-color: #464558;
-  color: #464558;
-  border-color: #000000;
+  --bs-table-bg: #ffffff;
+  --bs-table-striped-bg: #0b0b0c;
+  --bs-table-striped-color: #1B71A1;
+  --bs-table-active-bg: #0b0b0c;
+  --bs-table-active-color: #1B71A1;
+  --bs-table-hover-bg: #bce6fd;
+  --bs-table-hover-color: #1B71A1;
+  color: #1B71A1;
+  border-color: #1B71A1 ;
 }
 
 .table-secondary {
@@ -17472,14 +17472,13 @@ pre, code {
 
 section {
   position: relative;
-  padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
 @media (min-width: 992px) {
   section {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: 10.5rem;
+    padding-bottom: 10.5rem;
   }
 }
 
@@ -18466,7 +18465,7 @@ ul {
   color: #000;
   font-weight: 300;
   background-color: #FFFEFE;
-  padding: .95rem .95rem;
+  padding: .55rem .55rem;
 }
 
 .form-livedoc-control:focus {
@@ -18497,7 +18496,7 @@ ul {
   border-radius: 1rem;
   font-weight: 300;
   border-radius: 1.25rem;
-  padding: .95rem .95rem;
+  padding: .55rem .55rem;
   background-color: transparent;
   color: #7B7A8B;
 }

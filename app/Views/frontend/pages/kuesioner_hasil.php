@@ -298,7 +298,8 @@
                     </th>
                 </tr>
                 <tr></tr>
-
+                <?php foreach ($rule as $item2) : ?>
+                <?php endforeach ?>
                 <?php
                 if ($nilai_a > 5) {
                     echo "<tr><td align='center'>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>A. Masalah Mata Minus / Plus</td><td>SEHAT mencegah PENYAKIT</td></tr>";

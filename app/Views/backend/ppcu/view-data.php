@@ -24,12 +24,12 @@
                           <button type="button" class="bg-transparent border-0" data-toggle="modal" data-target="#editmodal<?= $id = $item['id'] ?>">
                               <span class="feather icon-edit-1 text-primary"></span>
                           </button>
-                          <!-- Modal Edit Koresponden-->
+                          <!-- Modal Edit Klien-->
                           <div class="modal fade" id="editmodal<?= $id = $item['id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                               <div class="modal-dialog modal-xl" role="document">
                                   <div class="modal-content">
                                       <div class="modal-header">
-                                          <h5 class="modal-title">Edit Koresponden : <?= $item['nama'] ?></h5>
+                                          <h5 class="modal-title">Edit Klien : <?= $item['nama'] ?></h5>
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                               <span aria-hidden="true">&times;</span>
                                           </button>

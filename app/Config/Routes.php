@@ -46,6 +46,7 @@ $routes->get('/hasil/(:any)', 'Pages::hasil');
 
 // menu
 $routes->get('/riwayat', 'Riwayat::index');
+$routes->get('/cek', 'Klien::cek');
 $routes->get('/ppcu', 'PPCU::index');
 $routes->get('/klien', 'Klien::index');
 $routes->get('/user', 'User::index');

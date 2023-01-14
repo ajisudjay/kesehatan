@@ -4,17 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KorespondenModel extends Model
+class RuleModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'koresponden';
-    protected $primaryKey       = 'id';
+    protected $table            = 'rule';
+    protected $primaryKey       = 'kode';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id', 'nama', 'slug', 'telepon', 'jk', 'umur', 'datetime', 'nilai_a', 'nilai_b', 'nilai_c', 'nilai_d', 'nilai_e', 'nilai_f', 'nilai_g', 'nilai_h', 'nilai_i', 'nilai_j', 'nilai_k', 'nilai_l', 'nilai_m', 'nilai_n', 'nilai_o', 'nilai_p', 'nilai_q', 'nilai_r', 'nilai_s'];
+    protected $allowedFields    = ['kode', 'dampak', 'risiko', 'anjuran'];
 
     // Dates
     protected $useTimestamps = false;

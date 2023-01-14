@@ -9,26 +9,45 @@
         <section id="home">
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
-            <div class="container">
+            <div class="container-xl">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-5">
                         <h1>Personal Prevention Check Up</h1>
-                        <p class="fs-1 mb-5">Lakukan check up disini <a class="btn btn-lg btn-primary rounded-pill" href="#checkup" role="button">Get Started</a></p>
-                        <form action="<?= base_url('Checkup/riwayat'); ?>" method="post" class="baru">
-                            <p class="fs-1 mb-5">Sudah pernah check up ? <br> cek riwayat disini <br>
-                                <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
-                                <input class="form-livedoc-control" name="telepon" type="text" placeholder="Telepon" required>
-                                <button class="btn btn-primary rounded-pill" type="submit">Cari</button>
-                            </p>
-                        </form>
                     </div>
+                    <div class="col-lg-5">
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <a class="btn btn-sm btn-primary rounded-pill" href="/#checkup" role="button">Check Up</a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <form action="<?= base_url('klien/cek'); ?>" method="post" class="Riwayatklien">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <h5>Sudah pernah PPCU ?</h5>
+                            </div>
+                            <div class="col-lg-2">
+                                <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
+                            </div>
+                            <div class="col-lg-2">
+                                <input class="form-livedoc-control" name="telepon" type="text" placeholder="Telepon" required>
+                            </div>
+                            <div class="col-lg-2">
+                                <button class="btn btn-sm btn-primary rounded-pill" type="submit">Cek di sini</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </div>
         </section>
-
         <!-- SECTION2 -->
-        <section class="pb-0" id="checkup">
-            <div class="container-xxl">
+        <section id="checkup" style="padding-top: 2.5rem;
+    padding-bottom: 2.5rem;">
+            <div class="container-xl">
                 <div class="row">
                     <!--/.bg-holder-->
                     <div class="col-lg-12">
@@ -48,7 +67,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control form-livedoc-control" name="umur" type="text" placeholder="Umur" required>
+                                    <input class="form-control form-livedoc-control" name="umur" type="number" placeholder="Umur" min="1" required>
                                 </div>
                             </div>
 
@@ -60,7 +79,6 @@
                                 </div>
                             </div>
                         </form>
-                        <br>
                     </div>
                 </div>
             </div>
@@ -73,6 +91,32 @@
 <!-- SCRIPT AJAX -->
 <script>
     $(document).ready(function() {
+        function dataKlien() {
+            $(".Riwayatklien").submit(function(e) {
+                var formObj = $(this);
+                var formURL = formObj.attr("action");
+                var formData = new FormData(this);
+                $.ajax({
+                    url: formURL,
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(response) {
+                        $("#result").html(response.data);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {}
+                });
+                e.preventDefault(); //Prevent Default action.
+            });
+        }
+
+        $(document).ready(function() {
+            dataKlien();
+        });
+
         //  function baru
         $('.baru').submit(function() {
             var nama = $('#nama').val();

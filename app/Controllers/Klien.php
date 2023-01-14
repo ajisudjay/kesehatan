@@ -58,7 +58,6 @@ class Klien extends BaseController
             $data = [
 
                 'ppcu' => $this->KorespondenModel->where('nama', $namax)->where('telepon', $teleponx)->orderBy('datetime', 'DESC')->get()->getResultArray(),
-                'namax' => $namax,
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [
@@ -68,6 +67,46 @@ class Klien extends BaseController
         } else {
             exit('Data Tidak Dapat diproses');
         }
+    }
+    public function cek()
+    {
+        $request = \Config\Services::request();
+        $nama = $request->getVar('nama');
+        $telepon = $request->getVar('telepon');
+        $data = [
+            'nama' => $nama,
+            'ppcu' => $this->KorespondenModel->where('nama', $nama)->where('telepon', $telepon)->orderBy('datetime', 'DESC')->get()->getResultArray(),
+            'telepon' => $telepon,
+        ];
+        return view('frontend/pages/cekriwayat', $data);
+    }
+
+    public function cekhasil()
+    {
+        $request = \Config\Services::request();
+        $slug = $request->getVar('slug');
+        $nama = $request->getVar('nama');
+        $telepon = $request->getVar('telepon');
+        $data = [
+            'ppcu' => $this->KorespondenModel->where('slug', $slug)->get()->getResultArray(),
+            'nama' => $nama,
+            'telepon' => $telepon,
+        ];
+        return view('frontend/pages/hasilriwayat', $data);
+    }
+    public function RiwayatKlien()
+    {
+        $request = \Config\Services::request();
+        $nama = $request->getVar('nama');
+        $telepon = $request->getVar('telepon');
+        $data = [
+            'ppcu' => $this->KorespondenModel->where('nama', $nama)->where('telepon', $telepon)->orderBy('datetime', 'DESC')->get()->getResultArray(),
+            'validation' => \Config\Services::validation(),
+        ];
+        $msg = [
+            'data' => view('frontend/cekriwayat/riwayat-data', $data)
+        ];
+        echo json_encode($msg);
     }
 
     public function hapus($id)
