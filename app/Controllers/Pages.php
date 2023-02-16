@@ -23,15 +23,31 @@ class Pages extends BaseController
     public function index()
     {
         error_reporting(0);
+        $bahasa = 'Indonesia';
         $data = [
             'title' => 'Beranda - Siswanto',
             'top_header' => 'Beranda',
             'header' => '',
+            'bahasa'  => $bahasa,
             'pertanyaan' => $this->PertanyaanModel->orderBy('nomor', 'ASC')->get()->getResultArray(),
         ];
         return view('frontend/pages/index', $data);
     }
 
+    public function bahasa()
+    {
+        error_reporting(0);
+        $request = \Config\Services::request();
+        $bahasa = $request->getVar('bahasa');
+        $data = [
+            'title' => 'Beranda - Siswanto',
+            'top_header' => 'Beranda',
+            'header' => '',
+            'bahasa'  => $bahasa,
+            'pertanyaan' => $this->PertanyaanModel->orderBy('nomor', 'ASC')->get()->getResultArray(),
+        ];
+        return view('frontend/pages/index', $data);
+    }
     public function hasil()
     {
         $uri = current_url(true);

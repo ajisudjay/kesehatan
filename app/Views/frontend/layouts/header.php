@@ -28,5 +28,4 @@
   <!--    Stylesheets-->
   <!-- ===============================================-->
   <link href="<?= base_url('libraries_frontend/assets/css/theme.css'); ?>" rel="stylesheet" />
-
 </head>

@@ -9,43 +9,85 @@
         <section id="home">
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
-            <div class="container-xl">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <h1>Personal Prevention Check Up</h1>
+            <div class="container-xl" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/bghand.png') ?>);background-position:top center;background-repeat: no-repeat;">
+
+                <form action="/pages/bahasa" method="post" align="center">
+                    <select name="bahasa">
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="English">English</option>
+                    </select>
+                    <button type="submit" class="btn-primary">Language</button>
+                </form>
+                <?php if ($bahasa === 'Indonesia') { ?>
+                    <h1 align="center">Personal Prevention Check Up</h1>
+                    <br>
+                    <h1 align="center">MENCEGAH LEBIH BAIK</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 align="center">YUK !!! <br> MENCEGAH DENGAN CHECK UP PENCEGAHAN</h3>
+                    <h1 style="color:red;text-align: center;">GRATIS</h1>
+                    <div class="col-lg-12" align="center">
+                        <a class="btn btn-sm btn-primary rounded-pill" href="/#checkup" role="button">Periksa Sekarang</a>
                     </div>
-                    <div class="col-lg-5">
+                    <br>
+                    <br>
+                <?php } else { ?>
+                    <h1 align="center">Personal Prevention Check Up</h1>
+                    <br>
+                    <h1 align="center">Prevention Better</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 align="center">Lets !!! <br> Personal Prevention Check Up</h3>
+                    <h1 style="color:red;text-align: center;">FREE</h1>
+                    <div class="col-lg-12" align="center">
+                        <a class="btn btn-sm btn-primary rounded-pill" href="#checkup" role="button">Check Up</a>
                     </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-lg-5">
-                        <a class="btn btn-sm btn-primary rounded-pill" href="/#checkup" role="button">Check Up</a>
-                    </div>
                     <br>
                     <br>
-                    <br>
-                    <br>
-                    <br>
-                    <form action="<?= base_url('klien/cek'); ?>" method="post" class="Riwayatklien">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <h5>Sudah pernah PPCU ?</h5>
-                            </div>
-                            <div class="col-lg-2">
-                                <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
-                            </div>
-                            <div class="col-lg-2">
-                                <input class="form-livedoc-control" name="telepon" type="text" placeholder="Telepon" required>
-                            </div>
-                            <div class="col-lg-2">
-                                <button class="btn btn-sm btn-primary rounded-pill" type="submit">Cek di sini</button>
-                            </div>
+                <?php } ?>
+
+                <form action="<?= base_url('klien/cek'); ?>" method="post" class="Riwayatklien">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <h5>Sudah pernah PPCU ?</h5>
                         </div>
-                    </form>
-                </div>
+                        <div class="col-lg-2">
+                            <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
+                        </div>
+                        <div class="col-lg-2">
+                            <input class="form-livedoc-control" name="telepon" type="text" placeholder="No. HP/WA" required>
+                        </div>
+                        <div class="col-lg-2">
+                            <button class="btn btn-sm btn-primary rounded-pill" type="submit">Cek di sini</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </section>
         <!-- SECTION2 -->
-        <section id="checkup" style="padding-top: 2.5rem;
+        <section id="checkup" style="padding-top:1rem;
     padding-bottom: 2.5rem;">
             <div class="container-xl">
                 <div class="row">
@@ -54,23 +96,22 @@
                         <form action="<?= base_url('Checkup/baru'); ?>" method="post" class="baru">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <input class="form-control form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
+                                    <input class="form-control form-livedoc-control" name="nama" type="text" placeholder="Nama / Name" required>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control form-livedoc-control" name="telepon" type="text" placeholder="telepon" required>
+                                    <input class="form-control form-livedoc-control" name="telepon" type="text" placeholder="No. HP(WA) / Contact" required>
                                 </div>
                                 <div class="col-md-3">
                                     <select class="form-select" name="jk" required>
-                                        <option selected="selected" value="">Jenis Kelamin</option>
+                                        <option selected="selected" value="">Jenis Kelamin / Gender</option>
                                         <option value="Laki-laki">Laki-laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control form-livedoc-control" name="umur" type="number" placeholder="Umur" min="1" required>
+                                    <input class="form-control form-livedoc-control" name="umur" type="number" placeholder="Umur / Age" min="1" required>
                                 </div>
                             </div>
-
                             <?= $this->include('frontend/pages/kuesioner') ?>
 
                             <div class="col-12">
