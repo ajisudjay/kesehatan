@@ -12,11 +12,11 @@
             <div class="container-xl" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/bghand.png') ?>);background-position:top center;background-repeat: no-repeat;">
 
                 <form action="/pages/bahasa" method="post" align="center">
-                    <select name="bahasa">
+                    <select class="form-livedoc-control" name="bahasa">
                         <option value="Indonesia">Indonesia</option>
                         <option value="English">English</option>
                     </select>
-                    <button type="submit" class="btn-primary">Language</button>
+                    <button type="submit" class="btn-primary form-livedoc-control">Language</button>
                 </form>
                 <?php if ($bahasa === 'Indonesia') { ?>
                     <h1 align="center">Personal Prevention Check Up</h1>
@@ -73,15 +73,6 @@
                     </div>
                 </form>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
             <br>
             <br>
             <br>

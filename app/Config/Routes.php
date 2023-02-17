@@ -41,6 +41,7 @@ $routes->get('/', 'Pages::index');
 $routes->get('/login', 'Pages::login');
 $routes->get('/superadmin', 'Pages::hal_superadmin');
 $routes->get('/admin', 'Pages::hal_superadmin');
+$routes->get('/cek', 'Pages::cek');
 $routes->get('/tentangkami', 'Pages::tentangkami');
 $routes->get('/hasil/(:any)', 'Pages::hasil');
 
