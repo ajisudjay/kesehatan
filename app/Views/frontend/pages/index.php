@@ -10,7 +10,6 @@
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
             <div class="container-xl" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/bghand.png') ?>);background-position:top center;background-repeat: no-repeat;">
-
                 <form action="/pages/bahasa" method="post" align="center">
                     <select class="form-livedoc-control" name="bahasa">
                         <option value="Indonesia">Indonesia</option>
@@ -22,10 +21,6 @@
                     <h1 align="center">Personal Prevention Check Up</h1>
                     <br>
                     <h1 align="center">MENCEGAH LEBIH BAIK</h1>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                     <br>
                     <br>
                     <br>
@@ -85,6 +80,7 @@
                     <!--/.bg-holder-->
                     <div class="col-lg-12">
                         <form action="<?= base_url('Checkup/baru'); ?>" method="post" class="baru">
+                            <h3 align="center">Personal Prevention Check Up</h3>
                             <div class="row">
                                 <div class="col-md-5">
                                     <input class="form-control form-livedoc-control" name="nama" type="text" placeholder="Nama / Name" required>
