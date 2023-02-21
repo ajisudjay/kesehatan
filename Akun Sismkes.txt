@@ -1,0 +1,30 @@
+Gmail
+Username : sismkes23@gmail.com
+Password : Sismkes2023
+date : 16/02/1990
+
+Hosting : 
+Nama Domain : sismkes.id
+Tanggal Registrasi : 17 February 2023
+Tanggal Expire : 17 February 2024
+
+Hoster.co.id
+Username: sismkes1
+Password: U3rmP4!sD~9y7Y
+Control Panel URL: https://mirage.hosterserver.com/login_up.php
+
+Database 
+database : sismkes1_sismkes
+username : sismkes1_sismkes
+password : Sismkes2023
+
+Akun :
+username : admin_divisi
+password : admin_divisi
+
+akun root:
+root.dev
+root.dev2022
+
+admin2
+082537
