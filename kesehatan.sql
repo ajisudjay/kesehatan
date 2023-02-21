@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Feb 2023 pada 06.40
+-- Waktu pembuatan: 20 Feb 2023 pada 04.09
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 8.1.6
 
@@ -97,7 +97,8 @@ INSERT INTO `koresponden` (`id`, `slug`, `nama`, `telepon`, `jk`, `umur`, `datet
 (1575742476, 'ini-sudah-fix-99993-2023-01-11', 'ini sudah fix', '99993', 'Laki-laki', 3, '2023-01-11', 5, 8, 6, 6, 3, 3, 9, 8, 8, 7, 6, 7, 6, 4, 2, 4, 7, 7, 7),
 (1575742477, 'fdrettret-45646-2023-01-11', 'fdrettret', '45646', 'Laki-laki', 3, '2023-01-11', 5, 8, 4, 6, 1, 5, 7, 7, 7, 6, 4, 4, 4, 2, 3, 5, 5, 5, 5),
 (1575742478, 'orang-percobaan-0123456789-2023-01-13', 'orang percobaan', '0123456789', 'Laki-laki', 27, '2023-01-13', 6, 6, 6, 6, 3, 2, 6, 5, 7, 6, 7, 5, 3, 5, 3, 4, 4, 4, 4),
-(1575742479, 'sadad-34535-2023-01-23', 'sadad', '34535', 'Perempuan', 34, '2023-01-23', 4, 6, 3, 5, 2, 2, 8, 7, 6, 6, 5, 6, 5, 3, 2, 2, 3, 3, 3);
+(1575742479, 'sadad-34535-2023-01-23', 'sadad', '34535', 'Perempuan', 34, '2023-01-23', 4, 6, 3, 5, 2, 2, 8, 7, 6, 6, 5, 6, 5, 3, 2, 2, 3, 3, 3),
+(1575742480, 'nama-sadadsadsa-2023-02-17', 'nama', 'sadadsadsa', 'Laki-laki', 3, '2023-02-17', 5, 6, 6, 7, 4, 4, 8, 6, 6, 7, 8, 7, 3, 6, 5, 4, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -253,7 +254,7 @@ ALTER TABLE `konfigurasi`
 -- AUTO_INCREMENT untuk tabel `koresponden`
 --
 ALTER TABLE `koresponden`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742480;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742481;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
