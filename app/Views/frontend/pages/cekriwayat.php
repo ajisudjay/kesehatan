@@ -29,6 +29,7 @@
             <div class="row">
                 <!--/.bg-holder-->
                 <div class="col-lg-12">
+                    <b>Ingin konsultasi lebih lanjut?,</b> <br> Yuk Gabung Whatsapp Group Pendampingan PS90 Hari! <a href="https://chat.whatsapp.com/CSN57aUvIRC2b9LaF3ORcV"><button class="btn btn-sm btn-primary rounded-pill" target="_blank">Klik Di sini</button></a>
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nama</label>
@@ -52,7 +53,7 @@
                                 <thead>
                                     <tr>
                                         <th style="max-width:5%; text-align: center;">No.</th>
-                                        <th style="max-width:10%; text-align: center;">Tampilkan</th>
+                                        <th style="max-width:10%; text-align: center;">Aksi</th>
                                         <th style="max-width:25%; text-align: center;">Nama</th>
                                         <th style="max-width:20%; text-align: center;">Kontak</th>
                                         <th style="max-width:10%; text-align: center;">Jenis Kelamin</th>

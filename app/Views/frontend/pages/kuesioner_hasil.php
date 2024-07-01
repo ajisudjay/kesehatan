@@ -177,97 +177,97 @@
 
                 <?php
                 if ($nilai_a >= 5) {
-                    echo "<tr><td>A</td><td>Masalah Mata Minus / Plus</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td>A</td><td>Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_b >= 5) {
-                    echo "<tr><td>B</td><td>Masalah Vertigo, Migrain</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td>B</td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_c >= 5) {
-                    echo "<tr><td>C</td><td>Masalah Flu, Pilek</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td>C</td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_d >= 5) {
-                    echo "<tr><td>D</td><td>Masalah Rematik, Tulang</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td>D</td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_e >= 5) {
-                    echo "<tr><td>E</td><td>Masalah Infertil, Kulit Kusam</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td>E</td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_f >= 5) {
-                    echo "<tr><td>F</td><td>Anemia, Sembelit</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td>F</td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_g >= 5) {
-                    echo "<tr><td>G</td><td>Masalah Stamina, Sembelit</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td>G</td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_h >= 5) {
-                    echo "<tr><td>H</td><td>Masalah Degeneratif</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td>H</td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_i >= 5) {
-                    echo "<tr><td>I</td><td>Masalah Jantung, Stroke</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td>I</td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_j >= 5) {
-                    echo "<tr><td>J</td><td>Masalah Liver, Obesitas</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td>J</td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_k >= 5) {
-                    echo "<tr><td>K</td><td>Masalah Hipertensi, Kholesterol</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td>K</td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_l >= 5) {
-                    echo "<tr><td>L</td><td>Konstipasi</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td>L</td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_m >= 5) {
-                    echo "<tr><td>M</td><td>Kholesterol</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>M</td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_n >= 5) {
-                    echo "<tr><td>N</td><td>Masalah regenerasi sel</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>N</td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_o >= 5) {
-                    echo "<tr><td>O</td><td>Masalah Liver</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>O</td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_p >= 5) {
-                    echo "<tr><td>P</td><td>Masalah Daya Ingat</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>P</td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_q >= 5) {
-                    echo "<tr><td>Q</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>Q</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_r >= 5) {
-                    echo "<tr><td>R</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>R</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_s >= 5) {
-                    echo "<tr><td>S</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td>S</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
@@ -302,135 +302,135 @@
                 <?php endforeach ?>
                 <?php
                 if ($nilai_a > 5) {
-                    echo "<tr><td align='center'>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>A. Masalah Mata Minus / Plus</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>A. Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_a >= 5) {
-                    echo "<tr><td align='center'>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>A. Masalah Mata Minus / Plus</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>A. Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_b > 5) {
-                    echo "<tr><td align='center'>B</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Vertigo, Migrain</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>B</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_b >= 5) {
-                    echo "<tr><td align='center'>B</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Vertigo, Migrain</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>B</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_c > 5) {
-                    echo "<tr><td align='center'>C</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Flu, Pilek</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>C</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_c >= 5) {
-                    echo "<tr><td align='center'>C</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Flu, Pilek</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>C</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_d > 5) {
-                    echo "<tr><td align='center'>D</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Rematik, Tulang</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>D</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_d >= 5) {
-                    echo "<tr><td align='center'>D</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Rematik, Tulang</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>D</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_e > 5) {
-                    echo "<tr><td align='center'>E</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Infertil, Kulit Kusam</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>E</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_e >= 5) {
-                    echo "<tr><td align='center'>E</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Infertil, Kulit Kusam</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>E</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_f > 5) {
-                    echo "<tr><td align='center'>F</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Anemia, Sembelit</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>F</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_f >= 5) {
-                    echo "<tr><td align='center'>F</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:orange;'>(Waspada)</span></td><td>Anemia, Sembelit</td><td>SEHAT mencegah PENYAKIT</td></tr>";
+                    echo "<tr><td align='center'>F</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:orange;'>(Waspada)</span></td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_g > 5) {
-                    echo "<tr><td align='center'>G</td><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Stamina, Sembelit</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>G</td><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_g >= 5) {
-                    echo "<tr><td align='center'>G</td><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Stamina, Sembelit</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>G</td><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_h > 5) {
-                    echo "<tr><td align='center'>H</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Degeneratif</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>H</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_h >= 5) {
-                    echo "<tr><td align='center'>H</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Degeneratif</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>H</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_i > 5) {
-                    echo "<tr><td align='center'>I</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Jantung, Stroke</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>I</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_i >= 5) {
-                    echo "<tr><td align='center'>I</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Jantung, Stroke</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>I</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_j > 5) {
-                    echo "<tr><td align='center'>J</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver, Obesitas</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>J</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_j >= 5) {
-                    echo "<tr><td align='center'>J</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver, Obesitas</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>J</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_k > 5) {
-                    echo "<tr><td align='center'>K</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Hipertensi, Kholesterol</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>K</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_k >= 5) {
-                    echo "<tr><td align='center'>K</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Hipertensi, Kholesterol</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>K</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_l > 5) {
-                    echo "<tr><td align='center'>L</td><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Konstipasi</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>L</td><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_l >= 5) {
-                    echo "<tr><td align='center'>L</td><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Konstipasi</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
+                    echo "<tr><td align='center'>L</td><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_m > 5) {
-                    echo "<tr><td align='center'>M</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Kholesterol</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>M</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_m >= 5) {
-                    echo "<tr><td align='center'>M</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Kholesterol</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>M</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_n > 5) {
-                    echo "<tr><td align='center'>N</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah regenerasi sel</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>N</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_n >= 5) {
-                    echo "<tr><td align='center'>N</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah regenerasi sel</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>N</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_o > 5) {
-                    echo "<tr><td align='center'>O</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>O</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_o >= 5) {
-                    echo "<tr><td align='center'>O</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>O</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_p > 5) {
-                    echo "<tr><td align='center'>P</td><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Daya Ingat</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>P</td><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_p >= 5) {
-                    echo "<tr><td align='center'>P</td><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Daya Ingat</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>P</td><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_q > 5) {
-                    echo "<tr><td align='center'>Q</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>Q</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_q >= 5) {
-                    echo "<tr><td align='center'>Q</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>Q</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_r > 5) {
-                    echo "<tr><td align='center'>R</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>R</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_r >= 5) {
-                    echo "<tr><td align='center'>R</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>R</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }
                 if ($nilai_s > 5) {
-                    echo "<tr><td align='center'>S</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>S</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } elseif ($nilai_s >= 5) {
-                    echo "<tr><td align='center'>S</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
+                    echo "<tr><td align='center'>S</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                 } else {
                     echo "";
                 }

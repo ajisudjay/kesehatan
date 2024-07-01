@@ -13,6 +13,7 @@
                     </div>
                     <!--/.bg-holder-->
                     <div class="col-lg-12 z-index-2">
+                        <b>Ingin konsultasi lebih lanjut?,</b> <br> Yuk Gabung Whatsapp Group Pendampingan PS90 Hari! <a href="https://chat.whatsapp.com/CSN57aUvIRC2b9LaF3ORcV"><button class="btn btn-sm btn-primary rounded-pill">Klik Di sini</button></a>
                         <?= $this->include('frontend/pages/kuesioner_hasil') ?>
                         <div class="col-12">
                             <div class="d-grid">

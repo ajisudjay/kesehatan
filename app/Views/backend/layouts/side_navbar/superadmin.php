@@ -23,15 +23,15 @@
                 </a>
             </li>
         </ul>
-        <div class="pcoded-navigatio-lavel">Konfigurasi</div>
+        <!-- <div class="pcoded-navigatio-lavel">Konfigurasi</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>
-                <a href="<?= base_url('konfigurasi'); ?>">
+                <a href="konfigurasi">
                     <span class="pcoded-micon"><i class="fa fa-gears"></i></span>
                     <span class="pcoded-mtext">Konfigurasi</span>
                 </a>
             </li>
-        </ul>
+        </ul> -->
         <div class="pcoded-navigatio-lavel">User</div>
         <ul class="pcoded-item pcoded-left-item">
             <li>

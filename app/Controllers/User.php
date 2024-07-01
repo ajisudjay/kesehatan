@@ -19,9 +19,9 @@ class User extends BaseController
         }
         $admin = session()->get('nama');
         $data = [
-            'title' => 'Beranda - Divisi.id',
-            'top_header' => 'Beranda',
-            'header' => 'Data User',
+            'title' => 'Pengguna - Divisi.id',
+            'top_header' => 'Pengguna',
+            'header' => 'Data Pengguna',
             'admin' => $admin,
         ];
         return view('backend/user/index', $data);

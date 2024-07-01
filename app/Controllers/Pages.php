@@ -97,8 +97,8 @@ class Pages extends BaseController
     public function login()
     {
         $data = [
-            'title' => 'Beranda - Siswanto',
-            'top_header' => 'Beranda',
+            'title' => 'Login - Siswanto',
+            'top_header' => 'Login',
             'header' => '',
         ];
         return view('backend/pages/login', $data);
