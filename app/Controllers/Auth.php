@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Controllers\BaseController;
 use App\Models\UserModel;
 
 class Auth extends BaseController
@@ -10,8 +11,6 @@ class Auth extends BaseController
     public function __construct()
     {
         $this->UserModel = new UserModel();
-        $this->validation = \Config\Services::validation();
-        $this->session = \Config\Services::session();
     }
     public function index()
     {

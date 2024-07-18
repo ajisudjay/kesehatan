@@ -10,13 +10,28 @@
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
             <div class="container-xl" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/bghand.png') ?>);background-position:top center;background-repeat: no-repeat;">
-                <form action="/pages/bahasa" method="post" align="center">
-                    <select class="form-livedoc-control" name="bahasa">
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="English">English</option>
-                    </select>
-                    <button type="submit" class="btn-primary form-livedoc-control">Language</button>
-                </form>
+                <div class="col-lg-12">
+                    <div class="row" align="center">
+                        <div class="col-lg-4">
+                            &nbsp;
+                        </div>
+                        <div class="col-lg-2">
+                            <form action="/pages/bahasa" method="post">
+                                <input type="text" name="bahasa" value="Indonesia" hidden>
+                                <button type="submit" class="btn-primary form-livedoc-control">Indonesian</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-2">
+                            <form action="/pages/bahasa" method="post">
+                                <input type="text" name="bahasa" value="English" hidden>
+                                <button type="submit" class="btn-primary form-livedoc-control">English</button>
+                            </form>
+                        </div>
+                        <div class="col-lg-4">
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
                 <?php if ($bahasa === 'Indonesia') { ?>
                     <h1 align="center">Personal Prevention Check Up</h1>
                     <br>
@@ -27,7 +42,7 @@
                     <h3 align="center">YUK !!! <br> MENCEGAH DENGAN CHECK UP PENCEGAHAN</h3>
                     <h1 style="color:red;text-align: center;">GRATIS</h1>
                     <div class="col-lg-12" align="center">
-                        <a class="btn btn-sm btn-primary rounded-pill" href="/#checkup" role="button">Periksa Sekarang</a>
+                        <a class="btn btn-sm btn-primary rounded-pill" href="#checkup" role="button">Periksa Sekarang</a>
                     </div>
                     <br>
                     <br>
@@ -53,7 +68,7 @@
 
                 <form action="<?= base_url('klien/cek'); ?>" method="post" class="Riwayatklien">
                     <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <h5>Sudah pernah PPCU ?</h5>
                         </div>
                         <div class="col-lg-2">

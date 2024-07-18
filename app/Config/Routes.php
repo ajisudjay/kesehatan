@@ -38,6 +38,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // pages
 $routes->get('/', 'Pages::index');
+$routes->get('/cekform', 'Pages::cekform');
 $routes->get('/login', 'Pages::login');
 $routes->get('/superadmin', 'Pages::hal_superadmin');
 $routes->get('/admin', 'Pages::hal_superadmin');

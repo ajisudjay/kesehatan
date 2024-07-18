@@ -34,6 +34,20 @@ class Pages extends BaseController
         return view('frontend/pages/index', $data);
     }
 
+    public function formcek()
+    {
+        error_reporting(0);
+        $bahasa = 'Indonesia';
+        $data = [
+            'title' => 'Beranda - Siswanto',
+            'top_header' => 'Beranda',
+            'header' => '',
+            'bahasa'  => $bahasa,
+            'pertanyaan' => $this->PertanyaanModel->orderBy('nomor', 'ASC')->get()->getResultArray(),
+        ];
+        return view('frontend/pages/formcek', $data);
+    }
+
     public function bahasa()
     {
         error_reporting(0);
