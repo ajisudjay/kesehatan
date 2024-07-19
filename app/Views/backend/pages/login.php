@@ -65,7 +65,7 @@
                                         <p class="text-inverse text-left"><a href="/"><b class="f-w-600">Kembali ke Beranda</b></a></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <img src="libraries_backend\assets\images\logo.png" width="50px" alt="logo.png">
+                                        <img src="<?= base_url('libraries_backend/assets/images/logo.png') ?>" width="50px" alt="logo.png">
                                     </div>
                                 </div>
                             </div>

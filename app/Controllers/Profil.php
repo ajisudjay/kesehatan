@@ -14,7 +14,7 @@ class Profil extends BaseController
     }
     public function index()
     {
-        if (session()->get('username') == NULL || session()->get('level') === 'Superadmin') {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             $admin = session()->get('nama');
             $lvl = session()->get('level');
             $data = [
@@ -42,7 +42,7 @@ class Profil extends BaseController
     }
     public function viewData()
     {
-        if (session()->get('username') == NULL || session()->get('level') === 'Superadmin') {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             $request = \Config\Services::request();
             $username = session()->get('username');
             if ($request->isAJAX()) {
@@ -80,7 +80,7 @@ class Profil extends BaseController
 
     public function edit()
     {
-        if (session()->get('username') == NULL || session()->get('level') === 'Superadmin') {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
             $request = \Config\Services::request();
             if ($request->isAJAX()) {
                 $username = $request->getVar('username');

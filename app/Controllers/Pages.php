@@ -120,7 +120,7 @@ class Pages extends BaseController
 
     public function hal_superadmin()
     {
-        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin') {
+        if (session()->get('username') == NULL || session()->get('level') !== 'Superadmin' || session()->get('level') !== 'Admin') {
             $admin = session()->get('nama');
             $lvl = session()->get('level');
             $data = [
@@ -131,7 +131,7 @@ class Pages extends BaseController
                 'lvl' => $lvl,
             ];
             return view('backend/pages/superadmin', $data);
-        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Admin') {
+        } elseif (session()->get('username') == NULL || session()->get('level') !== 'Superadmin' || session()->get('level') === 'Admin') {
             $admin = session()->get('nama');
             $lvl = session()->get('level');
             $data = [

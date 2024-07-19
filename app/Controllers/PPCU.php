@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\KorespondenModel;
 use App\Controllers\BaseController;
 
-class PPCU extends BaseController
+class Ppcu extends BaseController
 {
     protected $KorespondenModel;
     public function __construct()
