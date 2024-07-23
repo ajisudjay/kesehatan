@@ -76,7 +76,7 @@
                                             <table class="table table-responsive" style="text-align: left;max-width: 100%;">
                                                 <tr>
                                                     <th>
-                                                        Kode
+                                                        No
                                                     </th>
                                                     <th>
                                                         Dampak

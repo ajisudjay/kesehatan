@@ -21,6 +21,7 @@ class Checkup extends BaseController
         $jk = $request->getVar('jk');
         $umur = $request->getVar('umur');
         $nama_slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($nama)));
+        date_default_timezone_set("Asia/Kuala_Lumpur");
         $datestamp = date("Y-m-d");
         $slug = $nama_slug . '-' . $telepon . '-' . $datestamp;
         $cekkoresponden = $this->KorespondenModel->where('nama', $nama)->where('telepon', $telepon)->where('jk', $jk)->where('datetime', $datestamp)->where('umur', $umur)->first();

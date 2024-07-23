@@ -3,14 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\KorespondenModel;
+use App\Models\RuleModel;
 use App\Controllers\BaseController;
 
 class Klien extends BaseController
 {
     protected $KorespondenModel;
+    protected $RuleModel;
     public function __construct()
     {
         $this->KorespondenModel = new KorespondenModel();
+        $this->RuleModel = new RuleModel();
     }
     public function index()
     {
@@ -35,6 +38,7 @@ class Klien extends BaseController
         if ($request->isAJAX()) {
             $data = [
                 'klien' => $this->KorespondenModel->select('telepon')->select('nama')->select('jk')->distinct()->get()->getResultArray(),
+                'rule' => $this->RuleModel->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [
@@ -58,6 +62,7 @@ class Klien extends BaseController
             $data = [
 
                 'ppcu' => $this->KorespondenModel->where('nama', $namax)->where('telepon', $teleponx)->orderBy('datetime', 'DESC')->get()->getResultArray(),
+                'rule' => $this->RuleModel->get()->getResultArray(),
                 'validation' => \Config\Services::validation(),
             ];
             $msg = [

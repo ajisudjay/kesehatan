@@ -66,11 +66,14 @@ class Pages extends BaseController
     {
         $uri = current_url(true);
         $slug = $uri->getSegment(3); // Method - instrument
+        $request = \Config\Services::request();
+        $bahasa = $request->getVar('bahasa');
         $datakoresponden = $this->KorespondenModel->where('slug', $slug)->first();
         $data = [
             'title' => 'Beranda - Siswanto',
             'top_header' => 'Beranda',
             'header' => '',
+            'bahasa'  => $bahasa,
             'koresponden' => $this->KorespondenModel->where('slug', $slug)->get()->getResultArray(),
             'rule' => $this->RuleModel->get()->getResultArray(),
             'nilai_a' => $datakoresponden['nilai_a'],

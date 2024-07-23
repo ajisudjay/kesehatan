@@ -68,18 +68,34 @@
 
                 <form action="<?= base_url('klien/cek'); ?>" method="post" class="Riwayatklien">
                     <div class="row">
-                        <div class="col-lg-3">
-                            <h5>Sudah pernah PPCU ?</h5>
-                        </div>
-                        <div class="col-lg-2">
-                            <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
-                        </div>
-                        <div class="col-lg-2">
-                            <input class="form-livedoc-control" name="telepon" type="text" placeholder="No. HP/WA" required>
-                        </div>
-                        <div class="col-lg-2">
-                            <button class="btn btn-sm btn-primary rounded-pill" type="submit">Cek di sini</button>
-                        </div>
+                        <?php if ($bahasa === 'Indonesia') { ?>
+                            <div class="col-lg-3">
+                                <h5>Cek riwayat PPCU disini ?</h5>
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-livedoc-control" name="telepon" type="text" placeholder="No. HP/WA" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <button class="btn btn-sm btn-primary rounded-pill" type="submit">Cek di sini</button>
+                            </div>
+                        <?php } else { ?>
+                            <div class="col-lg-3">
+                                <h5>Check PPCU history here ?</h5>
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-livedoc-control" name="nama" type="text" placeholder="Name" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-livedoc-control" name="telepon" type="text" placeholder="Contact/WA" required>
+                            </div>
+                            <div class="col-lg-3">
+                                <button class="btn btn-sm btn-primary rounded-pill" type="submit">Check here</button>
+                            </div>
+                        <?php } ?>
+
                     </div>
                 </form>
             </div>
@@ -98,6 +114,7 @@
                             <h3 align="center">Personal Prevention Check Up</h3>
                             <div class="row">
                                 <div class="col-md-5">
+                                    <input name="bahasa" type="text" value="<?= $bahasa ?>" hidden>
                                     <input class="form-control form-livedoc-control" name="nama" type="text" placeholder="Nama / Name" required>
                                 </div>
                                 <div class="col-md-2">
