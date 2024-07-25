@@ -92,7 +92,7 @@
                                                 if ($item['nilai_a'] > 5) {
                                                     echo "<tr><td>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                                                 } elseif ($item['nilai_a'] >= 5) {
-                                                    echo "<tr><td>A</td>    <td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:orange;'>(Waspada)</span></td><td>Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                                                    echo "<tr><td>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:orange;'>(Waspada)</span></td><td>Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
                                                 } else {
                                                     echo "";
                                                 }

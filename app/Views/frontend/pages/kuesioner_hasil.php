@@ -9,7 +9,7 @@
             <div class="col-md-2">
                 <b>Kontak : <?= $item['telepon'] ?></b>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <b>Jenis Kelamin : <?= $item['jk'] ?></b>
             </div>
             <div class="col-md-2">
@@ -22,7 +22,7 @@
             <div class="col-md-2">
                 <b>Contact : <?= $item['telepon'] ?></b>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <b>Gender : <?= $item['jk'] ?></b>
             </div>
             <div class="col-md-2">
@@ -32,418 +32,154 @@
     </div>
 
     <?php if ($bahasa === 'Indonesia') { ?>
-        <div class="mobile">
-            <h5 align="center"> Results of the Personal Prevention Check-Up Analysis </h5>
-            <div class="col-12" style="text-align: left ;">
-                <?php
-                if ($nilai_a > 5) {
-                    echo "~ Risiko masalah kesehatan mata <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_a >= 5) {
-                    echo "~ Risiko masalah kesehatan mata <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_b > 5) {
-                    echo "~ Risiko masalah kesehatan persarafan <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_b >= 5) {
-                    echo "~ Risiko masalah kesehatan persarafan <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_c > 5) {
-                    echo "~ Risiko masalah daya tahan tubuh <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_c >= 5) {
-                    echo "~ Risiko masalah daya tahan tubuh <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_d > 5) {
-                    echo "~ Risiko masalah kesehatan tulang dan otot serta lambung <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_d >= 5) {
-                    echo "~ Risiko masalah kesehatan tulang dan otot serta lambung <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_e > 5) {
-                    echo "~ Risiko masalah kesehatan kulit dan kesuburan  <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_e >= 5) {
-                    echo "~ Risiko masalah kesehatan kulit dan kesuburan  <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_f > 5) {
-                    echo "~ Risiko masalah kesehatan darah <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_f >= 5) {
-                    echo "~ Risiko masalah kesehatan darah <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_g > 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina, kesuburan <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_g >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina, kesuburan <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_h > 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_h >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_i > 5) {
-                    echo "~ Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_i >= 5) {
-                    echo "~ Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_j > 5) {
-                    echo "~ Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_j >= 5) {
-                    echo "~ Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_k > 5) {
-                    echo "~ Gangguan fungsi perdaran darah, hipertensi dan kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_k >= 5) {
-                    echo "~ Gangguan fungsi perdaran darah, hipertensi dan kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_l > 5) {
-                    echo "~ Gangguan fungsi pencernaan, berat badan <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_l >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, berat badan <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_m > 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_m >= 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_n > 5) {
-                    echo "~ Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_n >= 5) {
-                    echo "~ Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_o > 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_o >= 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_p > 5) {
-                    echo "~ Gangguan fungsi memori (daya ingat) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_p >= 5) {
-                    echo "~ Gangguan fungsi memori (daya ingat) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_q > 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_q >= 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_r > 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_r >= 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_s > 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_s >= 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                ?>
-            </div>
-            <br>
-            <div class="col-12" style="text-align: left;">
-                <b> Risiko Masalah Kesehatan : </b> <br>
-                <table class="table table-striped table-hover" border="1" width="100%" style="font-size: xx-small;">
-                    <tr>
-                        <th rowspan="2" style="vertical-align: middle;">
-                            No
-                        </th>
-                        <th rowspan="2" style="vertical-align: middle;">
-                            Risiko Masalah Kesehatan
-                        </th>
-                        <th rowspan="2">
-                            Anjuran : <br>Program Sehat 90 Hari <br> Untuk anda yang
-                        </th>
-                    </tr>
-                    <tr></tr>
-
-                    <?php
-                    if ($nilai_a >= 5) {
-                        echo "<tr><td>A</td><td>Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_b >= 5) {
-                        echo "<tr><td>B</td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_c >= 5) {
-                        echo "<tr><td>C</td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_d >= 5) {
-                        echo "<tr><td>D</td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_e >= 5) {
-                        echo "<tr><td>E</td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_f >= 5) {
-                        echo "<tr><td>F</td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_g >= 5) {
-                        echo "<tr><td>G</td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_h >= 5) {
-                        echo "<tr><td>H</td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_i >= 5) {
-                        echo "<tr><td>I</td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_j >= 5) {
-                        echo "<tr><td>J</td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_k >= 5) {
-                        echo "<tr><td>K</td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_l >= 5) {
-                        echo "<tr><td>L</td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_m >= 5) {
-                        echo "<tr><td>M</td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_n >= 5) {
-                        echo "<tr><td>N</td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_o >= 5) {
-                        echo "<tr><td>O</td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_p >= 5) {
-                        echo "<tr><td>P</td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_q >= 5) {
-                        echo "<tr><td>Q</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_r >= 5) {
-                        echo "<tr><td>R</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_s >= 5) {
-                        echo "<tr><td>S</td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
-        <!-- risiko kesehatan -->
         <!-- tampilan desktop -->
         <div class="desktop">
+            <br>
+            <h5 align="center">Hasil Analisa Personal Prevention Check Up</h5>
+            <div align="center">
+                <span style="color:red;">[merah : risiko tinggi]</span> - <span style="color:orange;">[jingga : risiko sedang]</span>
+            </div>
             <div class="col-12" style="text-align: justify;">
-                <table class="table table-hover" border="3" width="100%" style="font-size: small;">
+                <table class="table table-hover" width="100%" style="font-size: small;">
                     <tr>
-                        <th rowspan="2" style="vertical-align: top;">
-                            No
-                        </th>
-                        <th rowspan="2" style="vertical-align: top;max-width:min-content;">
-                            Dampak kesehatan yang akan muncul bila tidak ada upaya pencegahan
-                        </th>
-                        <th rowspan="2" style="vertical-align: top;">
-                            Tingkat
-                        </th>
-                        <th rowspan="2" style="vertical-align: top;text-align: left;">
+                        <th style="vertical-align: top;" width="40%">
                             Risiko Masalah Kesehatan
                         </th>
-                        <th rowspan="2">
-                            Anjuran : <br>Program Sehat 90 Hari <br> Untuk anda yang
+                        <th style="vertical-align: top;">
+                            Dampak
                         </th>
                     </tr>
-                    <tr></tr>
-                    <?php foreach ($rule as $item2) : ?>
-                    <?php endforeach ?>
                     <?php
                     if ($nilai_a > 5) {
-                        echo "<tr><td align='center'>1</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>A. Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_a</span></td><td>$dampak_a</td></tr>";
                     } elseif ($nilai_a >= 5) {
-                        echo "<tr><td align='center'>A</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>A. Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_a</span></td><td>$dampak_a</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_b > 5) {
-                        echo "<tr><td align='center'>B</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_b</span></td><td>$dampak_b</td></tr>";
                     } elseif ($nilai_b >= 5) {
-                        echo "<tr><td align='center'>B</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_b</span></td><td>$dampak_b</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_c > 5) {
-                        echo "<tr><td align='center'>C</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_c</span></td><td>$dampak_c</td></tr>";
                     } elseif ($nilai_c >= 5) {
-                        echo "<tr><td align='center'>C</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_c</span></td><td>$dampak_c</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_d > 5) {
-                        echo "<tr><td align='center'>D</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_d</span></td><td>$dampak_d</td></tr>";
                     } elseif ($nilai_d >= 5) {
-                        echo "<tr><td align='center'>D</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_d</span></td><td>$dampak_d</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_e > 5) {
-                        echo "<tr><td align='center'>E</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_e</span></td><td>$dampak_e</td></tr>";
                     } elseif ($nilai_e >= 5) {
-                        echo "<tr><td align='center'>E</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_e</span></td><td>$dampak_e</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_f > 5) {
-                        echo "<tr><td align='center'>F</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_f</span></td><td>$dampak_f</td></tr>";
                     } elseif ($nilai_f >= 5) {
-                        echo "<tr><td align='center'>F</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:orange;'>(Waspada)</span></td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_f</span></td><td>$dampak_f</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_g > 5) {
-                        echo "<tr><td align='center'>G</td><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_g</span></td><td>$dampak_g</td></tr>";
                     } elseif ($nilai_g >= 5) {
-                        echo "<tr><td align='center'>G</td><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_g</span></td><td>$dampak_g</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_h > 5) {
-                        echo "<tr><td align='center'>H</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_h</span></td><td>$dampak_h</td></tr>";
                     } elseif ($nilai_h >= 5) {
-                        echo "<tr><td align='center'>H</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_h</span></td><td>$dampak_h</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_i > 5) {
-                        echo "<tr><td align='center'>I</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_i</span></td><td>$dampak_i</td></tr>";
                     } elseif ($nilai_i >= 5) {
-                        echo "<tr><td align='center'>I</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_i</span></td><td>$dampak_i</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_j > 5) {
-                        echo "<tr><td align='center'>J</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_j</span></td><td>$dampak_j</td></tr>";
                     } elseif ($nilai_j >= 5) {
-                        echo "<tr><td align='center'>J</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_j</span></td><td>$dampak_j</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_k > 5) {
-                        echo "<tr><td align='center'>K</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_k</span></td><td>$dampak_k</td></tr>";
                     } elseif ($nilai_k >= 5) {
-                        echo "<tr><td align='center'>K</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_k</span></td><td>$dampak_k</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_l > 5) {
-                        echo "<tr><td align='center'>L</td><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_l</span></td><td>$dampak_l</td></tr>";
                     } elseif ($nilai_l >= 5) {
-                        echo "<tr><td align='center'>L</td><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_l</span></td><td>$dampak_l</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_m > 5) {
-                        echo "<tr><td align='center'>M</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_m</span></td><td>$dampak_m</td></tr>";
                     } elseif ($nilai_m >= 5) {
-                        echo "<tr><td align='center'>M</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_m</span></td><td>$dampak_m</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_n > 5) {
-                        echo "<tr><td align='center'>N</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_n</span></td><td>$dampak_n</td></tr>";
                     } elseif ($nilai_n >= 5) {
-                        echo "<tr><td align='center'>N</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_n</span></td><td>$dampak_n</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_o > 5) {
-                        echo "<tr><td align='center'>O</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_o</span></td><td>$dampak_o</td></tr>";
                     } elseif ($nilai_o >= 5) {
-                        echo "<tr><td align='center'>O</td><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_o</span></td><td>$dampak_o</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_p > 5) {
-                        echo "<tr><td align='center'>P</td><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_p</span></td><td>$dampak_p</td></tr>";
                     } elseif ($nilai_p >= 5) {
-                        echo "<tr><td align='center'>P</td><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_p</span></td><td>$dampak_p</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_q > 5) {
-                        echo "<tr><td align='center'>Q</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_qrs</span></td><td>$dampak_qrs</td></tr>";
                     } elseif ($nilai_q >= 5) {
-                        echo "<tr><td align='center'>Q</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_qrs</span></td><td>$dampak_qrs</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_r > 5) {
-                        echo "<tr><td align='center'>R</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_qrs</span></td><td>$dampak_qrs</td></tr>";
                     } elseif ($nilai_r >= 5) {
-                        echo "<tr><td align='center'>R</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_qrs</span></td><td>$dampak_qrs</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_s > 5) {
-                        echo "<tr><td align='center'>S</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_qrs</span></td><td>$dampak_qrs</td></tr>";
                     } elseif ($nilai_s >= 5) {
-                        echo "<tr><td align='center'>S</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_qrs</span></td><td>$dampak_qrs</td></tr>";
                     } else {
                         echo "";
                     }
@@ -452,413 +188,154 @@
             </div>
         </div>
     <?php } else { ?>
-        <div class="mobile">
-            <h5 align="center"> Results of the Personal Prevention Check-Up Analysis </h5>
-            <div class="col-12" style="text-align: left ;">
-                <?php
-                if ($nilai_a > 5) {
-                    echo "~ Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_a >= 5) {
-                    echo "~ Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_b > 5) {
-                    echo "~ Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_b >= 5) {
-                    echo "~ Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_c > 5) {
-                    echo "~ Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_c >= 5) {
-                    echo "~ Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_d > 5) {
-                    echo "~ Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_d >= 5) {
-                    echo "~ Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_e > 5) {
-                    echo "~ Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_e >= 5) {
-                    echo "~ Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_f > 5) {
-                    echo "~ Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_f >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_g > 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina, kesuburan <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_g >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina, kesuburan <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_h > 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_h >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_i > 5) {
-                    echo "~ Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_i >= 5) {
-                    echo "~ Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_j > 5) {
-                    echo "~ Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_j >= 5) {
-                    echo "~ Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_k > 5) {
-                    echo "~ Gangguan fungsi perdaran darah, hipertensi dan kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_k >= 5) {
-                    echo "~ Gangguan fungsi perdaran darah, hipertensi dan kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_l > 5) {
-                    echo "~ Gangguan fungsi pencernaan, berat badan <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_l >= 5) {
-                    echo "~ Gangguan fungsi pencernaan, berat badan <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_m > 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_m >= 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_n > 5) {
-                    echo "~ Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_n >= 5) {
-                    echo "~ Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_o > 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_o >= 5) {
-                    echo "~ Gangguan fungsi hormon, kholesterol <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_p > 5) {
-                    echo "~ Gangguan fungsi memori (daya ingat) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_p >= 5) {
-                    echo "~ Gangguan fungsi memori (daya ingat) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_q > 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_q >= 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_r > 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_r >= 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                if ($nilai_s > 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span><br>";
-                } elseif ($nilai_s >= 5) {
-                    echo "~ Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span><br>";
-                } else {
-                    echo "";
-                }
-                ?>
-            </div>
-            <br>
-            <div class="col-12" style="text-align: left;">
-                <table class="table table-striped table-hover" border="1" width="100%" style="font-size: xx-small;">
-                    <tr>
-                        <th rowspan="2" style="vertical-align: middle;">
-                            Risiko Masalah Kesehatan
-                        </th>
-                        <th rowspan="2">
-                            Anjuran : <br>Program Sehat 90 Hari <br> Untuk anda yang
-                        </th>
-                    </tr>
-                    <tr></tr>
-
-                    <?php
-                    if ($nilai_a >= 5) {
-                        echo "<tr><td>Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_b >= 5) {
-                        echo "<tr><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_c >= 5) {
-                        echo "<tr><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_d >= 5) {
-                        echo "<tr><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_e >= 5) {
-                        echo "<tr><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_f >= 5) {
-                        echo "<tr><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_g >= 5) {
-                        echo "<tr><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_h >= 5) {
-                        echo "<tr><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_i >= 5) {
-                        echo "<tr><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_j >= 5) {
-                        echo "<tr><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_k >= 5) {
-                        echo "<tr><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_l >= 5) {
-                        echo "<tr><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_m >= 5) {
-                        echo "<tr><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_n >= 5) {
-                        echo "<tr><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_o >= 5) {
-                        echo "<tr><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_p >= 5) {
-                        echo "<tr><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_q >= 5) {
-                        echo "<tr><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_r >= 5) {
-                        echo "<tr><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    if ($nilai_s >= 5) {
-                        echo "<tr><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
-                    } else {
-                        echo "";
-                    }
-                    ?>
-                </table>
-            </div>
-        </div>
         <!-- tampilan desktop -->
         <div class="desktop">
             <br>
-            <h5 align="center"> Results of the Personal Prevention Check-Up Analysis </h5>
+            <h5 align="center">Results of the Personal Prevention Check-Up Analysis</h5>
+            <div align="center">
+                <span style="color:red;">[red : high risk]</span> - <span style="color:orange;">[orange : medium risk needs to be alert]</span>
+            </div>
             <div class="col-12" style="text-align: justify;">
-                <table class="table table-hover" border="3" width="100%" style="font-size: small;">
+                <table class="table table-hover" width="100%" style="font-size: small;">
                     <tr>
-
-                        <th style="vertical-align: top;max-width:min-content;">
-                            Dampak kesehatan yang akan muncul bila tidak ada upaya pencegahan
+                        <th style="vertical-align: top;" width="40%">
+                            Risk of health problems
                         </th>
                         <th style="vertical-align: top;">
-                            Tingkat
-                        </th>
-                        <th style="vertical-align: top;text-align: left;">
-                            Risiko Masalah Kesehatan
-                        </th>
-                        <th>
-                            Anjuran : <br>Program Sehat 90 Hari <br> Untuk anda yang
+                            Impact
                         </th>
                     </tr>
-                    <tr></tr>
-                    <?php foreach ($rule as $item2) : ?>
-                    <?php endforeach ?>
                     <?php
                     if ($nilai_a > 5) {
-                        echo "<tr><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>A. Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_a</span></td><td>$dampak_eng_a</td></tr>";
                     } elseif ($nilai_a >= 5) {
-                        echo "<tr><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>A. Masalah Mata Minus / Plus</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_a</span></td><td>$dampak_eng_a</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_b > 5) {
-                        echo "<tr><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_b</span></td><td>$dampak_eng_b</td></tr>";
                     } elseif ($nilai_b >= 5) {
-                        echo "<tr><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Vertigo, Migrain</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_b</span></td><td>$dampak_eng_b</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_c > 5) {
-                        echo "<tr><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_c</span></td><td>$dampak_eng_c</td></tr>";
                     } elseif ($nilai_c >= 5) {
-                        echo "<tr><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Flu, Pilek</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_c</span></td><td>$dampak_eng_c</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_d > 5) {
-                        echo "<tr><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_d</span></td><td>$dampak_eng_d</td></tr>";
                     } elseif ($nilai_d >= 5) {
-                        echo "<tr><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Rematik, Tulang</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_d</span></td><td>$dampak_eng_d</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_e > 5) {
-                        echo "<tr><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_e</span></td><td>$dampak_eng_e</td></tr>";
                     } elseif ($nilai_e >= 5) {
-                        echo "<tr><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Infertil, Kulit Kusam</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_e</span></td><td>$dampak_eng_e</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_f > 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_f</span></td><td>$dampak_eng_f</td></tr>";
                     } elseif ($nilai_f >= 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin</td><td><span style='color:orange;'>(Waspada)</span></td><td>Anemia, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_f</span></td><td>$dampak_eng_f</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_g > 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_g</span></td><td>$dampak_eng_g</td></tr>";
                     } elseif ($nilai_g >= 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, stamina, kesuburan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Stamina, Sembelit</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_g</span></td><td>$dampak_eng_g</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_h > 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_h</span></td><td>$dampak_eng_h</td></tr>";
                     } elseif ($nilai_h >= 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Degeneratif</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_h</span></td><td>$dampak_eng_h</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_i > 5) {
-                        echo "<tr><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_i</span></td><td>$dampak_eng_i</td></tr>";
                     } elseif ($nilai_i >= 5) {
-                        echo "<tr><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Jantung, Stroke</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_i</span></td><td>$dampak_eng_i</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_j > 5) {
-                        echo "<tr><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_j</span></td><td>$dampak_eng_j</td></tr>";
                     } elseif ($nilai_j >= 5) {
-                        echo "<tr><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver, Obesitas</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_j</span></td><td>$dampak_eng_j</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_k > 5) {
-                        echo "<tr><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_k</span></td><td>$dampak_eng_k</td></tr>";
                     } elseif ($nilai_k >= 5) {
-                        echo "<tr><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Hipertensi, Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_k</span></td><td>$dampak_eng_k</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_l > 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_l</span></td><td>$dampak_eng_l</td></tr>";
                     } elseif ($nilai_l >= 5) {
-                        echo "<tr><td>Gangguan fungsi pencernaan, berat badan</td><td><span style='color:orange;'>(Waspada)</span></td><td>Konstipasi</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_l</span></td><td>$dampak_eng_l</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_m > 5) {
-                        echo "<tr><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_m</span></td><td>$dampak_eng_m</td></tr>";
                     } elseif ($nilai_m >= 5) {
-                        echo "<tr><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Kholesterol</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_m</span></td><td>$dampak_eng_m</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_n > 5) {
-                        echo "<tr><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_n</span></td><td>$dampak_eng_n</td></tr>";
                     } elseif ($nilai_n >= 5) {
-                        echo "<tr><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah regenerasi sel</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_n</span></td><td>$dampak_eng_n</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_o > 5) {
-                        echo "<tr><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_o</span></td><td>$dampak_eng_o</td></tr>";
                     } elseif ($nilai_o >= 5) {
-                        echo "<tr><td>Gangguan fungsi hormon, kholesterol</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_o</span></td><td>$dampak_eng_o</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_p > 5) {
-                        echo "<tr><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_p</span></td><td>$dampak_eng_p</td></tr>";
                     } elseif ($nilai_p >= 5) {
-                        echo "<tr><td>Gangguan fungsi memori (daya ingat)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Daya Ingat</td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_p</span></td><td>$dampak_eng_p</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_q > 5) {
-                        echo "<tr><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_qrs</span></td><td>$dampak_eng_qrs</td></tr>";
                     } elseif ($nilai_q >= 5) {
-                        echo "<tr><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_qrs</span></td><td>$dampak_eng_qrs</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_r > 5) {
-                        echo "<tr><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_qrs</span></td><td>$dampak_eng_qrs</td></tr>";
                     } elseif ($nilai_r >= 5) {
-                        echo "<tr><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_qrs</span></td><td>$dampak_eng_qrs</td></tr>";
                     } else {
                         echo "";
                     }
                     if ($nilai_s > 5) {
-                        echo "<tr><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:red;'>Risiko Tinggi</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:red;'>$risiko_eng_qrs</span></td><td>$dampak_eng_qrs</td></tr>";
                     } elseif ($nilai_s >= 5) {
-                        echo "<tr><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)</td><td><span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu<br></td><td>Ikuti Program Sehat 90 Hari untuk mencegah sakit, keparahan dan kekambuhan</td></tr>";
+                        echo "<tr><td><span style='color:orange;'>$risiko_eng_qrs</span></td><td>$dampak_eng_qrs</td></tr>";
                     } else {
                         echo "";
                     }
@@ -868,266 +345,266 @@
         </div>
     <?php } ?>
 
-
+    <!-- perhitungan lengkap -->
     <!-- <div class=" dropdown" style="text-align: center;">
-        <button onclick="myFunction()" class="btn-outline-primary">Tampilkan Perhitungan</button>
-        <div id="myDropdown" class="dropdown-content">
-            <div class="kuesioner">
-                <div class="desktop">
-                    <table class="table table-striped" style="border:1;text-align: center;">
-                        <tr>
-                            <td>
-                                A
-                            </td>
-                            <td>
-                                B
-                            </td>
-                            <td>
-                                C
-                            </td>
-                            <td>
-                                D
-                            </td>
-                            <td>
-                                E
-                            </td>
-                            <td>
-                                F
-                            </td>
-                            <td>
-                                G
-                            </td>
-                            <td>
-                                H
-                            </td>
-                            <td>
-                                I
-                            </td>
-                            <td>
-                                J
-                            </td>
-                            <td>
-                                K
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                M
-                            </td>
-                            <td>
-                                N
-                            </td>
-                            <td>
-                                O
-                            </td>
-                            <td>
-                                P
-                            </td>
-                            <td>
-                                Q
-                            </td>
-                            <td>
-                                R
-                            </td>
-                            <td>
-                                S
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?= $nilai_a ?>
-                            </td>
-                            <td>
-                                <?= $nilai_b ?>
-                            </td>
-                            <td>
-                                <?= $nilai_c ?>
-                            </td>
-                            <td>
-                                <?= $nilai_d ?>
-                            </td>
-                            <td>
-                                <?= $nilai_e ?>
-                            </td>
-                            <td>
-                                <?= $nilai_f ?>
-                            </td>
-                            <td>
-                                <?= $nilai_g ?>
-                            </td>
-                            <td>
-                                <?= $nilai_h ?>
-                            </td>
-                            <td>
-                                <?= $nilai_i ?>
-                            </td>
-                            <td>
-                                <?= $nilai_j ?>
-                            </td>
-                            <td>
-                                <?= $nilai_k ?>
-                            </td>
-                            <td>
-                                <?= $nilai_l ?>
-                            </td>
-                            <td>
-                                <?= $nilai_m ?>
-                            </td>
-                            <td>
-                                <?= $nilai_n ?>
-                            </td>
-                            <td>
-                                <?= $nilai_o ?>
-                            </td>
-                            <td>
-                                <?= $nilai_p ?>
-                            </td>
-                            <td>
-                                <?= $nilai_q ?>
-                            </td>
-                            <td>
-                                <?= $nilai_r ?>
-                            </td>
-                            <td>
-                                <?= $nilai_s ?>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="mobile">
-                    <table class="table table-striped" style="border:1;text-align: center;">
-                        <tr>
-                            <td>
-                                A
-                            </td>
-                            <td>
-                                B
-                            </td>
-                            <td>
-                                C
-                            </td>
-                            <td>
-                                D
-                            </td>
-                            <td>
-                                E
-                            </td>
-                            <td>
-                                F
-                            </td>
-                            <td>
-                                G
-                            </td>
-                            <td>
-                                H
-                            </td>
-                            <td>
-                                I
-                            </td>
-                            <td>
-                                J
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?= $nilai_a ?>
-                            </td>
-                            <td>
-                                <?= $nilai_b ?>
-                            </td>
-                            <td>
-                                <?= $nilai_c ?>
-                            </td>
-                            <td>
-                                <?= $nilai_d ?>
-                            </td>
-                            <td>
-                                <?= $nilai_e ?>
-                            </td>
-                            <td>
-                                <?= $nilai_f ?>
-                            </td>
-                            <td>
-                                <?= $nilai_g ?>
-                            </td>
-                            <td>
-                                <?= $nilai_h ?>
-                            </td>
-                            <td>
-                                <?= $nilai_i ?>
-                            </td>
-                            <td>
-                                <?= $nilai_j ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                K
-                            </td>
-                            <td>
-                                L
-                            </td>
-                            <td>
-                                M
-                            </td>
-                            <td>
-                                N
-                            </td>
-                            <td>
-                                O
-                            </td>
-                            <td>
-                                P
-                            </td>
-                            <td>
-                                Q
-                            </td>
-                            <td>
-                                R
-                            </td>
-                            <td>
-                                S
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <?= $nilai_k ?>
-                            </td>
-                            <td>
-                                <?= $nilai_l ?>
-                            </td>
-                            <td>
-                                <?= $nilai_m ?>
-                            </td>
-                            <td>
-                                <?= $nilai_n ?>
-                            </td>
-                            <td>
-                                <?= $nilai_o ?>
-                            </td>
-                            <td>
-                                <?= $nilai_p ?>
-                            </td>
-                            <td>
-                                <?= $nilai_q ?>
-                            </td>
-                            <td>
-                                <?= $nilai_r ?>
-                            </td>
-                            <td>
-                                <?= $nilai_s ?>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div> -->
+                                <button onclick="myFunction()" class="btn-outline-primary">Tampilkan Perhitungan</button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <div class="kuesioner">
+                                        <div class="desktop">
+                                            <table class="table table-striped" style="border:1;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        A
+                                                    </td>
+                                                    <td>
+                                                        B
+                                                    </td>
+                                                    <td>
+                                                        C
+                                                    </td>
+                                                    <td>
+                                                        D
+                                                    </td>
+                                                    <td>
+                                                        E
+                                                    </td>
+                                                    <td>
+                                                        F
+                                                    </td>
+                                                    <td>
+                                                        G
+                                                    </td>
+                                                    <td>
+                                                        H
+                                                    </td>
+                                                    <td>
+                                                        I
+                                                    </td>
+                                                    <td>
+                                                        J
+                                                    </td>
+                                                    <td>
+                                                        K
+                                                    </td>
+                                                    <td>
+                                                        L
+                                                    </td>
+                                                    <td>
+                                                        M
+                                                    </td>
+                                                    <td>
+                                                        N
+                                                    </td>
+                                                    <td>
+                                                        O
+                                                    </td>
+                                                    <td>
+                                                        P
+                                                    </td>
+                                                    <td>
+                                                        Q
+                                                    </td>
+                                                    <td>
+                                                        R
+                                                    </td>
+                                                    <td>
+                                                        S
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <?= $nilai_a ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_b ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_c ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_d ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_e ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_f ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_g ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_h ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_i ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_j ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_k ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_l ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_m ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_n ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_o ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_p ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_q ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_r ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_s ?>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div class="mobile">
+                                            <table class="table table-striped" style="border:1;text-align: center;">
+                                                <tr>
+                                                    <td>
+                                                        A
+                                                    </td>
+                                                    <td>
+                                                        B
+                                                    </td>
+                                                    <td>
+                                                        C
+                                                    </td>
+                                                    <td>
+                                                        D
+                                                    </td>
+                                                    <td>
+                                                        E
+                                                    </td>
+                                                    <td>
+                                                        F
+                                                    </td>
+                                                    <td>
+                                                        G
+                                                    </td>
+                                                    <td>
+                                                        H
+                                                    </td>
+                                                    <td>
+                                                        I
+                                                    </td>
+                                                    <td>
+                                                        J
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <?= $nilai_a ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_b ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_c ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_d ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_e ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_f ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_g ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_h ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_i ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_j ?>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        K
+                                                    </td>
+                                                    <td>
+                                                        L
+                                                    </td>
+                                                    <td>
+                                                        M
+                                                    </td>
+                                                    <td>
+                                                        N
+                                                    </td>
+                                                    <td>
+                                                        O
+                                                    </td>
+                                                    <td>
+                                                        P
+                                                    </td>
+                                                    <td>
+                                                        Q
+                                                    </td>
+                                                    <td>
+                                                        R
+                                                    </td>
+                                                    <td>
+                                                        S
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <?= $nilai_k ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_l ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_m ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_n ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_o ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_p ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_q ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_r ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= $nilai_s ?>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+            </div> -->
 
 
 
-    <script>
+    <!-- <script>
         /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
         function myFunction() {
@@ -1149,6 +626,6 @@ toggle between hiding and showing the dropdown content */
                 }
             }
         }
-    </script>
+    </script> -->
 <?php endforeach ?>
 <br>

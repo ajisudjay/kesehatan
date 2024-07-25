@@ -65,10 +65,27 @@ class Pages extends BaseController
     public function hasil()
     {
         $uri = current_url(true);
-        $slug = $uri->getSegment(3); // Method - instrument
+        $bahasa = $uri->getSegment(3); // Method - instrument
+        $slug = $uri->getSegment(4); // Method - instrument
         $request = \Config\Services::request();
-        $bahasa = $request->getVar('bahasa');
         $datakoresponden = $this->KorespondenModel->where('slug', $slug)->first();
+        $datahasil_a = $this->RuleModel->where('kode', 'a')->first();
+        $datahasil_b = $this->RuleModel->where('kode', 'b')->first();
+        $datahasil_c = $this->RuleModel->where('kode', 'c')->first();
+        $datahasil_d = $this->RuleModel->where('kode', 'd')->first();
+        $datahasil_e = $this->RuleModel->where('kode', 'e')->first();
+        $datahasil_f = $this->RuleModel->where('kode', 'f')->first();
+        $datahasil_g = $this->RuleModel->where('kode', 'g')->first();
+        $datahasil_h = $this->RuleModel->where('kode', 'h')->first();
+        $datahasil_i = $this->RuleModel->where('kode', 'i')->first();
+        $datahasil_j = $this->RuleModel->where('kode', 'j')->first();
+        $datahasil_k = $this->RuleModel->where('kode', 'k')->first();
+        $datahasil_l = $this->RuleModel->where('kode', 'l')->first();
+        $datahasil_m = $this->RuleModel->where('kode', 'm')->first();
+        $datahasil_n = $this->RuleModel->where('kode', 'n')->first();
+        $datahasil_o = $this->RuleModel->where('kode', 'o')->first();
+        $datahasil_p = $this->RuleModel->where('kode', 'p')->first();
+        $datahasil_qrs = $this->RuleModel->where('kode', 'q')->first();
         $data = [
             'title' => 'Beranda - Siswanto',
             'top_header' => 'Beranda',
@@ -95,6 +112,80 @@ class Pages extends BaseController
             'nilai_q' => $datakoresponden['nilai_q'],
             'nilai_r' => $datakoresponden['nilai_r'],
             'nilai_s' => $datakoresponden['nilai_s'],
+
+            'risiko_a' => $datahasil_a['risiko'],
+            'risiko_b' => $datahasil_b['risiko'],
+            'risiko_c' => $datahasil_c['risiko'],
+            'risiko_d' => $datahasil_d['risiko'],
+            'risiko_e' => $datahasil_e['risiko'],
+            'risiko_f' => $datahasil_f['risiko'],
+            'risiko_g' => $datahasil_g['risiko'],
+            'risiko_h' => $datahasil_h['risiko'],
+            'risiko_i' => $datahasil_i['risiko'],
+            'risiko_j' => $datahasil_j['risiko'],
+            'risiko_k' => $datahasil_k['risiko'],
+            'risiko_l' => $datahasil_l['risiko'],
+            'risiko_m' => $datahasil_m['risiko'],
+            'risiko_n' => $datahasil_n['risiko'],
+            'risiko_o' => $datahasil_o['risiko'],
+            'risiko_p' => $datahasil_p['risiko'],
+            'risiko_qrs' => $datahasil_qrs['risiko'],
+
+            'risiko_eng_a' => $datahasil_a['risiko_eng'],
+            'risiko_eng_b' => $datahasil_b['risiko_eng'],
+            'risiko_eng_c' => $datahasil_c['risiko_eng'],
+            'risiko_eng_d' => $datahasil_d['risiko_eng'],
+            'risiko_eng_e' => $datahasil_e['risiko_eng'],
+            'risiko_eng_f' => $datahasil_f['risiko_eng'],
+            'risiko_eng_g' => $datahasil_g['risiko_eng'],
+            'risiko_eng_h' => $datahasil_h['risiko_eng'],
+            'risiko_eng_i' => $datahasil_i['risiko_eng'],
+            'risiko_eng_j' => $datahasil_j['risiko_eng'],
+            'risiko_eng_k' => $datahasil_k['risiko_eng'],
+            'risiko_eng_l' => $datahasil_l['risiko_eng'],
+            'risiko_eng_m' => $datahasil_m['risiko_eng'],
+            'risiko_eng_n' => $datahasil_n['risiko_eng'],
+            'risiko_eng_o' => $datahasil_o['risiko_eng'],
+            'risiko_eng_p' => $datahasil_p['risiko_eng'],
+            'risiko_eng_qrs' => $datahasil_qrs['risiko_eng'],
+
+            'dampak_a' => $datahasil_a['dampak'],
+            'dampak_b' => $datahasil_b['dampak'],
+            'dampak_c' => $datahasil_c['dampak'],
+            'dampak_d' => $datahasil_d['dampak'],
+            'dampak_e' => $datahasil_e['dampak'],
+            'dampak_f' => $datahasil_f['dampak'],
+            'dampak_g' => $datahasil_g['dampak'],
+            'dampak_h' => $datahasil_h['dampak'],
+            'dampak_i' => $datahasil_i['dampak'],
+            'dampak_j' => $datahasil_j['dampak'],
+            'dampak_k' => $datahasil_k['dampak'],
+            'dampak_l' => $datahasil_l['dampak'],
+            'dampak_m' => $datahasil_m['dampak'],
+            'dampak_n' => $datahasil_n['dampak'],
+            'dampak_o' => $datahasil_o['dampak'],
+            'dampak_p' => $datahasil_p['dampak'],
+            'dampak_qrs' => $datahasil_qrs['dampak'],
+
+            'dampak_eng_a' => $datahasil_a['dampak_eng'],
+            'dampak_eng_b' => $datahasil_b['dampak_eng'],
+            'dampak_eng_c' => $datahasil_c['dampak_eng'],
+            'dampak_eng_d' => $datahasil_d['dampak_eng'],
+            'dampak_eng_e' => $datahasil_e['dampak_eng'],
+            'dampak_eng_f' => $datahasil_f['dampak_eng'],
+            'dampak_eng_g' => $datahasil_g['dampak_eng'],
+            'dampak_eng_h' => $datahasil_h['dampak_eng'],
+            'dampak_eng_i' => $datahasil_i['dampak_eng'],
+            'dampak_eng_j' => $datahasil_j['dampak_eng'],
+            'dampak_eng_k' => $datahasil_k['dampak_eng'],
+            'dampak_eng_l' => $datahasil_l['dampak_eng'],
+            'dampak_eng_m' => $datahasil_m['dampak_eng'],
+            'dampak_eng_n' => $datahasil_n['dampak_eng'],
+            'dampak_eng_o' => $datahasil_o['dampak_eng'],
+            'dampak_eng_p' => $datahasil_p['dampak_eng'],
+            'dampak_eng_qrs' => $datahasil_qrs['dampak_eng'],
+
+
         ];
         return view('frontend/pages/hasil', $data);
     }

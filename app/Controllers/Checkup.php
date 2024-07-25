@@ -20,6 +20,7 @@ class Checkup extends BaseController
         $telepon = $request->getVar('telepon');
         $jk = $request->getVar('jk');
         $umur = $request->getVar('umur');
+        $bahasa = $request->getVar('bahasa');
         $nama_slug = preg_replace('/[^a-z0-9]+/i', '-', trim(strtolower($nama)));
         date_default_timezone_set("Asia/Kuala_Lumpur");
         $datestamp = date("Y-m-d");
@@ -558,7 +559,7 @@ class Checkup extends BaseController
                 'nilai_s' => $nilai_s,
             ];
             $this->KorespondenModel->insert($data);
-            return redirect()->to(base_url("/hasil/$slug"));
+            return redirect()->to(base_url("/hasil/$bahasa/$slug"));
         } else {
             $idlama = $cekkoresponden['id'];
             $this->KorespondenModel->delete($idlama);
@@ -569,6 +570,7 @@ class Checkup extends BaseController
                 'telepon' => $telepon,
                 'jk' => $jk,
                 'umur' => $umur,
+                'bahasa' => $bahasa,
                 'datetime' => $datestamp,
                 'nilai_a' => $nilai_a,
                 'nilai_b' => $nilai_b,
@@ -591,7 +593,7 @@ class Checkup extends BaseController
                 'nilai_s' => $nilai_s,
             ];
             $this->KorespondenModel->insert($data);
-            return redirect()->to(base_url("/hasil/$slug"));
+            return redirect()->to(base_url("/hasil/$bahasa/$slug"));
         }
     }
 

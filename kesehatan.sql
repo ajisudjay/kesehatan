@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jul 2024 pada 15.40
+-- Waktu pembuatan: 25 Jul 2024 pada 09.03
 -- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Versi PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,7 +89,6 @@ INSERT INTO `koresponden` (`id`, `slug`, `nama`, `telepon`, `jk`, `umur`, `datet
 (1575742465, 'sadsad-32432-2023-01-06', 'Umma', '08521313', 'Perempuan', 30, '2023-01-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1575742469, 'nama-123-2023-01-06', 'aji', '123', 'Laki-laki', 3, '2023-01-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1575742470, 'yaya-493509304-2023-01-06', 'yaya', '493509304', 'Perempuan', 15, '2023-01-06', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(1575742471, 'asdas', 'aji', '8888', 'laki-laki', 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1575742472, 'sadadas', 'aji', '123', 'Laki-laki', 20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1575742473, 'aji-sudjai-089656680408-2023-01-11', 'Aji Sudjai', '089656680408', 'Laki-laki', 27, '2023-01-11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (1575742474, 'qweqew-34242-2023-01-11', 'qweqew', '34242', 'Laki-laki', 44, '2023-01-11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -98,7 +97,18 @@ INSERT INTO `koresponden` (`id`, `slug`, `nama`, `telepon`, `jk`, `umur`, `datet
 (1575742477, 'fdrettret-45646-2023-01-11', 'fdrettret', '45646', 'Laki-laki', 3, '2023-01-11', 5, 8, 4, 6, 1, 5, 7, 7, 7, 6, 4, 4, 4, 2, 3, 5, 5, 5, 5),
 (1575742478, 'orang-percobaan-0123456789-2023-01-13', 'orang percobaan', '0123456789', 'Laki-laki', 27, '2023-01-13', 6, 6, 6, 6, 3, 2, 6, 5, 7, 6, 7, 5, 3, 5, 3, 4, 4, 4, 4),
 (1575742479, 'sadad-34535-2023-01-23', 'sadad', '34535', 'Perempuan', 34, '2023-01-23', 4, 6, 3, 5, 2, 2, 8, 7, 6, 6, 5, 6, 5, 3, 2, 2, 3, 3, 3),
-(1575742480, 'tes-78-2024-07-07', 'tes', '78', 'Laki-laki', 40, '2024-07-07', 7, 8, 8, 8, 3, 5, 8, 5, 8, 7, 10, 7, 6, 7, 5, 3, 5, 5, 5);
+(1575742480, 'tes-78-2024-07-07', 'tes', '78', 'Laki-laki', 40, '2024-07-07', 7, 8, 8, 8, 3, 5, 8, 5, 8, 7, 10, 7, 6, 7, 5, 3, 5, 5, 5),
+(1575742481, 'tes-123-2024-07-18', 'tes', '123', 'Laki-laki', 12, '2024-07-18', 1, 3, 1, 3, 0, 1, 1, 0, 2, 1, 2, 2, 2, 3, 1, 0, 2, 2, 2),
+(1575742482, 'sakkit-321-2024-07-18', 'sakkit', '321', 'Perempuan', 50, '2024-07-18', 10, 11, 12, 11, 7, 7, 12, 9, 13, 10, 12, 11, 8, 11, 6, 7, 9, 9, 9),
+(1575742483, 'tes-123-2024-07-18', 'tes', '123', 'Laki-laki', 23, '2024-07-18', 5, 4, 7, 7, 5, 4, 6, 4, 6, 2, 4, 3, 2, 5, 3, 2, 7, 7, 7),
+(1575742484, 'tes-123-2024-07-21', 'tes', '123', 'Laki-laki', 40, '2024-07-21', 10, 11, 12, 11, 7, 7, 12, 9, 13, 10, 12, 11, 8, 11, 6, 7, 9, 9, 9),
+(1575742485, 'tes-123-2024-07-21', 'tes', '123', 'Perempuan', 33, '2024-07-21', 10, 11, 12, 11, 7, 7, 12, 9, 13, 10, 12, 11, 8, 11, 6, 7, 9, 9, 9),
+(1575742486, 'tes-123-2024-07-22', 'tes', '123', 'Laki-laki', 90, '2024-07-22', 10, 11, 12, 11, 7, 7, 12, 9, 13, 10, 12, 11, 8, 11, 6, 7, 9, 9, 9),
+(1575742487, 'aji-321-2024-07-24', 'aji', '321', 'Laki-laki', 44, '2024-07-24', 10, 11, 12, 11, 7, 7, 12, 9, 13, 10, 12, 11, 8, 11, 6, 7, 9, 9, 9),
+(1575742488, 'aji-321-2024-07-24', 'aji', '321', 'Laki-laki', 33, '2024-07-24', 10, 11, 11, 11, 7, 7, 11, 8, 12, 9, 12, 10, 8, 11, 6, 7, 9, 9, 9),
+(1575742489, 'sadad-2112-2024-07-24', 'sadad', '2112', 'Perempuan', 22, '2024-07-24', 10, 10, 12, 9, 7, 7, 11, 8, 12, 9, 11, 11, 8, 11, 5, 6, 9, 9, 9),
+(1575742490, 'qwe-123-2024-07-25', 'qwe', '123', 'Laki-laki', 133, '2024-07-25', 10, 11, 12, 11, 7, 7, 12, 9, 13, 10, 12, 11, 8, 11, 6, 7, 9, 9, 9),
+(1575742491, 'rew-432-2024-07-25', 'rew', '432', 'Laki-laki', 133, '2024-07-25', 7, 6, 9, 8, 6, 6, 8, 5, 11, 7, 10, 10, 6, 10, 5, 4, 6, 6, 6);
 
 -- --------------------------------------------------------
 
@@ -156,7 +166,9 @@ INSERT INTO `pertanyaan` (`nomor`, `pertanyaan`, `eng`) VALUES
 CREATE TABLE `rule` (
   `kode` varchar(100) NOT NULL,
   `dampak` text NOT NULL,
-  `risiko` varchar(255) NOT NULL,
+  `dampak_eng` text NOT NULL,
+  `risiko` text NOT NULL,
+  `risiko_eng` text NOT NULL,
   `anjuran` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -164,26 +176,26 @@ CREATE TABLE `rule` (
 -- Dumping data untuk tabel `rule`
 --
 
-INSERT INTO `rule` (`kode`, `dampak`, `risiko`, `anjuran`) VALUES
-('a', 'Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia', 'Masalah Mata Minus / Plus', 'SEHAT mencegah PENYAKIT'),
-('b', 'Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh', 'Masalah Vertigo, Migrain', 'SEHAT mencegah PENYAKIT'),
-('c', 'Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia', 'Masalah Flu, Pilek', 'SEHAT mencegah PENYAKIT'),
-('d', 'Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung', 'Masalah Rematik, Tulang', 'SEHAT mencegah PENYAKIT'),
-('e', 'Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker', 'Masalah Infertil, Kulit Kusam', 'SEHAT mencegah PENYAKIT'),
-('f', 'Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin', 'Anemia, Sembelit', 'SEHAT mencegah PENYAKIT'),
-('g', 'Gangguan fungsi pencernaan, stamina, kesuburan', 'Masalah Stamina, Sembelit', 'SAKIT mencegah KEPARAHAN'),
-('h', 'Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker', 'Masalah Degeneratif', 'SAKIT mencegah KEPARAHAN'),
-('i', 'Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol', 'Masalah Jantung, Stroke', 'SAKIT mencegah KEPARAHAN'),
-('j', 'Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh', 'Masalah Liver, Obesitas', 'SAKIT mencegah KEPARAHAN'),
-('k', 'Gangguan fungsi perdaran darah, hipertensi dan kholesterol', 'Masalah Hipertensi, Kholesterol', 'SAKIT mencegah KEPARAHAN'),
-('l', 'Gangguan fungsi pencernaan, berat badan', 'Konstipasi', 'SAKIT mencegah KEPARAHAN'),
-('m', 'Gangguan fungsi hormon, kholesterol', 'Kholesterol', 'SAKIT mencegah KEKAMBUHAN'),
-('n', 'Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas', 'Masalah regenerasi sel', 'SAKIT mencegah KEKAMBUHAN'),
-('o', 'Gangguan fungsi hormon, kholesterol', 'Masalah Liver', 'SAKIT mencegah KEKAMBUHAN'),
-('p', 'Gangguan fungsi memori (daya ingat)', 'Masalah Daya Ingat', 'SAKIT mencegah KEKAMBUHAN'),
-('q', 'Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) ', 'Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu', 'SAKIT mencegah KEKAMBUHAN'),
-('r', 'Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)', 'Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu', 'SAKIT mencegah KEKAMBUHAN'),
-('s', 'Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)', 'Masalah Pengembangan Diri, Leadership Skill, Tn Hidup, Kecemasan, Stress dan Manajemen Waktu', 'SAKIT mencegah KEKAMBUHAN');
+INSERT INTO `rule` (`kode`, `dampak`, `dampak_eng`, `risiko`, `risiko_eng`, `anjuran`) VALUES
+('a', 'Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia', 'Reduced ability to see, Anemia risk, Cancer risk, risk of the condition of the Muscles, Bones, and Skin', 'Risiko masalah kesehatan mata', 'Risk of issues with the health of the eyes', 'SEHAT mencegah PENYAKIT'),
+('b', 'Gangguan fungsi metabolisme, pencernaan, kulit, daya konsentrasi dan persyarafan', 'Disorders of metabolism, Digestion, Skin, concentration and Neurological system function', 'Risiko masalah kesehatan persarafan', 'Risk of issues with the health of the neurological', 'SEHAT mencegah PENYAKIT'),
+('c', 'Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker', 'Weakening of the Immune system, Blood Arteries, Bones, and risk of Cancer', 'Risiko masalah daya tahan tubuh', 'Risk of immunological issues', 'SEHAT mencegah PENYAKIT'),
+('d', 'Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantungGangguan fungsi kulit, kesuburan, persyarafan, otot, tumbuh kembang', 'Problems with the growth and development, Nerves, Muscles, Skin, Fertility, and Muscles', 'Risiko masalah kesehatan tulang dan otot serta lambung ', 'Risk of stomach, muscular, and bone health issues', 'SEHAT mencegah PENYAKIT'),
+('e', 'Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker', 'Problems with the growth and development, Nerves, Muscles, Skin, Fertility, and Muscles', 'Risiko masalah kesehatan kulit dan kesuburan ', 'Risk of reproductive issues and skin health issues', 'SEHAT mencegah PENYAKIT'),
+('f', 'Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin', 'Problems with the Digestive system, Anemia, focus, growth, and development', 'Risiko masalah kesehatan darah ', 'Risk of issues with blood health', 'SEHAT mencegah PENYAKIT'),
+('g', 'Gangguan fungsi pencernaan, stamina, kesuburan', 'Disorders relating to Endurance, Digestion function and Fertility', 'Risiko masalah stamina tubuh ', 'Possibility of fatigue issues', 'SAKIT mencegah KEPARAHAN'),
+('h', 'Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker', 'Problems of the dDigestive system, endurance and stamina, and Cancer risk', 'Risiko masalah stamina tubuh dan effort ', 'Risk of issues with physical endurance and exertion', 'SAKIT mencegah KEPARAHAN'),
+('i', 'Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol', 'Impaired Circulatory function, Nerves, Body metabolism and high risk of Cholesterol', 'Risiko masalah metabolisme tubuh dan cholesterol tinggi ', 'Risk of elevated cholesterol and metabolic issues', 'SAKIT mencegah KEPARAHAN'),
+('j', 'Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh', 'Impaired Body metabolism, danger of excessive Cholesterol, Body Fat disorders, and Blood circulation impairment', 'Risiko masalah lemak tubuh ', 'Risk of issues with body fat', 'SAKIT mencegah KEPARAHAN'),
+('k', 'Gangguan fungsi perdaran darah, hipertensi dan kholesterol', 'Disorders of Metabolic function, Liver function, Cholesterol and Body Fat problems', 'Risiko masalah peredaran darah and Hipertensi ', 'Risk of issues with the circulatory system and Hypertension', 'SAKIT mencegah KEPARAHAN'),
+('l', 'Gangguan fungsi pencernaan, berat badan', 'Disorders of Digestive function, metabolism, Blood circulation, Hypertension and Cholesterol problems', 'Risiko masalah fungsi pencernaan ', 'Risk of digestive function problems', 'SAKIT mencegah KEPARAHAN'),
+('m', 'Gangguan fungsi hormon, kholesterol', 'Issues with Digestion, weight, and Hormones', 'Risiko masalah hormonal ', 'Risk of hormone issues', 'SAKIT mencegah KEKAMBUHAN'),
+('n', 'Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas', 'Risk of issues with Brain function and growth and development', 'Risiko masalah tumbuh kembang dan fungsi otak ', 'Risk of issues with brain function and growth and development', 'SAKIT mencegah KEKAMBUHAN'),
+('o', 'Gangguan fungsi hormon, kholesterol', 'Issues with the metabolism and function of the Liver', 'Risiko masalah fungsi hati ', 'Risk of of issues with liver function', 'SAKIT mencegah KEKAMBUHAN'),
+('p', 'Gangguan fungsi memori (daya ingat)', 'Impaired memory function', 'Risiko masalah fungsi daya ingat ', 'Risk of memory function issues', 'SAKIT mencegah KEKAMBUHAN'),
+('q', 'Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) ', 'Memory impairment, as well as psychological, emotional, social, and spiritual illnesses such as stress, worry, forgetfulness, and ineffective time management', 'Risiko masalah psikologis, mental, sosial dan spiritual ', 'Possibility of mental, emotional, social, and spiritual issues', 'SAKIT mencegah KEKAMBUHAN'),
+('r', 'Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)', 'Memory impairment, as well as psychological, emotional, social, and spiritual illnesses such as stress, worry, forgetfulness, and ineffective time management', 'Risiko masalah psikologis, mental, sosial dan spiritual ', 'Possibility of mental, emotional, social, and spiritual issues', 'SAKIT mencegah KEKAMBUHAN'),
+('s', 'Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu)', 'Memory impairment, as well as psychological, emotional, social, and spiritual illnesses such as stress, worry, forgetfulness, and ineffective time management', 'Risiko masalah psikologis, mental, sosial dan spiritual ', 'Possibility of mental, emotional, social, and spiritual issues', 'SAKIT mencegah KEKAMBUHAN');
 
 -- --------------------------------------------------------
 
@@ -254,7 +266,7 @@ ALTER TABLE `konfigurasi`
 -- AUTO_INCREMENT untuk tabel `koresponden`
 --
 ALTER TABLE `koresponden`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742481;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1575742492;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

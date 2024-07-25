@@ -5,7 +5,7 @@
         <?php if ($bahasa === 'English') { ?>
             <tr>
                 <th>
-                    Question
+                    Question <?= $bahasa ?>
                 </th>
                 <th style="text-align: center;" width="10%">
                     Yes

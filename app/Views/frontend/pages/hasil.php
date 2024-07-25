@@ -20,7 +20,7 @@
                                 </div>
                             </div>
                         <?php } else { ?>
-                            <b>Want further consultation?,</b> Come join the "PS90 Days" Assistance Whatsapp Group! <a href="https://chat.whatsapp.com/CSN57aUvIRC2b9LaF3ORcV"><button class="btn btn-sm btn-primary rounded-pill">Click Here</button></a>
+                            <b>Want further consultation?,</b>Come join the "PS90 Days" Assistance Whatsapp Group! <a href="https://chat.whatsapp.com/CSN57aUvIRC2b9LaF3ORcV"><button class="btn btn-sm btn-primary rounded-pill">Click Here</button></a>
                             <?= $this->include('frontend/pages/kuesioner_hasil') ?>
                             <div class="col-12">
                                 <div class="d-grid">
