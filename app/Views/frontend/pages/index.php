@@ -73,6 +73,7 @@
                                 <h5>Cek riwayat PPCU disini ?</h5>
                             </div>
                             <div class="col-lg-3">
+                                <input name="bahasa" type="text" value="<?= $bahasa ?>" hidden>
                                 <input class="form-livedoc-control" name="nama" type="text" placeholder="Nama" required>
                             </div>
                             <div class="col-lg-3">
@@ -86,6 +87,7 @@
                                 <h5>Check PPCU history here ?</h5>
                             </div>
                             <div class="col-lg-3">
+                                <input name="bahasa" type="text" value="<?= $bahasa ?>" hidden>
                                 <input class="form-livedoc-control" name="nama" type="text" placeholder="Name" required>
                             </div>
                             <div class="col-lg-3">

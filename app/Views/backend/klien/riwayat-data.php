@@ -56,162 +56,155 @@
                                                           <?= $item['umur'] ?> Tahun
                                                       </div>
                                                   </div>
+                                                  <table class="table table-responsive" style="font-size: x-small;">
+                                                      <tr>
+                                                          <td>
+                                                              Risiko
+                                                          </td>
+                                                          <td>
+                                                              Dampak
+                                                          </td>
+                                                          <td>
+                                                              Anjuran
+                                                          </td>
+                                                      </tr>
+                                                      <?php
+                                                        if ($item['nilai_a'] > 5) {
+                                                            echo "<tr><td>$risiko_a</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_a</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_a'] >= 5) {
+                                                            echo "<tr><td>$risiko_a</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_a</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_b'] > 5) {
+                                                            echo "<tr><td>$risiko_b</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_b</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_b'] >= 5) {
+                                                            echo "<tr><td>$risiko_b</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_b</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_c'] > 5) {
+                                                            echo "<tr><td>$risiko_c</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_c</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_c'] >= 5) {
+                                                            echo "<tr><td>$risiko_c</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_c</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_d'] > 5) {
+                                                            echo "<tr><td>$risiko_d</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_d</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_d'] >= 5) {
+                                                            echo "<tr><td>$risiko_d</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_d</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_e'] > 5) {
+                                                            echo "<tr><td>$risiko_e</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_e</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_e'] >= 5) {
+                                                            echo "<tr><td>$risiko_e</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_e</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_f'] > 5) {
+                                                            echo "<tr><td>$risiko_f</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_f</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_f'] >= 5) {
+                                                            echo "<tr><td>$risiko_f</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_f</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_g'] > 5) {
+                                                            echo "<tr><td>$risiko_g</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_g</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_g'] >= 5) {
+                                                            echo "<tr><td>$risiko_g</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_g</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_h'] > 5) {
+                                                            echo "<tr><td>$risiko_h</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_h</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_h'] >= 5) {
+                                                            echo "<tr><td>$risiko_h</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_h</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_i'] > 5) {
+                                                            echo "<tr><td>$risiko_i</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_i</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_i'] >= 5) {
+                                                            echo "<tr><td>$risiko_i</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_i</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_j'] > 5) {
+                                                            echo "<tr><td>$risiko_j</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_j</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_j'] >= 5) {
+                                                            echo "<tr><td>$risiko_j</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_j</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_k'] > 5) {
+                                                            echo "<tr><td>$risiko_k</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_k</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_k'] >= 5) {
+                                                            echo "<tr><td>$risiko_k</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_k</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_l'] > 5) {
+                                                            echo "<tr><td>$risiko_l</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_l</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_l'] >= 5) {
+                                                            echo "<tr><td>$risiko_l</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_l</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_m'] > 5) {
+                                                            echo "<tr><td>$risiko_m</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_m</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_m'] >= 5) {
+                                                            echo "<tr><td>$risiko_m</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_m</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_n'] > 5) {
+                                                            echo "<tr><td>$risiko_n</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_n</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_n'] >= 5) {
+                                                            echo "<tr><td>$risiko_n</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_n</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_o'] > 5) {
+                                                            echo "<tr><td>$risiko_o</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_o</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_o'] >= 5) {
+                                                            echo "<tr><td>$risiko_o</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_o</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_p'] > 5) {
+                                                            echo "<tr><td>$risiko_p</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_p</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_p'] >= 5) {
+                                                            echo "<tr><td>$risiko_p</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_p</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_q'] > 5) {
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_q'] >= 5) {
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_r'] > 5) {
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_r'] >= 5) {
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        if ($item['nilai_s'] > 5) {
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                        } elseif ($item['nilai_s'] >= 5) {
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                        } else {
+                                                            echo "";
+                                                        }
+                                                        ?>
+                                                  </table>
                                                   <br>
-                                                  <div class="row">
-                                                      <div class="col-md-11">
-                                                          <table class="table table-striped" style="font-size: x-small;">
-                                                              <tr>
-                                                                  <td>
-                                                                      No
-                                                                  </td>
-                                                                  <td>
-                                                                      Dampak
-                                                                  </td>
-                                                                  <td>
-                                                                      Risiko
-                                                                  </td>
-                                                                  <td>
-                                                                      Anjuran
-                                                                  </td>
-                                                              </tr>
-                                                              <?php
-                                                                if ($item['nilai_a'] > 5) {
-                                                                    echo "<tr><td>1</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Mata Minus / Plus</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } elseif ($item['nilai_a'] >= 5) {
-                                                                    echo "<tr><td>1</td><td>Gangguan fungsi penglihatan, otot, tulang dan kesehatan kulit, risiko Kanker dan Anemia <span style='color:orange;'>(Waspada)</span></td><td>Masalah Mata Minus / Plus</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_b'] > 5) {
-                                                                    echo "<tr><td>2</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Vertigo, Migrain</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } elseif ($item['nilai_b'] >= 5) {
-                                                                    echo "<tr><td>2</td><td>Gangguan fungsi persyarafan, pencernaan, kulit, daya konsentrasi dan metabolisme tubuh <span style='color:orange;'>(Waspada)</span></td><td>Masalah Vertigo, Migrain</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_c'] > 5) {
-                                                                    echo "<tr><td>3</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Flu, Pilek</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } elseif ($item['nilai_c'] >= 5) {
-                                                                    echo "<tr><td>3</td><td>Gangguan fungsi daya tahan tubuh, tulang, pembuluh darah, risiko Kanker dan Anemia <span style='color:orange;'>(Waspada)</span></td><td>Masalah Flu, Pilek</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_d'] > 5) {
-                                                                    echo "<tr><td>4</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Rematik, Tulang</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } elseif ($item['nilai_d'] >= 5) {
-                                                                    echo "<tr><td>4</td><td>Gangguan fungsi tulang, otot, lambung, pembuluh darah, persyarafan dan kesehatan jantung <span style='color:orange;'>(Waspada)</span></td><td>Masalah Rematik, Tulang</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_e'] > 5) {
-                                                                    echo "<tr><td>5</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Infertil, Kulit Kusam</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } elseif ($item['nilai_e'] >= 5) {
-                                                                    echo "<tr><td>5</td><td>Gangguan fungsi persyarafan, otot, tumbuh kembang, kulit, kesuburan dan risiko Kanker <span style='color:orange;'>(Waspada)</span></td><td>Masalah Infertil, Kulit Kusam</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_f'] > 5) {
-                                                                    echo "<tr><td>6</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin <span style='color:red;'>(Risiko Tinggi)</span></td><td>Anemia, Sembelit</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } elseif ($item['nilai_f'] >= 5) {
-                                                                    echo "<tr><td>6</td><td>Gangguan fungsi pencernaan, kurang darah (anemia), daya konsentrasi, perkembangan janin <span style='color:orange;'>(Waspada)</span></td><td>Anemia, Sembelit</td><td>SEHAT mencegah PENYAKIT</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_g'] > 5) {
-                                                                    echo "<tr><td>7</td><td>Gangguan fungsi pencernaan, stamina, kesuburan <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Stamina, Sembelit</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } elseif ($item['nilai_g'] >= 5) {
-                                                                    echo "<tr><td>7</td><td>Gangguan fungsi pencernaan, stamina, kesuburan <span style='color:orange;'>(Waspada)</span></td><td>Masalah Stamina, Sembelit</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_h'] > 5) {
-                                                                    echo "<tr><td>8</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Degeneratif</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } elseif ($item['nilai_h'] >= 5) {
-                                                                    echo "<tr><td>8</td><td>Gangguan fungsi pencernaan, stamina dengan aktivitas tinggi dan risiko Kanker <span style='color:orange;'>(Waspada)</span></td><td>Masalah Degeneratif</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_i'] > 5) {
-                                                                    echo "<tr><td>9</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Jantung, Stroke</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } elseif ($item['nilai_i'] >= 5) {
-                                                                    echo "<tr><td>9</td><td>Gangguan fungsi peredaran darah, persyarafan, metabolisme tubuh dan risiko tinggi kholesterol <span style='color:orange;'>(Waspada)</span></td><td>Masalah Jantung, Stroke</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_j'] > 5) {
-                                                                    echo "<tr><td>10</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Liver, Obesitas</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } elseif ($item['nilai_j'] >= 5) {
-                                                                    echo "<tr><td>10</td><td>Gangguan fungsi hati, kholesterol, metabolisme dan lemak tubuh <span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver, Obesitas</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_k'] > 5) {
-                                                                    echo "<tr><td>11</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Hipertensi, Kholesterol</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } elseif ($item['nilai_k'] >= 5) {
-                                                                    echo "<tr><td>11</td><td>Gangguan fungsi perdaran darah, hipertensi dan kholesterol <span style='color:orange;'>(Waspada)</span></td><td>Masalah Hipertensi, Kholesterol</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_l'] > 5) {
-                                                                    echo "<tr><td>12</td><td>Gangguan fungsi pencernaan, berat badan <span style='color:red;'>(Risiko Tinggi)</span></td><td>Konstipasi</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } elseif ($item['nilai_l'] >= 5) {
-                                                                    echo "<tr><td>12</td><td>Gangguan fungsi pencernaan, berat badan <span style='color:orange;'>(Waspada)</span></td><td>Konstipasi</td><td>SAKIT mencegah KEPARAHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_m'] > 5) {
-                                                                    echo "<tr><td>13</td><td>Gangguan fungsi hormon, kholesterol <span style='color:red;'>(Risiko Tinggi)</span></td><td>Kholesterol</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_m'] >= 5) {
-                                                                    echo "<tr><td>13</td><td>Gangguan fungsi hormon, kholesterol <span style='color:orange;'>(Waspada)</span></td><td>Kholesterol</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_n'] > 5) {
-                                                                    echo "<tr><td>14</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah regenerasi sel</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_n'] >= 5) {
-                                                                    echo "<tr><td>14</td><td>Gangguan fungsi otak, kesehatan mental, tumbuh kembang, imunitas <span style='color:orange;'>(Waspada)</span></td><td>Masalah regenerasi sel</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_o'] > 5) {
-                                                                    echo "<tr><td>15</td><td>Gangguan fungsi hormon, kholesterol <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Liver</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_o'] >= 5) {
-                                                                    echo "<tr><td>15</td><td>Gangguan fungsi hormon, kholesterol <span style='color:orange;'>(Waspada)</span></td><td>Masalah Liver</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_p'] > 5) {
-                                                                    echo "<tr><td>16</td><td>Gangguan fungsi memori (daya ingat) <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Daya Ingat</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_p'] >= 5) {
-                                                                    echo "<tr><td>16</td><td>Gangguan fungsi memori (daya ingat) <span style='color:orange;'>(Waspada)</span></td><td>Masalah Daya Ingat</td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_q'] > 5) {
-                                                                    echo "<tr><td>17</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tujuan Hidup,<br> Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_q'] >= 5) {
-                                                                    echo "<tr><td>17</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tujuan Hidup,<br> Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_r'] > 5) {
-                                                                    echo "<tr><td>18</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(18isiko Tinggi)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tujuan Hidup,<br> Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_r'] >= 5) {
-                                                                    echo "<tr><td>18</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tujuan Hidup,<br> Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                if ($item['nilai_s'] > 5) {
-                                                                    echo "<tr><td>19</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:red;'>(Risiko Tinggi)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tujuan Hidup,<br> Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } elseif ($item['nilai_s'] >= 5) {
-                                                                    echo "<tr><td>20</td><td>Gangguan psikologis, mental, sosial dan spiritual (stress, cemas, lupa, minim manajemen waktu) <span style='color:orange;'>(Waspada)</span></td><td>Masalah Pengembangan Diri, Leadership Skill, Tujuan Hidup,<br> Kecemasan, Stress dan Manajemen Waktu<br></td><td>SAKIT mencegah KEKAMBUHAN</td></tr>";
-                                                                } else {
-                                                                    echo "";
-                                                                }
-                                                                ?>
-                                                          </table>
-                                                      </div>
-                                                  </div>
                                               </div>
                                               <div class="modal-footer">
                                                   <button type="button" class="btn btn-danger" data-dismiss="modal">Batalkan</button>
@@ -222,8 +215,11 @@
                                   </div>
                               </div>
                           </div>
+                          <!-- button hapus modal-->
+                          <a href="<?= base_url('klien/hapus/' . $item['id']); ?>" class="hapus">
+                              <span class="feather icon-trash-2 text-danger"></span>
+                          </a>
                       </td>
-
                       <!-- ISI VIEW -->
                       <td><?= $item['nama'] ?></td>
                       <td><?= $item['telepon'] ?></td>
