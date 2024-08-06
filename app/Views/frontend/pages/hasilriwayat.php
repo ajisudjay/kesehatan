@@ -5,7 +5,6 @@
 <body>
     <!-- SECTION1 -->
     <main class="main" id="top">
-        <?= $this->include('frontend/layouts/topnavbar') ?>
         <section id="home">
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
@@ -68,318 +67,316 @@
                             </table>
                             <?php if ($bahasa === 'Indonesia') { ?>
                                 <!-- tampilan desktop -->
-                                <div class="desktop">
-                                    <br>
-                                    <h5 align="center">Hasil Analisa Personal Prevention Check Up</h5>
-                                    <div align="center">
-                                        <span style="color:red;">[merah : risiko tinggi]</span> - <span style="color:orange;">[jingga : risiko sedang]</span>
-                                    </div>
-                                    <div class="col-12" style="text-align: justify;">
-                                        <table id="alt-pg-dt" class="table table-primary table-hover" width="100%" style="font-size: small;">
-                                            <tr>
-                                                <th style="vertical-align: top;" width="40%">
-                                                    Risiko Masalah Kesehatan
-                                                </th>
-                                                <th style="vertical-align: top;">
-                                                    Dampak
-                                                </th>
-                                                <th style="vertical-align: top;">
-                                                    Saran
-                                                </th>
-                                            </tr>
-                                            <?php
+                                <h5 align="center">Hasil Analisa Personal Prevention Check Up</h5>
+                                <div align="center">
+                                    <span style="color:red;">[merah : risiko tinggi]</span> - <span style="color:orange;">[jingga : risiko sedang]</span> - <span style="color:green;">[hijau : risiko rendah]</span>
+                                </div>
+                                <div class="col-12" style="text-align: justify;">
+                                    <table id="alt-pg-dt" class="table table-primary table-hover" width="100%">
+                                        <tr>
+                                            <th style="vertical-align: top;min-width: 100px;max-width: 200px; white-space: normal;">
+                                                Risiko Masalah Kesehatan
+                                            </th>
+                                            <th style="vertical-align: top;min-width: 200px;max-width: 400px; white-space: normal;">
+                                                Dampak
+                                            </th>
+                                            <th style="vertical-align: top;min-width: 100px;max-width: 200px; white-space: normal;">
+                                                Hasil
+                                            </th>
+                                        </tr>
+                                        <?php
                                             if ($item['nilai_a'] > 5) {
                                                 echo "<tr><td>$risiko_a</td><td>$dampak_a</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_a'] >= 5) {
-                                                echo "<tr><td>$risiko_a</td><td>$dampak_a</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_a</td><td>$dampak_a</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_a</td><td>$dampak_a</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_b'] > 5) {
                                                 echo "<tr><td>$risiko_b</td><td>$dampak_b</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_b'] >= 5) {
-                                                echo "<tr><td>$risiko_b</td><td>$dampak_b</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_b</td><td>$dampak_b</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_b</td><td>$dampak_b</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_c'] > 5) {
                                                 echo "<tr><td>$risiko_c</td><td>$dampak_c</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_c'] >= 5) {
-                                                echo "<tr><td>$risiko_c</td><td>$dampak_c</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_c</td><td>$dampak_c</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_c</td><td>$dampak_c</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_d'] > 5) {
                                                 echo "<tr><td>$risiko_d</td><td>$dampak_d</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_d'] >= 5) {
-                                                echo "<tr><td>$risiko_d</td><td>$dampak_d</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_d</td><td>$dampak_d</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_d</td><td>$dampak_d</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_e'] > 5) {
                                                 echo "<tr><td>$risiko_e</td><td>$dampak_e</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_e'] >= 5) {
-                                                echo "<tr><td>$risiko_e</td><td>$dampak_e</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_e</td><td>$dampak_e</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_e</td><td>$dampak_e</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_f'] > 5) {
                                                 echo "<tr><td>$risiko_f</td><td>$dampak_f</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_f'] >= 5) {
-                                                echo "<tr><td>$risiko_f</td><td>$dampak_f</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_f</td><td>$dampak_f</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_f</td><td>$dampak_f</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_g'] > 5) {
                                                 echo "<tr><td>$risiko_g</td><td>$dampak_g</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_g'] >= 5) {
-                                                echo "<tr><td>$risiko_g</td><td>$dampak_g</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_g</td><td>$dampak_g</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_g</td><td>$dampak_g</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_h'] > 5) {
                                                 echo "<tr><td>$risiko_h</td><td>$dampak_h</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_h'] >= 5) {
-                                                echo "<tr><td>$risiko_h</td><td>$dampak_h</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_h</td><td>$dampak_h</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_h</td><td>$dampak_h</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_i'] > 5) {
                                                 echo "<tr><td>$risiko_i</td><td>$dampak_i</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_i'] >= 5) {
-                                                echo "<tr><td>$risiko_i</td><td>$dampak_i</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_i</td><td>$dampak_i</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_i</td><td>$dampak_i</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_j'] > 5) {
                                                 echo "<tr><td>$risiko_j</td><td>$dampak_j</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_j'] >= 5) {
-                                                echo "<tr><td>$risiko_j</td><td>$dampak_j</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_j</td><td>$dampak_j</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_j</td><td>$dampak_j</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_k'] > 5) {
                                                 echo "<tr><td>$risiko_k</td><td>$dampak_k</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_k'] >= 5) {
-                                                echo "<tr><td>$risiko_k</td><td>$dampak_k</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_k</td><td>$dampak_k</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_k</td><td>$dampak_k</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_l'] > 5) {
                                                 echo "<tr><td>$risiko_l</td><td>$dampak_l</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_l'] >= 5) {
-                                                echo "<tr><td>$risiko_l</td><td>$dampak_l</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_l</td><td>$dampak_l</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_l</td><td>$dampak_l</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_m'] > 5) {
                                                 echo "<tr><td>$risiko_m</td><td>$dampak_m</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_m'] >= 5) {
-                                                echo "<tr><td>$risiko_m</td><td>$dampak_m</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_m</td><td>$dampak_m</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_m</td><td>$dampak_m</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_n'] > 5) {
                                                 echo "<tr><td>$risiko_n</td><td>$dampak_n</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_n'] >= 5) {
-                                                echo "<tr><td>$risiko_n</td><td>$dampak_n</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_n</td><td>$dampak_n</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_n</td><td>$dampak_n</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_o'] > 5) {
                                                 echo "<tr><td>$risiko_o</td><td>$dampak_o</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_o'] >= 5) {
-                                                echo "<tr><td>$risiko_o</td><td>$dampak_o</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_o</td><td>$dampak_o</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_o</td><td>$dampak_o</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_p'] > 5) {
                                                 echo "<tr><td>$risiko_p</td><td>$dampak_p</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_p'] >= 5) {
-                                                echo "<tr><td>$risiko_p</td><td>$dampak_p</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_p</td><td>$dampak_p</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_p</td><td>$dampak_p</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_q'] > 5) {
                                                 echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_q'] >= 5) {
-                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_r'] > 5) {
                                                 echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_r'] >= 5) {
-                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
                                             if ($item['nilai_s'] > 5) {
                                                 echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                             } elseif ($item['nilai_s'] >= 5) {
-                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_qrs</td><td>$dampak_qrs</td><td><span style='color:green;'>risiko rendah</span>, memiliki risiko rendah</td></tr>";
                                             }
-                                            ?>
-                                        </table>
-                                    </div>
+                                        ?>
+                                    </table>
                                 </div>
                             <?php } else { ?>
                                 <!-- tampilan desktop -->
-                                <div class="desktop">
-                                    <br>
-                                    <h5 align="center">Results of the Personal Prevention Check-Up Analysis</h5>
-                                    <div align="center">
-                                        <span style="color:red;">[red : high risk]</span> - <span style="color:orange;">[orange : medium risk needs to be alert]</span>
-                                    </div>
-                                    <div class="col-12" style="text-align: justify;">
-                                        <table class="table table-hover" width="100%" style="font-size: small;">
-                                            <tr>
-                                                <th style="vertical-align: top;" width="40%">
-                                                    Risk of health problems
-                                                </th>
-                                                <th style="vertical-align: top;">
-                                                    Impact
-                                                </th>
-                                            </tr>
-                                            <?php
+                                <br>
+                                <h5 align="center">Results of the Personal Prevention Check-Up Analysis</h5>
+                                <div align="center">
+                                    <span style="color:red;">[red : high risk]</span> - <span style="color:orange;">[orange : medium risk needs to be alert]</span> - <span style="color:green;">[green : low risk]</span>
+                                </div>
+                                <div class="col-12" style="text-align: justify;">
+                                    <table id="alt-pg-dt" class="table table-primary table-hover" width="100%">
+                                        <tr>
+                                            <th style="vertical-align: top;min-width: 150px;max-width: 250px; white-space: normal;">
+                                                Risk of health problems
+                                            </th>
+                                            <th style="vertical-align: top;min-width: 200px;max-width: 250px; white-space: normal;">
+                                                Impact
+                                            </th>
+                                            <th style="vertical-align: top;min-width: 150px;max-width: 200px; white-space: normal;">
+                                                Results
+                                            </th>
+                                        </tr>
+                                        <?php
                                             if ($item['nilai_a'] > 5) {
-                                                echo "<tr><td>$risiko_eng_a</td><td>$dampak_eng_a</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_a</td><td>$dampak_eng_a</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_a'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_a</td><td>$dampak_eng_a</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_a</td><td>$dampak_eng_a</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_a</td><td>$dampak_eng_a</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_b'] > 5) {
-                                                echo "<tr><td>$risiko_eng_b</td><td>$dampak_eng_b</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_b</td><td>$dampak_eng_b</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_b'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_b</td><td>$dampak_eng_b</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_b</td><td>$dampak_eng_b</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_a</td><td>$dampak_eng_a</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_c'] > 5) {
-                                                echo "<tr><td>$risiko_eng_c</td><td>$dampak_eng_c</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_c</td><td>$dampak_eng_c</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_c'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_c</td><td>$dampak_eng_c</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_c</td><td>$dampak_eng_c</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_c</td><td>$dampak_eng_c</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_d'] > 5) {
-                                                echo "<tr><td>$risiko_eng_d</td><td>$dampak_eng_d</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_d</td><td>$dampak_eng_d</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_d'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_d</td><td>$dampak_eng_d</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_d</td><td>$dampak_eng_d</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_d</td><td>$dampak_eng_d</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_e'] > 5) {
-                                                echo "<tr><td>$risiko_eng_e</td><td>$dampak_eng_e</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_e</td><td>$dampak_eng_e</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_e'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_e</td><td>$dampak_eng_e</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_e</td><td>$dampak_eng_e</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_e</td><td>$dampak_eng_e</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_f'] > 5) {
-                                                echo "<tr><td>$risiko_eng_f</td><td>$dampak_eng_f</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_f</td><td>$dampak_eng_f</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_f'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_f</td><td>$dampak_eng_f</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_f</td><td>$dampak_eng_f</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_f</td><td>$dampak_eng_f</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_g'] > 5) {
-                                                echo "<tr><td>$risiko_eng_g</td><td>$dampak_eng_g</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_g</td><td>$dampak_eng_g</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_g'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_g</td><td>$dampak_eng_g</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_g</td><td>$dampak_eng_g</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_g</td><td>$dampak_eng_g</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_h'] > 5) {
-                                                echo "<tr><td>$risiko_eng_h</td><td>$dampak_eng_h</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_h</td><td>$dampak_eng_h</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_h'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_h</td><td>$dampak_eng_h</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_h</td><td>$dampak_eng_h</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_h</td><td>$dampak_eng_h</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_i'] > 5) {
-                                                echo "<tr><td>$risiko_eng_i</td><td>$dampak_eng_i</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_i</td><td>$dampak_eng_i</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_i'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_i</td><td>$dampak_eng_i</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_i</td><td>$dampak_eng_i</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_i</td><td>$dampak_eng_i</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_j'] > 5) {
-                                                echo "<tr><td>$risiko_eng_j</td><td>$dampak_eng_j</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_j</td><td>$dampak_eng_j</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_j'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_j</td><td>$dampak_eng_j</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_j</td><td>$dampak_eng_j</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_j</td><td>$dampak_eng_j</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_k'] > 5) {
-                                                echo "<tr><td>$risiko_eng_k</td><td>$dampak_eng_k</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_k</td><td>$dampak_eng_k</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_k'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_k</td><td>$dampak_eng_k</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_k</td><td>$dampak_eng_k</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_k</td><td>$dampak_eng_k</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_l'] > 5) {
-                                                echo "<tr><td>$risiko_eng_l</td><td>$dampak_eng_l</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_l</td><td>$dampak_eng_l</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_l'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_l</td><td>$dampak_eng_l</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_l</td><td>$dampak_eng_l</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_l</td><td>$dampak_eng_l</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_m'] > 5) {
-                                                echo "<tr><td>$risiko_eng_m</td><td>$dampak_eng_m</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_m</td><td>$dampak_eng_m</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_m'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_m</td><td>$dampak_eng_m</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_m</td><td>$dampak_eng_m</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_m</td><td>$dampak_eng_m</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_n'] > 5) {
-                                                echo "<tr><td>$risiko_eng_n</td><td>$dampak_eng_n</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_n</td><td>$dampak_eng_n</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_n'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_n</td><td>$dampak_eng_n</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_n</td><td>$dampak_eng_n</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_n</td><td>$dampak_eng_n</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_o'] > 5) {
-                                                echo "<tr><td>$risiko_eng_o</td><td>$dampak_eng_o</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_o</td><td>$dampak_eng_o</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_o'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_o</td><td>$dampak_eng_o</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_o</td><td>$dampak_eng_o</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_o</td><td>$dampak_eng_o</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_p'] > 5) {
-                                                echo "<tr><td>$risiko_eng_p</td><td>$dampak_eng_p</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_p</td><td>$dampak_eng_p</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_p'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_p</td><td>$dampak_eng_p</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_p</td><td>$dampak_eng_p</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_p</td><td>$dampak_eng_p</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_q'] > 5) {
-                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_q'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_r'] > 5) {
-                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_r'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
                                             if ($item['nilai_s'] > 5) {
-                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:red;'>high risk</span>, the recommendation is to prevent severity (don't get worse) and recurrence (don't relapse)</td></tr>";
                                             } elseif ($item['nilai_s'] >= 5) {
-                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:orange;'>be alert</span>, the recommendation is to prevent pain (don't get sick)</td></tr>";
                                             } else {
-                                                echo "";
+                                                echo "<tr><td>$risiko_eng_qrs</td><td>$dampak_eng_qrs</td><td><span style='color:green;'>low risk</span>, has low risk</td></tr>";
                                             }
-                                            ?>
-                                        </table>
-                                    </div>
+                                        ?>
+                                    </table>
                                 </div>
                             <?php } ?>
                         <?php endforeach ?>
@@ -408,56 +405,6 @@
 </body>
 
 </html>
-<!-- SCRIPT AJAX -->
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            url: '<?= base_url('klien/RiwayatKlien') ?>',
-            dataType: 'json',
-            success: function(response) {
-                $("#result").html(response.data);
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
-            }
-        });
-
-        function dataKlien() {
-            $(".Riwayatklien").submit(function(e) {
-                var formObj = $(this);
-                var formURL = formObj.attr("action");
-                var formData = new FormData(this);
-                $.ajax({
-                    url: formURL,
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(response) {
-                        $("#result").html(response.data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {}
-                });
-                e.preventDefault(); //Prevent Default action.
-            });
-        }
-
-        $(document).ready(function() {
-            dataKlien();
-        });
-
-
-        window.setTimeout(function() {
-            $(".flashAjax").fadeTo(500, 0).slideUp(500, function() {
-                $(this).remove();
-            });
-        }, 5000);
-    });
-</script>
-<?= $this->include('frontend/layouts/javascript') ?>
-<?= $this->include('backend/layouts/js_viewData') ?>
 </body>
 
 </html>

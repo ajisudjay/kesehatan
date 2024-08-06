@@ -5,7 +5,6 @@
 <body>
     <!-- SECTION1 -->
     <main class="main" id="top">
-        <?= $this->include('frontend/layouts/topnavbar') ?>
         <section id="home">
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
@@ -66,9 +65,9 @@
                                             <td>
                                                 <form action="<?= base_url('klien/cekhasil'); ?>" method="post" class="Riwayatklien">
                                                     <input name="bahasa" type="text" value="<?= $bahasa ?>" hidden>
-                                                    <input class="form-livedoc-control" name="slug" type="text" value="<?= $item['slug'] ?>" hidden>
-                                                    <input class="form-livedoc-control" name="nama" type="text" value="<?= $item['nama'] ?>" hidden>
-                                                    <input class="form-livedoc-control" name="telepon" type="text" value="<?= $item['telepon'] ?>" hidden>
+                                                    <input name="slug" type="text" value="<?= $item['slug'] ?>" hidden>
+                                                    <input name="nama" type="text" value="<?= $item['nama'] ?>" hidden>
+                                                    <input name="telepon" type="text" value="<?= $item['telepon'] ?>" hidden>
                                                     <button class="btn btn-sm btn-primary rounded-pill" type="submit">
                                                         Detail
                                                     </button>
@@ -87,7 +86,7 @@
                                 <?php if ($bahasa === 'Indonesia') { ?>
                                     <a href="/"><button type="button" class="btn btn-danger">Kembali</button></a>
                                 <?php } else { ?>
-                                    <a href="/"><button type="button" class="btn btn-danger">Kembali</button></a>
+                                    <a href="/"><button type="button" class="btn btn-danger">Back</button></a>
                                 <?php } ?>
 
                             </p>
@@ -109,54 +108,6 @@
 
 </html>
 <!-- SCRIPT AJAX -->
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            url: '<?= base_url('klien/RiwayatKlien') ?>',
-            dataType: 'json',
-            success: function(response) {
-                $("#result").html(response.data);
-            },
-            error: function(xhr, ajaxOptions, thrownError) {
-                alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
-            }
-        });
-
-        function dataKlien() {
-            $(".Riwayatklien").submit(function(e) {
-                var formObj = $(this);
-                var formURL = formObj.attr("action");
-                var formData = new FormData(this);
-                $.ajax({
-                    url: formURL,
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(response) {
-                        $("#result").html(response.data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {}
-                });
-                e.preventDefault(); //Prevent Default action.
-            });
-        }
-
-        $(document).ready(function() {
-            dataKlien();
-        });
-
-
-        window.setTimeout(function() {
-            $(".flashAjax").fadeTo(500, 0).slideUp(500, function() {
-                $(this).remove();
-            });
-        }, 5000);
-    });
-</script>
-<?= $this->include('frontend/layouts/javascript') ?>
 </body>
 
 </html>

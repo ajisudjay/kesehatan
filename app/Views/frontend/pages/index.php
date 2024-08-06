@@ -5,7 +5,6 @@
 <body>
     <!-- SECTION1 -->
     <main class="main" id="top">
-        <?= $this->include('frontend/layouts/topnavbar') ?>
         <section id="home">
             <div class="bg-holder bg-size" style="background-image:url(<?= base_url('libraries_frontend/assets/img/gallery/hero-bg.png') ?>);background-position:top center;background-size:cover;">
             </div>
@@ -49,7 +48,7 @@
                 <?php } else { ?>
                     <h1 align="center">Personal Prevention Check Up</h1>
                     <br>
-                    <h1 align="center">Prevention Better</h1>
+                    <h1 align="center">Prevention is Better</h1>
                     <br>
                     <br>
                     <br>
@@ -151,94 +150,6 @@
 
 </html>
 <!-- SCRIPT AJAX -->
-<script>
-    $(document).ready(function() {
-        function dataKlien() {
-            $(".Riwayatklien").submit(function(e) {
-                var formObj = $(this);
-                var formURL = formObj.attr("action");
-                var formData = new FormData(this);
-                $.ajax({
-                    url: formURL,
-                    type: 'POST',
-                    data: formData,
-                    dataType: 'json',
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success: function(response) {
-                        $("#result").html(response.data);
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {}
-                });
-                e.preventDefault(); //Prevent Default action.
-            });
-        }
-
-        $(document).ready(function() {
-            dataKlien();
-        });
-
-        //  function baru
-        $('.baru').submit(function() {
-            var nama = $('#nama').val();
-            var hp = $('#hp').val();
-            var jk = $('#jk').val();
-            var fd = new FormData();
-
-            fd.append('nama', nama);
-            fd.append('hp', hp);
-            fd.append('jk', jk);
-            $.ajax({
-                type: "post",
-                data: fd,
-                dataType: "json",
-                contentType: false,
-                processData: false,
-                beforeSend: function() {
-                    $('.btnSimpan').attr('disable', 'disabled');
-                    $('.btnSimpan').html('<i class="fa fa-spin fa-spinner"></i>');
-                },
-                complete: function() {
-                    $('.btnSimpan').removeAttr('disable', 'disabled');
-                    $('.btnSimpan').html('Simpan');
-                },
-                success: function(response) {
-                    if (response.error) {
-                        if (response.error.nama) {
-                            $('.nama').addClass('is-invalid');
-                            $('.errorNama').html(response.error.nama);
-                        } else {
-                            $('.nama').removeClass('is-invalid');
-                            $('.errorNama').html('');
-                        }
-                    } else {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'berhasil',
-                            text: response.sukses,
-                        });
-                        $('body').removeClass('modal-open');
-                        //modal-open class is added on body so it has to be removed
-                        $('.modal-backdrop').remove();
-                        //need to remove div with modal-backdrop class
-                        $("#result").html(response.data);
-                    }
-                },
-                error: function(xhr, ajaxOptions, thrownError) {
-                    alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError);
-                }
-            })
-        });
-
-        window.setTimeout(function() {
-            $(".flashAjax").fadeTo(500, 0).slideUp(500, function() {
-                $(this).remove();
-            });
-        }, 5000);
-    });
-</script>
-<?= $this->include('frontend/layouts/javascript') ?>
 </body>
 
 </html>

@@ -72,133 +72,133 @@
                                                         if ($item['nilai_a'] > 5) {
                                                             echo "<tr><td>$risiko_a</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_a</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_a'] >= 5) {
-                                                            echo "<tr><td>$risiko_a</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_a</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_a</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_a</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_b'] > 5) {
                                                             echo "<tr><td>$risiko_b</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_b</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_b'] >= 5) {
-                                                            echo "<tr><td>$risiko_b</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_b</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_b</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_b</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_c'] > 5) {
                                                             echo "<tr><td>$risiko_c</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_c</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_c'] >= 5) {
-                                                            echo "<tr><td>$risiko_c</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_c</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_c</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_c</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_d'] > 5) {
                                                             echo "<tr><td>$risiko_d</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_d</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_d'] >= 5) {
-                                                            echo "<tr><td>$risiko_d</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_d</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_d</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_d</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_e'] > 5) {
                                                             echo "<tr><td>$risiko_e</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_e</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_e'] >= 5) {
-                                                            echo "<tr><td>$risiko_e</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_e</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_e</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_e</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_f'] > 5) {
                                                             echo "<tr><td>$risiko_f</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_f</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_f'] >= 5) {
-                                                            echo "<tr><td>$risiko_f</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_f</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_f</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_f</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_g'] > 5) {
                                                             echo "<tr><td>$risiko_g</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_g</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_g'] >= 5) {
-                                                            echo "<tr><td>$risiko_g</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_g</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_g</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_g</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_h'] > 5) {
                                                             echo "<tr><td>$risiko_h</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_h</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_h'] >= 5) {
-                                                            echo "<tr><td>$risiko_h</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_h</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_h</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_h</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_i'] > 5) {
                                                             echo "<tr><td>$risiko_i</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_i</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_i'] >= 5) {
-                                                            echo "<tr><td>$risiko_i</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_i</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_i</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_i</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_j'] > 5) {
                                                             echo "<tr><td>$risiko_j</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_j</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_j'] >= 5) {
-                                                            echo "<tr><td>$risiko_j</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_j</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_j</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_j</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_k'] > 5) {
                                                             echo "<tr><td>$risiko_k</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_k</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_k'] >= 5) {
-                                                            echo "<tr><td>$risiko_k</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_k</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_k</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_k</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_l'] > 5) {
                                                             echo "<tr><td>$risiko_l</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_l</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_l'] >= 5) {
-                                                            echo "<tr><td>$risiko_l</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_l</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_l</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_l</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_m'] > 5) {
                                                             echo "<tr><td>$risiko_m</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_m</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_m'] >= 5) {
-                                                            echo "<tr><td>$risiko_m</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_m</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_m</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_m</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_n'] > 5) {
                                                             echo "<tr><td>$risiko_n</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_n</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_n'] >= 5) {
-                                                            echo "<tr><td>$risiko_n</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_n</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_n</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_n</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_o'] > 5) {
                                                             echo "<tr><td>$risiko_o</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_o</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_o'] >= 5) {
-                                                            echo "<tr><td>$risiko_o</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_o</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_o</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_o</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_p'] > 5) {
                                                             echo "<tr><td>$risiko_p</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_p</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_p'] >= 5) {
-                                                            echo "<tr><td>$risiko_p</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_p</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_p</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_p</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_q'] > 5) {
                                                             echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_q'] >= 5) {
-                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_r'] > 5) {
                                                             echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_r'] >= 5) {
-                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }
                                                         if ($item['nilai_s'] > 5) {
                                                             echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:red;'>risiko tinggi</span>, mencegah keparahan & kekambuhan</td></tr>";
                                                         } elseif ($item['nilai_s'] >= 5) {
-                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, bisakah anjuran nya mencegah kesakitan (jangan sakit)</td></tr>";
+                                                            echo "<tr><td>$risiko_qrs</td><td style='min-width: 200px;max-width: 400px; white-space: normal;'>$dampak_qrs</td><td><span style='color:orange;'>waspada</span>, mencegah kesakitan (jangan sakit)</td></tr>";
                                                         } else {
                                                             echo "";
                                                         }

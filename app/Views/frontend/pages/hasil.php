@@ -4,7 +4,6 @@
 
 <body>
     <main class="main" id="top">
-        <?= $this->include('frontend/layouts/topnavbar') ?>
         <!-- SECTION2 -->
         <section class="pb-0" id="checkup">
             <div class="container-sm">
